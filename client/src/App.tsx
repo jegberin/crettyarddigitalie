@@ -137,7 +137,7 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   },
   "/web-design-carlow": {
     title: "Web Design Carlow \u2014 Professional Websites for Small Businesses | Crettyard Digital",
-    description: "Professional website design for tradespeople and SMEs in County Carlow. Get found on Google and win more local customers.",
+    description: "Professional website design for tradespeople and SMEs across County Carlow \u2014 Carlow town, Tullow, Bagenalstown, Borris. Get found on Google, win more local customers. Based five minutes from the Carlow border.",
   },
   "/web-design-kilkenny": {
     title: "Web Design Kilkenny \u2014 Professional Websites for Small Businesses | Crettyard Digital",
@@ -278,6 +278,21 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
     { question: "Can you help pass a client\u2019s IT security assessment?", answer: "Yes. I implement the measures and provide documentation to demonstrate compliance." },
     { question: "Is this more expensive than generic IT?", answer: "Not necessarily. Compliance is included, not billed as an add-on. For regulated firms this is often more cost-effective." },
   ],
+  "/web-design-laois": [
+    { question: "Can you rank my business in Portlaoise specifically?", answer: "Yes. I optimise for the exact terms your customers search \u2014 'plumber Portlaoise,' 'accountant Portlaoise,' etc. Combined with Google Business Profile optimisation, this targets both the organic results and the local map pack." },
+    { question: "I\u2019m in a small town \u2014 is a website worth it?", answer: "Absolutely. In smaller towns like Mountmellick, Mountrath, or Durrow, there's less competition online, which means a well-built site can rank faster and dominate local search results more easily than in a larger town." },
+    { question: "How do I apply for the Laois LEO grant?", answer: "The Laois LEO in Portlaoise runs regular information sessions. You attend a session, then apply. I handle the quote, help with the application, and ensure everything meets their requirements." },
+  ],
+  "/web-design-carlow": [
+    { question: "I\u2019m a tradesperson in Carlow \u2014 do I really need a website?", answer: "Your bigger clients are Googling you before awarding work. Under NIS2, main contractors increasingly ask about their subcontractors' online presence and security. A professional website and email address signals credibility \u2014 which translates directly into winning contracts." },
+    { question: "Is the Carlow LEO grant easy to get?", answer: "Carlow LEO has a reputation for relatively efficient processing. The main requirements are attending an information session and providing a clear, itemised quote. I handle the quote side and walk you through the application." },
+    { question: "Can you meet me in person?", answer: "Yes \u2014 I\u2019m based five minutes from Carlow. I regularly meet clients in Carlow town, Tullow, and the surrounding area. Face-to-face is always an option." },
+  ],
+  "/web-design-kilkenny": [
+    { question: "Do I need an accessible website for my Kilkenny restaurant?", answer: "If you take bookings online or display menus digitally, the European Accessibility Act likely applies. I build accessibility into every site from the start \u2014 so you're covered without paying for a separate audit or retrofit." },
+    { question: "Can I compete with Booking.com for accommodation searches?", answer: "Not on volume \u2014 but on specificity, absolutely. Booking.com can\u2019t rank for 'guesthouse near Thomastown with river views.' A properly built website with targeted local SEO can and does." },
+    { question: "I\u2019m not in Kilkenny city \u2014 will you still work with me?", answer: "Absolutely. I work with businesses across the entire county \u2014 Castlecomer, Thomastown, Callan, Graiguenamanagh, and everywhere in between. Remote support works perfectly, and I\u2019m available for in-person meetings too." },
+  ],
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -329,6 +344,15 @@ function RouteSEO() {
       )}
       {location === "/professional-services" && (
         <ServiceSchema name="IT & Compliance for Professional Services" description="Managed IT, Microsoft 365, cybersecurity, and regulatory compliance for accountants, solicitors, and professional services firms in Ireland." />
+      )}
+      {location === "/web-design-laois" && (
+        <ServiceSchema name="Web Design in County Laois" description="Professional website design for small businesses across County Laois \u2014 Portlaoise, Portarlington, Abbeyleix, Mountmellick, Mountrath, Stradbally. Mobile-friendly, EAA-compliant, SEO-ready. From \u20ac799." areaServed="County Laois, Ireland" />
+      )}
+      {location === "/web-design-carlow" && (
+        <ServiceSchema name="Web Design in County Carlow" description="Professional website design for small businesses across County Carlow \u2014 Carlow town, Tullow, Bagenalstown, Borris, Leighlinbridge. Mobile-friendly, EAA-compliant, SEO-ready. From \u20ac799." areaServed="County Carlow, Ireland" />
+      )}
+      {location === "/web-design-kilkenny" && (
+        <ServiceSchema name="Web Design in County Kilkenny" description="Professional website design for hospitality, retail, accommodation, and trades across County Kilkenny \u2014 Kilkenny city, Thomastown, Castlecomer, Callan, Graiguenamanagh. EAA-compliant for hospitality and retail. From \u20ac799." areaServed="County Kilkenny, Ireland" />
       )}
 
       {/* Page-type schemas */}

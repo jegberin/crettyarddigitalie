@@ -91,7 +91,15 @@ export function LocalBusinessSchema() {
   );
 }
 
-export function ServiceSchema({ name, description }: { name: string; description: string }) {
+export function ServiceSchema({
+  name,
+  description,
+  areaServed,
+}: {
+  name: string;
+  description: string;
+  areaServed?: string;
+}) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -104,7 +112,7 @@ export function ServiceSchema({ name, description }: { name: string; description
     },
     areaServed: {
       "@type": "AdministrativeArea",
-      name: "Laois, Carlow, Kilkenny, Ireland"
+      name: areaServed ?? "Laois, Carlow, Kilkenny, Ireland"
     }
   };
 

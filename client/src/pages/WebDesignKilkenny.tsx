@@ -1,10 +1,16 @@
 ﻿import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, BadgeEuro, Search, MapPin, Utensils, Store, Eye } from "lucide-react";
+import { ArrowRight, BadgeEuro, Search } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import heroKilkenny from "@assets/wd-kilkenny-hero-medieval-mile-dusk.webp";
+import iconHospitality from "@assets/concept-hospitality-dining.webp";
+import iconRetail from "@assets/concept-retail-craft.webp";
+import iconAccommodation from "@assets/concept-accommodation.webp";
+import iconProfessional from "@assets/concept-professional-services.webp";
+import iconAccessibility from "@assets/concept-accessibility-eaa.webp";
 
 export default function WebDesignKilkenny() {
   return (
@@ -12,24 +18,36 @@ export default function WebDesignKilkenny() {
 
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">Web Design &mdash; County Kilkenny</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
-              Web Design for Kilkenny &mdash; Where Tourism, Craft, and Local Business Meet
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              Kilkenny is one of Ireland's most-visited destinations. Tourists, locals, and businesses searching online for services, food, accommodation, and experiences in Kilkenny need to find you &mdash; not your competitor on the next street. I build websites that make that happen, with an understanding of what makes Kilkenny's market unique.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact#send-message">
-                <Button size="lg">Get a Free Quote</Button>
-              </Link>
-              <Link href="/portfolio">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">See My Work &rarr;</Button>
-              </Link>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">Web Design &mdash; County Kilkenny</span>
+              <h1 className="display-heading text-white mb-6 leading-tight">
+                Web Design for Kilkenny &mdash; Where Tourism, Craft, and Local Business Meet
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                Kilkenny is one of Ireland's most-visited destinations. From Kilkenny Castle and the Medieval Mile to Smithwick's and Jerpoint Park, tourists, locals, and businesses searching online for services, food, accommodation, and experiences in Kilkenny need to find you &mdash; not your competitor on the next street. I build websites that make that happen, with an understanding of what makes Kilkenny's market unique.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact#send-message">
+                  <Button size="lg">Get a Free Quote</Button>
+                </Link>
+                <Link href="/portfolio">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">See My Work &rarr;</Button>
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroKilkenny}
+                alt="High Street on the Medieval Mile in Kilkenny city at dusk with a phone showing a restaurant booking website"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -48,8 +66,32 @@ export default function WebDesignKilkenny() {
               But Kilkenny isn't just tourism. Towns like Castlecomer, Thomastown, Callan, and Graiguenamanagh have active local economies driven by construction, farming services, professional firms, and local retailers. These businesses serve local customers who search Google the same way everyone else does &mdash; and the business that appears first wins.
             </p>
             <p className="text-foreground text-[15px] leading-relaxed font-sans mb-6">
-              The <strong>European Accessibility Act</strong> is particularly relevant for Kilkenny businesses. If you sell products or services online &mdash; especially in hospitality and retail &mdash; your website now needs to be accessible to people with disabilities. I build with this in mind from the start, so you're compliant without an expensive retrofit.
+              The <strong>European Accessibility Act (EAA)</strong> is particularly relevant for Kilkenny businesses. If you sell products or services online &mdash; especially in hospitality and retail &mdash; your website now needs to be accessible to people with disabilities. I build with the EAA in mind from the start, so you're compliant without an expensive retrofit.
             </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* EAA callout */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn>
+            <div className="bg-accent/5 border border-accent/20 p-7 rounded-2xl flex items-center gap-6">
+              <img
+                src={iconAccessibility}
+                alt="Glass accessibility symbol representing European Accessibility Act (EAA) compliance"
+                width={1000}
+                height={1000}
+                className="w-20 h-20 md:w-24 md:h-24 shrink-0"
+                loading="lazy"
+              />
+              <div>
+                <h3 className="text-lg mb-1">EAA Compliance Built In</h3>
+                <p className="text-foreground text-[15px] font-sans">
+                  Every Kilkenny website I build is designed to meet European Accessibility Act requirements from day one &mdash; colour contrast, keyboard navigation, screen-reader semantics, and proper form labels. No separate audit bill, no retrofit.
+                </p>
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -64,14 +106,21 @@ export default function WebDesignKilkenny() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {[
-              { icon: Utensils, title: "Restaurants, Caf\u00e9s & Pubs", desc: "Tourists plan on Google before they arrive. A properly built website with menus, hours, location, and booking options means you capture visitors before they even reach the city. Accessibility compliance (EAA) is essential for hospitality." },
-              { icon: Store, title: "Retail & Craft Businesses", desc: "Kilkenny's craft heritage is world-famous. Whether you're a potter in Thomastown or a boutique in the city, an e-commerce or portfolio website turns browsers into buyers \u2014 both walk-in and online." },
-              { icon: MapPin, title: "B&Bs, Guesthouses & Self-Catering", desc: "Accommodation searches are massive in Kilkenny. Your website needs to compete with Booking.com \u2014 not by matching their scale, but by ranking for specific terms like 'guesthouse Thomastown' and offering direct booking." },
-              { icon: Eye, title: "Professional Services & Trades", desc: "Solicitors, accountants, builders, and electricians in Kilkenny city and surrounding towns. A professional website builds trust and wins the call over a competitor with no online presence." },
+              { img: iconHospitality, alt: "Glass plate and crossed fork-and-knife representing hospitality and dining", title: "Restaurants, Caf\u00e9s & Pubs", desc: "Tourists plan on Google before they arrive. A properly built website with menus, hours, location, and booking options means you capture visitors before they even reach the city. Accessibility compliance (EAA) is essential for hospitality." },
+              { img: iconRetail, alt: "Glass shopping bag with a shop sign representing retail and craft businesses", title: "Retail & Craft Businesses", desc: "Kilkenny's craft heritage is world-famous \u2014 think Kilkenny Design Centre, Bennetsbridge Pottery, Jerpoint Glass. Whether you're a potter in Thomastown or a boutique in the city, an e-commerce or portfolio website turns browsers into buyers \u2014 both walk-in and online." },
+              { img: iconAccommodation, alt: "Glass house with a bed inside representing B&Bs, guesthouses and self-catering accommodation", title: "B&Bs, Guesthouses & Self-Catering", desc: "Accommodation searches are massive in Kilkenny. Your website needs to compete with Booking.com \u2014 not by matching their scale, but by ranking for specific terms like 'guesthouse Thomastown' and offering direct booking." },
+              { img: iconProfessional, alt: "Glass briefcase with scales of justice representing professional services and trades", title: "Professional Services & Trades", desc: "Solicitors, accountants, builders, and electricians in Kilkenny city and surrounding towns. A professional website builds trust and wins the call over a competitor with no online presence." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                  <item.icon className="text-accent mb-4" size={28} />
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 mb-4"
+                    loading="lazy"
+                  />
                   <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans">{item.desc}</p>
                 </div>
@@ -121,7 +170,7 @@ export default function WebDesignKilkenny() {
                 <h3 className="text-lg">Kilkenny LEO Grow Digital Voucher</h3>
               </div>
               <p className="text-foreground text-[15px] font-sans mb-2">
-                Kilkenny LEO (based in Kilkenny city) administers the Grow Digital Voucher, which replaced the old Trading Online Voucher in December 2024. It covers 50% of new software subscriptions (M365, CRM, e-commerce platforms, cybersecurity) up to &euro;5,000. A free Digital for Business consultation is required before applying.
+                Kilkenny LEO (based in Kilkenny city) administers the Grow Digital Voucher, which replaced the old Trading Online Voucher in December 2024. It covers 50% of new software subscriptions (<Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>, CRM, e-commerce platforms, cybersecurity) up to &euro;5,000. A free Digital for Business consultation is required before applying.
               </p>
               <p className="text-foreground text-[15px] font-sans">
                 For Kilkenny hospitality businesses, subscription-based booking platforms, CRM, and e-commerce tools are exactly the kind of software the voucher is designed to fund. Bespoke website builds aren&rsquo;t eligible, but the software that powers modern hospitality businesses often is.
@@ -148,7 +197,10 @@ export default function WebDesignKilkenny() {
                 <p className="text-xs text-muted-foreground">E-commerce / booking</p>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground font-sans mb-6">All websites include a mandatory care plan from &euro;49/month. Accessibility compliance (EAA) built in.</p>
+            <p className="text-sm text-muted-foreground font-sans mb-6">All websites include a mandatory <Link href="/website-care-plans" className="text-accent hover:underline">care plan from &euro;49/month</Link>. Accessibility compliance (EAA) built in.</p>
+            <Link href="/portfolio" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+              See Kilkenny-ready projects in my portfolio <ArrowRight size={14} className="ml-1" />
+            </Link>
           </FadeIn>
         </div>
       </section>
@@ -199,6 +251,39 @@ export default function WebDesignKilkenny() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related services for Kilkenny businesses */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">More Local Services</span>
+            <h2 className="text-2xl">Other Ways I Can Help Kilkenny Businesses</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            <StaggerItem>
+              <Link href="/it-support-kilkenny" className="block bg-[#f3f4f5] p-6 rounded-2xl card-hover h-full">
+                <h3 className="text-base mb-2">IT Support in Kilkenny</h3>
+                <p className="text-foreground text-sm font-sans mb-3">Managed IT, Microsoft 365, and cybersecurity for businesses across Kilkenny city, Thomastown, Callan, Castlecomer and beyond.</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+              </Link>
+            </StaggerItem>
+            <StaggerItem>
+              <Link href="/website-care-plans" className="block bg-[#f3f4f5] p-6 rounded-2xl card-hover h-full">
+                <h3 className="text-base mb-2">Website Care Plans</h3>
+                <p className="text-foreground text-sm font-sans mb-3">Hosting, backups, security patches and content updates. Every Kilkenny site includes a care plan with EAA compliance maintained.</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+              </Link>
+            </StaggerItem>
+            <StaggerItem>
+              <Link href="/grants-funding" className="block bg-[#f3f4f5] p-6 rounded-2xl card-hover h-full">
+                <h3 className="text-base mb-2">Grants &amp; Funding</h3>
+                <p className="text-foreground text-sm font-sans mb-3">Full honest guide to the Grow Digital Voucher through Kilkenny LEO &mdash; what qualifies, what doesn&rsquo;t.</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 

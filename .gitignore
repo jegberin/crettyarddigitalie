@@ -9,4 +9,8 @@ vite.config.ts.*
 .replit
 .agents/
 .claude/
-attached_assets/
+
+# attached_assets/ is a mix of scratch files and live site assets.
+# Only the WebP files (imported via @assets alias) should be committed.
+attached_assets/*
+!attached_assets/*.webp
