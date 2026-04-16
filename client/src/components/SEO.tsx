@@ -172,6 +172,94 @@ export function AboutPageSchema() {
   );
 }
 
+export function PortfolioSchema() {
+  const projects = [
+    { id: "project-bm-custom-furniture", name: "BM Custom Furniture", url: "https://bmcustomfurniture.ie", description: "Bespoke fitted furniture and wall panelling website with strong local SEO for Carlow and Laois." },
+    { id: "project-go-green-steam-clean", name: "Go Green Steam Clean", url: "https://gogreensteamclean.ie", description: "Eco-friendly steam cleaning website with conversion-optimised booking CTAs." },
+    { id: "project-nurney-plant-civil", name: "Nurney Plant and Civil", url: "https://nurneyplantandcivil.ie", description: "Integrated Digital Foundation project: corporate website, Microsoft 365, and business-grade Wi-Fi for a plant hire and civil engineering firm in County Carlow." },
+    { id: "project-more-than-points", name: "More Than Points", url: "https://morethanpoints.ie", description: "Teen and parent coaching website with empathetic, trust-building copy and clear service structure." },
+    { id: "project-crettyard-ie", name: "Crettyard.ie", url: "https://crettyard.ie", description: "Community website for Crettyard (Co. Laois) with local business directory, heritage content, and public notice board." },
+  ];
+
+  const reviews = [
+    { author: "Barry", business: "BM Custom Furniture", rating: 5, text: "Joey built us a website that actually looks as good as the furniture we make. Within weeks of launching, we were getting enquiries from people who found us on Google \u2014 that never happened before. Brilliant service, no messing." },
+    { author: "Darren", business: "Go Green Steam Clean", rating: 5, text: "I had no website and no idea where to start. Joey made the whole thing painless \u2014 explained everything in plain English and delivered a site that brings in new bookings every week. Best investment I've made in my business." },
+    { author: "Brian", business: "Nurney Plant and Civil", rating: 5, text: "Joey did the lot for us \u2014 a professional website, Microsoft 365 so we have proper email between the office and the lads on site, and sorted our Wi-Fi so it works in every room. Can't recommend him enough." },
+  ];
+
+  const base = "https://crettyarddigital.ie/portfolio";
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Crettyard Digital Portfolio & Case Studies",
+    description: "Case studies of web design, Microsoft 365, and IT projects delivered for small businesses in Carlow, Laois, and the Irish Midlands.",
+    url: base,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: projects.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${base}#${p.id}`,
+        item: {
+          "@type": "CreativeWork",
+          name: p.name,
+          url: p.url,
+          description: p.description,
+          creator: {
+            "@type": "LocalBusiness",
+            name: "Crettyard Digital",
+            url: "https://crettyarddigital.ie",
+          },
+        },
+      })),
+    },
+  };
+
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Crettyard Digital",
+    url: "https://crettyarddigital.ie",
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.author },
+      reviewBody: r.text,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(r.rating),
+        bestRating: "5",
+        worstRating: "1",
+      },
+      itemReviewed: {
+        "@type": "LocalBusiness",
+        name: "Crettyard Digital",
+      },
+      publisher: { "@type": "Organization", name: r.business },
+    })),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: String(reviews.length),
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+    </>
+  );
+}
+
 export function ContactPageSchema() {
   const schema = {
     "@context": "https://schema.org",

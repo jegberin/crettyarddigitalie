@@ -85,7 +85,7 @@ export default function WebDesignCarlow() {
                   <p className="text-foreground text-sm font-sans italic">"Within weeks, we were getting enquiries from people who found us on Google."</p>
                 </div>
                 <p className="text-xs text-muted-foreground font-headline font-bold mb-3">Barry &mdash; Carlow/Laois border</p>
-                <Link href="/portfolio" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                <Link href="/portfolio#project-bm-custom-furniture" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
                   View full case study <ArrowRight size={14} className="ml-1" />
                 </Link>
               </div>
@@ -99,7 +99,7 @@ export default function WebDesignCarlow() {
                   <p className="text-foreground text-sm font-sans italic">"Joey did the lot for us. Can't recommend him enough."</p>
                 </div>
                 <p className="text-xs text-muted-foreground font-headline font-bold mb-3">Brian &mdash; Nurney, Co. Carlow</p>
-                <Link href="/portfolio" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                <Link href="/portfolio#project-nurney-plant-civil" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
                   View full case study <ArrowRight size={14} className="ml-1" />
                 </Link>
               </div>

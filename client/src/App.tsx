@@ -52,7 +52,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CookieBanner } from "@/components/CookieBanner";
-import { SEO, LocalBusinessSchema, ServiceSchema, FAQSchema, AboutPageSchema, ContactPageSchema } from "@/components/SEO";
+import { SEO, LocalBusinessSchema, ServiceSchema, FAQSchema, AboutPageSchema, ContactPageSchema, PortfolioSchema } from "@/components/SEO";
 
 // ═══════════════════════════════════════════════════════════
 //  SEO metadata for every page
@@ -367,6 +367,7 @@ function RouteSEO() {
       {/* Page-type schemas */}
       {location === "/about" && <AboutPageSchema />}
       {location === "/contact" && <ContactPageSchema />}
+      {location === "/portfolio" && <PortfolioSchema />}
     </>
   );
 }

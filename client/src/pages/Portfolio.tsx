@@ -10,65 +10,108 @@ import { Quote, ArrowRight, Globe, Mail, Wifi, Star, Tag, ServerCog, Shield, Bra
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 
+interface ProjectService {
+  href: string;
+  label: string;
+}
+
+interface Project {
+  id: string;
+  title: string;
+  url: string;
+  image: string;
+  imageAlt: string;
+  industry: string;
+  services: ProjectService[]; // first entry is primary
+  countyLinks?: { href: string; label: string }[]; // local SEO cross-links
+  challenge: string;
+  solution: string;
+  outcome: string;
+}
+
 export default function Portfolio() {
-  const projects = [
+  const projects: Project[] = [
     {
+      id: "project-bm-custom-furniture",
       title: "BM Custom Furniture",
       url: "https://bmcustomfurniture.ie",
       image: project1,
       imageAlt: "BM Custom Furniture — bespoke fitted furniture and wall panelling website homepage",
       industry: "Home & Interiors",
-      serviceLink: "/web-design",
-      serviceLabel: "Web Design",
+      services: [
+        { href: "/web-design", label: "Web Design" },
+      ],
+      countyLinks: [
+        { href: "/web-design-carlow", label: "Web design in Carlow" },
+        { href: "/web-design-laois", label: "Web design in Laois" },
+      ],
       challenge: "BM Custom Furniture does outstanding work — bespoke fitted wardrobes, wall panelling, and custom cabinetry — but had no online presence to show for it. New clients came entirely through word-of-mouth, and the business was missing enquiries from homeowners searching Google for furniture makers in Carlow and Laois.",
       solution: "Designed and built a visually rich, image-led website showcasing their craftsmanship in detail. The site included a portfolio gallery, service pages for each product category, and strong local SEO targeting Carlow, Laois, and surrounding areas, with clear calls-to-action for quote requests.",
       outcome: "BM Custom Furniture now has a professional online presence that positions them as a credible, high-quality provider. The site generates consistent enquiries from homeowners and businesses across Carlow and Laois who found them through Google — customers who previously wouldn't have known they existed."
     },
     {
+      id: "project-go-green-steam-clean",
       title: "Go Green Steam Clean",
       url: "https://gogreensteamclean.ie",
       image: project2,
       imageAlt: "Go Green Steam Clean — eco-friendly steam cleaning business website homepage",
       industry: "Cleaning Services",
-      serviceLink: "/web-design",
-      serviceLabel: "Web Design",
+      services: [
+        { href: "/web-design", label: "Web Design" },
+      ],
+      countyLinks: [
+        { href: "/web-design-laois", label: "Web design in Laois" },
+      ],
       challenge: "Go Green Steam Clean offered a differentiated eco-friendly cleaning service but had no website to communicate their proposition. Without an online presence, they were invisible to the growing number of customers searching for cleaning services in the Midlands — and had no way to showcase what made them different.",
       solution: "Built a service-focused website with dedicated pages for each cleaning service, strong local SEO targeting the Midlands and surrounding areas, and conversion-optimised CTAs to drive bookings. The eco-friendly angle was emphasised throughout as a key differentiator that resonates with their target customers.",
       outcome: "The website now acts as a 24/7 booking engine, bringing in new customers who find the business through Google searches for steam cleaning services in their area. Enquiry volume increased significantly in the weeks following launch."
     },
     {
+      id: "project-nurney-plant-civil",
       title: "Nurney Plant and Civil",
       url: "https://nurneyplantandcivil.ie",
       image: project3,
       imageAlt: "Nurney Plant and Civil — plant hire and civil engineering website homepage",
       industry: "Civil Engineering & Plant Hire",
-      serviceLink: "/web-design",
-      serviceLabel: "Web Design",
-      extraServices: ["Microsoft 365", "Network & Wi-Fi"],
+      services: [
+        { href: "/web-design", label: "Web Design" },
+        { href: "/microsoft-365", label: "Microsoft 365" },
+        { href: "/network-wifi-security", label: "Network & Wi-Fi" },
+      ],
+      countyLinks: [
+        { href: "/web-design-carlow", label: "Web design in Carlow" },
+      ],
       challenge: "Nurney Plant and Civil operate a substantial plant hire and civil engineering business in Co. Carlow, but their online presence didn't reflect the scale or professionalism of their operation. Prospective clients — including councils and main contractors — were making decisions based on a site that undersold the business. Internally, email between office and site crews was unreliable (personal Gmail accounts), and Wi-Fi coverage was patchy.",
       solution: "Three integrated solutions: a professional corporate website clearly presenting their fleet and capabilities, Microsoft 365 for professional email across office and site teams, and a business-grade Wi-Fi installation covering the entire premises including workshop areas.",
       outcome: "A credible web presence that helps win contracts. Professional @nurneyplantandcivil.ie email between office and field. Full Wi-Fi coverage across all areas. This project is a perfect example of the Digital Foundation Bundle approach — one provider handling website, email, and network as one integrated system."
     },
     {
+      id: "project-more-than-points",
       title: "More Than Points",
       url: "https://morethanpoints.ie",
       image: project4,
       imageAlt: "More Than Points — teen and parent coaching website homepage",
       industry: "Education & Coaching",
-      serviceLink: "/web-design",
-      serviceLabel: "Web Design",
+      services: [
+        { href: "/web-design", label: "Web Design" },
+      ],
       challenge: "More Than Points is a coaching service helping Irish teenagers aged 16–19 and their parents navigate the pressures of the Irish education system. The founder had a clear offering and a compelling message — but no website to communicate it to families who were searching for help.",
       solution: "Designed and built a warm, grounded website with empathetic, conversion-focused copy and a clear service structure for both audiences: teens and parents. The visual identity was calm and reassuring, reflecting the coaching approach. The site makes it easy for families to understand the service, see who it's for, and take the step of booking a session.",
       outcome: "A professional, trust-building online presence that clearly communicates the coaching offering and differentiates the service from traditional academic tutoring. The site gives families the confidence to reach out and book — guiding them from curiosity to conversation."
     },
     {
+      id: "project-crettyard-ie",
       title: "Crettyard.ie",
       url: "https://crettyard.ie",
       image: project5,
       imageAlt: "Crettyard.ie — community website for Crettyard, Co. Laois",
       industry: "Community & Local",
-      serviceLink: "/web-design",
-      serviceLabel: "Web Design",
+      services: [
+        { href: "/web-design", label: "Web Design" },
+      ],
+      countyLinks: [
+        { href: "/web-design-laois", label: "Web design in Laois" },
+      ],
       challenge: "Crettyard is a vibrant rural community on the Laois-Carlow border with deep local roots, active sports clubs, local businesses, and a rich heritage — but it had no dedicated online home. Residents, visitors, and diaspora had no single place to find community information, local news, or discover nearby businesses and services.",
       solution: "Designed and built a community website covering the history and heritage of the area, a local business directory with individual profiles, community club and school information, and a public notice board where residents can post and read local announcements. The site is built around a warm, locally grounded identity that reflects the character of the area.",
       outcome: "Crettyard.ie now serves as the community's digital home — a place where locals stay informed, visitors can discover what the area has to offer, and businesses can be found by people who are looking for them. The notice board and directory give residents and organisations a practical way to share news and support the local economy."
@@ -81,15 +124,15 @@ export default function Portfolio() {
         <GridLines cols={8} rows={5} color="#002157" opacity={0.04} />
         <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
           <FadeIn>
-            <span className="eyebrow mb-5 inline-block">Portfolio</span>
+            <span className="eyebrow mb-5 inline-block">Portfolio &amp; Case Studies</span>
             <h1 className="display-sm mb-6" data-testid="text-portfolio-heading">
-              Real Projects. Measurable Results. Local Businesses Like Yours.
+              Portfolio &mdash; Web Design, Microsoft 365 &amp; IT Case Studies for Irish Small Businesses
             </h1>
             <p className="text-xl text-foreground mb-4 leading-relaxed font-sans font-normal" data-testid="text-portfolio-intro">
-              Every project here started the same way — a business owner who knew they needed better technology but wasn't sure where to start. I helped them get found on Google, look professional, and grow their business.
+              Every case study here started the same way &mdash; a business owner who knew they needed better technology but wasn't sure where to start. I helped them get found on Google, look professional, and grow their business.
             </p>
             <p className="text-lg text-foreground leading-relaxed font-sans">
-              These aren't template sites or generic setups. Each one was built around the business's specific goals, customers, and location.
+              These aren't template sites or generic setups. Each project below was built around the business's specific goals, customers, and location &mdash; across Carlow, Laois, and the Midlands.
             </p>
           </FadeIn>
         </div>
@@ -99,8 +142,12 @@ export default function Portfolio() {
         <div className="container mx-auto px-4 max-w-5xl">
           <StaggerContainer className="grid gap-24">
             {projects.map((project, index) => (
-              <StaggerItem key={index}>
-                <div className="flex flex-col md:flex-row gap-10 items-start border-b border-gray-100 pb-20 last:border-0 last:pb-0" data-testid={`card-project-${index}`}>
+              <StaggerItem key={project.id}>
+                <article
+                  id={project.id}
+                  className="scroll-mt-24 flex flex-col md:flex-row gap-10 items-start border-b border-gray-100 pb-20 last:border-0 last:pb-0"
+                  data-testid={`card-project-${index}`}
+                >
                   <div className="w-full md:w-1/2">
                     <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
                       <img
@@ -122,9 +169,26 @@ export default function Portfolio() {
                         {project.industry}
                       </span>
                     </div>
+                    {project.services.length > 1 && (
+                      <div className="mt-3 flex items-center flex-wrap gap-2">
+                        <span className="text-xs font-headline font-bold uppercase tracking-wider text-muted-foreground">Services delivered:</span>
+                        {project.services.map((svc) => (
+                          <Link
+                            key={svc.href}
+                            href={svc.href}
+                            className="text-xs font-headline font-bold text-accent bg-accent/5 border border-accent/20 px-2.5 py-1 rounded-full hover:bg-accent/10 transition-colors"
+                            data-testid={`tag-service-${index}-${svc.href}`}
+                          >
+                            {svc.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <div className="w-full md:w-1/2">
-                    <h3 className="text-2xl mb-4" data-testid={`text-project-title-${index}`}>{project.title}</h3>
+                    <h3 className="text-2xl mb-4" data-testid={`text-project-title-${index}`}>
+                      <a href={`#${project.id}`} className="hover:text-accent transition-colors">{project.title}</a>
+                    </h3>
 
                     <div className="mb-5">
                       <h4 className="text-sm font-headline font-bold uppercase tracking-wide text-accent mb-2">The Challenge</h4>
@@ -147,16 +211,35 @@ export default function Portfolio() {
                       </p>
                     </div>
 
-                    <div className="flex flex-wrap gap-3">
-                      <Link href={project.serviceLink} className="text-accent font-headline font-bold inline-flex items-center gap-1 text-sm hover:text-primary transition-colors" data-testid={`link-service-${index}`}>
-                        Learn about {project.serviceLabel} <ArrowRight className="w-4 h-4" />
-                      </Link>
+                    <div className="flex flex-wrap gap-4 mb-4">
+                      {project.services.map((svc) => (
+                        <Link
+                          key={svc.href}
+                          href={svc.href}
+                          className="text-accent font-headline font-bold inline-flex items-center gap-1 text-sm hover:text-primary transition-colors"
+                          data-testid={`link-service-${index}-${svc.href}`}
+                        >
+                          Learn about {svc.label} <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      ))}
                       <Link href="/contact#send-message" className="text-foreground/80 font-headline font-bold inline-flex items-center gap-1 text-sm hover:text-accent transition-colors" data-testid={`link-discuss-project-${index}`}>
                         Discuss a similar project <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
+
+                    {project.countyLinks && project.countyLinks.length > 0 && (
+                      <p className="text-xs font-sans text-muted-foreground">
+                        Local case study:{" "}
+                        {project.countyLinks.map((link, i) => (
+                          <span key={link.href}>
+                            <Link href={link.href} className="text-accent hover:underline">{link.label}</Link>
+                            {i < project.countyLinks!.length - 1 ? ", " : ""}
+                          </span>
+                        ))}
+                      </p>
+                    )}
                   </div>
-                </div>
+                </article>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -176,20 +259,23 @@ export default function Portfolio() {
                 {
                   quote: "Joey built us a website that actually looks as good as the furniture we make. Within weeks of launching, we were getting enquiries from people who found us on Google — that never happened before. Brilliant service, no messing.",
                   name: "Barry",
-                  business: "BM Custom Furniture"
+                  business: "BM Custom Furniture",
+                  projectId: "project-bm-custom-furniture",
                 },
                 {
                   quote: "I had no website and no idea where to start. Joey made the whole thing painless — explained everything in plain English and delivered a site that brings in new bookings every week. Best investment I've made in my business.",
                   name: "Darren",
-                  business: "Go Green Steam Clean"
+                  business: "Go Green Steam Clean",
+                  projectId: "project-go-green-steam-clean",
                 },
                 {
                   quote: "Joey did the lot for us — a professional website, Microsoft 365 so we have proper email between the office and the lads on site, and sorted our Wi-Fi so it works in every room. The lads even get compliments from clients about the website now. Can't recommend him enough.",
                   name: "Brian",
-                  business: "Nurney Plant and Civil"
+                  business: "Nurney Plant and Civil",
+                  projectId: "project-nurney-plant-civil",
                 }
               ].map((testimonial, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 shadow-sm text-left" data-testid={`card-testimonial-${i + 1}`}>
+                <div key={i} className="bg-white rounded-2xl p-6 shadow-sm text-left flex flex-col" data-testid={`card-testimonial-${i + 1}`}>
                   <div className="flex gap-0.5 mb-4">
                     {[...Array(5)].map((_, j) => (
                       <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
@@ -198,9 +284,12 @@ export default function Portfolio() {
                   <p className="text-foreground text-[15px] leading-relaxed mb-5 italic font-sans">
                     "{testimonial.quote}"
                   </p>
-                  <div>
+                  <div className="mt-auto">
                     <p className="font-headline font-bold text-sm text-foreground" data-testid={`text-testimonial-name-${i + 1}`}>{testimonial.name}</p>
-                    <p className="text-foreground text-sm">{testimonial.business}</p>
+                    <p className="text-foreground text-sm mb-3">{testimonial.business}</p>
+                    <a href={`#${testimonial.projectId}`} className="text-accent text-xs font-headline font-bold inline-flex items-center hover:text-primary transition-colors" data-testid={`link-testimonial-to-project-${i + 1}`}>
+                      See the case study <ArrowRight className="w-3 h-3 ml-1" />
+                    </a>
                   </div>
                 </div>
               ))}
@@ -255,6 +344,36 @@ export default function Portfolio() {
               </Link>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* By County */}
+      <section className="py-20 bg-[#f3f4f5] border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Local Coverage</span>
+            <h2 className="text-2xl">Looking for Local Web Design or IT Support?</h2>
+            <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">
+              I work with small businesses across the south-east Midlands. Pick your county for tailored pricing, sector angles, and LEO grant guidance.
+            </p>
+          </FadeIn>
+          <StaggerContainer className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { href: "/web-design-laois", label: "Web Design \u2014 Laois" },
+              { href: "/web-design-carlow", label: "Web Design \u2014 Carlow" },
+              { href: "/web-design-kilkenny", label: "Web Design \u2014 Kilkenny" },
+              { href: "/it-support-laois", label: "IT Support \u2014 Laois" },
+              { href: "/it-support-carlow", label: "IT Support \u2014 Carlow" },
+              { href: "/it-support-kilkenny", label: "IT Support \u2014 Kilkenny" },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href} className="bg-white px-5 py-4 rounded-xl text-primary font-headline font-bold text-sm hover:bg-accent/10 hover:text-accent transition-colors flex items-center justify-between" data-testid={`link-county-${item.href}`}>
+                  <span>{item.label}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 

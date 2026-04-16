@@ -358,7 +358,7 @@ export default function Microsoft365() {
                 </div>
               </div>
               <div className="mt-4 pl-0 md:pl-12">
-                <Link href="/portfolio" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                <Link href="/portfolio#project-nurney-plant-civil" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
                   Read the full case study <ArrowRight size={14} className="ml-1" />
                 </Link>
               </div>
