@@ -299,6 +299,21 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
     { question: "Do you handle Google Workspace to Microsoft 365 migrations?", answer: "Yes \u2014 alongside Gmail, POP, IMAP, and legacy Exchange 2016 / 2019. Google Workspace tenant migrations require a bit more planning but I\u2019ve done them for multiple Irish small businesses without losing data." },
     { question: "Does the Grow Digital Voucher cover Copilot as well?", answer: "Microsoft 365 Copilot is a new subscription, which means it can qualify for the Grow Digital Voucher 50% funding up to \u20ac5,000 \u2014 provided you complete the free Digital for Business consultation with your LEO first. See the grants page for the full eligibility breakdown." },
   ],
+  "/it-support-laois": [
+    { question: "Can you visit my office in Portlaoise?", answer: "Absolutely. I\u2019m 20 minutes from Portlaoise. On-site visits for network issues, hardware setup, or new office configurations are a normal part of my service." },
+    { question: "I only have 2\u20133 staff \u2014 is this overkill?", answer: "Not at all. My Essential plan starts at \u20ac45/user/month. Even a 2-person business benefits from proper email management, security, and someone to call when things go wrong." },
+    { question: "Do you cover Portarlington and south Offaly too?", answer: "Yes \u2014 Portarlington straddles the border and I cover it fully. I also serve nearby Offaly towns like Mountmellick and Edenderry." },
+  ],
+  "/it-support-carlow": [
+    { question: "My main contractor is asking about IT security. Can you help?", answer: "This is exactly why many Carlow construction firms come to me. I implement the security measures (MFA, email encryption, backup, endpoint protection) and provide documentation that proves compliance. When the question comes, you\u2019re ready." },
+    { question: "We\u2019re a small crew \u2014 is managed IT really for us?", answer: "Even a 3-person operation with email, a laptop, and an internet connection benefits. At \u20ac45/user on the Essential plan, it costs less than a single emergency call-out \u2014 and prevents most emergencies." },
+    { question: "Can you do on-site work in Tullow or Muinebheag?", answer: "Yes. I cover all of Carlow \u2014 Carlow town, Tullow, Muinebheag (Bagenalstown), Borris, Leighlinbridge, and everywhere in between." },
+  ],
+  "/it-support-kilkenny": [
+    { question: "Do you support POS systems for restaurants?", answer: "I support the IT infrastructure that POS systems run on \u2014 network connectivity, Wi-Fi, security, and integration with your other business systems. If your POS drops out on a busy Friday, the first thing to check is usually the network \u2014 and that\u2019s exactly what I manage." },
+    { question: "Can you set up separate guest Wi-Fi for my hotel or caf\u00e9?", answer: "Yes. Guest Wi-Fi should be completely isolated from your business network for security and compliance. I set this up with proper bandwidth management so guests get reliable access without slowing down your staff systems." },
+    { question: "I\u2019m a solicitor in Kilkenny \u2014 what compliance do I need?", answer: "At minimum: GDPR for client data handling, secure email with encryption, proper document management with access controls, and regular backup. Law Society practice management requirements apply to client funds and records. If larger corporate clients audit your supply chain under NIS2, I help you respond. I assess all of this in a free review." },
+  ],
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -362,6 +377,15 @@ function RouteSEO() {
       )}
       {location === "/microsoft-365-setup-ireland" && (
         <ServiceSchema name="Microsoft 365 Setup & Migration Across Ireland" description="Remote-first Microsoft 365 tenant setup, Exchange/Google Workspace/POP migration, Teams Phone, and Microsoft 365 Copilot configuration for small businesses across Ireland. GDPR-compliant with EU data residency, Microsoft Entra ID identity, and MFA. From \u20ac350 basic setup." areaServed="Ireland" />
+      )}
+      {location === "/it-support-laois" && (
+        <ServiceSchema name="Managed IT Support in County Laois" description="Proactive managed IT support for small businesses across County Laois \u2014 Portlaoise, Portarlington, Abbeyleix, Mountmellick, Mountrath. Microsoft 365 administration, endpoint security, GDPR/NIS2 compliance, on-site support. From \u20ac45 per user per month." areaServed="County Laois, Ireland" />
+      )}
+      {location === "/it-support-carlow" && (
+        <ServiceSchema name="Managed IT Support in County Carlow" description="Managed IT and NIS2-ready cybersecurity for Carlow construction, trades, plant hire and professional services businesses. Supply-chain security documentation, MFA, endpoint protection, Microsoft 365 administration. From \u20ac45 per user per month." areaServed="County Carlow, Ireland" />
+      )}
+      {location === "/it-support-kilkenny" && (
+        <ServiceSchema name="Managed IT Support in County Kilkenny" description="Sector-tailored managed IT for Kilkenny hospitality, professional firms, retail/craft, and trades \u2014 POS support, guest Wi-Fi isolation, EAA and GDPR compliance, Microsoft 365 administration. From \u20ac45 per user per month." areaServed="County Kilkenny, Ireland" />
       )}
 
       {/* Page-type schemas */}

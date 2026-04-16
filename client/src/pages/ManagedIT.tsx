@@ -16,8 +16,8 @@ export default function ManagedIT() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">Managed IT Support</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
-              Your Outsourced IT Department &mdash; Without the Corporate Price Tag
+            <h1 className="display-sm text-white mb-6">
+              Managed IT Support &mdash; Your Outsourced IT Department Without the Corporate Price Tag
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
               Stop waiting for things to break and then scrambling to fix them. I manage your technology proactively &mdash; keeping everything updated, secure, compliant, and running smoothly &mdash; for a fixed monthly fee. One point of contact, no ticketing systems, no waiting days for a response.
@@ -155,7 +155,7 @@ export default function ManagedIT() {
                 price: "From \u20ac45",
                 unit: "per user / month",
                 target: "Micro-businesses & solo traders (1\u20135 users)",
-                items: ["Microsoft 365 administration", "Remote helpdesk support", "Endpoint antivirus", "Automated patch management", "Cloud backup", "Basic GDPR compliance checks", "Direct access to me"],
+                items: ["Microsoft 365 administration", "Remote helpdesk support", "Endpoint antivirus (Microsoft Defender)", "Automated patch management", "Cloud backup", "Basic GDPR compliance checks", "Direct access to me"],
                 popular: false,
               },
               {
@@ -163,7 +163,7 @@ export default function ManagedIT() {
                 price: "From \u20ac75",
                 unit: "per user / month",
                 target: "Small offices & teams (5\u201315 users)",
-                items: ["Everything in Essential", "Advanced email security", "Proactive device monitoring", "Priority response times", "Regular IT health reviews", "NIS2 readiness checks", "Teams Phone support"],
+                items: ["Everything in Essential", "Advanced email security", "Intune device management", "Priority response times", "Regular IT health reviews", "NIS2 readiness checks", "Teams Phone support"],
                 popular: true,
               },
               {
@@ -199,7 +199,8 @@ export default function ManagedIT() {
           </StaggerContainer>
 
           <FadeIn className="text-center mt-8">
-            <p className="text-foreground text-sm font-sans mb-4">All plans quoted after a free discovery call. No long-term lock-in contracts &mdash; I earn your business every month.</p>
+            <p className="text-foreground text-sm font-sans mb-2">All plans quoted after a free discovery call. No long-term lock-in contracts &mdash; I earn your business every month.</p>
+            <p className="text-foreground text-sm font-sans mb-4">Thinking about AI? The Comprehensive tier includes a <Link href="/ai-readiness" className="text-accent hover:underline">Microsoft 365 Copilot readiness assessment</Link>. Looking for grant funding? The M365 subscriptions inside your IT plan may qualify for the <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link>.</p>
             <Link href="/pricing">
               <Button variant="outline">See Digital Foundation Bundles &rarr;</Button>
             </Link>
@@ -218,10 +219,10 @@ export default function ManagedIT() {
             <Accordion type="single" collapsible className="w-full space-y-3">
               {[
                 { id: "mit-1", q: "Is this only for businesses with lots of staff?", a: "Not at all. Many clients are one to five-person businesses. Even a sole trader benefits from proper email, device, and compliance management." },
-                { id: "mit-2", q: "Is compliance really included?", a: "Yes. GDPR checks and configurations are included in every plan. NIS2 supply-chain readiness is included at Professional and Comprehensive tiers. DORA readiness is included at the Comprehensive tier for regulated financial clients where DORA applies. It\u2019s not an add-on \u2014 it\u2019s part of the service." },
-                { id: "mit-3", q: "How is this different from calling someone when things break?", a: "Predictability (fixed fee, not hourly bills), prevention (problems caught early), familiarity (I already know your setup), and compliance (someone is actively managing your regulatory obligations)." },
+                { id: "mit-2", q: "Is compliance really included?", a: "Yes. GDPR checks and configurations are included in every plan. NIS2 supply-chain readiness is included at Professional and Comprehensive tiers (see the cybersecurity page for full framework detail). DORA readiness is included at the Comprehensive tier for regulated financial clients where DORA applies \u2014 see the DORA page. It\u2019s not an add-on \u2014 it\u2019s part of the service." },
+                { id: "mit-3", q: "How is this different from calling someone when things break?", a: "Predictability (fixed fee, not hourly bills), prevention (problems caught early), familiarity (I already know your setup), and compliance (someone is actively managing your regulatory obligations). This is what managed service providers (MSPs) deliver \u2014 IT outsourced properly, not an hourly break-fix gamble." },
                 { id: "mit-4", q: "Can I change plans as I grow?", a: "Absolutely. Plans scale with your business. Adding a new team member? I add them to the system. Need more coverage? We adjust. No reinstalling, no starting over." },
-                { id: "mit-5", q: "Do I need this if I already have Microsoft 365?", a: "Having the licence is one thing \u2014 having it properly managed is another. Managed IT covers user management, security monitoring, troubleshooting, and compliance. It\u2019s the difference between owning a car and having someone service it regularly." },
+                { id: "mit-5", q: "Do I need this if I already have Microsoft 365?", a: "Having the licence is one thing \u2014 having it properly managed is another. Managed IT covers user management, security monitoring, troubleshooting, Intune device enrolment, and compliance. It\u2019s the difference between owning a car and having someone service it regularly. See the Microsoft 365 page for the product details I set up for you." },
               ].map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6 bg-white">
                   <AccordionTrigger className="text-left text-[15px] font-headline font-bold py-5">{faq.q}</AccordionTrigger>
@@ -235,15 +236,16 @@ export default function ManagedIT() {
 
       {/* Related Services */}
       <section className="py-20 bg-[#f3f4f5]">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn className="text-center mb-10">
             <span className="eyebrow mb-5 inline-block">Pairs With</span>
             <h2 className="text-3xl mb-3">Managed IT Works Best Together</h2>
           </FadeIn>
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { href: "/managed-hardware", title: "Managed Hardware", desc: "Turnkey business PCs and on-site servers, delivered ready to use and already under your managed IT plan." },
               { href: "/microsoft-365", title: "Microsoft 365", desc: "Professional email, cloud files, and Teams \u2014 administered as part of your managed IT service." },
+              { href: "/network-wifi-security", title: "Network & Wi-Fi", desc: "Business-grade connectivity and secure Wi-Fi across your offices, workshops, and retail spaces." },
               { href: "/cybersecurity", title: "Cybersecurity & Compliance", desc: "The security layer: endpoint protection, NIS2 and GDPR frameworks, staff training." },
             ].map((item) => (
               <StaggerItem key={item.href}>
@@ -252,6 +254,35 @@ export default function ManagedIT() {
                     <h3 className="text-base font-headline font-bold text-primary mb-2">{item.title}</h3>
                     <p className="text-foreground text-[14px] font-sans leading-relaxed mb-3">{item.desc}</p>
                     <span className="text-accent text-sm font-headline font-bold">Learn more &rarr;</span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* By County */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">By County</span>
+            <h2 className="text-2xl">Local IT Support Across the South-East Midlands</h2>
+            <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">Each county has its own sector mix and compliance angle. Pick yours for tailored managed IT pricing and on-site coverage detail.</p>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            {[
+              { href: "/it-support-laois", county: "Laois", headline: "IT Support in Laois", desc: "Portlaoise, Portarlington, Mountmellick. M7 corridor growth, local on-site response, Microsoft 365 administration." },
+              { href: "/it-support-carlow", county: "Carlow", headline: "IT Support in Carlow", desc: "Carlow town, Tullow, Bagenalstown. NIS2 supply-chain security documentation for construction, plant hire and trades." },
+              { href: "/it-support-kilkenny", county: "Kilkenny", headline: "IT Support in Kilkenny", desc: "Kilkenny city, Thomastown, Castlecomer. Hospitality POS + guest Wi-Fi, EAA and GDPR for professional firms." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover cursor-pointer h-full" data-testid={`link-county-${item.county.toLowerCase()}`}>
+                    <span className="text-xs font-headline font-bold text-accent uppercase tracking-wider">County {item.county}</span>
+                    <h3 className="text-lg mt-2 mb-3">{item.headline}</h3>
+                    <p className="text-foreground text-[15px] leading-relaxed font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-block">See {item.county} details &rarr;</span>
                   </div>
                 </Link>
               </StaggerItem>

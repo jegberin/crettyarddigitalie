@@ -15,7 +15,7 @@ export default function ITSupportLaois() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">IT Support &mdash; County Laois</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
+            <h1 className="display-sm text-white mb-6">
               Managed IT Support in Laois &mdash; From Someone Based Right Here
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
@@ -62,7 +62,7 @@ export default function ITSupportLaois() {
             {[
               { icon: ServerCog, title: "Proactive Monitoring", desc: "Your systems watched 24/7. Problems caught before they cost you time. Updates applied, patches installed, performance maintained \u2014 all from right here in Laois." },
               { icon: Cloud, title: "Microsoft 365 Management", desc: "User management, password resets, email config, licence admin. If you\u2019re a Laois business on M365, I manage the entire environment." },
-              { icon: Shield, title: "Security & Compliance", desc: "MFA, endpoint protection, backup, and GDPR compliance checks. If your business handles customer data \u2014 which almost every Laois business does \u2014 this matters." },
+              { icon: Shield, title: "Security & Compliance", desc: "MFA, endpoint protection, backup, and GDPR / NIS2 compliance checks. If your business handles customer data \u2014 which almost every Laois business does \u2014 this matters." },
               { icon: MapPin, title: "On-Site When Needed", desc: "Sometimes remote isn\u2019t enough. Network issues, hardware problems, new office setups \u2014 I come to you anywhere in Laois." },
               { icon: Users, title: "One Person Who Knows Your Setup", desc: "When you call, I already know your systems because I built and manage them. No explaining your setup to a stranger every time." },
               { icon: TrendingUp, title: "Scales as You Grow", desc: "New staff member? New office? I add them to the system. Laois businesses are growing \u2014 your IT support should grow with you." },
@@ -113,6 +113,34 @@ export default function ITSupportLaois() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related services */}
+      <section className="py-20 bg-[#f3f4f5] border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Related Services</span>
+            <h2 className="text-2xl">More Ways I Help Laois Businesses</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/managed-it-support", title: "Full IT Plans", desc: "See the Essential / Professional / Comprehensive managed IT tiers in full detail, with complete feature lists." },
+              { href: "/microsoft-365", title: "Microsoft 365", desc: "Professional email, Teams, and Teams Phone \u2014 administered as part of your Laois IT plan." },
+              { href: "/cybersecurity", title: "Cybersecurity & Compliance", desc: "Dedicated NIS2, GDPR, and phishing-protection guidance for Laois SMEs beyond the core IT plan." },
+              { href: "/web-design-laois", title: "Web Design in Laois", desc: "Laois-focused web design with local SEO for Portlaoise, Portarlington and the wider county." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-white p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 

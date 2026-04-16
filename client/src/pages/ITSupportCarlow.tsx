@@ -15,7 +15,7 @@ export default function ITSupportCarlow() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">IT Support &mdash; County Carlow</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
+            <h1 className="display-sm text-white mb-6">
               IT Support for Carlow Businesses &mdash; Especially Construction, Trades, and Growing Firms
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
@@ -65,7 +65,10 @@ export default function ITSupportCarlow() {
                     "Joey did the lot for us &mdash; a professional website, Microsoft 365 so we have proper email between the office and the lads on site, and sorted our Wi-Fi so it works in every room. Can't recommend him enough."
                   </p>
                   <p className="font-headline font-bold text-primary">Brian, Nurney Plant and Civil &mdash; Co. Carlow</p>
-                  <p className="text-sm text-muted-foreground">Gmail &rarr; professional email, patchy Wi-Fi &rarr; full premises coverage, no website &rarr; professional online presence</p>
+                  <p className="text-sm text-muted-foreground mb-3">Gmail &rarr; professional email, patchy Wi-Fi &rarr; full premises coverage, no website &rarr; professional online presence</p>
+                  <Link href="/portfolio#project-nurney-plant-civil" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                    View full case study <ArrowRight size={14} className="ml-1" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -81,7 +84,7 @@ export default function ITSupportCarlow() {
           <StaggerContainer className="grid sm:grid-cols-2 gap-6">
             {[
               { icon: ServerCog, title: "Proactive IT Management", desc: "Systems monitored, updates applied, problems prevented. When issues do occur, I fix them fast because I already know your setup \u2014 no starting from scratch." },
-              { icon: Shield, title: "NIS2-Ready Security", desc: "MFA, email protection, endpoint security, and documented compliance. When a main contractor or council asks about your security posture, you have the answer ready." },
+              { icon: Shield, title: "NIS2-Ready Security", desc: "MFA, Microsoft Defender endpoint protection, email protection, and documented compliance. When a main contractor or council asks about your security posture, you have the answer ready. See the cybersecurity page for the full NIS2 framework I deliver." },
               { icon: HardHat, title: "Office-to-Site Connectivity", desc: "Proper email and file sharing between the office and field crews. Microsoft 365 configured so quotes, photos, and documents flow seamlessly between locations." },
               { icon: FileCheck, title: "Supply Chain Documentation", desc: "I provide the IT security documentation that larger clients increasingly require from their Carlow subcontractors. Audit-ready, current, and comprehensive." },
               { icon: Wrench, title: "On-Site Support", desc: "Five minutes from Carlow. Network installs, hardware setup, and troubleshooting that requires someone physically present." },
@@ -132,6 +135,34 @@ export default function ITSupportCarlow() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related services */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Related Services</span>
+            <h2 className="text-2xl">More Ways I Help Carlow Businesses</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/cybersecurity", title: "Cybersecurity & NIS2", desc: "The full NIS2 supply-chain framework \u2014 phishing protection, staff training, documented policies for main-contractor audits." },
+              { href: "/microsoft-365", title: "Microsoft 365", desc: "Professional office-to-site email, Teams, Teams Phone, and OneDrive for your Carlow crew \u2014 administered as part of your IT plan." },
+              { href: "/network-wifi-security", title: "Network & Wi-Fi", desc: "Business-grade Wi-Fi and network installations for yards, workshops, and offices across Carlow." },
+              { href: "/web-design-carlow", title: "Web Design in Carlow", desc: "Carlow-focused web design with local SEO for construction, plant hire, trades, and professional firms." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
