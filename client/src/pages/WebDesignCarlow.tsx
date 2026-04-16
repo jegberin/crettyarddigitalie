@@ -17,7 +17,7 @@ export default function WebDesignCarlow() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <FadeIn direction="up">
               <span className="eyebrow mb-4 inline-block">Web Design &mdash; County Carlow</span>
-              <h1 className="display-heading text-white mb-6 leading-tight">
+              <h1 className="display-sm text-white mb-6">
                 Web Design for Carlow Businesses &mdash; Built by a Neighbour, Not a Dublin Agency
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">

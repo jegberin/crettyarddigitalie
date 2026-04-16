@@ -22,7 +22,7 @@ export default function WebDesignKilkenny() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <FadeIn direction="up">
               <span className="eyebrow mb-4 inline-block">Web Design &mdash; County Kilkenny</span>
-              <h1 className="display-heading text-white mb-6 leading-tight">
+              <h1 className="display-sm text-white mb-6">
                 Web Design for Kilkenny &mdash; Where Tourism, Craft, and Local Business Meet
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
