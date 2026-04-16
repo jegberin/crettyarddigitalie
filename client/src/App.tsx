@@ -157,7 +157,7 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   },
   "/microsoft-365-setup-ireland": {
     title: "Microsoft 365 Setup for Small Businesses Across Ireland | Crettyard Digital",
-    description: "Expert Microsoft 365 configuration, migration, and training for small businesses anywhere in Ireland.",
+    description: "Remote-first Microsoft 365 setup, migration, Teams Phone and Copilot for small businesses across Ireland \u2014 Dublin, Cork, Galway, Limerick, Waterford, and every county. GDPR-compliant, Grow Digital Voucher ready.",
   },
   "/network-wifi-laois-carlow": {
     title: "Business Network & Wi-Fi Solutions in Laois and Carlow | Crettyard Digital",
@@ -293,6 +293,12 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
     { question: "Can I compete with Booking.com for accommodation searches?", answer: "Not on volume \u2014 but on specificity, absolutely. Booking.com can\u2019t rank for 'guesthouse near Thomastown with river views.' A properly built website with targeted local SEO can and does." },
     { question: "I\u2019m not in Kilkenny city \u2014 will you still work with me?", answer: "Absolutely. I work with businesses across the entire county \u2014 Castlecomer, Thomastown, Callan, Graiguenamanagh, and everywhere in between. Remote support works perfectly, and I\u2019m available for in-person meetings too." },
   ],
+  "/microsoft-365-setup-ireland": [
+    { question: "I\u2019m in Dublin / Cork / Galway \u2014 can you still do this remotely?", answer: "Yes. Microsoft 365 setup, migration, and training are ideal for remote delivery. Tenant build, security hardening, Exchange migration and Teams Phone configuration all happen without anyone on-site. I only add on-site time if you\u2019re in the Laois / Carlow / Kilkenny corridor and specifically want face-to-face." },
+    { question: "What\u2019s the difference between this and the main Microsoft 365 page?", answer: "Same service, different emphasis. This page is for businesses outside the Laois / Carlow / Kilkenny Midlands area where my work is remote-first by default. The main Microsoft 365 page covers the full product detail, pricing, and FAQs in depth." },
+    { question: "Do you handle Google Workspace to Microsoft 365 migrations?", answer: "Yes \u2014 alongside Gmail, POP, IMAP, and legacy Exchange 2016 / 2019. Google Workspace tenant migrations require a bit more planning but I\u2019ve done them for multiple Irish small businesses without losing data." },
+    { question: "Does the Grow Digital Voucher cover Copilot as well?", answer: "Microsoft 365 Copilot is a new subscription, which means it can qualify for the Grow Digital Voucher 50% funding up to \u20ac5,000 \u2014 provided you complete the free Digital for Business consultation with your LEO first. See the grants page for the full eligibility breakdown." },
+  ],
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -353,6 +359,9 @@ function RouteSEO() {
       )}
       {location === "/web-design-kilkenny" && (
         <ServiceSchema name="Web Design in County Kilkenny" description="Professional website design for hospitality, retail, accommodation, and trades across County Kilkenny \u2014 Kilkenny city, Thomastown, Castlecomer, Callan, Graiguenamanagh. EAA-compliant for hospitality and retail. From \u20ac799." areaServed="County Kilkenny, Ireland" />
+      )}
+      {location === "/microsoft-365-setup-ireland" && (
+        <ServiceSchema name="Microsoft 365 Setup & Migration Across Ireland" description="Remote-first Microsoft 365 tenant setup, Exchange/Google Workspace/POP migration, Teams Phone, and Microsoft 365 Copilot configuration for small businesses across Ireland. GDPR-compliant with EU data residency, Microsoft Entra ID identity, and MFA. From \u20ac350 basic setup." areaServed="Ireland" />
       )}
 
       {/* Page-type schemas */}
