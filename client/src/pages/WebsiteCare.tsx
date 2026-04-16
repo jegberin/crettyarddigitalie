@@ -1,0 +1,207 @@
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { Shield, CheckCircle, AlertTriangle, Clock, Gauge, FileText, Lock, ArrowRight } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
+import { GridLines } from "@/components/GridLines";
+import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const standardItems = [
+  "Reliable, fast hosting on quality infrastructure",
+  "SSL certificate management (the padlock in the browser bar)",
+  "Weekly automated backups",
+  "Monthly security and software updates",
+  "Uptime monitoring",
+  "Cookie consent monitoring and updates",
+  "Up to 30 minutes of minor content changes per month",
+  "Direct access to me for questions and requests",
+];
+
+const premiumExtras = [
+  "Daily automated backups",
+  "Monthly performance review and speed optimisation",
+  "Priority response for support requests",
+  "Up to 60 minutes of content changes per month",
+  "Monthly SEO health check (rankings, broken links, indexing)",
+  "Quarterly analytics summary",
+  "Annual accessibility compliance review",
+];
+
+export default function WebsiteCare() {
+  return (
+    <div className="flex flex-col min-h-screen">
+
+      {/* Hero */}
+      <section className="relative bg-primary overflow-hidden py-20 md:py-28">
+        <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+          <FadeIn direction="up">
+            <span className="eyebrow mb-4 inline-block">Website Care Plans</span>
+            <h1 className="display-heading text-white mb-6 leading-tight">
+              Every Website I Build Is Protected From Day One
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
+              A website isn't a "build it and forget it" project. Without regular updates, security monitoring, and maintenance, even the best website becomes slow, vulnerable, and outdated. That's why every website I build comes with a mandatory care plan &mdash; so your investment is protected and your site keeps performing.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a href="#plans">
+                <Button size="lg">Choose a Plan</Button>
+              </a>
+              <Link href="/contact#send-message">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  Book a Free Consultation
+                </Button>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Why Care Plans Are Mandatory */}
+      <section className="py-28 bg-white">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Why It Matters</span>
+            <h2 className="text-3xl md:text-4xl mb-6">Why I Don't Build Websites Without Ongoing Care</h2>
+          </FadeIn>
+
+          <FadeIn>
+            <p className="text-lg text-foreground mb-8 leading-relaxed font-sans font-normal text-center">
+              I've seen what happens to websites that don't get maintained. Within six months:
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid sm:grid-cols-2 gap-6 mb-10">
+            {[
+              { icon: AlertTriangle, title: "Security Vulnerabilities Accumulate", desc: "Without regular updates and patches, your site becomes an easy target for hackers who specifically scan for outdated, unpatched websites." },
+              { icon: Gauge, title: "Loading Speed Degrades", desc: "Images pile up un-optimised, caching expires, and performance slowly drops \u2014 pushing your Google ranking down with it." },
+              { icon: FileText, title: "Content Goes Stale", desc: "Old prices, outdated services, a missing phone number \u2014 potential customers notice, and it makes your business look inactive." },
+              { icon: Lock, title: "Backups Stop Working", desc: "If your site goes down or gets hacked, you have nothing to restore. A properly maintained backup is the difference between an inconvenience and a catastrophe." },
+            ].map((item, i) => (
+              <StaggerItem key={i}>
+                <div className="bg-red-50/60 p-6 rounded-2xl">
+                  <item.icon className="text-red-400 mb-3" size={24} />
+                  <h3 className="text-base font-headline font-bold text-red-800 mb-2">{item.title}</h3>
+                  <p className="text-red-800/70 text-[15px] font-sans">{item.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="text-center">
+            <p className="text-lg text-foreground font-sans font-bold">
+              A care plan prevents all of this. It's the most cost-effective way to protect the investment you've already made.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Plans */}
+      <section id="plans" className="py-28 bg-[#f3f4f5]">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Care Plans</span>
+            <h2 className="text-3xl">What You Get</h2>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Standard */}
+            <FadeIn>
+              <div className="bg-white rounded-2xl p-8 shadow-sm h-full flex flex-col">
+                <h3 className="text-xl mb-1">Standard Care</h3>
+                <p className="text-3xl font-headline font-extrabold text-accent mb-1">&euro;49</p>
+                <p className="text-sm text-muted-foreground mb-6 font-sans">per month</p>
+                <ul className="space-y-3 flex-1 mb-6">
+                  {standardItems.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-[15px] font-sans text-foreground">
+                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={16} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact#send-message">
+                  <Button variant="outline" className="w-full">Get Started</Button>
+                </Link>
+              </div>
+            </FadeIn>
+
+            {/* Premium */}
+            <FadeIn delay={0.1}>
+              <div className="bg-white rounded-2xl p-8 shadow-sm h-full flex flex-col border-2 border-accent relative">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Recommended</span>
+                <h3 className="text-xl mb-1">Premium Care</h3>
+                <p className="text-3xl font-headline font-extrabold text-accent mb-1">&euro;79</p>
+                <p className="text-sm text-muted-foreground mb-6 font-sans">per month</p>
+                <p className="text-xs text-muted-foreground mb-4 font-sans font-bold">Everything in Standard, plus:</p>
+                <ul className="space-y-3 flex-1 mb-6">
+                  {premiumExtras.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-[15px] font-sans text-foreground">
+                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={16} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/contact#send-message">
+                  <Button className="w-full">Get Started</Button>
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Process snippet */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn>
+            <div className="bg-[#f3f4f5] p-8 rounded-2xl">
+              <h3 className="text-lg mb-4">What Happens When You Need a Change?</h3>
+              <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-4">
+                You send me an email or WhatsApp: "Joey, can you update our phone number on the website?" I make the change &mdash; usually within a business day &mdash; and confirm when it's done. That's it. No ticket. No portal. No waiting.
+              </p>
+              <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">
+                For Premium plan clients, I also proactively check your site's performance, SEO health, and analytics monthly &mdash; so I often catch issues before you even notice them.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-28 bg-[#f3f4f5]">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Common Questions</span>
+            <h2 className="text-3xl">Answered in Plain English</h2>
+          </FadeIn>
+          <FadeIn>
+            <Accordion type="single" collapsible className="w-full space-y-3">
+              {[
+                { id: "wc-1", q: "Why is the care plan mandatory?", a: "Because a website without maintenance is a ticking clock. Security, performance, and compliance all degrade over time. I build websites I\u2019m proud of, and I won\u2019t let them deteriorate because maintenance was treated as optional. The care plan is the only way I can guarantee ongoing quality." },
+                { id: "wc-2", q: "Can I cancel?", a: "Yes. If you cancel, I can transfer your website files to you or another provider. However, I will no longer be responsible for hosting, security, updates, or any compliance issues that arise. There are no long-term lock-in contracts." },
+                { id: "wc-3", q: "What if I need bigger changes?", a: "Larger changes \u2014 new pages, design updates, added functionality \u2014 are quoted separately at preferential rates for care plan clients." },
+                { id: "wc-4", q: "Is this on top of the website cost?", a: "The care plan is factored into your project quote from the start, so you know the full cost upfront. It\u2019s not a surprise \u2014 it\u2019s part of the package." },
+                { id: "wc-5", q: "What about cookie consent and compliance?", a: "Both plans include cookie consent monitoring. The Premium plan also includes an annual accessibility compliance review to ensure your site continues to meet EAA standards as regulations evolve." },
+              ].map((faq) => (
+                <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6 bg-white">
+                  <AccordionTrigger className="text-left text-[15px] font-headline font-bold py-5">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-foreground leading-relaxed font-sans text-[15px] pb-5">{faq.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </FadeIn>
+        </div>
+      </section>
+
+      <SpotlightCTA
+        eyebrow="Protect Your Investment"
+        heading="Your Website Deserves Ongoing Protection"
+        subtext="A care plan costs less per month than a single emergency fix &mdash; and prevents the need for one. Every website I build comes with a care plan as standard."
+        primaryText="Get Started"
+        primaryHref="/contact#send-message"
+        secondaryText="See Digital Foundation Bundles"
+        secondaryHref="/pricing"
+      />
+    </div>
+  );
+}

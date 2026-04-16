@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+Disallow: /subscribe
+
+Sitemap: https://crettyarddigital.ie/sitemap.xml

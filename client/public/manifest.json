@@ -1,0 +1,21 @@
+{
+  "name": "Crettyard Digital",
+  "short_name": "Crettyard Digital",
+  "description": "Web design, Microsoft 365 and network solutions for small businesses in Laois, Carlow and Kilkenny.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0C2366",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

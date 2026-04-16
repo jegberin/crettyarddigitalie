@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core pages -->
+  <url><loc>https://crettyarddigital.ie/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/contact</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/pricing</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/portfolio</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/about</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/how-it-works</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/get-a-quote</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Service pages -->
+  <url><loc>https://crettyarddigital.ie/web-design</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/microsoft-365</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/managed-it-support</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/managed-hardware</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/network-wifi-security</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/cybersecurity</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/ai-readiness</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/website-care-plans</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/grants-funding</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Compliance -->
+  <url><loc>https://crettyarddigital.ie/dora-compliance</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Sector pages -->
+  <url><loc>https://crettyarddigital.ie/trades</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/professional-services</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Local SEO: Web Design -->
+  <url><loc>https://crettyarddigital.ie/web-design-laois</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/web-design-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/web-design-kilkenny</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Local SEO: IT Support -->
+  <url><loc>https://crettyarddigital.ie/it-support-laois</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/it-support-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/it-support-kilkenny</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Local SEO: Other services -->
+  <url><loc>https://crettyarddigital.ie/microsoft-365-setup-ireland</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/network-wifi-laois-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Legal -->
+  <url><loc>https://crettyarddigital.ie/privacy-policy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/terms-and-conditions</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/cookie-policy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+</urlset>

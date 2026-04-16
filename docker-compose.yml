@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: digital-crettyard
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - RESEND_SENDER=quoterequest@digital.crettyard.ie
+      - RESEND_API_KEY=${RESEND_API_KEY}
