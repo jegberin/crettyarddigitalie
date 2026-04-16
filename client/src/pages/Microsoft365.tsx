@@ -24,10 +24,10 @@ export default function Microsoft365() {
             <FadeIn>
               <span className="eyebrow mb-5 inline-block">Microsoft 365 &amp; Teams Phone</span>
               <h1 className="display-sm mb-6" data-testid="text-page-title">
-                Professional Email, Cloud Tools, and a Business Phone System &mdash; All in One
+                Microsoft 365 for Small Business &mdash; Professional Email, Teams Phone &amp; Cloud Tools, Set Up Properly
               </h1>
               <p className="text-xl text-foreground mb-8 leading-relaxed font-sans font-normal" data-testid="text-hero-description">
-                Stop losing emails, sharing files by USB stick, or sending quotes from a Gmail address. I set up Microsoft 365 so your email, file storage, and collaboration tools work securely from anywhere &mdash; and with Teams Phone, your business calls work through the same system. One setup, one provider, one bill.
+                Stop losing emails, sharing files by USB stick, or sending quotes from a Gmail address. I set up Microsoft 365 for small businesses across Ireland so your email, file storage, and collaboration tools work securely from anywhere &mdash; and with Teams Phone, your business calls work through the same system. One setup, one provider, one bill.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact#send-message">
@@ -46,12 +46,11 @@ export default function Microsoft365() {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={serviceImg}
-                  alt="A clean professional desk setup with laptop and devices showing productivity software"
+                  alt="Microsoft 365 business email open on a laptop in a small Irish office, with Teams and OneDrive visible"
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
                   loading="eager"
-                  fetchPriority="high"
                 />
               </div>
             </FadeIn>
@@ -102,7 +101,7 @@ export default function Microsoft365() {
               {
                 icon: <ShieldCheck className="text-accent" size={28} />,
                 title: "GDPR-Compliant from Day One",
-                benefit: "I configure your environment with EU data residency, data retention policies, Multi-Factor Authentication, and encrypted communications \u2014 so your setup meets GDPR requirements from the start.",
+                benefit: "I configure your environment with EU data residency, Microsoft Entra ID (formerly Azure AD) identity, data retention policies, Multi-Factor Authentication, and encrypted communications \u2014 so your setup meets GDPR requirements from the start. Business Premium adds Intune device management if you need it.",
               },
             ].map((item, i) => (
               <StaggerItem key={i}>
@@ -169,18 +168,28 @@ export default function Microsoft365() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {[
-              { title: "Tradespeople & Contractors", desc: "You need a professional email address and a simple way to share quotes, invoices, and site photos between the office and the field. Not a personal Gmail." },
+              { title: "Tradespeople & Contractors", desc: "You need a professional email address and a simple way to share quotes, invoices, and site photos between the office and the field. Not a personal Gmail.", href: "/trades" },
               { title: "Small Offices & Teams (2\u201320 staff)", desc: "You need email, shared calendars, and file storage that everyone can access without IT headaches or paying someone every time something breaks." },
-              { title: "Professional Services", desc: "Accountants, solicitors, consultants \u2014 you handle sensitive client data. Consumer-grade email isn\u2019t secure enough. You need proper business email with real security controls and GDPR compliance." },
+              { title: "Professional Services", desc: "Accountants, solicitors, consultants \u2014 you handle sensitive client data. Consumer-grade email isn\u2019t secure enough. You need proper business email with real security controls and GDPR compliance.", href: "/professional-services" },
               { title: "Growing Businesses", desc: "You\u2019ve outgrown free email and ad-hoc file sharing. You need a system that scales easily as you hire, without starting over every time." },
-            ].map((item, i) => (
-              <StaggerItem key={i}>
-                <div className="bg-white p-8 rounded-2xl card-hover" data-testid={`card-who-for-${i}`}>
+            ].map((item, i) => {
+              const Card = (
+                <div className="bg-white p-8 rounded-2xl card-hover h-full" data-testid={`card-who-for-${i}`}>
                   <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">{item.desc}</p>
+                  {item.href && (
+                    <span className="text-accent text-sm font-headline font-bold mt-4 inline-flex items-center">
+                      Learn more <ArrowRight size={14} className="ml-1" />
+                    </span>
+                  )}
                 </div>
-              </StaggerItem>
-            ))}
+              );
+              return (
+                <StaggerItem key={i}>
+                  {item.href ? <Link href={item.href}>{Card}</Link> : Card}
+                </StaggerItem>
+              );
+            })}
           </StaggerContainer>
         </div>
       </section>
@@ -230,7 +239,7 @@ export default function Microsoft365() {
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <p className="text-foreground leading-relaxed mb-4 font-sans font-normal">
-                    Moving to Microsoft 365 sounds daunting if you've been on Gmail or an old POP email account for years. I understand &mdash; your emails feel irreplaceable.
+                    Moving to Microsoft 365 sounds daunting if you've been on Gmail, Google Workspace, or an old POP / legacy Exchange account for years. I understand &mdash; your emails feel irreplaceable.
                   </p>
                   <p className="text-foreground leading-relaxed mb-4 font-sans font-normal">
                     That's why I plan every migration carefully. I've migrated dozens of businesses and have never lost a single email. Where possible, I run the migration overnight to minimise disruption.
@@ -257,6 +266,34 @@ export default function Microsoft365() {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Common Migrations ─────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Migrations Handled</span>
+            <h2 className="text-2xl">Common Microsoft 365 Migrations I Handle</h2>
+            <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">Whatever you&rsquo;re moving from, I&rsquo;ve moved it to Microsoft 365 without losing data.</p>
+          </FadeIn>
+
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { from: "Gmail", detail: "Personal Gmail to professional @yourbusiness.ie." },
+              { from: "Google Workspace", detail: "Full tenant move from Google Workspace to Microsoft 365." },
+              { from: "Exchange 2016 / 2019", detail: "Legacy on-premise Exchange to cloud-hosted Exchange Online." },
+              { from: "POP / IMAP email", detail: "Old-school POP or IMAP mailboxes to a proper cloud platform." },
+            ].map((item) => (
+              <StaggerItem key={item.from}>
+                <div className="bg-[#f3f4f5] p-5 rounded-xl text-center h-full">
+                  <p className="text-xs font-headline font-bold uppercase tracking-wider text-accent mb-1">From</p>
+                  <p className="font-headline font-bold text-primary text-base mb-2">{item.from}</p>
+                  <p className="text-foreground text-sm font-sans">{item.detail}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
@@ -434,7 +471,7 @@ export default function Microsoft365() {
                   Microsoft 365 licence fees are separate and billed directly by Microsoft. I recommend the most cost-effective plan.
                 </p>
                 <p className="text-sm font-headline font-bold text-accent mt-4">
-                  The Grow Digital Voucher may cover up to 50% of setup costs and 12 months of licences.
+                  <Link href="/grants-funding" className="hover:underline">The Grow Digital Voucher</Link> may cover up to 50% of setup costs and 12 months of licences.
                 </p>
               </div>
             </FadeIn>
@@ -470,7 +507,7 @@ export default function Microsoft365() {
                 { id: "m365-faq-4", q: "Do I need a desk phone?", a: "Not unless you want one. Most small businesses use Teams Phone on their mobile and laptop. If you prefer a physical handset, I can supply and configure one \u2014 but it\u2019s entirely optional." },
                 { id: "m365-faq-5", q: "Which Microsoft 365 plan do I need?", a: "Most small businesses do well with Business Basic or Business Standard. For Teams Phone, you need a compatible plan plus a calling plan. I\u2019ll assess your needs and recommend the most cost-effective option." },
                 { id: "m365-faq-6", q: "I\u2019m not technical \u2014 will this be complicated for me?", a: "Not at all. I handle all the technical work and provide plain-English training. That\u2019s literally the entire point \u2014 you don\u2019t need to be technical." },
-                { id: "m365-faq-7", q: "Can I use a government grant?", a: "M365 is one of the cleanest fits for the Grow Digital Voucher. It can cover 50% of your first year of licence fees plus setup and training, up to \u20ac5,000 total. You must complete a free Digital for Business consultation with your LEO first, then apply yourself \u2014 I provide scheme-compliant invoicing to support your claim." },
+                { id: "m365-faq-7", q: "Can I use a government grant?", a: "M365 is one of the cleanest fits for the Grow Digital Voucher (see the grants page for full details). It can cover 50% of your first year of licence fees plus setup and training, up to \u20ac5,000 total. You must complete a free Digital for Business consultation with your LEO first, then apply yourself \u2014 I provide scheme-compliant invoicing to support your claim." },
                 { id: "m365-faq-8", q: "Do you offer ongoing support?", a: "Yes. Monthly plans covering user management, troubleshooting, security updates, and administration \u2014 so you always have someone to call who knows your setup." },
               ].map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6">
@@ -485,12 +522,15 @@ export default function Microsoft365() {
 
       {/* ── Related Services ──────────────────────────────────────── */}
       <section className="py-20 bg-[#f3f4f5]">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <FadeIn className="text-center mb-10">
             <span className="eyebrow mb-5 inline-block">Related Services</span>
+            <h2 className="text-2xl">More Ways I Can Help Your Business</h2>
           </FadeIn>
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
+              { href: "/ai-readiness", title: "Microsoft Copilot & AI", desc: "Microsoft 365 Copilot turns your existing M365 into an AI assistant. I set it up securely and train your team to use it properly.", label: "AI readiness \u2192" },
+              { href: "/microsoft-365-setup-ireland", title: "M365 Across Ireland", desc: "Nationwide Microsoft 365 setup, migration, and training \u2014 remote-first, no matter where your team is based.", label: "See Ireland setup \u2192" },
               { href: "/managed-it-support", title: "Managed IT Support", desc: "Proactive monitoring, updates, security, and compliance \u2014 for a fixed monthly fee.", label: "Learn more \u2192" },
               { href: "/managed-hardware", title: "Managed Hardware", desc: "Turnkey business PCs and on-site servers, delivered ready to use.", label: "Learn more \u2192" },
               { href: "/network-wifi-security", title: "Network & Wi-Fi", desc: "Reliable connectivity for offices, workshops, and retail spaces.", label: "Learn more \u2192" },
@@ -498,10 +538,10 @@ export default function Microsoft365() {
             ].map((item) => (
               <StaggerItem key={item.href}>
                 <Link href={item.href}>
-                  <div className="bg-white p-7 rounded-2xl card-hover cursor-pointer shadow-sm">
+                  <div className="bg-white p-7 rounded-2xl card-hover cursor-pointer shadow-sm h-full">
                     <h3 className="text-lg mb-3">{item.title}</h3>
-                    <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">{item.desc}</p>
-                    <span className="text-accent text-sm font-headline font-bold mt-3 inline-block">{item.label}</span>
+                    <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-block">{item.label}</span>
                   </div>
                 </Link>
               </StaggerItem>
