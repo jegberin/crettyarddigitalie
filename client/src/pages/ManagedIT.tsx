@@ -1,10 +1,17 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ServerCog, Shield, Cloud, Wrench, CheckCircle, ArrowRight, Clock, TrendingUp, Quote, HeartPulse, Users, MonitorSmartphone } from "lucide-react";
+import { CheckCircle, ArrowRight, Quote } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import heroAdminConsole from "@assets/mit-hero-admin-console.webp";
+import iconProactiveMonitoring from "@assets/concept-proactive-monitoring.webp";
+import icon365Admin from "@assets/concept-365-admin.webp";
+import iconEndpointSecurity from "@assets/concept-endpoint-security.webp";
+import iconComplianceCheck from "@assets/concept-compliance-check.webp";
+import iconCloudBackup from "@assets/concept-cloud-backup.webp";
+import iconItHelpdesk from "@assets/concept-it-helpdesk.webp";
 
 export default function ManagedIT() {
   return (
@@ -13,26 +20,38 @@ export default function ManagedIT() {
       {/* Hero */}
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">Managed IT Support</span>
-            <h1 className="display-sm text-white mb-6">
-              Managed IT Support &mdash; Your Outsourced IT Department Without the Corporate Price Tag
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              Stop waiting for things to break and then scrambling to fix them. I manage your technology proactively &mdash; keeping everything updated, secure, compliant, and running smoothly &mdash; for a fixed monthly fee. One point of contact, no ticketing systems, no waiting days for a response.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="#pricing">
-                <Button size="lg">See Pricing Plans</Button>
-              </Link>
-              <Link href="/contact#send-message">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Book a Free IT Review
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">Managed IT Support</span>
+              <h1 className="display-sm text-white mb-6">
+                Managed IT Support &mdash; Your Outsourced IT Department Without the Corporate Price Tag
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                Stop waiting for things to break and then scrambling to fix them. I manage your technology proactively &mdash; keeping everything updated, secure, compliant, and running smoothly &mdash; for a fixed monthly fee. One point of contact, no ticketing systems, no waiting days for a response.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="#pricing">
+                  <Button size="lg">See Pricing Plans</Button>
+                </Link>
+                <Link href="/contact#send-message">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    Book a Free IT Review
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroAdminConsole}
+                alt="A small Irish office desk with a laptop showing a clean admin console dashboard and a second monitor showing a Microsoft 365 user list with green status ticks"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -65,16 +84,23 @@ export default function ManagedIT() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {[
-              { icon: HeartPulse, title: "Proactive Monitoring", desc: "Problems get spotted and fixed before they affect your business. Updates applied, patches installed, potential issues addressed \u2014 often before you even know they existed." },
-              { icon: Cloud, title: "Microsoft 365 Administration", desc: "Adding and removing users, resetting passwords, managing licences, configuring email settings \u2014 all handled as part of your plan, not billed as separate call-outs." },
-              { icon: Shield, title: "Endpoint Security", desc: "Business-grade antivirus and threat protection for your devices. Not the free consumer stuff \u2014 real protection against real threats." },
-              { icon: ServerCog, title: "Compliance Management", desc: "GDPR data handling, NIS2 security standards (where applicable), and proper data retention \u2014 included in your plan, not an extra fee." },
-              { icon: Wrench, title: "Cloud Backup & Recovery", desc: "Your business data backed up automatically. Ransomware, hardware failure, or accidental deletion doesn\u2019t mean permanent data loss." },
-              { icon: Users, title: "Help When You Need It", desc: "When something goes wrong, you call me \u2014 the person who built your system. Fast, informed support without repeating yourself to a stranger." },
+              { img: iconProactiveMonitoring, alt: "Glass heartbeat ECG line over a glass eye representing proactive IT monitoring", title: "Proactive Monitoring", desc: "Problems get spotted and fixed before they affect your business. Updates applied, patches installed, potential issues addressed \u2014 often before you even know they existed." },
+              { img: icon365Admin, alt: "Glass cog with a glass envelope inside representing Microsoft 365 administration", title: "Microsoft 365 Administration", desc: "Adding and removing users, resetting passwords, managing licences, configuring email settings \u2014 all handled as part of your plan, not billed as separate call-outs." },
+              { img: iconEndpointSecurity, alt: "Glass laptop with a padlock in its screen representing endpoint security", title: "Endpoint Security", desc: "Business-grade antivirus and threat protection for your devices. Not the free consumer stuff \u2014 real protection against real threats." },
+              { img: iconComplianceCheck, alt: "Glass clipboard with rows of checkmarks representing compliance management", title: "Compliance Management", desc: "GDPR data handling, NIS2 security standards (where applicable), and proper data retention \u2014 included in your plan, not an extra fee." },
+              { img: iconCloudBackup, alt: "Glass cloud containing a shield with a circular-arrow representing cloud backup and recovery", title: "Cloud Backup & Recovery", desc: "Your business data backed up automatically. Ransomware, hardware failure, or accidental deletion doesn\u2019t mean permanent data loss." },
+              { img: iconItHelpdesk, alt: "Glass headset with a speech bubble representing direct IT helpdesk support", title: "Help When You Need It", desc: "When something goes wrong, you call me \u2014 the person who built your system. Fast, informed support without repeating yourself to a stranger." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-8 rounded-2xl flex gap-5 card-hover shadow-sm">
-                  <item.icon className="text-accent shrink-0 mt-1" size={28} />
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 shrink-0"
+                    loading="lazy"
+                  />
                   <div>
                     <h3 className="text-lg mb-2">{item.title}</h3>
                     <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">{item.desc}</p>

@@ -50,6 +50,19 @@ const jobs = [
   // /microsoft-365-setup-ireland additions
   ['m365-ireland-hero-nationwide.png', 'm365-ireland-hero-nationwide.webp'],
   ['concept-grant-euro.png',            'concept-grant-euro.webp'],
+
+  // Managed IT cluster additions
+  ['concept-proactive-monitoring.png', 'concept-proactive-monitoring.webp'],
+  ['concept-compliance-check.png',     'concept-compliance-check.webp'],
+  ['concept-cloud-backup.png',         'concept-cloud-backup.webp'],
+  ['concept-it-helpdesk.png',          'concept-it-helpdesk.webp'],
+  ['concept-endpoint-security.png',    'concept-endpoint-security.webp'],
+  ['concept-365-admin.png',            'concept-365-admin.webp'],
+  ['concept-trades-construction.png',  'concept-trades-construction.webp'],
+  ['mit-hero-admin-console.png',       'mit-hero-admin-console.webp'],
+
+  // Home.tsx replacement for illustration-get-found-online.webp
+  ['concept-your-business-found.png',  'concept-your-business-found.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -59,6 +72,7 @@ const HERO_FILES = new Set([
   'wd-kilkenny-hero-medieval-mile-dusk.webp',
   'm365-teams-phone-multi-device.webp',
   'm365-ireland-hero-nationwide.webp',
+  'mit-hero-admin-console.webp',
 ]);
 
 let totalIn = 0;

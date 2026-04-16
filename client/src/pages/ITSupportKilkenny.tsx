@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, ServerCog } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -8,6 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import iconHospitality from "@assets/concept-hospitality-dining.webp";
 import iconProfessional from "@assets/concept-professional-services.webp";
 import iconRetail from "@assets/concept-retail-craft.webp";
+import iconTrades from "@assets/concept-trades-construction.webp";
 
 export default function ITSupportKilkenny() {
   return (
@@ -66,22 +67,18 @@ export default function ITSupportKilkenny() {
               { img: iconHospitality, alt: "Glass plate with fork and knife representing hospitality and tourism IT support", title: "Hospitality & Tourism", desc: "POS system support, guest Wi-Fi setup and isolation, booking system integration, and compliance with the European Accessibility Act for digital services. Your technology needs to handle Friday evening and August bank holiday peaks without flinching." },
               { img: iconProfessional, alt: "Glass briefcase representing IT for professional firms in Kilkenny", title: "Professional Firms", desc: "Secure Microsoft 365 with GDPR-compliant data handling, encrypted email, and proper document management. Solicitors, accountants, and consultants in Kilkenny need IT that protects client confidentiality and meets regulatory requirements." },
               { img: iconRetail, alt: "Glass shopping bag representing retail and craft IT support", title: "Retail & Craft", desc: "In-store and online technology working together. E-commerce support, inventory systems, payment processing, and reliable connectivity. Kilkenny's craft businesses need technology that supports rather than complicates their work." },
-              { icon: ServerCog, title: "Trades & Construction", desc: "Office-to-site connectivity, professional email, file sharing, and the security documentation that larger clients now require from their supply chain." },
+              { img: iconTrades, alt: "Glass construction hard hat representing IT for trades and construction", title: "Trades & Construction", desc: "Office-to-site connectivity, professional email, file sharing, and the security documentation that larger clients now require from their supply chain." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                  {"img" in item ? (
-                    <img
-                      src={item.img}
-                      alt={item.alt}
-                      width={1000}
-                      height={1000}
-                      className="w-20 h-20 mb-4"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <item.icon className="text-accent mb-4" size={28} />
-                  )}
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 mb-4"
+                    loading="lazy"
+                  />
                   <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans">{item.desc}</p>
                 </div>

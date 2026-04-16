@@ -15,7 +15,7 @@ import project3 from "@assets/portfolio-nurney-plant-civil.webp";
 import project4 from "@assets/portfolio-more-than-points.webp";
 import project5 from "@assets/portfolio-crettyard-ie.webp";
 import joeyPhoto from "@assets/joey-profile-photo.webp";
-import getFoundIllustration from "@assets/illustration-get-found-online.webp";
+import getFoundIllustration from "@assets/concept-your-business-found.webp";
 import serviceIconWebDesign from "@assets/service-icon-web-design.webp";
 import serviceIconMicrosoft365 from "@assets/service-icon-microsoft-365.webp";
 import serviceIconManagedIT from "@assets/service-icon-managed-it.webp";
@@ -296,11 +296,11 @@ export default function Home() {
             <FadeIn delay={0.3} className="md:col-span-2 lg:col-span-1 justify-self-center self-center">
               <img
                 src={getFoundIllustration}
-                alt="A local Irish business found on Google with a professional @yourbusiness.ie email address"
+                alt="Glass illustration of an Irish small business being found on Google with a professional business email"
                 className="w-40 lg:w-44"
                 loading="lazy"
-                width="1200"
-                height="851"
+                width="1000"
+                height="1000"
                 data-testid="img-get-found-online"
               />
             </FadeIn>
