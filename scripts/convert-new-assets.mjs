@@ -1,6 +1,6 @@
-// One-off conversion script for the 13 newly added PNG assets.
-// Renames the 4 Kilkenny sector icons to semantic filenames and
-// converts all 13 to quality-85 WebP in attached_assets/.
+// PNG -> WebP conversion script for newly generated assets.
+// Appends new batches over time. Skips targets that already exist
+// and are newer than their source PNG (safe to re-run).
 // The source PNGs stay on disk (they're gitignored).
 
 import sharp from 'sharp';
@@ -31,6 +31,21 @@ const jobs = [
 
   // EAA accessibility icon
   ['concept-accessibility-eaa.png', 'concept-accessibility-eaa.webp'],
+
+  // M365 glass concept icons (Key Benefits + What's Included)
+  ['concept-email-pro.png',        'concept-email-pro.webp'],
+  ['concept-cloud-storage.png',    'concept-cloud-storage.webp'],
+  ['concept-team-collab.png',      'concept-team-collab.webp'],
+  ['concept-business-phone.png',   'concept-business-phone.webp'],
+  ['concept-shared-calendar.png',  'concept-shared-calendar.webp'],
+  ['concept-work-anywhere.png',    'concept-work-anywhere.webp'],
+  ['concept-gdpr-shield.png',      'concept-gdpr-shield.webp'],
+  ['concept-licence-match.png',    'concept-licence-match.webp'],
+  ['concept-migration-safe.png',   'concept-migration-safe.webp'],
+  ['concept-training.png',         'concept-training.webp'],
+
+  // M365 Teams Phone photoreal hero image
+  ['m365-teams-phone-multi-device.png', 'm365-teams-phone-multi-device.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -38,10 +53,13 @@ const HERO_FILES = new Set([
   'wd-laois-hero-portlaoise-dusk.webp',
   'wd-carlow-hero-tullow-construction-dawn.webp',
   'wd-kilkenny-hero-medieval-mile-dusk.webp',
+  'm365-teams-phone-multi-device.webp',
 ]);
 
 let totalIn = 0;
 let totalOut = 0;
+
+let skipped = 0;
 
 for (const [srcName, outName] of jobs) {
   const src = path.join(ROOT, srcName);
@@ -50,11 +68,23 @@ for (const [srcName, outName] of jobs) {
   let inStat;
   try {
     inStat = await fs.stat(src);
-    totalIn += inStat.size;
   } catch {
     console.error(`MISSING: ${srcName}`);
     continue;
   }
+
+  // Skip if target exists and is newer than source (idempotent re-runs).
+  try {
+    const outStatExisting = await fs.stat(out);
+    if (outStatExisting.mtimeMs >= inStat.mtimeMs) {
+      skipped++;
+      continue;
+    }
+  } catch {
+    // target doesn't exist yet, fall through
+  }
+
+  totalIn += inStat.size;
 
   const isHero = HERO_FILES.has(outName);
   const pipeline = sharp(src)
@@ -75,6 +105,10 @@ for (const [srcName, outName] of jobs) {
   const kbIn  = (inStat.size  / 1024).toFixed(0).padStart(6);
   const kbOut = (outStat.size / 1024).toFixed(0).padStart(6);
   console.log(`${kbIn} KB -> ${kbOut} KB   ${srcName}  ->  ${outName}`);
+}
+
+if (skipped > 0) {
+  console.log(`(skipped ${skipped} already up-to-date)`);
 }
 
 console.log('');

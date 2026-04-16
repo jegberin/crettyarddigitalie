@@ -1,7 +1,18 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Cloud, ShieldCheck, Mail, Users, FileLock, CheckCircle, XCircle, ArrowRight, Monitor, Wrench, Calendar, Globe, HardDrive, Phone, Quote } from "lucide-react";
+import { CheckCircle, XCircle, ArrowRight, Quote } from "lucide-react";
 import serviceImg from "@assets/service-microsoft-365.webp";
+import teamsPhoneImg from "@assets/m365-teams-phone-multi-device.webp";
+import iconEmailPro from "@assets/concept-email-pro.webp";
+import iconCloudStorage from "@assets/concept-cloud-storage.webp";
+import iconTeamCollab from "@assets/concept-team-collab.webp";
+import iconBusinessPhone from "@assets/concept-business-phone.webp";
+import iconSharedCalendar from "@assets/concept-shared-calendar.webp";
+import iconWorkAnywhere from "@assets/concept-work-anywhere.webp";
+import iconGdprShield from "@assets/concept-gdpr-shield.webp";
+import iconLicenceMatch from "@assets/concept-licence-match.webp";
+import iconMigrationSafe from "@assets/concept-migration-safe.webp";
+import iconTraining from "@assets/concept-training.webp";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -69,44 +80,58 @@ export default function Microsoft365() {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <Mail className="text-accent" size={28} />,
+                img: iconEmailPro,
+                alt: "Glass envelope with an @-symbol representing professional business email",
                 title: "Professional Email",
                 benefit: "Send and receive emails from you@yourbusiness.ie \u2014 not a personal Gmail or Yahoo address. Every email builds credibility. 50GB+ mailbox, shared calendars, and contacts.",
               },
               {
-                icon: <HardDrive className="text-accent" size={28} />,
+                img: iconCloudStorage,
+                alt: "Glass cloud cradling a folder representing secure cloud file storage",
                 title: "Cloud File Storage",
                 benefit: "Quotes, invoices, photos, documents \u2014 stored safely in the cloud, accessible from any device. No more USB sticks, no more lost attachments.",
               },
               {
-                icon: <Users className="text-accent" size={28} />,
+                img: iconTeamCollab,
+                alt: "Three overlapping glass speech bubbles representing team collaboration",
                 title: "Team Collaboration",
                 benefit: "Microsoft Teams for chat, file sharing, and video calls \u2014 whether your team is in the office, on site, or at home. One app for all communication.",
               },
               {
-                icon: <Phone className="text-accent" size={28} />,
+                img: iconBusinessPhone,
+                alt: "Glass telephone handset representing a business phone system",
                 title: "Business Phone System",
                 benefit: "Teams Phone replaces your landline with a proper business number that works from your mobile, laptop, or desk phone \u2014 integrated with your calendar and contacts.",
               },
               {
-                icon: <Calendar className="text-accent" size={28} />,
+                img: iconSharedCalendar,
+                alt: "Glass calendar page with a highlighted date representing shared calendars",
                 title: "Shared Calendars",
                 benefit: "Book meetings, check availability, and set reminders without endless back-and-forth texts and phone calls.",
               },
               {
-                icon: <Globe className="text-accent" size={28} />,
+                img: iconWorkAnywhere,
+                alt: "Glass globe orbited by device silhouettes representing working from anywhere",
                 title: "Work from Anywhere",
                 benefit: "Full access to everything from any device, securely. Whether your team is at a desk, on a building site, or at the kitchen table.",
               },
               {
-                icon: <ShieldCheck className="text-accent" size={28} />,
+                img: iconGdprShield,
+                alt: "Glass shield with a tick and a ring of EU stars representing GDPR compliance",
                 title: "GDPR-Compliant from Day One",
                 benefit: "I configure your environment with EU data residency, Microsoft Entra ID (formerly Azure AD) identity, data retention policies, Multi-Factor Authentication, and encrypted communications \u2014 so your setup meets GDPR requirements from the start. Business Premium adds Intune device management if you need it.",
               },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover h-full" data-testid={`card-benefit-${i}`}>
-                  <div className="mb-4">{item.icon}</div>
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 mb-4"
+                    loading="lazy"
+                  />
                   <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">{item.benefit}</p>
                 </div>
@@ -118,14 +143,19 @@ export default function Microsoft365() {
 
       {/* ── Teams Phone ───────────────────────────────────────────── */}
       <section className="py-20 bg-accent/5 border-y border-accent/10">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <FadeIn>
-            <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                    <Phone className="text-accent" size={24} />
-                  </div>
+                  <img
+                    src={iconBusinessPhone}
+                    alt="Glass telephone handset representing Microsoft Teams Phone"
+                    width={1000}
+                    height={1000}
+                    className="w-12 h-12"
+                    loading="lazy"
+                  />
                   <span className="eyebrow">Microsoft Teams Phone</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl mb-4">Replace Your Landline for Good</h2>
@@ -146,12 +176,20 @@ export default function Microsoft365() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm font-headline font-bold text-accent">From &euro;7.50 per user per month (plus Microsoft calling plan). I handle the entire setup.</p>
-              </div>
-              <div className="flex flex-col gap-3">
+                <p className="text-sm font-headline font-bold text-accent mb-5">From &euro;7.50 per user per month (plus Microsoft calling plan). I handle the entire setup.</p>
                 <Link href="/contact#send-message">
-                  <Button size="lg" className="w-full">Ask About Teams Phone</Button>
+                  <Button size="lg">Ask About Teams Phone</Button>
                 </Link>
+              </div>
+              <div>
+                <img
+                  src={teamsPhoneImg}
+                  alt="A Microsoft Teams incoming call ringing simultaneously on a laptop, smartphone and desk handset on a small-office desk"
+                  width={1920}
+                  height={1280}
+                  className="w-full h-auto rounded-2xl shadow-xl"
+                  loading="lazy"
+                />
               </div>
             </div>
           </FadeIn>
@@ -207,18 +245,25 @@ export default function Microsoft365() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {[
-              { icon: <Mail className="text-accent shrink-0" size={32} />, title: "Professional Business Email", desc: "Custom domain email (you@yourbusiness.ie) with 50GB+ mailboxes, shared calendars, and contacts on Exchange Online." },
-              { icon: <Cloud className="text-accent shrink-0" size={32} />, title: "The Right Licence for Your Needs", desc: "I recommend the Microsoft 365 plan that fits your actual business \u2014 no upselling features you\u2019ll never use, no paying for things you don\u2019t need." },
-              { icon: <Users className="text-accent shrink-0" size={32} />, title: "Teams & Collaboration", desc: "Microsoft Teams set up with the right channels, permissions, and settings so your staff can work together \u2014 without the chaos of an un-managed free-for-all." },
-              { icon: <Phone className="text-accent shrink-0" size={32} />, title: "Teams Phone Setup", desc: "Business phone numbers, call routing, voicemail, and auto-attendant \u2014 all configured and tested. Replace your landline with a modern cloud phone system." },
-              { icon: <FileLock className="text-accent shrink-0" size={32} />, title: "Cloud File Storage", desc: "OneDrive for personal files, SharePoint for team files \u2014 properly organised, version-controlled, and accessible from anywhere. The end of USB sticks." },
-              { icon: <ShieldCheck className="text-accent shrink-0" size={32} />, title: "GDPR-Compliant Security", desc: "MFA, tenant hardening, EU data residency, data retention policies, and email encryption. These aren\u2019t optional extras \u2014 they\u2019re how I set up every single tenant." },
-              { icon: <Wrench className="text-accent shrink-0" size={32} />, title: "Safe Email Migration", desc: "Every email, contact, and calendar entry moved safely from your old system. I\u2019ve migrated dozens of businesses without losing a single message." },
-              { icon: <Monitor className="text-accent shrink-0" size={32} />, title: "Team Training", desc: "Your team gets a walkthrough so everyone is confident from the start. Not a lecture \u2014 practical, task-based training they can use immediately." },
+              { img: iconEmailPro, alt: "Glass envelope with an @-symbol representing professional business email", title: "Professional Business Email", desc: "Custom domain email (you@yourbusiness.ie) with 50GB+ mailboxes, shared calendars, and contacts on Exchange Online." },
+              { img: iconLicenceMatch, alt: "Glass hexagonal tag with a checkmark representing licence-to-needs matching", title: "The Right Licence for Your Needs", desc: "I recommend the Microsoft 365 plan that fits your actual business \u2014 no upselling features you\u2019ll never use, no paying for things you don\u2019t need." },
+              { img: iconTeamCollab, alt: "Three overlapping glass speech bubbles representing team collaboration", title: "Teams & Collaboration", desc: "Microsoft Teams set up with the right channels, permissions, and settings so your staff can work together \u2014 without the chaos of an un-managed free-for-all." },
+              { img: iconBusinessPhone, alt: "Glass telephone handset representing Teams Phone setup", title: "Teams Phone Setup", desc: "Business phone numbers, call routing, voicemail, and auto-attendant \u2014 all configured and tested. Replace your landline with a modern cloud phone system." },
+              { img: iconCloudStorage, alt: "Glass cloud cradling a folder representing OneDrive and SharePoint cloud storage", title: "Cloud File Storage", desc: "OneDrive for personal files, SharePoint for team files \u2014 properly organised, version-controlled, and accessible from anywhere. The end of USB sticks." },
+              { img: iconGdprShield, alt: "Glass shield with a tick and EU stars representing GDPR-compliant security", title: "GDPR-Compliant Security", desc: "MFA, tenant hardening, EU data residency, data retention policies, and email encryption. These aren\u2019t optional extras \u2014 they\u2019re how I set up every single tenant." },
+              { img: iconMigrationSafe, alt: "Two glass folders connected by an arrow representing a safe email migration", title: "Safe Email Migration", desc: "Every email, contact, and calendar entry moved safely from your old system. I\u2019ve migrated dozens of businesses without losing a single message." },
+              { img: iconTraining, alt: "Glass lightbulb with a speech bubble representing practical team training", title: "Team Training", desc: "Your team gets a walkthrough so everyone is confident from the start. Not a lecture \u2014 practical, task-based training they can use immediately." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-[#f3f4f5] p-8 rounded-2xl flex gap-6 card-hover shadow-sm hover:shadow-lg transition-all duration-300" data-testid={`card-included-${i}`}>
-                  {item.icon}
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 shrink-0"
+                    loading="lazy"
+                  />
                   <div>
                     <h3 className="text-lg mb-2">{item.title}</h3>
                     <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">{item.desc}</p>
