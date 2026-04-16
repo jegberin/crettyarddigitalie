@@ -1,40 +1,54 @@
 ﻿import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, BadgeEuro } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import heroIreland from "@assets/m365-ireland-hero-nationwide.webp";
 import iconEmailPro from "@assets/concept-email-pro.webp";
 import iconCloudStorage from "@assets/concept-cloud-storage.webp";
 import iconBusinessPhone from "@assets/concept-business-phone.webp";
 import iconGdprShield from "@assets/concept-gdpr-shield.webp";
 import iconMigrationSafe from "@assets/concept-migration-safe.webp";
+import iconGrantEuro from "@assets/concept-grant-euro.webp";
 
 export default function Microsoft365Ireland() {
   return (
     <div className="flex flex-col min-h-screen">
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">Microsoft 365 Setup &mdash; Ireland</span>
-            <h1 className="display-sm text-white mb-6">
-              Microsoft 365 Setup for Irish Small Businesses &mdash; Done Properly, Done Securely, Done Remotely
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-3xl mb-8">
-              Professional email, cloud file storage, Microsoft Teams, Teams Phone, and optional Microsoft 365 Copilot &mdash; all set up with EU data residency, GDPR compliance, Microsoft Entra ID, and proper security from day one. Remote-first delivery means I work with small businesses anywhere in Ireland &mdash; Dublin, Cork, Galway, Limerick, Waterford, and every county in between &mdash; with on-site support available across Laois, Carlow, Kilkenny, and the Midlands.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact#send-message">
-                <Button size="lg">Book a Free Consultation</Button>
-              </Link>
-              <Link href="/microsoft-365">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Full M365 Details &rarr;
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">Microsoft 365 Setup &mdash; Ireland</span>
+              <h1 className="display-sm text-white mb-6">
+                Microsoft 365 Setup for Irish Small Businesses &mdash; Done Properly, Done Securely, Done Remotely
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                Professional email, cloud file storage, Microsoft Teams, Teams Phone, and optional Microsoft 365 Copilot &mdash; all set up with EU data residency, GDPR compliance, Microsoft Entra ID, and proper security from day one. Remote-first delivery means I work with small businesses anywhere in Ireland &mdash; Dublin, Cork, Galway, Limerick, Waterford, and every county in between &mdash; with on-site support available across Laois, Carlow, Kilkenny, and the Midlands.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact#send-message">
+                  <Button size="lg">Book a Free Consultation</Button>
+                </Link>
+                <Link href="/microsoft-365">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    Full M365 Details &rarr;
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroIreland}
+                alt="Microsoft 365 business email and Teams open on a laptop and phone on a windowsill overlooking a typical Irish town at golden hour"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -57,22 +71,18 @@ export default function Microsoft365Ireland() {
               { img: iconBusinessPhone, alt: "Glass telephone handset representing Microsoft Teams Phone", title: "Teams Phone", desc: "Replace your landline with a modern business phone system. Calls from mobile, laptop, or desk phone \u2014 all integrated with your calendar and email." },
               { img: iconGdprShield, alt: "Glass shield with a tick and EU stars representing GDPR-compliant security", title: "GDPR-Compliant from Day One", desc: "Microsoft Entra ID (formerly Azure AD), MFA, encrypted email, EU data residency, and data retention policies. Business Premium adds Intune device management for regulated sectors. Not an add-on \u2014 it\u2019s how I set up every single Irish business tenant." },
               { img: iconMigrationSafe, alt: "Two glass folders connected by an arrow representing a safe data migration", title: "Full Migration \u2014 Zero Data Loss", desc: "Every email, contact, and calendar entry migrated safely from Gmail, Google Workspace, POP, IMAP, or legacy Exchange 2016/2019. Often done overnight." },
-              { icon: BadgeEuro, title: "Grow Digital Voucher Ready", desc: "M365 is a strong fit for the voucher \u2014 50% of setup plus first-year licences may qualify, up to \u20ac5,000. A free Digital for Business consultation is required before applying.", href: "/grants-funding" },
-            ].map((item: { img?: string; alt?: string; icon?: typeof BadgeEuro; title: string; desc: string; href?: string }, i) => (
+              { img: iconGrantEuro, alt: "Glass euro coin with a checkmark representing Grow Digital Voucher eligibility", title: "Grow Digital Voucher Ready", desc: "M365 is a strong fit for the voucher \u2014 50% of setup plus first-year licences may qualify, up to \u20ac5,000. A free Digital for Business consultation is required before applying.", href: "/grants-funding" },
+            ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover h-full">
-                  {item.img ? (
-                    <img
-                      src={item.img}
-                      alt={item.alt}
-                      width={1000}
-                      height={1000}
-                      className="w-16 h-16 mb-3"
-                      loading="lazy"
-                    />
-                  ) : item.icon ? (
-                    <item.icon className="text-accent mb-3" size={24} />
-                  ) : null}
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-16 h-16 mb-3"
+                    loading="lazy"
+                  />
                   <h3 className="text-base font-headline font-bold mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] font-sans">{item.desc}</p>
                   {item.href && (

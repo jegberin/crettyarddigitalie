@@ -46,6 +46,10 @@ const jobs = [
 
   // M365 Teams Phone photoreal hero image
   ['m365-teams-phone-multi-device.png', 'm365-teams-phone-multi-device.webp'],
+
+  // /microsoft-365-setup-ireland additions
+  ['m365-ireland-hero-nationwide.png', 'm365-ireland-hero-nationwide.webp'],
+  ['concept-grant-euro.png',            'concept-grant-euro.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -54,6 +58,7 @@ const HERO_FILES = new Set([
   'wd-carlow-hero-tullow-construction-dawn.webp',
   'wd-kilkenny-hero-medieval-mile-dusk.webp',
   'm365-teams-phone-multi-device.webp',
+  'm365-ireland-hero-nationwide.webp',
 ]);
 
 let totalIn = 0;
