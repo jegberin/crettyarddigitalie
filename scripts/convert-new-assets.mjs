@@ -73,6 +73,9 @@ const jobs = [
   ['concept-security-audit.png', 'concept-security-audit.webp'],
   ['concept-mfa-padlock.png',    'concept-mfa-padlock.webp'],
   ['concept-email-shield.png',   'concept-email-shield.webp'],
+
+  // Cybersecurity hero (MFA in action)
+  ['cyber-hero-mfa-in-action.png', 'cyber-hero-mfa-in-action.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -84,6 +87,7 @@ const HERO_FILES = new Set([
   'm365-ireland-hero-nationwide.webp',
   'mit-hero-admin-console.webp',
   'network-hero-sme-install.webp',
+  'cyber-hero-mfa-in-action.webp',
 ]);
 
 let totalIn = 0;

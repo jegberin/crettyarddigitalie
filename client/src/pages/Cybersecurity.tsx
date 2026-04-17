@@ -5,6 +5,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import heroMfaInAction from "@assets/cyber-hero-mfa-in-action.webp";
 import iconSecurityAudit from "@assets/concept-security-audit.webp";
 import iconMfaPadlock from "@assets/concept-mfa-padlock.webp";
 import iconEmailShield from "@assets/concept-email-shield.webp";
@@ -19,26 +20,38 @@ export default function Cybersecurity() {
       {/* Hero */}
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">Cybersecurity &amp; Compliance</span>
-            <h1 className="display-sm text-white mb-6">
-              Cybersecurity and Compliance for Small Businesses &mdash; Before Something Goes Wrong
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You don't need to be a big company to be a target &mdash; or to face compliance obligations. Cyber attacks hit small businesses every week across Ireland &mdash; Dublin, Cork, Galway, and every town in between. EU regulations like NIS2, GDPR, DORA, and the European Accessibility Act now apply to more businesses than ever. I deliver practical cybersecurity grounded in NCSC Cyber Essentials, Microsoft Defender, MFA (phishing-resistant where it matters), and Zero Trust principles &mdash; all in plain English, at a price that makes sense.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact#send-message">
-                <Button size="lg">Book a Free Security Review</Button>
-              </Link>
-              <a href="#nis2">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Learn About NIS2 &darr;
-                </Button>
-              </a>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">Cybersecurity &amp; Compliance</span>
+              <h1 className="display-sm text-white mb-6">
+                Cybersecurity and Compliance for Small Businesses &mdash; Before Something Goes Wrong
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                You don't need to be a big company to be a target &mdash; or to face compliance obligations. Cyber attacks hit small businesses every week across Ireland &mdash; Dublin, Cork, Galway, and every town in between. EU regulations like NIS2, GDPR, DORA, and the European Accessibility Act now apply to more businesses than ever. I deliver practical cybersecurity grounded in NCSC Cyber Essentials, Microsoft Defender, MFA (phishing-resistant where it matters), and Zero Trust principles &mdash; all in plain English, at a price that makes sense.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact#send-message">
+                  <Button size="lg">Book a Free Security Review</Button>
+                </Link>
+                <a href="#nis2">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    Learn About NIS2 &darr;
+                  </Button>
+                </a>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroMfaInAction}
+                alt="A smartphone showing a Microsoft-style multi-factor authentication prompt with an Approve button, held above a laptop displaying a matching sign-in verification screen on a small Irish-office desk"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
