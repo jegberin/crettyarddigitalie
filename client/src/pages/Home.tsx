@@ -17,11 +17,11 @@ import project5 from "@assets/portfolio-crettyard-ie.webp";
 import joeyPhoto from "@assets/joey-profile-photo.webp";
 import getFoundIllustration from "@assets/concept-your-business-found.webp";
 import serviceIconWebDesign from "@assets/service-icon-web-design.webp";
-import serviceIconMicrosoft365 from "@assets/service-icon-microsoft-365.webp";
-import serviceIconManagedIT from "@assets/service-icon-managed-it.webp";
-import serviceIconNetworkWifi from "@assets/service-icon-network-wifi.webp";
-import serviceIconCybersecurity from "@assets/service-icon-cybersecurity.webp";
 import serviceIconAICopilot from "@assets/service-icon-ai-copilot.webp";
+import icon365Admin from "@assets/concept-365-admin.webp";
+import iconItHelpdesk from "@assets/concept-it-helpdesk.webp";
+import iconWifiMesh from "@assets/concept-wifi-mesh.webp";
+import iconGdprShield from "@assets/concept-gdpr-shield.webp";
 import iconEndpointSecurity from "@assets/concept-endpoint-security.webp";
 import iconCloudBackup from "@assets/concept-cloud-backup.webp";
 
@@ -57,8 +57,8 @@ const services: Service[] = [
   },
   {
     num: "02",
-    image: serviceIconMicrosoft365,
-    imageAlt: "Glass cloud with @ symbol, email, and document icons",
+    image: icon365Admin,
+    imageAlt: "Glass cogwheel with an envelope representing Microsoft 365 and Teams Phone administration",
     title: "Microsoft 365 & Teams Phone",
     desc: "Professional @yourbusiness.ie email, cloud file storage, Teams for collaboration, and a modern business phone system \u2014 replacing old landlines. Set up securely with GDPR compliance from day one.",
     price: "Setup from \u20ac350",
@@ -69,8 +69,8 @@ const services: Service[] = [
   },
   {
     num: "03",
-    image: serviceIconManagedIT,
-    imageAlt: "Glass cogwheel gears with server storage blocks",
+    image: iconItHelpdesk,
+    imageAlt: "Glass headset with a speech bubble representing direct IT helpdesk support",
     title: "Managed IT Support",
     desc: "Your outsourced IT department. I monitor your systems, keep everything updated and secure, manage compliance, and fix problems before they cost you time or money. Fixed monthly pricing.",
     price: "From \u20ac45/user/month",
@@ -81,8 +81,8 @@ const services: Service[] = [
   },
   {
     num: "04",
-    image: serviceIconNetworkWifi,
-    imageAlt: "Glass Wi-Fi signal icon against a network of connected nodes",
+    image: iconWifiMesh,
+    imageAlt: "Glass Wi-Fi access point with concentric signal arcs representing mesh Wi-Fi coverage",
     title: "Network & Wi\u2011Fi",
     desc: "Business-grade network design, Wi-Fi installation, and security for offices, workshops, warehouses, and retail spaces. Dead spots eliminated, card machines connected, teams productive.",
     price: "Health checks from \u20ac150",
@@ -93,8 +93,8 @@ const services: Service[] = [
   },
   {
     num: "05",
-    image: serviceIconCybersecurity,
-    imageAlt: "Glass shield with a keyhole symbolising cybersecurity protection",
+    image: iconGdprShield,
+    imageAlt: "Glass shield with a tick and a ring of EU stars representing cybersecurity and GDPR compliance",
     title: "Cybersecurity & Compliance",
     desc: "Practical protection against phishing, ransomware, and data breaches \u2014 plus NIS2, GDPR, and European Accessibility Act compliance. Security audits, staff training, and ongoing monitoring.",
     price: "Audits from \u20ac200",
