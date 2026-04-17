@@ -161,7 +161,7 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   },
   "/network-wifi-laois-carlow": {
     title: "Business Network & Wi-Fi Installation in Laois and Carlow | Crettyard Digital",
-    description: "Business-grade network design, Cat6 cabling, Wi-Fi 6 installation, and UniFi / MikroTik hardware for offices, workshops, and retail spaces in Laois and Carlow. On-site surveys, no remote guesswork.",
+    description: "Business-grade network design, Cat6a / Cat7 cabling, Wi-Fi 6E and Wi-Fi 7 installation, and UniFi / MikroTik hardware for offices, workshops, and retail spaces in Laois and Carlow. On-site surveys, no remote guesswork.",
   },
   "/privacy-policy": {
     title: "Privacy Policy | Crettyard Digital",
@@ -242,8 +242,8 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
   "/network-wifi-security": [
     { question: "How do I know if I need a new network or just a fix?", answer: "I\u2019ll start with a free review \u2014 looking at your current setup, your pain points, and what you need. Sometimes a tweak is all it takes; other times a proper redesign is the smarter long-term move. I\u2019ll give you an honest recommendation either way." },
     { question: "Can you work around our business hours?", answer: "Absolutely. I regularly schedule installations and upgrades for evenings or weekends to minimise disruption. Your team shouldn\u2019t lose a day\u2019s work because of an IT upgrade." },
-    { question: "Do you supply the hardware?", answer: "Yes. I source and supply business-grade equipment from trusted brands like Ubiquiti UniFi, MikroTik, and TP-Link. I\u2019ll recommend the best options for your space and budget \u2014 Wi-Fi 6 / Wi-Fi 6E where it makes sense, no unnecessary upselling." },
-    { question: "How long does a typical installation take?", answer: "A small office setup can often be done in a day. Larger premises with new Cat6 / Cat6a cabling may take 2\u20133 days. I\u2019ll give you a clear timeline before any work begins." },
+    { question: "Do you supply the hardware?", answer: "Yes. I source and supply business-grade equipment from trusted brands like Ubiquiti UniFi, MikroTik, and TP-Link Omada. I\u2019ll recommend the best options for your space and budget \u2014 Wi-Fi 6, Wi-Fi 6E or Wi-Fi 7 where it makes sense, no unnecessary upselling." },
+    { question: "How long does a typical installation take?", answer: "A small office setup can often be done in a day. Larger premises with new Cat6a or Cat7 structured cabling (Cat8 for specialist short runs where needed) may take 2\u20133 days. I\u2019ll give you a clear timeline before any work begins." },
     { question: "What about ongoing support?", answer: "I offer optional support packages for monitoring, maintenance, and troubleshooting. But even without a package, I\u2019m always just a call or message away if something goes wrong." },
     { question: "Do you cover areas outside Laois and Carlow?", answer: "I\u2019m based on the Laois/Carlow border but regularly work across the Midlands and South-East including Kilkenny. Get in touch and we\u2019ll figure it out." },
   ],
@@ -318,8 +318,8 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
   ],
   "/network-wifi-laois-carlow": [
     { question: "How quickly can you come out for a Laois or Carlow site survey?", answer: "Usually within a week for standard surveys. I\u2019m based on the Laois\u2013Carlow border, so travel time is short and I can often fit an on-site survey around your business hours." },
-    { question: "What brands of hardware do you install?", answer: "Business-grade Ubiquiti UniFi, MikroTik, and TP-Link Omada \u2014 selected per-site. Wi-Fi 6 / Wi-Fi 6E where it makes sense, Cat6 / Cat6a cabling, and CRA-compliant firewalls. No consumer-grade kit in commercial installations." },
-    { question: "Can you work with my existing ISP / broadband?", answer: "Yes. The network I install sits behind whichever broadband provider you already use (Eir, Vodafone, Sky, SIRO, etc.). If your connection itself is the bottleneck I\u2019ll tell you straight \u2014 no point putting Wi-Fi 6 on a 30Mbps line." },
+    { question: "What brands of hardware do you install?", answer: "Business-grade Ubiquiti UniFi, MikroTik, and TP-Link Omada \u2014 selected per-site. Wi-Fi 6, Wi-Fi 6E, or Wi-Fi 7 where it makes sense; Cat6a or Cat7 structured cabling (Cat8 for specialist short runs); and CRA-compliant firewalls. No consumer-grade kit in commercial installations." },
+    { question: "Can you work with my existing ISP / broadband?", answer: "Yes. The network I install sits behind whichever broadband provider you already use (Eir, Vodafone, Sky, SIRO, etc.). If your connection itself is the bottleneck I\u2019ll tell you straight \u2014 no point putting Wi-Fi 7 on a 30Mbps line." },
     { question: "Do you do outdoor Wi-Fi and yard coverage?", answer: "Yes \u2014 common for Carlow plant-hire yards, construction sites, and rural workshops. Weatherproof outdoor APs with proper mounting and power, integrated with the indoor network. On-site survey covers both indoor and outdoor coverage." },
   ],
 };
@@ -396,7 +396,7 @@ function RouteSEO() {
         <ServiceSchema name="Managed IT Support in County Kilkenny" description="Sector-tailored managed IT for Kilkenny hospitality, professional firms, retail/craft, and trades \u2014 POS support, guest Wi-Fi isolation, EAA and GDPR compliance, Microsoft 365 administration. From \u20ac45 per user per month." areaServed="County Kilkenny, Ireland" />
       )}
       {location === "/network-wifi-laois-carlow" && (
-        <ServiceSchema name="Business Network & Wi-Fi Installation in Laois and Carlow" description="On-site network design, Cat6 / Cat6a cabling, Wi-Fi 6 mesh installation, CRA-compliant firewalls, and guest Wi-Fi isolation for offices, workshops, warehouses, and retail across Laois and Carlow. From \u20ac150 Wi-Fi health check, \u20ac400 small-office setup, \u20ac800 full design and install." areaServed="Laois and Carlow, Ireland" />
+        <ServiceSchema name="Business Network & Wi-Fi Installation in Laois and Carlow" description="On-site network design, Cat6a / Cat7 structured cabling (Cat8 for specialist runs), Wi-Fi 6E / Wi-Fi 7 mesh installation, CRA-compliant firewalls, and guest Wi-Fi isolation for offices, workshops, warehouses, and retail across Laois and Carlow. From \u20ac150 Wi-Fi health check, \u20ac400 small-office setup, \u20ac800 full design and install." areaServed="Laois and Carlow, Ireland" />
       )}
 
       {/* Page-type schemas */}

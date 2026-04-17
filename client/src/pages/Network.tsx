@@ -23,11 +23,11 @@ const faqItems = [
   },
   {
     q: "Do you supply the hardware?",
-    a: "Yes. I source and supply business-grade equipment from trusted brands like Ubiquiti UniFi, MikroTik, and TP-Link. I'll recommend the best options for your space and budget — Wi-Fi 6 / Wi-Fi 6E where it makes sense, no unnecessary upselling."
+    a: "Yes. I source and supply business-grade equipment from trusted brands like Ubiquiti UniFi, MikroTik, and TP-Link Omada. I'll recommend the best options for your space and budget — Wi-Fi 6, Wi-Fi 6E or Wi-Fi 7 where it makes sense, no unnecessary upselling."
   },
   {
     q: "How long does a typical installation take?",
-    a: "A small office setup can often be done in a day. Larger premises with new Cat6 / Cat6a cabling may take 2–3 days. I'll give you a clear timeline before any work begins."
+    a: "A small office setup can often be done in a day. Larger premises with new Cat6a or Cat7 structured cabling (Cat8 for specialist short runs where needed) may take 2–3 days. I'll give you a clear timeline before any work begins."
   },
   {
     q: "What about ongoing support?",
@@ -54,7 +54,7 @@ export default function NetworkWifi() {
                 Business Network &amp; Wi&#8209;Fi Solutions for Offices and Workshops
               </h1>
               <p className="text-xl text-foreground mb-8 leading-relaxed font-sans font-normal">
-                Dropped connections, Wi&#8209;Fi dead spots, and unreliable internet cost your business time and money every single day. I design, install, and secure networks for small businesses across Laois, Carlow, Kilkenny, and the Irish Midlands using Ubiquiti UniFi, MikroTik, and TP-Link Omada equipment &mdash; Wi&#8209;Fi 6 / Wi&#8209;Fi 6E, Cat6 / Cat6a structured cabling, and CRA-compliant firewalls. Real coverage, real security, no consumer-grade shortcuts.
+                Dropped connections, Wi&#8209;Fi dead spots, and unreliable internet cost your business time and money every single day. I design, install, and secure networks for small businesses across Laois, Carlow, Kilkenny, and the Irish Midlands using Ubiquiti UniFi, MikroTik, and TP-Link Omada equipment &mdash; Wi&#8209;Fi 6, Wi&#8209;Fi 6E and Wi&#8209;Fi 7; Cat6a or Cat7 structured cabling (Cat8 for specialist runs); and CRA-compliant firewalls. Real coverage, real security, no consumer-grade shortcuts.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact#send-message">
@@ -73,7 +73,7 @@ export default function NetworkWifi() {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={serviceImg}
-                  alt="Neatly organised business network rack with structured Cat6 ethernet cabling in a professional Irish office environment"
+                  alt="Neatly organised business network rack with structured Cat6a ethernet cabling and a wall-mounted Wi-Fi 6E access point in a professional Irish office environment"
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
@@ -173,7 +173,7 @@ export default function NetworkWifi() {
                   I survey your premises and design a network that fits your space — proper cabling, switch placement, and access point positioning for full coverage.
                 </p>
                 <ul className="space-y-2">
-                  {["Site survey & coverage mapping", "Structured Cat6 / Cat6a cabling plans", "VLAN segmentation", "Capacity planning for growth"].map((item, i) => (
+                  {["Site survey & coverage mapping", "Structured Cat6a / Cat7 cabling plans (Cat8 for specialist runs)", "VLAN segmentation", "Capacity planning for growth"].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[15px] text-foreground font-sans">
                       <CheckCircle className="text-accent mt-0.5 flex-shrink-0" size={16} />
                       <span>{item}</span>
@@ -198,7 +198,7 @@ export default function NetworkWifi() {
                   Professional mesh Wi&#8209;Fi and access point placement to eliminate dead spots across offices, multi-story buildings, or tricky workshop layouts.
                 </p>
                 <ul className="space-y-2">
-                  {["Mesh Wi‑Fi 6 / 6E & access point deployment", "Channel optimisation", "Guest network separation", "Seamless roaming between zones"].map((item, i) => (
+                  {["Mesh Wi‑Fi 6 / 6E / Wi‑Fi 7 access point deployment", "Channel optimisation", "Guest network separation", "Seamless roaming between zones"].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[15px] text-foreground font-sans">
                       <CheckCircle className="text-accent mt-0.5 flex-shrink-0" size={16} />
                       <span>{item}</span>
