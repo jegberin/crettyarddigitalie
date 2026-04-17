@@ -378,22 +378,6 @@ async function exportStatic() {
 
       await browser.close();
 
-      const workerSrc = await fs.readFile(path.join(__dirname, 'cloudflare-worker.js'), 'utf8');
-      await fs.writeFile(path.join(docsDir, '_worker.js'), workerSrc);
-
-      const wranglerConfig = {
-        $schema: 'node_modules/wrangler/config-schema.json',
-        name: 'digitalcrettyard',
-        main: '_worker.js',
-        compatibility_date: '2025-09-27',
-        observability: { enabled: true },
-        assets: { directory: '.' },
-        compatibility_flags: ['nodejs_compat'],
-      };
-      await fs.writeFile(path.join(docsDir, 'wrangler.jsonc'), JSON.stringify(wranglerConfig, null, 2));
-
-      await fs.writeFile(path.join(docsDir, '.assetsignore'), '_worker.js\nwrangler.jsonc\n.assetsignore\n.nojekyll\n');
-
       await fs.writeFile(path.join(docsDir, '.nojekyll'), '');
 
       console.log('Export complete! Files are in the /docs directory.');
