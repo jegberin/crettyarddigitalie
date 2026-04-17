@@ -467,83 +467,6 @@ async function handleQuote(request, env) {
   }
 }
 
-const EVERYTHING_INCLUDED_PRICE_ID = "price_1TM5r5Dl4HQCKMGyQZ0n9gza";
-
-function stripeAuth(secretKey) {
-  return "Basic " + btoa(secretKey + ":");
-}
-
-async function handleSubscribeConfig(_request, env) {
-  const key = env.STRIPE_PUBLISHABLE_KEY || "";
-  return jsonResponse({ publishableKey: key });
-}
-
-async function handleSubscribeCreateSession(request, env) {
-  const secretKey = env.STRIPE_SECRET_KEY;
-  if (!secretKey) return jsonResponse({ error: "Payment not configured." }, 500);
-
-  const origin = new URL(request.url).origin;
-  const returnUrl = `${origin}/subscribe?session_id={CHECKOUT_SESSION_ID}`;
-
-  const bodyParts = [
-    `line_items[0][price]=${encodeURIComponent(EVERYTHING_INCLUDED_PRICE_ID)}`,
-    `line_items[0][quantity]=1`,
-    `mode=subscription`,
-    `ui_mode=embedded`,
-    `return_url=${encodeURIComponent(returnUrl)}`,
-  ];
-  const body = bodyParts.join("&");
-
-  try {
-    const res = await fetch("https://api.stripe.com/v1/checkout/sessions", {
-      method: "POST",
-      headers: {
-        "Authorization": stripeAuth(secretKey),
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Stripe-Version": "2025-01-27.acacia",
-      },
-      body,
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      const msg = data?.error?.message || JSON.stringify(data);
-      return jsonResponse({ error: msg }, res.status);
-    }
-    if (!data.client_secret) {
-      return jsonResponse({ error: "No client_secret returned by Stripe." }, 500);
-    }
-    return jsonResponse({ clientSecret: data.client_secret });
-  } catch (err) {
-    return jsonResponse({ error: String(err) }, 500);
-  }
-}
-
-async function handleSubscribeSessionStatus(request, env) {
-  const secretKey = env.STRIPE_SECRET_KEY;
-  if (!secretKey) return jsonResponse({ error: "Payment not configured." }, 500);
-
-  const url = new URL(request.url);
-  const sessionId = url.searchParams.get("session_id");
-  if (!sessionId) return jsonResponse({ error: "Missing session_id." }, 400);
-
-  try {
-    const res = await fetch(`https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sessionId)}`, {
-      headers: {
-        "Authorization": stripeAuth(secretKey),
-        "Stripe-Version": "2025-01-27.acacia",
-      },
-    });
-    const data = await res.json();
-    if (!res.ok) return jsonResponse({ error: data?.error?.message || "Stripe error." }, 500);
-    return jsonResponse({
-      status: data.status,
-      customer_email: data.customer_details?.email ?? null,
-    });
-  } catch (err) {
-    return jsonResponse({ error: "Could not retrieve session." }, 500);
-  }
-}
-
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -556,23 +479,6 @@ export default {
     }
     if (request.method === "POST" && url.pathname === "/api/quote") {
       return handleQuote(request, env);
-    }
-
-    // Stripe subscription endpoints
-    if (request.method === "GET" && url.pathname === "/api/subscribe/config") {
-      return handleSubscribeConfig(request, env);
-    }
-    if (request.method === "POST" && url.pathname === "/api/subscribe/create-session") {
-      return handleSubscribeCreateSession(request, env);
-    }
-    if (request.method === "GET" && url.pathname === "/api/subscribe/session-status") {
-      return handleSubscribeSessionStatus(request, env);
-    }
-
-    // Serve subscribe.html for the clean /subscribe URL
-    if (url.pathname === "/subscribe" || url.pathname === "/subscribe/") {
-      const assetUrl = new URL("/subscribe.html", url.origin);
-      return env.ASSETS.fetch(new Request(assetUrl.toString(), request));
     }
 
     return env.ASSETS.fetch(request);

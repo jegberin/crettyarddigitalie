@@ -13,25 +13,51 @@ const docsDir = path.join(rootDir, 'docs');
 
 const routes = [
   { path: '/', file: 'index.html' },
-  { path: '/web-design', file: 'web-design.html' },
-  { path: '/microsoft-365', file: 'microsoft-365.html' },
-  { path: '/network-wifi-security', file: 'network-wifi-security.html' },
-  { path: '/portfolio', file: 'portfolio.html' },
   { path: '/about', file: 'about.html' },
   { path: '/contact', file: 'contact.html' },
+  { path: '/portfolio', file: 'portfolio.html' },
+  { path: '/web-design', file: 'web-design.html' },
+  { path: '/microsoft-365', file: 'microsoft-365.html' },
+  { path: '/managed-it-support', file: 'managed-it-support.html' },
+  { path: '/managed-hardware', file: 'managed-hardware.html' },
+  { path: '/network-wifi-security', file: 'network-wifi-security.html' },
+  { path: '/cybersecurity', file: 'cybersecurity.html' },
+  { path: '/ai-readiness', file: 'ai-readiness.html' },
+  { path: '/website-care-plans', file: 'website-care-plans.html' },
+  { path: '/trades', file: 'trades.html' },
+  { path: '/professional-services', file: 'professional-services.html' },
+  { path: '/dora-compliance', file: 'dora-compliance.html' },
+  { path: '/pricing', file: 'pricing.html' },
+  { path: '/grants-funding', file: 'grants-funding.html' },
+  { path: '/how-it-works', file: 'how-it-works.html' },
+  { path: '/get-a-quote', file: 'get-a-quote.html' },
+  { path: '/web-design-laois', file: 'web-design-laois.html' },
+  { path: '/web-design-carlow', file: 'web-design-carlow.html' },
+  { path: '/web-design-kilkenny', file: 'web-design-kilkenny.html' },
+  { path: '/it-support-laois', file: 'it-support-laois.html' },
+  { path: '/it-support-carlow', file: 'it-support-carlow.html' },
+  { path: '/it-support-kilkenny', file: 'it-support-kilkenny.html' },
+  { path: '/microsoft-365-setup-ireland', file: 'microsoft-365-setup-ireland.html' },
+  { path: '/network-wifi-laois-carlow', file: 'network-wifi-laois-carlow.html' },
   { path: '/privacy-policy', file: 'privacy-policy.html' },
   { path: '/terms-and-conditions', file: 'terms-and-conditions.html' },
   { path: '/cookie-policy', file: 'cookie-policy.html' },
-  { path: '/parental-controls', file: 'parental-controls.html' },
-  { path: '/get-a-quote', file: 'get-a-quote.html' },
-  { path: '/subscribe', file: 'subscribe.html' }
 ];
 
+// Longest-first so that e.g. "web-design-laois" matches before "web-design".
+const linkSlugAlternation = routes
+  .filter(r => r.path !== '/')
+  .map(r => r.path.slice(1))
+  .sort((a, b) => b.length - a.length)
+  .join('|');
+
 function rewriteLinks(html) {
-  html = html.replace(/href="\/(web-design|microsoft-365|network-wifi-security|parental-controls|portfolio|about|contact|privacy-policy|terms-and-conditions|cookie-policy|get-a-quote)#([^"]*)"/g, 'href="/$1.html#$2"');
-  html = html.replace(/href="\/(web-design|microsoft-365|network-wifi-security|parental-controls|portfolio|about|contact|privacy-policy|terms-and-conditions|cookie-policy|get-a-quote)"/g, 'href="/$1.html"');
+  const withHash = new RegExp('href="/(' + linkSlugAlternation + ')#([^"]*)"', 'g');
+  const plain = new RegExp('href="/(' + linkSlugAlternation + ')"', 'g');
+  html = html.replace(withHash, 'href="/$1.html#$2"');
+  html = html.replace(plain, 'href="/$1.html"');
   html = html.replace(/href="\/"/g, 'href="/index.html"');
-  html = html.replace(/href="\/#services"/g, 'href="/index.html#services"');
+  html = html.replace(/href="\/#([^"]*)"/g, 'href="/index.html#$1"');
   return html;
 }
 
@@ -64,6 +90,44 @@ function fixAccordionContent(html) {
 const staticScripts = `
 <script>
 (function(){
+  // ── Desktop navbar dropdowns (hover) ─────────────────────────────
+  document.querySelectorAll('[data-dropdown-root]').forEach(function(root){
+    var id = root.getAttribute('data-dropdown-root');
+    var panel = document.querySelector('[data-dropdown-panel="' + id + '"]');
+    var trigger = root.querySelector('[data-dropdown-trigger="' + id + '"]');
+    if(!panel) return;
+    var hideTimer = null;
+    function chev(){ return trigger ? trigger.querySelector('svg') : null; }
+    function open(){
+      if(hideTimer){ clearTimeout(hideTimer); hideTimer = null; }
+      panel.setAttribute('data-state','open');
+      if(trigger) trigger.setAttribute('aria-expanded','true');
+      var c = chev(); if(c) c.setAttribute('data-state','open');
+    }
+    function close(){
+      hideTimer = setTimeout(function(){
+        panel.setAttribute('data-state','closed');
+        if(trigger) trigger.setAttribute('aria-expanded','false');
+        var c = chev(); if(c) c.setAttribute('data-state','closed');
+      }, 150);
+    }
+    root.addEventListener('mouseenter', open);
+    root.addEventListener('mouseleave', close);
+  });
+
+  // ── Mobile navbar accordions (click) ─────────────────────────────
+  document.querySelectorAll('[data-mobile-accordion-trigger]').forEach(function(trigger){
+    var id = trigger.getAttribute('data-mobile-accordion-trigger');
+    var panel = document.querySelector('[data-mobile-accordion-panel="' + id + '"]');
+    if(!panel) return;
+    trigger.addEventListener('click', function(){
+      var isOpen = panel.getAttribute('data-state') === 'open';
+      var next = isOpen ? 'closed' : 'open';
+      panel.setAttribute('data-state', next);
+      var c = trigger.querySelector('svg'); if(c) c.setAttribute('data-state', next);
+    });
+  });
+
   var btn = document.querySelector('[data-mobile-toggle]');
   var menu = document.querySelector('[data-mobile-menu]');
   if(btn && menu){
@@ -284,7 +348,7 @@ async function exportStatic() {
       });
       const page = await browser.newPage();
 
-      const interactivePages = new Set(['get-a-quote.html', 'contact.html', 'parental-controls.html', 'subscribe.html']);
+      const interactivePages = new Set(['get-a-quote.html', 'contact.html']);
 
       for (const route of routes) {
         console.log(`Exporting ${route.path} to ${route.file}...`);

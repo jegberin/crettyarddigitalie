@@ -92,24 +92,45 @@ export function Navbar() {
               className="relative"
               onMouseEnter={() => handleDropdownEnter("services")}
               onMouseLeave={handleDropdownLeave}
+              data-dropdown-root="services"
             >
               <button
                 className={`${linkClass(isServiceActive)} flex items-center gap-1`}
                 aria-expanded={openDropdown === "services"}
                 aria-haspopup="true"
+                data-dropdown-trigger="services"
               >
                 Services
                 <ChevronDown
                   size={12}
-                  className={`transition-transform duration-200 ${openDropdown === "services" ? "rotate-180" : ""}`}
+                  className="transition-transform duration-200 data-[state=open]:rotate-180"
+                  data-state={openDropdown === "services" ? "open" : "closed"}
                 />
               </button>
-              {openDropdown === "services" && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
-                  <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 w-[340px]">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2 px-2">Services</p>
+              <div
+                className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50 data-[state=closed]:hidden"
+                data-dropdown-panel="services"
+                data-state={openDropdown === "services" ? "open" : "closed"}
+              >
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 w-[340px]">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2 px-2">Services</p>
+                  <ul className="list-none m-0 p-0">
+                    {serviceLinks.map((item) => (
+                      <li key={item.path}>
+                        <Link
+                          href={item.path}
+                          className="flex flex-col gap-0.5 px-3 py-2.5 rounded-xl hover:bg-secondary transition-colors"
+                        >
+                          <span className="font-headline text-sm font-bold text-primary">{item.label}</span>
+                          <span className="text-xs text-muted-foreground">{item.desc}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="border-t border-gray-100 mt-2 pt-2">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2 px-2">Industries</p>
                     <ul className="list-none m-0 p-0">
-                      {serviceLinks.map((item) => (
+                      {industryLinks.map((item) => (
                         <li key={item.path}>
                           <Link
                             href={item.path}
@@ -121,25 +142,9 @@ export function Navbar() {
                         </li>
                       ))}
                     </ul>
-                    <div className="border-t border-gray-100 mt-2 pt-2">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2 px-2">Industries</p>
-                      <ul className="list-none m-0 p-0">
-                        {industryLinks.map((item) => (
-                          <li key={item.path}>
-                            <Link
-                              href={item.path}
-                              className="flex flex-col gap-0.5 px-3 py-2.5 rounded-xl hover:bg-secondary transition-colors"
-                            >
-                              <span className="font-headline text-sm font-bold text-primary">{item.label}</span>
-                              <span className="text-xs text-muted-foreground">{item.desc}</span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
                 </div>
-              )}
+              </div>
             </li>
 
             {/* Direct links */}
@@ -240,30 +245,34 @@ export function Navbar() {
                   isServiceActive ? "text-accent" : "text-primary"
                 }`}
                 onClick={() => setMobileExpanded(mobileExpanded === "services" ? null : "services")}
+                data-mobile-accordion-trigger="services"
               >
                 Services
                 <ChevronDown
                   size={14}
-                  className={`transition-transform duration-200 ${mobileExpanded === "services" ? "rotate-180" : ""}`}
+                  className="transition-transform duration-200 data-[state=open]:rotate-180"
+                  data-state={mobileExpanded === "services" ? "open" : "closed"}
                 />
               </button>
-              {mobileExpanded === "services" && (
-                <ul className="list-none m-0 p-0 pl-3 pb-1">
-                  {serviceLinks.map((item) => (
-                    <li key={item.path}>
-                      <Link
-                        href={item.path}
-                        className={`block p-2 rounded-lg text-sm hover:bg-secondary ${
-                          location === item.path ? "text-accent font-bold" : "text-primary/80"
-                        }`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <ul
+                className="list-none m-0 p-0 pl-3 pb-1 data-[state=closed]:hidden"
+                data-mobile-accordion-panel="services"
+                data-state={mobileExpanded === "services" ? "open" : "closed"}
+              >
+                {serviceLinks.map((item) => (
+                  <li key={item.path}>
+                    <Link
+                      href={item.path}
+                      className={`block p-2 rounded-lg text-sm hover:bg-secondary ${
+                        location === item.path ? "text-accent font-bold" : "text-primary/80"
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
 
             {/* Industries accordion */}
@@ -273,30 +282,34 @@ export function Navbar() {
                   isIndustryActive ? "text-accent" : "text-primary"
                 }`}
                 onClick={() => setMobileExpanded(mobileExpanded === "industries" ? null : "industries")}
+                data-mobile-accordion-trigger="industries"
               >
                 Industries
                 <ChevronDown
                   size={14}
-                  className={`transition-transform duration-200 ${mobileExpanded === "industries" ? "rotate-180" : ""}`}
+                  className="transition-transform duration-200 data-[state=open]:rotate-180"
+                  data-state={mobileExpanded === "industries" ? "open" : "closed"}
                 />
               </button>
-              {mobileExpanded === "industries" && (
-                <ul className="list-none m-0 p-0 pl-3 pb-1">
-                  {industryLinks.map((item) => (
-                    <li key={item.path}>
-                      <Link
-                        href={item.path}
-                        className={`block p-2 rounded-lg text-sm hover:bg-secondary ${
-                          location === item.path ? "text-accent font-bold" : "text-primary/80"
-                        }`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <ul
+                className="list-none m-0 p-0 pl-3 pb-1 data-[state=closed]:hidden"
+                data-mobile-accordion-panel="industries"
+                data-state={mobileExpanded === "industries" ? "open" : "closed"}
+              >
+                {industryLinks.map((item) => (
+                  <li key={item.path}>
+                    <Link
+                      href={item.path}
+                      className={`block p-2 rounded-lg text-sm hover:bg-secondary ${
+                        location === item.path ? "text-accent font-bold" : "text-primary/80"
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </li>
 
             {/* Direct links */}
