@@ -16,11 +16,11 @@ export default function AIReadiness() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">AI Readiness &amp; Microsoft Copilot</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
-              AI Isn't Hype. It's a Practical Tool That Saves Hours Every Week.
+            <h1 className="display-sm text-white mb-6">
+              Microsoft 365 Copilot &amp; AI Readiness for Small Business &mdash; Practical, Not Hype
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You've heard about AI. You've seen the headlines. But you're not sure what it can actually do for a business like yours &mdash; or where to start. I help small businesses cut through the noise, understand what AI can realistically do, and implement tools like Microsoft Copilot that deliver genuine productivity gains. No buzzwords, no science fiction &mdash; just practical technology that saves you time.
+              You've heard about AI, ChatGPT, and <Link href="/microsoft-365" className="text-accent underline decoration-accent/50 hover:decoration-accent">Microsoft 365</Link> Copilot. You're not sure what it can actually do for a business like yours &mdash; or where to start. I help small businesses cut through the noise, navigate the EU AI Act in plain English, and implement <strong>Microsoft 365 Copilot</strong>, <strong>Copilot Chat</strong>, or (where it fits) <strong>Copilot Studio</strong> and Azure OpenAI &mdash; with data access and permissions configured properly. Genuine productivity gains, no buzzwords.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">
@@ -85,9 +85,9 @@ export default function AIReadiness() {
                 note: "This isn\u2019t a sales pitch for Microsoft \u2014 it\u2019s an honest assessment. If AI isn\u2019t the right investment for your business today, I\u2019ll tell you.",
               },
               {
-                title: "Microsoft Copilot Setup & Training",
+                title: "Microsoft 365 Copilot Setup & Training",
                 price: "From \u20ac250",
-                desc: "If your business is already on Microsoft 365, adding Copilot is straightforward \u2014 but it needs correct configuration and your team needs to know how to get the best out of it.",
+                desc: "If your business is already on Microsoft 365, adding Copilot is straightforward \u2014 but it needs correct configuration and your team needs to know how to get the best out of it. I handle both Microsoft 365 Copilot (paid) and Copilot Chat (free tier) setup.",
                 items: [
                   "Copilot licence setup and configuration within your Microsoft 365 environment",
                   "Data and security review (Copilot accesses your business data \u2014 I make sure permissions are correct)",
@@ -97,9 +97,9 @@ export default function AIReadiness() {
                 ],
               },
               {
-                title: "AI Strategy Consultation",
+                title: "AI Strategy Consultation (incl. Copilot Studio & Azure OpenAI)",
                 price: "From \u20ac400",
-                desc: "For businesses that want a deeper understanding of how AI could reshape their operations over the next 12\u201324 months. I assess your workflows, identify automation opportunities, and create a practical roadmap. Strategic advantage, not technology for its own sake.",
+                desc: "For businesses that want a deeper understanding of how AI could reshape their operations over the next 12\u201324 months. I assess your workflows, identify automation opportunities across Copilot Studio custom agents and Azure OpenAI where relevant, and create a practical roadmap that\u2019s aligned with the EU AI Act. Strategic advantage, not technology for its own sake.",
                 note: null,
               },
             ].map((service, i) => (
@@ -127,6 +127,27 @@ export default function AIReadiness() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Grow Digital Voucher callout */}
+      <section className="py-12 bg-[#f3f4f5] border-y border-accent/10">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn>
+            <div className="bg-accent/5 border border-accent/20 p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center gap-5 justify-between">
+              <div>
+                <h3 className="text-lg mb-2">Can the Grow Digital Voucher fund Copilot?</h3>
+                <p className="text-foreground text-[15px] font-sans">
+                  Microsoft 365 Copilot is a new subscription, which is exactly the kind of software the Grow Digital Voucher is designed to fund &mdash; 50% up to &euro;5,000 after a free Digital for Business consultation with your LEO. I provide scheme-compliant invoicing to support your claim.
+                </p>
+              </div>
+              <Link href="/grants-funding">
+                <Button size="lg" variant="outline" className="shrink-0">
+                  Grants &amp; Funding Details &rarr;
+                </Button>
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -167,11 +188,11 @@ export default function AIReadiness() {
           <FadeIn>
             <Accordion type="single" collapsible className="w-full space-y-3">
               {[
-                { id: "ai-1", q: "Do I need Microsoft 365 to use AI?", a: "Not necessarily, but Microsoft Copilot is the most practical and well-integrated AI tool for small businesses already using M365. If you\u2019re not on Microsoft 365, my AI Readiness Assessment can recommend other options." },
-                { id: "ai-2", q: "Is my business data safe with Copilot?", a: "Yes \u2014 when configured correctly. Copilot accesses your existing Microsoft 365 data, so proper permissions and security settings are essential. That\u2019s why professional setup matters. I ensure Copilot only sees what it should, and your data never leaves your Microsoft environment." },
-                { id: "ai-3", q: "How much does Microsoft Copilot cost?", a: "Microsoft Copilot for Microsoft 365 is currently priced at around \u20ac28.10 per user per month (on top of your M365 subscription). I\u2019ll confirm exact current pricing during our consultation." },
+                { id: "ai-1", q: "Do I need Microsoft 365 to use AI?", a: "Not necessarily, but Microsoft 365 Copilot is the most practical and well-integrated AI tool for small businesses already using M365. If you\u2019re not on Microsoft 365, my AI Readiness Assessment can recommend other options \u2014 Copilot Chat (free tier), Azure OpenAI, or ChatGPT for Teams use cases." },
+                { id: "ai-2", q: "Is my business data safe with Copilot?", a: "Yes \u2014 when configured correctly. Copilot accesses your existing Microsoft 365 data, so proper permissions and security settings are essential. That\u2019s why professional setup matters. I ensure Copilot only sees what it should, and your data never leaves your Microsoft environment. See the cybersecurity page for the wider data-handling picture." },
+                { id: "ai-3", q: "How much does Microsoft Copilot cost?", a: "Microsoft 365 Copilot is currently priced at around \u20ac28.10 per user per month on top of your M365 subscription. Copilot Chat has a free tier for simpler use cases. I\u2019ll confirm exact current pricing during our consultation \u2014 and whether the Grow Digital Voucher can help." },
                 { id: "ai-4", q: "Is this actually useful for a small business?", a: "Genuinely useful. The businesses that benefit most aren\u2019t necessarily the biggest \u2014 they\u2019re the ones where a small team handles a lot of admin. If you spend hours on email, proposals, and paperwork, Copilot gives measurable time back every week." },
-                { id: "ai-5", q: "Will AI replace my staff?", a: "No. Copilot is a productivity tool \u2014 it helps your team work faster and smarter, not replaces them. Think of it as giving everyone an assistant for the boring parts of their job." },
+                { id: "ai-5", q: "Will AI replace my staff?", a: "No. Copilot is a productivity tool \u2014 it helps your team work faster and smarter, it doesn\u2019t replace them. Think of it as giving everyone an assistant for the boring parts of their job. Under the EU AI Act, the human-in-the-loop principle is also built into how Copilot is designed." },
               ].map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6 bg-white">
                   <AccordionTrigger className="text-left text-[15px] font-headline font-bold py-5">{faq.q}</AccordionTrigger>
@@ -180,6 +201,34 @@ export default function AIReadiness() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Related Services</span>
+            <h2 className="text-2xl">How AI Fits With the Rest of Your IT</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/microsoft-365", title: "Microsoft 365", desc: "The platform Copilot runs on. Done properly with EU data residency and MFA, so Copilot has the right foundation." },
+              { href: "/managed-it-support", title: "Managed IT Support", desc: "Comprehensive-tier managed IT already includes a Copilot readiness assessment and ongoing tenant governance." },
+              { href: "/grants-funding", title: "Grants & Funding", desc: "Full guide to the Grow Digital Voucher \u2014 which often covers 50% of Copilot licence costs for the first year." },
+              { href: "/professional-services", title: "AI for Professional Services", desc: "Specific AI workflows for solicitors, accountants, and consulting firms \u2014 summarising, drafting, and document review." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
