@@ -341,11 +341,15 @@ async function exportStatic() {
       }
 
       console.log('Launching Puppeteer...');
-      const chromePath = execSync('which chromium').toString().trim();
-      const browser = await puppeteer.launch({
-        executablePath: chromePath,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
-      });
+      const launchOptions = { args: ['--no-sandbox', '--disable-setuid-sandbox'] };
+      try {
+        const whichCmd = process.platform === 'win32' ? 'where chromium' : 'which chromium';
+        const chromePath = execSync(whichCmd).toString().trim().split(/\r?\n/)[0];
+        if (chromePath) launchOptions.executablePath = chromePath;
+      } catch {
+        // No system chromium on PATH — fall back to Puppeteer's bundled browser.
+      }
+      const browser = await puppeteer.launch(launchOptions);
       const page = await browser.newPage();
 
       const interactivePages = new Set(['get-a-quote.html', 'contact.html']);
