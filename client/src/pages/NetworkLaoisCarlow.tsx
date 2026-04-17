@@ -13,7 +13,7 @@ export default function NetworkLaoisCarlow() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">Network &amp; Wi-Fi &mdash; Laois &amp; Carlow</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
+            <h1 className="display-sm text-white mb-6">
               Business Network &amp; Wi-Fi Solutions in Laois and Carlow
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
@@ -86,7 +86,10 @@ export default function NetworkLaoisCarlow() {
                     "Joey sorted our Wi-Fi so it works in every room. The lads even get compliments from clients about the website now. Can't recommend him enough."
                   </p>
                   <p className="text-sm font-headline font-bold text-primary">Brian, Nurney Plant and Civil &mdash; Co. Carlow</p>
-                  <p className="text-xs text-muted-foreground">Patchy Wi-Fi &rarr; full business-grade coverage across entire premises</p>
+                  <p className="text-xs text-muted-foreground mb-3">Patchy Wi-Fi &rarr; full business-grade coverage across entire premises</p>
+                  <Link href="/portfolio#project-nurney-plant-civil" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                    View full case study <ArrowRight size={14} className="ml-1" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -134,6 +137,34 @@ export default function NetworkLaoisCarlow() {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related services */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Related Services</span>
+            <h2 className="text-2xl">More Ways I Help Laois & Carlow Businesses</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/network-wifi-security", title: "Full Network Details", desc: "The complete Business Network & Wi-Fi service page with pricing guidance and FAQ." },
+              { href: "/managed-it-support", title: "Managed IT Support", desc: "Pair your network with fixed-fee proactive IT management, Microsoft 365 admin and compliance." },
+              { href: "/managed-hardware", title: "Managed Hardware", desc: "Business PCs and on-site servers that plug straight into your new Laois or Carlow network." },
+              { href: "/cybersecurity", title: "Cybersecurity & Compliance", desc: "NIS2 supply-chain documentation, GDPR, and phishing protection beyond the network layer." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 

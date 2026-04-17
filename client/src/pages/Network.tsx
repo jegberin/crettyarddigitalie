@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Wifi, ShieldAlert, Server, Network, CheckCircle, Users, Building2, Wrench, HelpCircle, ArrowRight, PiggyBank, Quote } from "lucide-react";
 import serviceImg from "@assets/service-network-wifi.webp";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
-import { FAQSchema } from "@/components/SEO";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 
+// FAQ content kept in sync with faqData["/network-wifi-security"] in App.tsx,
+// which emits the FAQPage JSON-LD. Don't emit it from this component too.
 const faqItems = [
   {
     q: "How do I know if I need a new network or just a fix?",
@@ -18,11 +19,11 @@ const faqItems = [
   },
   {
     q: "Do you supply the hardware?",
-    a: "Yes. I source and supply business-grade equipment from trusted brands like Ubiquiti, MikroTik, and TP-Link. I'll recommend the best options for your space and budget — no unnecessary upselling."
+    a: "Yes. I source and supply business-grade equipment from trusted brands like Ubiquiti UniFi, MikroTik, and TP-Link. I'll recommend the best options for your space and budget — Wi-Fi 6 / Wi-Fi 6E where it makes sense, no unnecessary upselling."
   },
   {
     q: "How long does a typical installation take?",
-    a: "A small office setup can often be done in a day. Larger premises with cabling requirements may take 2–3 days. I'll give you a clear timeline before any work begins."
+    a: "A small office setup can often be done in a day. Larger premises with new Cat6 / Cat6a cabling may take 2–3 days. I'll give you a clear timeline before any work begins."
   },
   {
     q: "What about ongoing support?",
@@ -30,14 +31,13 @@ const faqItems = [
   },
   {
     q: "Do you cover areas outside Laois and Carlow?",
-    a: "I'm based in the Laois/Carlow area but regularly work across the Midlands and South-East. Get in touch and we'll figure it out."
+    a: "I'm based on the Laois/Carlow border but regularly work across the Midlands and South-East including Kilkenny. Get in touch and we'll figure it out."
   },
 ];
 
 export default function NetworkWifi() {
   return (
     <div className="flex flex-col min-h-screen">
-      <FAQSchema items={faqItems.map(f => ({ question: f.q, answer: f.a }))} />
 
       {/* Hero Section */}
       <section className="bg-[#f3f4f5] py-20 md:py-28 dot-matrix-bg relative overflow-hidden">
@@ -50,7 +50,7 @@ export default function NetworkWifi() {
                 Business Network &amp; Wi&#8209;Fi Solutions for Offices and Workshops
               </h1>
               <p className="text-xl text-foreground mb-8 leading-relaxed font-sans font-normal">
-                Dropped connections, Wi&#8209;Fi dead spots, and unreliable internet cost your business time and money every single day. I design, install, and secure networks using certified, business-grade equipment that actually covers your entire premises &mdash; and meets the security standards your business increasingly needs.
+                Dropped connections, Wi&#8209;Fi dead spots, and unreliable internet cost your business time and money every single day. I design, install, and secure networks for small businesses across Laois, Carlow, Kilkenny, and the Irish Midlands using Ubiquiti UniFi, MikroTik, and TP-Link Omada equipment &mdash; Wi&#8209;Fi 6 / Wi&#8209;Fi 6E, Cat6 / Cat6a structured cabling, and CRA-compliant firewalls. Real coverage, real security, no consumer-grade shortcuts.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact#send-message">
@@ -69,12 +69,11 @@ export default function NetworkWifi() {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={serviceImg}
-                  alt="Neatly organised network rack with ethernet cables in a professional office environment"
+                  alt="Neatly organised business network rack with structured Cat6 ethernet cabling in a professional Irish office environment"
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
                   loading="eager"
-                  fetchPriority="high"
                 />
               </div>
             </FadeIn>
@@ -126,15 +125,15 @@ export default function NetworkWifi() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
             {[
-              { icon: Building2, title: "Offices &amp; Co-Working Spaces", desc: "Multiple users, video calls, cloud apps — your network needs to handle it all without slowing down." },
-              { icon: Wrench, title: "Workshops &amp; Warehouses", desc: "Card machines, security cameras, and devices that need coverage across large or awkward spaces." },
-              { icon: Users, title: "Retail &amp; Hospitality", desc: "Customer Wi‑Fi, point-of-sale systems, and staff devices all running smoothly on separate, secure networks." },
-              { icon: Server, title: "Home Offices &amp; Remote Workers", desc: "A professional-grade setup so your home office runs as reliably as any corporate network." },
+              { icon: Building2, title: "Offices & Co-Working Spaces", desc: "Multiple users, video calls, cloud apps — your network needs to handle it all without slowing down." },
+              { icon: Wrench, title: "Workshops & Warehouses", desc: "Card machines, security cameras, and devices that need coverage across large or awkward spaces." },
+              { icon: Users, title: "Retail & Hospitality", desc: "Customer Wi‑Fi, point-of-sale systems, and staff devices all running smoothly on separate, secure networks." },
+              { icon: Server, title: "Home Offices & Remote Workers", desc: "A professional-grade setup so your home office runs as reliably as any corporate network." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-8 rounded-2xl card-hover shadow-sm hover:shadow-lg transition-all duration-300" data-testid={`card-who-for-${i}`}>
                   <item.icon className="text-accent mb-4" size={28} />
-                  <h3 className="text-lg mb-2" dangerouslySetInnerHTML={{ __html: item.title }} />
+                  <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">{item.desc}</p>
                 </div>
               </StaggerItem>
@@ -163,10 +162,10 @@ export default function NetworkWifi() {
                   I survey your premises and design a network that fits your space — proper cabling, switch placement, and access point positioning for full coverage.
                 </p>
                 <ul className="space-y-2">
-                  {["Site survey &amp; coverage mapping", "Structured cabling plans", "VLAN segmentation", "Capacity planning for growth"].map((item, i) => (
+                  {["Site survey & coverage mapping", "Structured Cat6 / Cat6a cabling plans", "VLAN segmentation", "Capacity planning for growth"].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[15px] text-foreground font-sans">
                       <CheckCircle className="text-accent mt-0.5 flex-shrink-0" size={16} />
-                      <span dangerouslySetInnerHTML={{ __html: item }} />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -181,10 +180,10 @@ export default function NetworkWifi() {
                   Professional mesh Wi&#8209;Fi and access point placement to eliminate dead spots across offices, multi-story buildings, or tricky workshop layouts.
                 </p>
                 <ul className="space-y-2">
-                  {["Mesh Wi‑Fi &amp; access point deployment", "Channel optimisation", "Guest network separation", "Seamless roaming between zones"].map((item, i) => (
+                  {["Mesh Wi‑Fi 6 / 6E & access point deployment", "Channel optimisation", "Guest network separation", "Seamless roaming between zones"].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[15px] text-foreground font-sans">
                       <CheckCircle className="text-accent mt-0.5 flex-shrink-0" size={16} />
-                      <span dangerouslySetInnerHTML={{ __html: item }} />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -217,10 +216,10 @@ export default function NetworkWifi() {
                   Ongoing network health checks plus secure VPN and remote access — so your team can work from anywhere without compromising security.
                 </p>
                 <ul className="space-y-2">
-                  {["Network health audit &amp; reporting", "VPN setup for remote access", "Performance troubleshooting", "Ongoing monitoring &amp; support"].map((item, i) => (
+                  {["Network health audit & reporting", "VPN setup for remote access", "Performance troubleshooting", "Ongoing monitoring & support"].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[15px] text-foreground font-sans">
                       <CheckCircle className="text-accent mt-0.5 flex-shrink-0" size={16} />
-                      <span dangerouslySetInnerHTML={{ __html: item }} />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -246,7 +245,7 @@ export default function NetworkWifi() {
                 </div>
               </div>
               <div className="mt-4 pl-0 md:pl-12">
-                <Link href="/portfolio" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                <Link href="/portfolio#project-nurney-plant-civil" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
                   Read the full case study <ArrowRight size={14} className="ml-1" />
                 </Link>
               </div>
@@ -320,13 +319,13 @@ export default function NetworkWifi() {
                 <h3 className="text-lg mb-4">Typical Starting Points</h3>
                 <ul className="space-y-4">
                   {[
-                    { label: "Wi‑Fi health check &amp; optimisation", range: "From €150" },
+                    { label: "Wi‑Fi health check & optimisation", range: "From €150" },
                     { label: "Small office network setup", range: "From €400" },
-                    { label: "Full network design &amp; install", range: "From €800" },
-                    { label: "Firewall &amp; security configuration", range: "From €300" },
+                    { label: "Full network design & install", range: "From €800" },
+                    { label: "Firewall & security configuration", range: "From €300" },
                   ].map((item, i) => (
                     <li key={i} className="flex items-center justify-between text-sm border-b border-white pb-3 last:border-0 last:pb-0" data-testid={`text-pricing-${i}`}>
-                      <span className="text-foreground font-sans" dangerouslySetInnerHTML={{ __html: item.label }} />
+                      <span className="text-foreground font-sans">{item.label}</span>
                       <span className="font-headline font-bold text-primary">{item.range}</span>
                     </li>
                   ))}
@@ -380,9 +379,30 @@ export default function NetworkWifi() {
         </div>
       </section>
 
+      {/* By Region callout */}
+      <section className="py-16 bg-[#f3f4f5]">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn>
+            <div className="bg-accent/5 border border-accent/20 p-6 md:p-8 rounded-2xl flex flex-col md:flex-row items-center gap-5 justify-between">
+              <div>
+                <h2 className="text-xl mb-2">Based in Laois or Carlow?</h2>
+                <p className="text-foreground text-[15px] font-sans">
+                  See the dedicated Laois &amp; Carlow network page for on-site survey details, local towns covered, and case studies like Nurney Plant and Civil.
+                </p>
+              </div>
+              <Link href="/network-wifi-laois-carlow">
+                <Button size="lg" variant="outline" className="shrink-0">
+                  Laois &amp; Carlow network details &rarr;
+                </Button>
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Internal Links */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn className="text-center mb-12">
             <h2 className="text-2xl mb-4">Related Services</h2>
             <p className="text-foreground leading-relaxed font-sans font-normal">
@@ -390,37 +410,48 @@ export default function NetworkWifi() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <StaggerItem>
               <Link href="/managed-it-support">
-                <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer group">
+                <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer group h-full">
                   <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Managed IT Support</h3>
-                  <p className="text-foreground text-[15px] leading-relaxed font-sans">
+                  <p className="text-foreground text-[15px] leading-relaxed font-sans mb-3">
                     Proactive monitoring, updates, security, and compliance for a fixed monthly fee.
                   </p>
-                  <span className="text-accent text-sm font-headline font-bold mt-3 inline-flex items-center gap-1">Learn more <ArrowRight size={13} /></span>
+                  <span className="text-accent text-sm font-headline font-bold inline-flex items-center gap-1">Learn more <ArrowRight size={13} /></span>
+                </div>
+              </Link>
+            </StaggerItem>
+            <StaggerItem>
+              <Link href="/managed-hardware">
+                <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer group h-full">
+                  <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Managed Hardware</h3>
+                  <p className="text-foreground text-[15px] leading-relaxed font-sans mb-3">
+                    Turnkey business PCs and on-site servers that plug straight into your new network.
+                  </p>
+                  <span className="text-accent text-sm font-headline font-bold inline-flex items-center gap-1">Learn more <ArrowRight size={13} /></span>
                 </div>
               </Link>
             </StaggerItem>
             <StaggerItem>
               <Link href="/microsoft-365">
-                <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer group">
-                  <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Microsoft 365 &amp; Teams Phone</h3>
-                  <p className="text-foreground text-[15px] leading-relaxed font-sans">
+                <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer group h-full">
+                  <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Microsoft 365 & Teams Phone</h3>
+                  <p className="text-foreground text-[15px] leading-relaxed font-sans mb-3">
                     Professional email, cloud storage, and a modern business phone system.
                   </p>
-                  <span className="text-accent text-sm font-headline font-bold mt-3 inline-flex items-center gap-1">Learn more <ArrowRight size={13} /></span>
+                  <span className="text-accent text-sm font-headline font-bold inline-flex items-center gap-1">Learn more <ArrowRight size={13} /></span>
                 </div>
               </Link>
             </StaggerItem>
             <StaggerItem>
               <Link href="/cybersecurity">
-                <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer group">
-                  <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Cybersecurity &amp; Compliance</h3>
-                  <p className="text-foreground text-[15px] leading-relaxed font-sans">
+                <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer group h-full">
+                  <h3 className="text-lg mb-2 group-hover:text-accent transition-colors">Cybersecurity & Compliance</h3>
+                  <p className="text-foreground text-[15px] leading-relaxed font-sans mb-3">
                     NIS2, GDPR, and practical threat protection for your business.
                   </p>
-                  <span className="text-accent text-sm font-headline font-bold mt-3 inline-flex items-center gap-1">Learn more <ArrowRight size={13} /></span>
+                  <span className="text-accent text-sm font-headline font-bold inline-flex items-center gap-1">Learn more <ArrowRight size={13} /></span>
                 </div>
               </Link>
             </StaggerItem>
