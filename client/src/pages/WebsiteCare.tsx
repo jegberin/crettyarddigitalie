@@ -1,17 +1,18 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Shield, CheckCircle, AlertTriangle, Clock, Gauge, FileText, Lock, ArrowRight } from "lucide-react";
+import { CheckCircle, AlertTriangle, Gauge, FileText, Lock, ArrowRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const standardItems = [
-  "Reliable, fast hosting on quality infrastructure",
+  "Reliable, fast EU-hosted infrastructure (Ireland data residency)",
   "SSL certificate management (the padlock in the browser bar)",
-  "Weekly automated backups",
+  "Weekly automated backups with off-site copy",
   "Monthly security and software updates",
-  "Uptime monitoring",
+  "Malware scanning and removal",
+  "Uptime monitoring with alerts",
   "Cookie consent monitoring and updates",
   "Up to 30 minutes of minor content changes per month",
   "Direct access to me for questions and requests",
@@ -19,12 +20,13 @@ const standardItems = [
 
 const premiumExtras = [
   "Daily automated backups",
-  "Monthly performance review and speed optimisation",
+  "Staging environment for safe content changes",
+  "Monthly Core Web Vitals review and speed optimisation",
   "Priority response for support requests",
   "Up to 60 minutes of content changes per month",
-  "Monthly SEO health check (rankings, broken links, indexing)",
+  "Monthly SEO health check (Google Search Console rankings, broken links, indexing)",
   "Quarterly analytics summary",
-  "Annual accessibility compliance review",
+  "Annual accessibility (EAA / WCAG) compliance review",
 ];
 
 export default function WebsiteCare() {
@@ -37,11 +39,11 @@ export default function WebsiteCare() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">Website Care Plans</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
-              Every Website I Build Is Protected From Day One
+            <h1 className="display-sm text-white mb-6">
+              Website Care Plans &mdash; Every Website I Build Is Protected From Day One
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              A website isn't a "build it and forget it" project. Without regular updates, security monitoring, and maintenance, even the best website becomes slow, vulnerable, and outdated. That's why every website I build comes with a mandatory care plan &mdash; so your investment is protected and your site keeps performing.
+              A website isn't a "build it and forget it" project. Without regular updates, security monitoring, and maintenance, even the best website becomes slow, vulnerable, and outdated &mdash; and Core Web Vitals, malware scans and broken links start working against you in Google Search Console. That's why every website I build comes with a mandatory care plan &mdash; EU-hosted with Ireland data residency &mdash; so your investment is protected and your site keeps performing.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="#plans">
@@ -160,7 +162,7 @@ export default function WebsiteCare() {
                 You send me an email or WhatsApp: "Joey, can you update our phone number on the website?" I make the change &mdash; usually within a business day &mdash; and confirm when it's done. That's it. No ticket. No portal. No waiting.
               </p>
               <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">
-                For Premium plan clients, I also proactively check your site's performance, SEO health, and analytics monthly &mdash; so I often catch issues before you even notice them.
+                For Premium plan clients, I also proactively check your site's Core Web Vitals, Google Search Console SEO health, and analytics monthly &mdash; so I often catch issues before you even notice them. If you&rsquo;re looking at the broader IT picture, see <Link href="/managed-it-support" className="text-accent hover:underline">Managed IT</Link>, and <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity &amp; compliance</Link> for the security layer beyond the care plan. New builds are covered on the <Link href="/web-design" className="text-accent hover:underline">web design</Link> page.
               </p>
             </div>
           </FadeIn>
@@ -181,7 +183,7 @@ export default function WebsiteCare() {
                 { id: "wc-2", q: "Can I cancel?", a: "Yes. If you cancel, I can transfer your website files to you or another provider. However, I will no longer be responsible for hosting, security, updates, or any compliance issues that arise. There are no long-term lock-in contracts." },
                 { id: "wc-3", q: "What if I need bigger changes?", a: "Larger changes \u2014 new pages, design updates, added functionality \u2014 are quoted separately at preferential rates for care plan clients." },
                 { id: "wc-4", q: "Is this on top of the website cost?", a: "The care plan is factored into your project quote from the start, so you know the full cost upfront. It\u2019s not a surprise \u2014 it\u2019s part of the package." },
-                { id: "wc-5", q: "What about cookie consent and compliance?", a: "Both plans include cookie consent monitoring. The Premium plan also includes an annual accessibility compliance review to ensure your site continues to meet EAA standards as regulations evolve." },
+                { id: "wc-5", q: "What about cookie consent and accessibility compliance?", a: "Both plans include cookie consent monitoring. The Premium plan also includes an annual accessibility (EAA / WCAG) compliance review to ensure your site continues to meet European Accessibility Act standards as regulations evolve." },
               ].map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6 bg-white">
                   <AccordionTrigger className="text-left text-[15px] font-headline font-bold py-5">{faq.q}</AccordionTrigger>
@@ -190,6 +192,34 @@ export default function WebsiteCare() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related services */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Related Services</span>
+            <h2 className="text-2xl">How Website Care Fits the Wider Picture</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/web-design", title: "Web Design", desc: "How new websites are built \u2014 Laois, Carlow, Kilkenny, and across Ireland. Every build includes a mandatory care plan." },
+              { href: "/cybersecurity", title: "Cybersecurity & Compliance", desc: "The security and compliance layer beyond the technical care plan \u2014 NIS2, GDPR, phishing protection, staff training." },
+              { href: "/managed-it-support", title: "Managed IT Support", desc: "Pair your website care with fixed-fee proactive IT for the rest of your business \u2014 Microsoft 365, devices, network." },
+              { href: "/grants-funding", title: "Grants & Funding", desc: "Care plans aren\u2019t voucher-eligible, but new subscription-based platforms may qualify for the Grow Digital Voucher." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
