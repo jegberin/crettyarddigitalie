@@ -91,6 +91,9 @@ const jobs = [
 
   // Website Care Plans hero
   ['website-care-hero-tending.png', 'website-care-hero-tending.webp'],
+
+  // How It Works hero (Joey at desk)
+  ['how-it-works-hero-joey-at-desk.png', 'how-it-works-hero-joey-at-desk.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -107,6 +110,7 @@ const HERO_FILES = new Set([
   'hardware-hero-fresh-install.webp',
   'pro-services-hero-office.webp',
   'website-care-hero-tending.webp',
+  'how-it-works-hero-joey-at-desk.webp',
 ]);
 
 let totalIn = 0;
