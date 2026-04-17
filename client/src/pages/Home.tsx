@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, XCircle, ArrowRight, Shield, Clock, TrendingUp, MessageCircle, BadgeEuro, Briefcase, Monitor, MapPin, Users } from "lucide-react";
@@ -22,14 +22,33 @@ import serviceIconManagedIT from "@assets/service-icon-managed-it.webp";
 import serviceIconNetworkWifi from "@assets/service-icon-network-wifi.webp";
 import serviceIconCybersecurity from "@assets/service-icon-cybersecurity.webp";
 import serviceIconAICopilot from "@assets/service-icon-ai-copilot.webp";
+import iconEndpointSecurity from "@assets/concept-endpoint-security.webp";
+import iconCloudBackup from "@assets/concept-cloud-backup.webp";
 
-const services = [
+type Service = {
+  num: string;
+  image: string;
+  imageAlt: string;
+  title: string;
+  desc: ReactNode;
+  price: string;
+  href: string;
+  linkLabel: string;
+  testId: string;
+  linkTestId: string;
+};
+
+const services: Service[] = [
   {
     num: "01",
     image: serviceIconWebDesign,
     imageAlt: "Glass-effect illustration of a computer monitor displaying code brackets",
     title: "Web Design",
-    desc: "Professional, mobile-friendly websites built to rank on Google for your area, turn visitors into enquiries, and make your business look as good online as the work you do. Every site includes a care plan.",
+    desc: (
+      <>
+        Professional, mobile-friendly websites built to rank on Google for your area, turn visitors into enquiries, and make your business look as good online as the work you do. Every site includes a <Link href="/website-care-plans" className="text-accent hover:underline">care plan</Link>.
+      </>
+    ),
     price: "From \u20ac799",
     href: "/web-design",
     linkLabel: "Learn what's included",
@@ -95,6 +114,30 @@ const services = [
     linkLabel: "Explore AI readiness",
     testId: "card-service-ai",
     linkTestId: "link-ai",
+  },
+  {
+    num: "07",
+    image: iconEndpointSecurity,
+    imageAlt: "Glass laptop with a padlock representing managed business hardware",
+    title: "Managed Hardware",
+    desc: "Turnkey business PCs and on-site servers delivered ready to use \u2014 fully configured, licensed, encrypted, and with your data migrated before they arrive. Log in and get to work.",
+    price: "PCs from \u20ac899",
+    href: "/managed-hardware",
+    linkLabel: "See what's included",
+    testId: "card-service-hardware",
+    linkTestId: "link-hardware",
+  },
+  {
+    num: "08",
+    image: iconCloudBackup,
+    imageAlt: "Glass cloud with a shield representing ongoing website care and backups",
+    title: "Website Care Plans",
+    desc: "Every website I build comes with a mandatory care plan \u2014 EU-hosted, with weekly backups, monthly security updates, uptime monitoring, malware scanning, and a Core Web Vitals review on Premium.",
+    price: "From \u20ac49/month",
+    href: "/website-care-plans",
+    linkLabel: "See care plan details",
+    testId: "card-service-care",
+    linkTestId: "link-care",
   },
 ];
 
@@ -162,7 +205,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link href="/contact#send-message">
-                  <Button size="lg" className="px-10 bg-accent hover:bg-[#18a07e] text-white" data-testid="button-book-consultation">
+                  <Button size="lg" className="px-10" data-testid="button-book-consultation">
                     Book a Free Consultation
                   </Button>
                 </Link>
@@ -192,7 +235,7 @@ export default function Home() {
               { target: 10, suffix: "+", label: "Websites Launched", icon: Monitor },
               { target: 6, suffix: "", label: "Counties Served", icon: MapPin },
               { target: 100, suffix: "%", label: "Small Business Focus", icon: Users },
-              { target: 50, suffix: "%", label: "Grant Funding Available", icon: BadgeEuro },
+              { target: 50, suffix: "%", label: "Up to 50% Grant Funding", icon: BadgeEuro },
             ].map((stat, i) => (
               <StaggerItem key={i} className="flex flex-col items-center">
                 <stat.icon className="text-accent mb-2" size={28} aria-hidden="true" />
@@ -352,26 +395,26 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service) => (
               <StaggerItem key={service.num}>
                 <div
-                  className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full flex flex-col"
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-full flex flex-col"
                   data-testid={service.testId}
                 >
                   <img
                     src={service.image}
                     alt={service.imageAlt}
-                    className="w-36 h-36 rounded-xl object-contain mb-6"
+                    className="w-28 h-28 rounded-xl object-contain mb-5"
                     loading="lazy"
                     width="600"
                     height="600"
                   />
-                  <h3 className="text-xl mb-3">{service.title}</h3>
-                  <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal flex-1 mb-4">
+                  <h3 className="text-lg mb-3">{service.title}</h3>
+                  <p className="text-foreground text-[14px] leading-relaxed font-sans font-normal flex-1 mb-4">
                     {service.desc}
                   </p>
-                  <p className="text-sm font-headline font-bold text-primary/60 mb-4">{service.price}</p>
+                  <p className="text-xs font-headline font-bold text-primary/60 mb-3">{service.price}</p>
                   <Link
                     href={service.href}
                     className="text-accent font-headline font-bold inline-flex items-center gap-1 text-sm hover:text-primary transition-colors"
@@ -500,22 +543,31 @@ export default function Home() {
 
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
-              { href: "https://bmcustomfurniture.ie", img: project1, alt: "BM Custom Furniture bespoke fitted furniture website designed by Crettyard Digital", title: "BM Custom Furniture", url: "bmcustomfurniture.ie", desc: "Bespoke furniture \u2014 Google enquiries within 3 weeks", cta: "Visit BM Custom Furniture", ariaLabel: "Visit BM Custom Furniture website (opens in new tab)", testId: "card-project-bm" },
-              { href: "https://gogreensteamclean.ie", img: project2, alt: "Go Green Steam Clean eco-friendly steam cleaning business website designed by Crettyard Digital", title: "Go Green Steam Clean", url: "gogreensteamclean.ie", desc: "Eco-cleaning \u2014 new bookings every week via Google", cta: "See Go Green Steam Clean", ariaLabel: "Visit Go Green Steam Clean website (opens in new tab)", testId: "card-project-gogreen" },
-              { href: "https://nurneyplantandcivil.ie", img: project3, alt: "Nurney Plant and Civil plant hire and civil engineering website designed by Crettyard Digital", title: "Nurney Plant and Civil", url: "nurneyplantandcivil.ie", desc: "Website + M365 + Wi-Fi \u2014 full digital foundation", cta: "View Nurney Plant and Civil", ariaLabel: "Visit Nurney Plant and Civil website (opens in new tab)", testId: "card-project-nurney" },
-              { href: "https://morethanpoints.ie", img: project4, alt: "More Than Points teen and parent coaching website designed by Crettyard Digital", title: "More Than Points", url: "morethanpoints.ie", desc: "Coaching service \u2014 trust-building for families", cta: "Visit More Than Points", ariaLabel: "Visit More Than Points coaching website (opens in new tab)", testId: "card-project-morethanpoints" },
-              { href: "https://crettyard.ie", img: project5, alt: "Crettyard.ie community website designed by Crettyard Digital", title: "Crettyard.ie", url: "crettyard.ie", desc: "Community hub \u2014 local business directory", cta: "Explore Crettyard.ie", ariaLabel: "Visit Crettyard.ie community website (opens in new tab)", testId: "card-project-crettyardie" },
+              { href: "https://bmcustomfurniture.ie", portfolioAnchor: "/portfolio#project-bm-custom-furniture", img: project1, alt: "BM Custom Furniture bespoke fitted furniture website designed by Crettyard Digital", title: "BM Custom Furniture", url: "bmcustomfurniture.ie", desc: "Bespoke furniture \u2014 Google enquiries within 3 weeks", cta: "Visit site", ariaLabel: "Visit BM Custom Furniture website (opens in new tab)", testId: "card-project-bm" },
+              { href: "https://gogreensteamclean.ie", portfolioAnchor: "/portfolio#project-go-green-steam-clean", img: project2, alt: "Go Green Steam Clean eco-friendly steam cleaning business website designed by Crettyard Digital", title: "Go Green Steam Clean", url: "gogreensteamclean.ie", desc: "Eco-cleaning \u2014 new bookings every week via Google", cta: "Visit site", ariaLabel: "Visit Go Green Steam Clean website (opens in new tab)", testId: "card-project-gogreen" },
+              { href: "https://nurneyplantandcivil.ie", portfolioAnchor: "/portfolio#project-nurney-plant-civil", img: project3, alt: "Nurney Plant and Civil plant hire and civil engineering website designed by Crettyard Digital", title: "Nurney Plant and Civil", url: "nurneyplantandcivil.ie", desc: "Website + M365 + Wi-Fi \u2014 full digital foundation", cta: "Visit site", ariaLabel: "Visit Nurney Plant and Civil website (opens in new tab)", testId: "card-project-nurney" },
+              { href: "https://morethanpoints.ie", portfolioAnchor: "/portfolio#project-more-than-points", img: project4, alt: "More Than Points teen and parent coaching website designed by Crettyard Digital", title: "More Than Points", url: "morethanpoints.ie", desc: "Coaching service \u2014 trust-building for families", cta: "Visit site", ariaLabel: "Visit More Than Points coaching website (opens in new tab)", testId: "card-project-morethanpoints" },
+              { href: "https://crettyard.ie", portfolioAnchor: "/portfolio#project-crettyard-ie", img: project5, alt: "Crettyard.ie community website designed by Crettyard Digital", title: "Crettyard.ie", url: "crettyard.ie", desc: "Community hub \u2014 local business directory", cta: "Visit site", ariaLabel: "Visit Crettyard.ie community website (opens in new tab)", testId: "card-project-crettyardie" },
             ].map((p) => (
               <StaggerItem key={p.testId}>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="group cursor-pointer block" data-testid={p.testId} aria-label={p.ariaLabel}>
-                  <div className="aspect-[4/3] bg-white mb-5 overflow-hidden rounded-xl shadow-sm">
-                    <img src={p.img} alt={p.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="400" height="300" loading="lazy" />
+                <div className="flex flex-col h-full" data-testid={p.testId}>
+                  <a href={p.href} target="_blank" rel="noopener noreferrer" className="group block" aria-label={p.ariaLabel}>
+                    <div className="aspect-[4/3] bg-white mb-5 overflow-hidden rounded-xl shadow-sm">
+                      <img src={p.img} alt={p.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="400" height="300" loading="lazy" />
+                    </div>
+                    <h3 className="text-lg mb-1 group-hover:text-accent transition-colors">{p.title}</h3>
+                    <p className="text-xs font-medium text-muted-foreground mb-2">{p.url}</p>
+                    <p className="text-sm text-foreground mb-3 font-sans">{p.desc}</p>
+                  </a>
+                  <div className="flex items-center gap-4 mt-auto">
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors" aria-label={p.ariaLabel}>
+                      {p.cta} <ArrowRight size={14} className="ml-1" />
+                    </a>
+                    <Link href={p.portfolioAnchor} className="text-muted-foreground font-headline font-bold inline-flex items-center text-xs hover:text-accent transition-colors" data-testid={`link-case-study-${p.testId}`}>
+                      Case study &rarr;
+                    </Link>
                   </div>
-                  <h3 className="text-lg mb-1 group-hover:text-accent transition-colors">{p.title}</h3>
-                  <p className="text-xs font-medium text-muted-foreground mb-2">{p.url}</p>
-                  <p className="text-sm text-foreground mb-3 font-sans">{p.desc}</p>
-                  <span className="text-accent font-headline font-bold inline-flex items-center text-sm">{p.cta} <ArrowRight size={14} className="ml-1" /></span>
-                </a>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
