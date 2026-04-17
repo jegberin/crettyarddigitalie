@@ -85,6 +85,9 @@ const jobs = [
   ['hardware-hero-fresh-install.png', 'hardware-hero-fresh-install.webp'],
   ['desktop.png',                     'hardware-business-desktop.webp'],
   ['server.png',                      'hardware-onsite-server.webp'],
+
+  // Professional Services hero
+  ['pro-services-hero-office.png', 'pro-services-hero-office.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -99,6 +102,7 @@ const HERO_FILES = new Set([
   'cyber-hero-mfa-in-action.webp',
   'ai-hero-copilot-in-action.webp',
   'hardware-hero-fresh-install.webp',
+  'pro-services-hero-office.webp',
 ]);
 
 let totalIn = 0;

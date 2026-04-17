@@ -6,6 +6,7 @@ import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { TrustMarquee } from "@/components/TrustMarquee";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import heroOffice from "@assets/pro-services-hero-office.webp";
 import iconEmailShield from "@assets/concept-email-shield.webp";
 import icon365Admin from "@assets/concept-365-admin.webp";
 import iconMfaPadlock from "@assets/concept-mfa-padlock.webp";
@@ -20,26 +21,38 @@ export default function ProfessionalServices() {
       {/* Hero */}
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">IT for Professional Services</span>
-            <h1 className="display-sm text-white mb-6">
-              Managed IT, Email, and Compliance for Accountants, Solicitors, and Professional Firms
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You handle sensitive client data every day. Your professional reputation &mdash; whether you&rsquo;re regulated by the Law Society of Ireland, Chartered Accountants Ireland, CPA Ireland, or the Central Bank &mdash; depends on that data being secure, your email being reliable, and your technology meeting the regulatory standards your industry demands. I provide the IT infrastructure, security, and compliance you need for firms in Dublin, Cork, Galway, and right across Ireland &mdash; without the corporate price tag or the jargon.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact#send-message">
-                <Button size="lg">Book a Free IT &amp; Compliance Review</Button>
-              </Link>
-              <Link href="/pricing">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  See Pricing &rarr;
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">IT for Professional Services</span>
+              <h1 className="display-sm text-white mb-6">
+                Managed IT, Email, and Compliance for Accountants, Solicitors, and Professional Firms
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                You handle sensitive client data every day. Your professional reputation &mdash; whether you&rsquo;re regulated by the Law Society of Ireland, Chartered Accountants Ireland, CPA Ireland, or the Central Bank &mdash; depends on that data being secure, your email being reliable, and your technology meeting the regulatory standards your industry demands. I provide the IT infrastructure, security, and compliance you need for firms in Dublin, Cork, Galway, and right across Ireland &mdash; without the corporate price tag or the jargon.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact#send-message">
+                  <Button size="lg">Book a Free IT &amp; Compliance Review</Button>
+                </Link>
+                <Link href="/pricing">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    See Pricing &rarr;
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroOffice}
+                alt="A tidy Irish professional services office desk with an open case file, fountain pen, green banker\u2019s lamp and a laptop showing a Microsoft SharePoint document library \u2014 evokes a solicitor or accountancy firm"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
