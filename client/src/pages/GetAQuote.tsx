@@ -617,9 +617,17 @@ export default function GetAQuote() {
     name: false,
     email: false,
     phone: false,
+    businessName: false,
   });
 
   const ballpark = useMemo(() => calculateBallpark(state), [state]);
+
+  // Business name becomes mandatory once the ballpark's high-end one-off
+  // estimate crosses €1000 — bigger engagements need the legal entity name.
+  const businessNameRequired =
+    !ballpark.hasTalkOnly &&
+    ballpark.lines.length > 0 &&
+    ballpark.oneOffHigh > 1000;
 
   // Scroll to top on step change
   useEffect(() => {
@@ -647,15 +655,17 @@ export default function GetAQuote() {
     if (state.step === 3) return true; // all sub-answers optional
     if (state.step === 4) return Boolean(state.timing);
     if (state.step === 5) {
-      const { name, email, phone, contactMethod } = state.contact;
+      const { name, email, phone, businessName, contactMethod } = state.contact;
       const nameOk = name.trim().length >= 2;
       const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
       const phoneDigits = phone.replace(/\D/g, "");
       const phoneValid = phoneDigits.length >= 7;
+      const businessNameOk =
+        !businessNameRequired || businessName.trim().length >= 2;
       if (contactMethod === "phone" || contactMethod === "whatsapp") {
-        return nameOk && phoneValid;
+        return nameOk && phoneValid && businessNameOk;
       }
-      return nameOk && emailValid;
+      return nameOk && emailValid && businessNameOk;
     }
     return true;
   };
@@ -680,7 +690,7 @@ export default function GetAQuote() {
   };
 
   const handleSubmit = async () => {
-    setTouched({ name: true, email: true, phone: true });
+    setTouched({ name: true, email: true, phone: true, businessName: true });
     if (!canProceed()) return;
 
     setSubmitting(true);
@@ -826,6 +836,7 @@ export default function GetAQuote() {
                     onChange={(v) =>
                       setState((s) => ({ ...s, contact: v }))
                     }
+                    businessNameRequired={businessNameRequired}
                   />
                 )}
                 {state.step === 6 && (
@@ -1438,11 +1449,13 @@ function Step5Contact({
   touched,
   onTouch,
   onChange,
+  businessNameRequired,
 }: {
   value: QuoteState["contact"];
-  touched: { name: boolean; email: boolean; phone: boolean };
-  onTouch: (k: "name" | "email" | "phone") => void;
+  touched: { name: boolean; email: boolean; phone: boolean; businessName: boolean };
+  onTouch: (k: "name" | "email" | "phone" | "businessName") => void;
   onChange: (v: QuoteState["contact"]) => void;
+  businessNameRequired: boolean;
 }) {
   const set = <K extends keyof QuoteState["contact"]>(
     key: K,
@@ -1470,6 +1483,12 @@ function Step5Contact({
   const phoneError =
     phoneRequired && touched.phone && !phoneValid
       ? "Please enter a valid phone number"
+      : null;
+  const businessNameError =
+    businessNameRequired &&
+    touched.businessName &&
+    value.businessName.trim().length < 2
+      ? "Business name is required for projects over €1,000"
       : null;
 
   return (
@@ -1521,8 +1540,11 @@ function Step5Contact({
           />
           <Field
             label="Business name"
+            required={businessNameRequired}
+            error={businessNameError}
             value={value.businessName}
             onChange={(v) => set("businessName", v)}
+            onBlur={() => onTouch("businessName")}
             placeholder="Kelly Plumbing Ltd"
             autoComplete="organization"
           />

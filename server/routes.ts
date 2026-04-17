@@ -340,6 +340,16 @@ export async function registerRoutes(app: Express): Promise<void> {
       hasTalkOnly: ballparkIn.hasTalkOnly === true || (services.length === 1 && services[0] === "not-sure"),
     };
 
+    const businessNameRequired =
+      !ballpark.hasTalkOnly &&
+      ballpark.lines.length > 0 &&
+      ballpark.oneOffHigh > 1000;
+    if (businessNameRequired && businessName.length < 2) {
+      return res.status(400).json({
+        error: "Business name is required for projects over €1,000.",
+      });
+    }
+
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       console.error("[quote] RESEND_API_KEY is not set.");
