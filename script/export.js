@@ -13,24 +13,51 @@ const docsDir = path.join(rootDir, 'docs');
 
 const routes = [
   { path: '/', file: 'index.html' },
-  { path: '/web-design', file: 'web-design.html' },
-  { path: '/microsoft-365', file: 'microsoft-365.html' },
-  { path: '/network-wifi-security', file: 'network-wifi-security.html' },
-  { path: '/portfolio', file: 'portfolio.html' },
   { path: '/about', file: 'about.html' },
   { path: '/contact', file: 'contact.html' },
+  { path: '/portfolio', file: 'portfolio.html' },
+  { path: '/web-design', file: 'web-design.html' },
+  { path: '/microsoft-365', file: 'microsoft-365.html' },
+  { path: '/managed-it-support', file: 'managed-it-support.html' },
+  { path: '/managed-hardware', file: 'managed-hardware.html' },
+  { path: '/network-wifi-security', file: 'network-wifi-security.html' },
+  { path: '/cybersecurity', file: 'cybersecurity.html' },
+  { path: '/ai-readiness', file: 'ai-readiness.html' },
+  { path: '/website-care-plans', file: 'website-care-plans.html' },
+  { path: '/trades', file: 'trades.html' },
+  { path: '/professional-services', file: 'professional-services.html' },
+  { path: '/dora-compliance', file: 'dora-compliance.html' },
+  { path: '/pricing', file: 'pricing.html' },
+  { path: '/grants-funding', file: 'grants-funding.html' },
+  { path: '/how-it-works', file: 'how-it-works.html' },
+  { path: '/get-a-quote', file: 'get-a-quote.html' },
+  { path: '/web-design-laois', file: 'web-design-laois.html' },
+  { path: '/web-design-carlow', file: 'web-design-carlow.html' },
+  { path: '/web-design-kilkenny', file: 'web-design-kilkenny.html' },
+  { path: '/it-support-laois', file: 'it-support-laois.html' },
+  { path: '/it-support-carlow', file: 'it-support-carlow.html' },
+  { path: '/it-support-kilkenny', file: 'it-support-kilkenny.html' },
+  { path: '/microsoft-365-setup-ireland', file: 'microsoft-365-setup-ireland.html' },
+  { path: '/network-wifi-laois-carlow', file: 'network-wifi-laois-carlow.html' },
   { path: '/privacy-policy', file: 'privacy-policy.html' },
   { path: '/terms-and-conditions', file: 'terms-and-conditions.html' },
   { path: '/cookie-policy', file: 'cookie-policy.html' },
-  { path: '/parental-controls', file: 'parental-controls.html' },
-  { path: '/get-a-quote', file: 'get-a-quote.html' }
 ];
 
+// Longest-first so that e.g. "web-design-laois" matches before "web-design".
+const linkSlugAlternation = routes
+  .filter(r => r.path !== '/')
+  .map(r => r.path.slice(1))
+  .sort((a, b) => b.length - a.length)
+  .join('|');
+
 function rewriteLinks(html) {
-  html = html.replace(/href="\/(web-design|microsoft-365|network-wifi-security|parental-controls|portfolio|about|contact|privacy-policy|terms-and-conditions|cookie-policy|get-a-quote)#([^"]*)"/g, 'href="/$1.html#$2"');
-  html = html.replace(/href="\/(web-design|microsoft-365|network-wifi-security|parental-controls|portfolio|about|contact|privacy-policy|terms-and-conditions|cookie-policy|get-a-quote)"/g, 'href="/$1.html"');
+  const withHash = new RegExp('href="/(' + linkSlugAlternation + ')#([^"]*)"', 'g');
+  const plain = new RegExp('href="/(' + linkSlugAlternation + ')"', 'g');
+  html = html.replace(withHash, 'href="/$1.html#$2"');
+  html = html.replace(plain, 'href="/$1.html"');
   html = html.replace(/href="\/"/g, 'href="/index.html"');
-  html = html.replace(/href="\/#services"/g, 'href="/index.html#services"');
+  html = html.replace(/href="\/#([^"]*)"/g, 'href="/index.html#$1"');
   return html;
 }
 
@@ -321,7 +348,7 @@ async function exportStatic() {
       });
       const page = await browser.newPage();
 
-      const interactivePages = new Set(['get-a-quote.html', 'contact.html', 'parental-controls.html']);
+      const interactivePages = new Set(['get-a-quote.html', 'contact.html']);
 
       for (const route of routes) {
         console.log(`Exporting ${route.path} to ${route.file}...`);
