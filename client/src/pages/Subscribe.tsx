@@ -185,7 +185,7 @@ export default function Subscribe() {
 
       <footer className="py-6 text-center text-xs text-gray-400">
         © {new Date().getFullYear()} Crettyard Digital · Crettyard, Co. Laois ·{" "}
-        <a href="/privacy-policy.html" className="hover:text-gray-600 transition-colors">Privacy Policy</a>
+        <a href="/privacy-policy" className="hover:text-gray-600 transition-colors">Privacy Policy</a>
       </footer>
     </div>
   );

@@ -1,10 +1,16 @@
 ﻿import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { HardHat, CheckCircle, ArrowRight, Search, Mail, Phone, Shield, ServerCog, MonitorSmartphone, Quote, BadgeEuro, Wrench } from "lucide-react";
+import { CheckCircle, ArrowRight, Quote } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import iconLocalSeo from "@assets/concept-local-seo.webp";
+import iconEmailPro from "@assets/concept-email-pro.webp";
+import iconBusinessPhone from "@assets/concept-business-phone.webp";
+import icon365Admin from "@assets/concept-365-admin.webp";
+import iconGdprShield from "@assets/concept-gdpr-shield.webp";
+import iconGrantEuro from "@assets/concept-grant-euro.webp";
 
 export default function Trades() {
   return (
@@ -16,11 +22,11 @@ export default function Trades() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">IT for Trades &amp; Construction</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
+            <h1 className="display-sm text-white mb-6">
               Websites, Email, and IT Built Specifically for Tradespeople and Contractors
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You're brilliant at what you do &mdash; but when someone searches Google for an electrician, a plumber, or a builder in your area, they find your competitors instead. And increasingly, the bigger contractors you work for are asking about your IT security. I solve both problems &mdash; with technology that works, explained in plain English.
+              You're brilliant at what you do &mdash; but when someone searches Google for an electrician, a plumber, or a builder in Laois, Carlow, Kilkenny or the wider Midlands, they find your competitors instead. And increasingly, the bigger contractors you work for are asking about your IT security. I solve both problems &mdash; with technology that works, explained in plain English.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">
@@ -72,23 +78,54 @@ export default function Trades() {
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
-            {[
-              { icon: MonitorSmartphone, title: "A Website That Brings in Work", desc: "Professional, mobile-friendly, designed to rank on Google when locals search for your trade. Portfolio gallery, quote request form, SEO for your area. From \u20ac799.", price: "From \u20ac799" },
-              { icon: Mail, title: "Professional Email", desc: "@yourbusiness.ie email through Microsoft 365. Accessible on phone, laptop, and tablet. Shared between office and field. Properly secured with MFA.", price: "Setup from \u20ac350" },
-              { icon: Phone, title: "A Phone System That Follows You", desc: "Microsoft Teams Phone replaces your landline or the personal mobile you\u2019ve been giving to clients. A proper business number that works from any device.", price: "From \u20ac7.50/user/mo" },
-              { icon: ServerCog, title: "Managed IT That Prevents Problems", desc: "Proactive monitoring, updates, security, and support for a fixed monthly fee. When something goes wrong, one call to someone who knows your setup.", price: "From \u20ac45/user/mo" },
-              { icon: Shield, title: "Security That Meets Supply Chain Requirements", desc: "MFA, email protection, endpoint security, and backup \u2014 documented and ready to show a main contractor or council if they ask about your security posture.", price: "Included in plans" },
-              { icon: BadgeEuro, title: "Grow Digital Voucher Ready", desc: "The voucher covers 50% of new software subscriptions (CRM, job tracking, M365, e-commerce) up to \u20ac5,000. Bespoke websites aren\u2019t eligible, but I provide scheme-compliant invoicing for elements that are.", price: "Up to \u20ac5,000 funding" },
-            ].map((item, i) => (
-              <StaggerItem key={i}>
-                <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                  <item.icon className="text-accent mb-4" size={28} />
-                  <h3 className="text-lg mb-2">{item.title}</h3>
-                  <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">{item.desc}</p>
-                  <p className="text-sm font-headline font-bold text-accent">{item.price}</p>
-                </div>
-              </StaggerItem>
-            ))}
+            <StaggerItem>
+              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
+                <img src={iconLocalSeo} alt="Glass magnifying glass on a search bar representing local SEO for tradespeople" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">A Website That Brings in Work</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">Professional, mobile-friendly, designed to rank on Google when locals search for your trade. Portfolio gallery, quote request form, local SEO for your area. See the <Link href="/web-design" className="text-accent hover:underline">web design page</Link> for details.</p>
+                <p className="text-sm font-headline font-bold text-accent">From &euro;799</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
+                <img src={iconEmailPro} alt="Glass envelope with @-symbol representing professional business email" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">Professional Email</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">@yourbusiness.ie email through <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>. Accessible on phone, laptop, and tablet. Shared between office and field. Properly secured with MFA.</p>
+                <p className="text-sm font-headline font-bold text-accent">Setup from &euro;350</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
+                <img src={iconBusinessPhone} alt="Glass telephone handset representing Microsoft Teams Phone business phone system" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">A Phone System That Follows You</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3"><Link href="/microsoft-365" className="text-accent hover:underline">Microsoft Teams Phone</Link> replaces your landline or the personal mobile you&rsquo;ve been giving to clients. A proper business number that works from any device.</p>
+                <p className="text-sm font-headline font-bold text-accent">From &euro;7.50/user/mo</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
+                <img src={icon365Admin} alt="Glass cog with envelope representing managed IT and Microsoft 365 administration" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">Managed IT That Prevents Problems</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">Proactive <Link href="/managed-it-support" className="text-accent hover:underline">managed IT support</Link>: monitoring, updates, security, and support for a fixed monthly fee. When something goes wrong, one call to someone who knows your setup.</p>
+                <p className="text-sm font-headline font-bold text-accent">From &euro;45/user/mo</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
+                <img src={iconGdprShield} alt="Glass shield representing NIS2 supply-chain security for trade businesses" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">Security That Meets Supply Chain Requirements</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">MFA, email protection, endpoint security, and backup &mdash; documented and ready to show a main contractor or council if they ask about your <Link href="/cybersecurity" className="text-accent hover:underline">NIS2 supply-chain security</Link> posture.</p>
+                <p className="text-sm font-headline font-bold text-accent">Included in plans</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
+                <img src={iconGrantEuro} alt="Glass euro coin with checkmark representing Grow Digital Voucher eligibility" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">Grow Digital Voucher Ready</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">The <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link> covers 50% of new software subscriptions (CRM, job tracking, M365, e-commerce) up to &euro;5,000. Bespoke websites aren&rsquo;t eligible, but I provide scheme-compliant invoicing for elements that are.</p>
+                <p className="text-sm font-headline font-bold text-accent">Up to &euro;5,000 funding</p>
+              </div>
+            </StaggerItem>
           </StaggerContainer>
         </div>
       </section>
@@ -103,26 +140,28 @@ export default function Trades() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             <StaggerItem>
-              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
+              <Link href="/portfolio#project-bm-custom-furniture" className="block bg-[#f3f4f5] p-7 rounded-2xl card-hover group">
                 <h3 className="text-lg mb-2">BM Custom Furniture &mdash; Carlow</h3>
-                <p className="text-foreground text-[15px] font-sans mb-3">Bespoke furniture maker. No website, no online enquiries. I built a portfolio-led website with local SEO. Within weeks, Google was sending enquiries from customers who'd never heard of them.</p>
+                <p className="text-foreground text-[15px] font-sans mb-3">Bespoke furniture maker. No website, no online enquiries. I built a portfolio-led website with local SEO. Within weeks, Google was sending enquiries from customers who&rsquo;d never heard of them.</p>
                 <div className="flex items-start gap-2 mb-4">
                   <Quote className="text-accent shrink-0 mt-1" size={16} />
-                  <p className="text-foreground text-sm font-sans italic">"Within weeks of launching, we were getting enquiries from people who found us on Google \u2014 that never happened before."</p>
+                  <p className="text-foreground text-sm font-sans italic">&ldquo;Within weeks of launching, we were getting enquiries from people who found us on Google &mdash; that never happened before.&rdquo;</p>
                 </div>
-                <p className="text-xs text-muted-foreground font-headline font-bold">Barry, BM Custom Furniture</p>
-              </div>
+                <p className="text-xs text-muted-foreground font-headline font-bold mb-3">Barry, BM Custom Furniture</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Read the case study <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+              </Link>
             </StaggerItem>
             <StaggerItem>
-              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
+              <Link href="/portfolio#project-nurney-plant-civil" className="block bg-[#f3f4f5] p-7 rounded-2xl card-hover group">
                 <h3 className="text-lg mb-2">Nurney Plant and Civil &mdash; Carlow</h3>
                 <p className="text-foreground text-[15px] font-sans mb-3">Plant hire and civil engineering. I handled the lot &mdash; website, Microsoft 365, and Wi-Fi across the premises. Professional email between office and site, and a website that wins contracts.</p>
                 <div className="flex items-start gap-2 mb-4">
                   <Quote className="text-accent shrink-0 mt-1" size={16} />
-                  <p className="text-foreground text-sm font-sans italic">"Joey did the lot for us. Can't recommend him enough."</p>
+                  <p className="text-foreground text-sm font-sans italic">&ldquo;Joey did the lot for us. Can&rsquo;t recommend him enough.&rdquo;</p>
                 </div>
-                <p className="text-xs text-muted-foreground font-headline font-bold">Brian, Nurney Plant and Civil</p>
-              </div>
+                <p className="text-xs text-muted-foreground font-headline font-bold mb-3">Brian, Nurney Plant and Civil</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Read the case study <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+              </Link>
             </StaggerItem>
           </StaggerContainer>
 
@@ -193,6 +232,34 @@ export default function Trades() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-20 bg-[#f3f4f5] border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Dig Deeper</span>
+            <h2 className="text-2xl">Each Service in Full Detail</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/web-design", title: "Web Design", desc: "4-week builds targeting local search terms \u2014 'plumber Portlaoise', 'electrician Carlow', 'builder Kilkenny'." },
+              { href: "/microsoft-365", title: "Microsoft 365 & Teams Phone", desc: "Office-to-site email, Teams, and a proper business phone number your lads carry on their phones." },
+              { href: "/managed-it-support", title: "Managed IT Support", desc: "Fixed-fee proactive IT with NIS2 supply-chain security documentation included." },
+              { href: "/grants-funding", title: "Grants & Funding", desc: "Honest guide to the Grow Digital Voucher \u2014 what qualifies for trade businesses and what doesn\u2019t." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-white p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
