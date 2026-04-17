@@ -63,6 +63,44 @@ function fixAccordionContent(html) {
 const staticScripts = `
 <script>
 (function(){
+  // ── Desktop navbar dropdowns (hover) ─────────────────────────────
+  document.querySelectorAll('[data-dropdown-root]').forEach(function(root){
+    var id = root.getAttribute('data-dropdown-root');
+    var panel = document.querySelector('[data-dropdown-panel="' + id + '"]');
+    var trigger = root.querySelector('[data-dropdown-trigger="' + id + '"]');
+    if(!panel) return;
+    var hideTimer = null;
+    function chev(){ return trigger ? trigger.querySelector('svg') : null; }
+    function open(){
+      if(hideTimer){ clearTimeout(hideTimer); hideTimer = null; }
+      panel.setAttribute('data-state','open');
+      if(trigger) trigger.setAttribute('aria-expanded','true');
+      var c = chev(); if(c) c.setAttribute('data-state','open');
+    }
+    function close(){
+      hideTimer = setTimeout(function(){
+        panel.setAttribute('data-state','closed');
+        if(trigger) trigger.setAttribute('aria-expanded','false');
+        var c = chev(); if(c) c.setAttribute('data-state','closed');
+      }, 150);
+    }
+    root.addEventListener('mouseenter', open);
+    root.addEventListener('mouseleave', close);
+  });
+
+  // ── Mobile navbar accordions (click) ─────────────────────────────
+  document.querySelectorAll('[data-mobile-accordion-trigger]').forEach(function(trigger){
+    var id = trigger.getAttribute('data-mobile-accordion-trigger');
+    var panel = document.querySelector('[data-mobile-accordion-panel="' + id + '"]');
+    if(!panel) return;
+    trigger.addEventListener('click', function(){
+      var isOpen = panel.getAttribute('data-state') === 'open';
+      var next = isOpen ? 'closed' : 'open';
+      panel.setAttribute('data-state', next);
+      var c = trigger.querySelector('svg'); if(c) c.setAttribute('data-state', next);
+    });
+  });
+
   var btn = document.querySelector('[data-mobile-toggle]');
   var menu = document.querySelector('[data-mobile-menu]');
   if(btn && menu){
