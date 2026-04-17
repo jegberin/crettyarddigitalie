@@ -1,7 +1,11 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Wifi, ShieldAlert, Server, Network, CheckCircle, Users, Building2, Wrench, HelpCircle, ArrowRight, PiggyBank, Quote } from "lucide-react";
+import { CheckCircle, Users, Building2, Wrench, HelpCircle, ArrowRight, PiggyBank, Quote, Server } from "lucide-react";
 import serviceImg from "@assets/service-network-wifi.webp";
+import iconNetworkDesign from "@assets/concept-network-design.webp";
+import iconWifiMesh from "@assets/concept-wifi-mesh.webp";
+import iconEndpointSecurity from "@assets/concept-endpoint-security.webp";
+import iconProactiveMonitoring from "@assets/concept-proactive-monitoring.webp";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -156,8 +160,15 @@ export default function NetworkWifi() {
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             <StaggerItem>
               <div className="bg-[#f3f4f5] p-8 rounded-2xl card-hover">
-                <Network className="text-accent mb-6" size={32} />
-                <h3 className="text-xl mb-4">Network Design &amp; Planning</h3>
+                <img
+                  src={iconNetworkDesign}
+                  alt="Glass router connected to three glass nodes representing a network design hub-and-spoke topology"
+                  width={1000}
+                  height={1000}
+                  className="w-20 h-20 mb-4"
+                  loading="lazy"
+                />
+                <h3 className="text-xl mb-4">Network Design & Planning</h3>
                 <p className="text-foreground text-[15px] leading-relaxed mb-4 font-sans font-normal">
                   I survey your premises and design a network that fits your space — proper cabling, switch placement, and access point positioning for full coverage.
                 </p>
@@ -174,8 +185,15 @@ export default function NetworkWifi() {
 
             <StaggerItem>
               <div className="bg-[#f3f4f5] p-8 rounded-2xl card-hover">
-                <Wifi className="text-accent mb-6" size={32} />
-                <h3 className="text-xl mb-4">Wi&#8209;Fi Setup &amp; Optimisation</h3>
+                <img
+                  src={iconWifiMesh}
+                  alt="Glass Wi-Fi access point with three concentric glass signal arcs representing mesh Wi-Fi coverage"
+                  width={1000}
+                  height={1000}
+                  className="w-20 h-20 mb-4"
+                  loading="lazy"
+                />
+                <h3 className="text-xl mb-4">Wi&#8209;Fi Setup & Optimisation</h3>
                 <p className="text-foreground text-[15px] leading-relaxed mb-4 font-sans font-normal">
                   Professional mesh Wi&#8209;Fi and access point placement to eliminate dead spots across offices, multi-story buildings, or tricky workshop layouts.
                 </p>
@@ -192,8 +210,15 @@ export default function NetworkWifi() {
 
             <StaggerItem>
               <div className="bg-[#f3f4f5] p-8 rounded-2xl card-hover">
-                <ShieldAlert className="text-accent mb-6" size={32} />
-                <h3 className="text-xl mb-4">Security &amp; Firewalls</h3>
+                <img
+                  src={iconEndpointSecurity}
+                  alt="Glass laptop with a padlock in its screen representing network security and firewalls"
+                  width={1000}
+                  height={1000}
+                  className="w-20 h-20 mb-4"
+                  loading="lazy"
+                />
+                <h3 className="text-xl mb-4">Security & Firewalls</h3>
                 <p className="text-foreground text-[15px] leading-relaxed mb-4 font-sans font-normal">
                   Business-grade firewalls and security to protect your data and your customers' information. I only source hardware that meets EU Cyber Resilience Act (CRA) standards &mdash; no cheap, uncertified consumer gear.
                 </p>
@@ -210,8 +235,15 @@ export default function NetworkWifi() {
 
             <StaggerItem>
               <div className="bg-[#f3f4f5] p-8 rounded-2xl card-hover">
-                <Server className="text-accent mb-6" size={32} />
-                <h3 className="text-xl mb-4">Health Checks &amp; Remote Access</h3>
+                <img
+                  src={iconProactiveMonitoring}
+                  alt="Glass ECG heartbeat line over a glass eye representing network health checks and monitoring"
+                  width={1000}
+                  height={1000}
+                  className="w-20 h-20 mb-4"
+                  loading="lazy"
+                />
+                <h3 className="text-xl mb-4">Health Checks & Remote Access</h3>
                 <p className="text-foreground text-[15px] leading-relaxed mb-4 font-sans font-normal">
                   Ongoing network health checks plus secure VPN and remote access — so your team can work from anywhere without compromising security.
                 </p>

@@ -63,6 +63,10 @@ const jobs = [
 
   // Home.tsx replacement for illustration-get-found-online.webp
   ['concept-your-business-found.png',  'concept-your-business-found.webp'],
+
+  // Network cluster additions
+  ['concept-network-design.png', 'concept-network-design.webp'],
+  ['concept-wifi-mesh.png',      'concept-wifi-mesh.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.

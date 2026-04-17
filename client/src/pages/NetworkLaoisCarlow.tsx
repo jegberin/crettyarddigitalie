@@ -1,9 +1,13 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Wifi, Shield, Server, Network, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import iconNetworkDesign from "@assets/concept-network-design.webp";
+import iconWifiMesh from "@assets/concept-wifi-mesh.webp";
+import iconEndpointSecurity from "@assets/concept-endpoint-security.webp";
+import iconProactiveMonitoring from "@assets/concept-proactive-monitoring.webp";
 
 export default function NetworkLaoisCarlow() {
   return (
@@ -62,14 +66,21 @@ export default function NetworkLaoisCarlow() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8 mb-14">
             {[
-              { icon: Network, title: "Network Design & Installation", desc: "I survey your premises, design the network, run cabling where needed, and install business-grade switches and access points. Full coverage, no dead spots." },
-              { icon: Wifi, title: "Wi-Fi Optimisation", desc: "Mesh Wi-Fi and access point placement for offices, multi-story buildings, warehouses, and tricky workshop layouts. Seamless roaming between zones." },
-              { icon: Shield, title: "Security & Firewalls", desc: "Business-grade firewalls, guest network isolation, intrusion detection, and CRA-compliant hardware. Your data protected, your customers' data safe." },
-              { icon: Server, title: "Health Checks & Remote Access", desc: "Network health audits, VPN for secure remote access, and performance troubleshooting. Ongoing monitoring and support available." },
+              { img: iconNetworkDesign, alt: "Glass router connected to three glass nodes representing network design and installation", title: "Network Design & Installation", desc: "I survey your premises, design the network, run cabling where needed, and install business-grade switches and access points. Full coverage, no dead spots." },
+              { img: iconWifiMesh, alt: "Glass Wi-Fi access point with three concentric signal arcs representing mesh Wi-Fi optimisation", title: "Wi-Fi Optimisation", desc: "Mesh Wi-Fi and access point placement for offices, multi-story buildings, warehouses, and tricky workshop layouts. Seamless roaming between zones." },
+              { img: iconEndpointSecurity, alt: "Glass laptop with a padlock representing business-grade firewall security", title: "Security & Firewalls", desc: "Business-grade firewalls, guest network isolation, intrusion detection, and CRA-compliant hardware. Your data protected, your customers' data safe." },
+              { img: iconProactiveMonitoring, alt: "Glass ECG heartbeat over a glass eye representing network health checks and monitoring", title: "Health Checks & Remote Access", desc: "Network health audits, VPN for secure remote access, and performance troubleshooting. Ongoing monitoring and support available." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover">
-                  <item.icon className="text-accent mb-4" size={28} />
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 mb-4"
+                    loading="lazy"
+                  />
                   <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans">{item.desc}</p>
                 </div>
