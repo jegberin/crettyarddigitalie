@@ -1,4 +1,4 @@
-const BASE_PRICES = { "1-3": 499, "4-7": 899, "8+": 1399 };
+﻿const BASE_PRICES = { "1-3": 499, "4-7": 899, "8+": 1399 };
 
 const FEATURE_PRICES = {
   copywriting:  { label: "Let Crettyard Digital write the text & images", price: 99 },
@@ -96,7 +96,7 @@ function buildContactNotification(d) {
         <p style="margin:0;color:#555;font-size:14px;line-height:1.7;white-space:pre-wrap;">${esc(d.message)}</p>
       </td></tr>
       <tr><td style="padding:16px 40px;background:#f3f4f5;border-top:1px solid #e5e7eb;">
-        <p style="margin:0;font-size:12px;color:#999;">Sent via the Crettyard Digital contact form at digital.crettyard.ie</p>
+        <p style="margin:0;font-size:12px;color:#999;">Sent via the Crettyard Digital contact form at crettyarddigital.ie</p>
       </td></tr>
     </table>
   </td></tr>
@@ -142,7 +142,7 @@ function buildParentalNotification(d) {
       </td></tr>
       ${d.notes ? `<tr><td style="padding:0 40px 24px;"><p style="margin:0 0 8px;color:#0C2366;font-size:14px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #f3f4f5;padding-bottom:8px;">Additional Notes</p><p style="margin:0;color:#555;font-size:14px;line-height:1.7;white-space:pre-wrap;">${esc(String(d.notes))}</p></td></tr>` : ""}
       <tr><td style="padding:16px 40px;background:#f3f4f5;border-top:1px solid #e5e7eb;">
-        <p style="margin:0;font-size:12px;color:#999;">Sent via the Crettyard Digital parental controls form at digital.crettyard.ie</p>
+        <p style="margin:0;font-size:12px;color:#999;">Sent via the Crettyard Digital parental controls form at crettyarddigital.ie</p>
       </td></tr>
     </table>
   </td></tr>
@@ -168,10 +168,10 @@ function buildThankYou(name, intro, extra) {
         <p style="margin:0 0 4px;color:#333;font-size:14px;">Talk soon,</p>
         <p style="margin:0 0 4px;color:#333;font-size:14px;font-weight:bold;">Joey</p>
         <p style="margin:0;color:#555;font-size:13px;">Crettyard Digital</p>
-        <p style="margin:0;font-size:13px;"><a href="mailto:info@crettyard.ie" style="color:#12B388;">info@crettyard.ie</a> &nbsp;&middot;&nbsp; <a href="https://digital.crettyard.ie" style="color:#12B388;">digital.crettyard.ie</a></p>
+        <p style="margin:0;font-size:13px;"><a href="mailto:info@crettyarddigital.ie" style="color:#12B388;">info@crettyarddigital.ie</a> &nbsp;&middot;&nbsp; <a href="https://crettyarddigital.ie" style="color:#12B388;">crettyarddigital.ie</a></p>
       </td></tr>
       <tr><td style="padding:16px 40px;background:#f3f4f5;border-top:1px solid #e5e7eb;">
-        <p style="margin:0;font-size:12px;color:#999;">You're receiving this because you submitted a form at digital.crettyard.ie. Reply directly to this email if you'd like to add anything.</p>
+        <p style="margin:0;font-size:12px;color:#999;">You're receiving this because you submitted a form at crettyarddigital.ie. Reply directly to this email if you'd like to add anything.</p>
       </td></tr>
     </table>
   </td></tr>
@@ -287,7 +287,7 @@ function buildQuoteEmail(data, pricing) {
       </tr>` : ""}
       <tr>
         <td style="padding:20px 40px;background:#f3f4f5;border-top:1px solid #e5e7eb;">
-          <p style="margin:0;font-size:12px;color:#999;">Sent via the Crettyard Digital quote calculator at digital.crettyard.ie</p>
+          <p style="margin:0;font-size:12px;color:#999;">Sent via the Crettyard Digital quote calculator at crettyarddigital.ie</p>
         </td>
       </tr>
     </table>
@@ -333,12 +333,12 @@ async function handleContact(request, env) {
   if (!data?.message?.trim()) return jsonResponse({ error: "Message is required." }, 400);
 
   const apiKey = env.RESEND_API_KEY;
-  const from = env.RESEND_SENDER ?? "info@crettyard.ie";
+  const from = env.RESEND_SENDER ?? "info@crettyarddigital.ie";
   if (!apiKey) return jsonResponse({ error: "Email service not configured." }, 500);
 
   try {
     const [notifRes] = await Promise.all([
-      sendEmail(apiKey, `Crettyard Digital Website <${from}>`, "info@crettyard.ie",
+      sendEmail(apiKey, `Crettyard Digital Website <${from}>`, "info@crettyarddigital.ie",
         `New Contact Enquiry \u2014 ${data.name}${data.businessName ? ` (${data.businessName})` : ""}`,
         buildContactNotification(data), data.email),
       sendEmail(apiKey, `Crettyard Digital <${from}>`, data.email,
@@ -351,12 +351,12 @@ async function handleContact(request, env) {
     ]);
     if (!notifRes.ok) {
       console.error("[contact] Resend notification error:", await notifRes.text());
-      return jsonResponse({ error: "Failed to send. Please contact info@crettyard.ie directly." }, 500);
+      return jsonResponse({ error: "Failed to send. Please contact info@crettyarddigital.ie directly." }, 500);
     }
     return jsonResponse({ success: true });
   } catch (err) {
     console.error("[contact] Error:", err);
-    return jsonResponse({ error: "An unexpected error occurred. Please contact info@crettyard.ie directly." }, 500);
+    return jsonResponse({ error: "An unexpected error occurred. Please contact info@crettyarddigital.ie directly." }, 500);
   }
 }
 
@@ -374,12 +374,12 @@ async function handleParentalEnquiry(request, env) {
   }
 
   const apiKey = env.RESEND_API_KEY;
-  const from = env.RESEND_SENDER ?? "info@crettyard.ie";
+  const from = env.RESEND_SENDER ?? "info@crettyarddigital.ie";
   if (!apiKey) return jsonResponse({ error: "Email service not configured." }, 500);
 
   try {
     const [notifRes] = await Promise.all([
-      sendEmail(apiKey, `Crettyard Digital Website <${from}>`, "info@crettyard.ie",
+      sendEmail(apiKey, `Crettyard Digital Website <${from}>`, "info@crettyarddigital.ie",
         `New Parental Controls Enquiry \u2014 ${data.name}${data.county ? `, ${data.county}` : ""}`,
         buildParentalNotification(data), data.email),
       sendEmail(apiKey, `Crettyard Digital <${from}>`, data.email,
@@ -392,12 +392,12 @@ async function handleParentalEnquiry(request, env) {
     ]);
     if (!notifRes.ok) {
       console.error("[parental-enquiry] Resend error:", await notifRes.text());
-      return jsonResponse({ error: "Failed to send. Please contact info@crettyard.ie directly." }, 500);
+      return jsonResponse({ error: "Failed to send. Please contact info@crettyarddigital.ie directly." }, 500);
     }
     return jsonResponse({ success: true });
   } catch (err) {
     console.error("[parental-enquiry] Error:", err);
-    return jsonResponse({ error: "An unexpected error occurred. Please contact info@crettyard.ie directly." }, 500);
+    return jsonResponse({ error: "An unexpected error occurred. Please contact info@crettyarddigital.ie directly." }, 500);
   }
 }
 
@@ -440,12 +440,12 @@ async function handleQuote(request, env) {
   const pricing = calculatePrice(sanitised);
 
   const apiKey = env.RESEND_API_KEY;
-  const from = env.RESEND_SENDER ?? "info@crettyard.ie";
-  if (!apiKey) return jsonResponse({ error: "Email service not configured. Please contact info@crettyard.ie directly." }, 500);
+  const from = env.RESEND_SENDER ?? "info@crettyarddigital.ie";
+  if (!apiKey) return jsonResponse({ error: "Email service not configured. Please contact info@crettyarddigital.ie directly." }, 500);
 
   try {
     const [notifRes] = await Promise.all([
-      sendEmail(apiKey, `Crettyard Digital Quote Tool <${from}>`, "info@crettyard.ie",
+      sendEmail(apiKey, `Crettyard Digital Quote Tool <${from}>`, "info@crettyarddigital.ie",
         `New Quote Request \u2014 ${sanitised.businessName || sanitised.name} (${sanitised.pageCount} pages, ${pricing.oneTime > 0 ? fmt(pricing.oneTime) : "TBD"})`,
         buildQuoteEmail(sanitised, pricing), body.email),
       sendEmail(apiKey, `Crettyard Digital <${from}>`, body.email,
@@ -458,12 +458,12 @@ async function handleQuote(request, env) {
     ]);
     if (!notifRes.ok) {
       console.error("[quote] Resend error:", await notifRes.text());
-      return jsonResponse({ error: "Failed to send quote. Please contact info@crettyard.ie directly." }, 500);
+      return jsonResponse({ error: "Failed to send quote. Please contact info@crettyarddigital.ie directly." }, 500);
     }
     return jsonResponse({ success: true });
   } catch (err) {
     console.error("[quote] Error:", err);
-    return jsonResponse({ error: "An unexpected error occurred. Please contact info@crettyard.ie directly." }, 500);
+    return jsonResponse({ error: "An unexpected error occurred. Please contact info@crettyarddigital.ie directly." }, 500);
   }
 }
 
