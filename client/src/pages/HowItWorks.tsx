@@ -15,7 +15,7 @@ export default function HowItWorks() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">How It Works</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
+            <h1 className="display-sm text-white mb-6">
               What Actually Happens When You Work With Me
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
@@ -143,13 +143,14 @@ export default function HowItWorks() {
           </div>
 
           <FadeIn className="mt-8">
-            <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
+            <Link href="/pricing" className="block bg-white p-6 rounded-2xl shadow-sm text-center card-hover group">
               <Shield className="text-accent mx-auto mb-3" size={24} />
-              <h3 className="text-base font-headline font-bold mb-2">Getting a Digital Foundation Bundle?</h3>
-              <p className="text-foreground text-sm font-sans max-w-xl mx-auto">
-                All of the above happens in a coordinated sequence \u2014 website, email, phone, security, and network configured together as one integrated system. That\u2019s the whole point.
+              <h3 className="text-base font-headline font-bold mb-2 group-hover:text-accent transition-colors">Getting a Digital Foundation Bundle?</h3>
+              <p className="text-foreground text-sm font-sans max-w-xl mx-auto mb-3">
+                All of the above happens in a coordinated sequence &mdash; website, email, phone, security, and network configured together as one integrated system. That&rsquo;s the whole point.
               </p>
-            </div>
+              <span className="text-accent text-sm font-headline font-bold inline-flex items-center">See all bundles <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+            </Link>
           </FadeIn>
         </div>
       </section>
@@ -165,7 +166,7 @@ export default function HowItWorks() {
           <StaggerContainer className="space-y-6">
             <StaggerItem>
               <div className="bg-[#f3f4f5] p-7 rounded-2xl">
-                <h3 className="text-lg mb-3">Your Website Care Plan (active from day one)</h3>
+                <h3 className="text-lg mb-3">Your <Link href="/website-care-plans" className="text-primary hover:text-accent transition-colors">Website Care Plan</Link> (active from day one)</h3>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {[
                     "Hosting, backups, and security running automatically",
@@ -184,7 +185,7 @@ export default function HowItWorks() {
 
             <StaggerItem>
               <div className="bg-[#f3f4f5] p-7 rounded-2xl">
-                <h3 className="text-lg mb-3">Your Managed IT Plan (if applicable)</h3>
+                <h3 className="text-lg mb-3">Your <Link href="/managed-it-support" className="text-primary hover:text-accent transition-colors">Managed IT Plan</Link> (if applicable)</h3>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {[
                     "Systems monitored proactively",
@@ -232,23 +233,53 @@ export default function HowItWorks() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             <StaggerItem>
-              <div className="bg-white p-7 rounded-2xl shadow-sm">
+              <Link href="/portfolio#project-nurney-plant-civil" className="block bg-white p-7 rounded-2xl shadow-sm card-hover group">
                 <Quote className="text-accent/30 mb-3" size={24} />
                 <p className="text-foreground text-[15px] font-sans italic mb-4">
-                  "The thing I appreciate most is that I don't have to think about any of it. Joey handles the website, the email, the Wi-Fi \u2014 and when I need something changed, I send one message and it's done."
+                  &ldquo;The thing I appreciate most is that I don&rsquo;t have to think about any of it. Joey handles the website, the email, the Wi-Fi &mdash; and when I need something changed, I send one message and it&rsquo;s done.&rdquo;
                 </p>
-                <p className="font-headline font-bold text-sm">Brian, Nurney Plant and Civil</p>
-              </div>
+                <p className="font-headline font-bold text-sm mb-3">Brian, Nurney Plant and Civil</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Read the case study <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+              </Link>
             </StaggerItem>
             <StaggerItem>
-              <div className="bg-white p-7 rounded-2xl shadow-sm">
+              <Link href="/portfolio#project-go-green-steam-clean" className="block bg-white p-7 rounded-2xl shadow-sm card-hover group">
                 <Quote className="text-accent/30 mb-3" size={24} />
                 <p className="text-foreground text-[15px] font-sans italic mb-4">
-                  "I was nervous about the whole process because I'm not technical at all. Joey explained everything in plain English and made it completely painless."
+                  &ldquo;I was nervous about the whole process because I&rsquo;m not technical at all. Joey explained everything in plain English and made it completely painless.&rdquo;
                 </p>
-                <p className="font-headline font-bold text-sm">Darren, Go Green Steam Clean</p>
-              </div>
+                <p className="font-headline font-bold text-sm mb-3">Darren, Go Green Steam Clean</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Read the case study <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+              </Link>
             </StaggerItem>
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Related Services</span>
+            <h2 className="text-2xl">Dig Deeper Into Specific Services</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/pricing", title: "Bundles & Pricing", desc: "Starter / Business / Growth bundles and full individual service pricing." },
+              { href: "/web-design", title: "Web Design", desc: "4-week site builds from discovery to launch, care plan included." },
+              { href: "/microsoft-365", title: "Microsoft 365", desc: "Email, Teams, Teams Phone, OneDrive, and Copilot readiness." },
+              { href: "/portfolio", title: "Portfolio", desc: "Real projects with client testimonials \u2014 BM Custom Furniture, Nurney Plant and Civil, and more." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
           </StaggerContainer>
         </div>
       </section>

@@ -53,8 +53,8 @@ export default function Grants() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">Grow Digital Voucher</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
-              Up to &euro;5,000 Towards New Digital Tools for Your Business
+            <h1 className="display-sm text-white mb-6">
+              Grow Digital Voucher &mdash; Up to &euro;5,000 Towards New Digital Tools for Your Business
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
               The Local Enterprise Office's Grow Digital Voucher scheme covers 50% of the cost of new software subscriptions and setup &mdash; up to &euro;5,000. It replaced the old Trading Online Voucher in December 2024, with broader eligibility but a narrower focus. Here's how it actually works, what it covers, and where I fit in.
@@ -178,7 +178,7 @@ export default function Grants() {
           <FadeIn className="mt-10">
             <div className="bg-[#f3f4f5] p-6 rounded-2xl text-center">
               <p className="text-foreground text-[15px] font-sans">
-                <strong>The bottom line:</strong> the Grow Digital Voucher is a software adoption grant, not a general "digital project" grant. If you need a custom WordPress site built, that part of your project is <strong>not</strong> fundable. But if you're rolling out new Microsoft 365, a CRM, an e-commerce platform, or cybersecurity software, that <em>is</em> the kind of project the voucher is designed for.
+                <strong>The bottom line:</strong> the Grow Digital Voucher is a software adoption grant, not a general "digital project" grant. If you need a custom <Link href="/web-design" className="text-accent hover:underline">WordPress site</Link> built, that part of your project is <strong>not</strong> fundable. But if you're rolling out new <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>, a CRM, an e-commerce platform, or <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity software</Link>, that <em>is</em> the kind of project the voucher is designed for.
               </p>
             </div>
           </FadeIn>
@@ -197,19 +197,30 @@ export default function Grants() {
           </FadeIn>
 
           <StaggerContainer className="grid sm:grid-cols-2 gap-6 mb-10">
-            {[
-              { title: "Scheme-compliant invoicing", desc: "I invoice with proper business details (tax registration, itemised scope) so your claim goes through cleanly." },
-              { title: "Honest scope advice", desc: "I'll tell you plainly which parts of your project are fundable under the voucher and which aren't." },
-              { title: "Service alignment", desc: "Microsoft 365 setup, CRM implementation, e-commerce platforms, cybersecurity rollouts \u2014 all things I do that fit the scheme." },
-              { title: "Documentation support", desc: "I'll provide the quotes, invoices, and project confirmation your LEO needs for drawdown." },
-            ].map((item, i) => (
-              <StaggerItem key={i}>
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <h3 className="text-base font-headline font-bold mb-2 text-primary">{item.title}</h3>
-                  <p className="text-foreground text-[15px] font-sans">{item.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
+            <StaggerItem>
+              <div className="bg-white p-6 rounded-2xl shadow-sm">
+                <h3 className="text-base font-headline font-bold mb-2 text-primary">Scheme-compliant invoicing</h3>
+                <p className="text-foreground text-[15px] font-sans">I invoice with proper business details (tax registration, itemised scope) so your claim goes through cleanly.</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-6 rounded-2xl shadow-sm">
+                <h3 className="text-base font-headline font-bold mb-2 text-primary">Honest scope advice</h3>
+                <p className="text-foreground text-[15px] font-sans">I'll tell you plainly which parts of your project are fundable under the voucher and which aren't.</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-6 rounded-2xl shadow-sm">
+                <h3 className="text-base font-headline font-bold mb-2 text-primary">Service alignment</h3>
+                <p className="text-foreground text-[15px] font-sans"><Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link> setup, CRM implementation, e-commerce platforms, <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity</Link> rollouts, and <Link href="/ai-readiness" className="text-accent hover:underline">Microsoft Copilot</Link> readiness &mdash; all things I do that fit the scheme.</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-6 rounded-2xl shadow-sm">
+                <h3 className="text-base font-headline font-bold mb-2 text-primary">Documentation support</h3>
+                <p className="text-foreground text-[15px] font-sans">I'll provide the quotes, invoices, and project confirmation your LEO needs for drawdown.</p>
+              </div>
+            </StaggerItem>
           </StaggerContainer>
 
           <FadeIn>
@@ -346,6 +357,34 @@ export default function Grants() {
               <strong>Disclaimer:</strong> The information on this page is provided in good faith and believed accurate as of April 2026. Scheme terms, eligibility, and funding levels are set by the Department of Enterprise, Trade and Employment and administered by Ireland's Local Enterprise Offices. Always confirm current details with your LEO or at <a href="https://www.localenterprise.ie/growdigital" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-primary transition-colors underline">localenterprise.ie/growdigital</a> before relying on any figure or condition. Crettyard Digital does not guarantee eligibility, approval, or drawdown of any grant. See our <Link href="/terms-and-conditions" className="text-accent hover:text-primary transition-colors underline">Terms &amp; Conditions</Link> for the full position.
             </p>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Voucher-Eligible Services</span>
+            <h2 className="text-2xl">Services That Typically Fit the Scheme</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/microsoft-365", title: "Microsoft 365", desc: "New M365 subscriptions + setup + training \u2014 a core voucher-eligible project." },
+              { href: "/cybersecurity", title: "Cybersecurity", desc: "New cybersecurity software subscriptions, staff training, and documentation." },
+              { href: "/ai-readiness", title: "Microsoft Copilot & AI", desc: "Copilot is a new Microsoft 365 subscription \u2014 often directly voucher-eligible." },
+              { href: "/managed-it-support", title: "Managed IT", desc: "The monthly management that keeps it all running after your voucher project." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-[#f3f4f5] p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more &rarr;</span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
