@@ -1,5 +1,4 @@
-﻿import { Link } from "wouter";
-import { FadeIn } from "@/components/FadeIn";
+﻿import { FadeIn } from "@/components/FadeIn";
 
 const tocItems = [
   { id: "section-1", label: "1. Who we are" },
@@ -20,7 +19,7 @@ export default function CookiePolicy() {
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <FadeIn>
             <span className="eyebrow mb-5 inline-block">Legal</span>
-            <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6">Cookie Policy</h1>
+            <h1 className="display-sm mb-6">Cookie Policy</h1>
             <p className="text-foreground font-sans">Effective date: 10/03/2026</p>
           </FadeIn>
         </div>

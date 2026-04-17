@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <FadeIn>
             <span className="eyebrow mb-5 inline-block">Legal</span>
-            <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6">Privacy Policy</h1>
+            <h1 className="display-sm mb-6">Privacy Policy</h1>
             <p className="text-foreground font-sans">Effective date: 10/03/2026</p>
           </FadeIn>
         </div>
