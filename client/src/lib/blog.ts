@@ -20,6 +20,7 @@ export interface BlogFrontmatter {
   tags: string[];
   author?: string;
   coverImage?: string;
+  coverImageAlt?: string;
   ogImage?: string;
   draft?: boolean;
 }
@@ -90,6 +91,7 @@ function parsePost(filePath: string, raw: string): BlogPost | null {
     tags: Array.isArray(data.tags) ? data.tags.filter((t): t is string => typeof t === "string") : [],
     author: typeof data.author === "string" ? data.author : "Joey",
     coverImage: typeof data.coverImage === "string" ? data.coverImage : undefined,
+    coverImageAlt: typeof data.coverImageAlt === "string" ? data.coverImageAlt : undefined,
     ogImage: typeof data.ogImage === "string" ? data.ogImage : undefined,
     draft: data.draft === true,
     body,

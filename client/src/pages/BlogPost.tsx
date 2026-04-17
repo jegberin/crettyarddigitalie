@@ -146,7 +146,7 @@ export default function BlogPost() {
             <FadeIn>
               <img
                 src={post.coverImage}
-                alt=""
+                alt={post.coverImageAlt ?? ""}
                 className="w-full h-auto rounded-2xl shadow-sm"
                 loading="eager"
               />
