@@ -1,11 +1,17 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Briefcase, CheckCircle, ArrowRight, Shield, Lock, Mail, ServerCog, FileCheck, MonitorSmartphone, Users } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { TrustMarquee } from "@/components/TrustMarquee";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import iconEmailShield from "@assets/concept-email-shield.webp";
+import icon365Admin from "@assets/concept-365-admin.webp";
+import iconMfaPadlock from "@assets/concept-mfa-padlock.webp";
+import iconGdprShield from "@assets/concept-gdpr-shield.webp";
+import iconAccessibilityEaa from "@assets/concept-accessibility-eaa.webp";
+import iconComplianceCheck from "@assets/concept-compliance-check.webp";
 
 export default function ProfessionalServices() {
   return (
@@ -17,11 +23,11 @@ export default function ProfessionalServices() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">IT for Professional Services</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
+            <h1 className="display-sm text-white mb-6">
               Managed IT, Email, and Compliance for Accountants, Solicitors, and Professional Firms
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You handle sensitive client data every day. Your professional reputation depends on that data being secure, your email being reliable, and your technology meeting the regulatory standards your industry demands. I provide the IT infrastructure, security, and compliance you need &mdash; without the corporate price tag or the jargon.
+              You handle sensitive client data every day. Your professional reputation &mdash; whether you&rsquo;re regulated by the Law Society of Ireland, Chartered Accountants Ireland, CPA Ireland, or the Central Bank &mdash; depends on that data being secure, your email being reliable, and your technology meeting the regulatory standards your industry demands. I provide the IT infrastructure, security, and compliance you need for firms in Dublin, Cork, Galway, and right across Ireland &mdash; without the corporate price tag or the jargon.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">
@@ -73,16 +79,23 @@ export default function ProfessionalServices() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {[
-              { icon: Mail, title: "Microsoft 365 for Regulated Environments", desc: "Professional @yourfirm.ie email with encrypted communications, data retention policies, GDPR-compliant EU data residency, and Multi-Factor Authentication. Shared calendars, Teams, and OneDrive/SharePoint for secure document management." },
-              { icon: ServerCog, title: "Managed IT With Compliance Built In", desc: "Proactive monitoring, security updates, endpoint protection, and cloud backup \u2014 with GDPR, NIS2, and DORA compliance checks integrated into the service. Not bolted on as an extra." },
-              { icon: Lock, title: "Secure Document Management", desc: "A properly structured SharePoint environment for sensitive client files, board minutes, CRO filings, and regulatory documents. Version-controlled, access-restricted, and backed up automatically." },
-              { icon: Shield, title: "Cybersecurity for Your Risk Profile", desc: "Phishing protection, email security hardening, staff awareness training, and incident response planning. Documented and audit-ready for when clients or regulators ask." },
-              { icon: MonitorSmartphone, title: "A Website That Reflects Your Standards", desc: "Clean, credible, and compliant with GDPR, cookie regulations, and the European Accessibility Act. Built to attract the right clients and demonstrate the professionalism your firm stands for." },
-              { icon: FileCheck, title: "DORA Readiness (Financial Services)", desc: "If your firm is a credit union, investment firm, insurance undertaking or broker, or similar regulated financial entity, DORA requires your technology to meet operational resilience standards. I ensure your systems qualify and provide documentation." },
+              { img: iconEmailShield, alt: "Glass envelope with a glass shield representing GDPR-compliant business email for regulated firms", title: "Microsoft 365 for Regulated Environments", desc: "Professional @yourfirm.ie email with encrypted communications, data retention policies, GDPR-compliant EU data residency, and Multi-Factor Authentication. Shared calendars, Teams, and OneDrive/SharePoint for secure document management." },
+              { img: icon365Admin, alt: "Glass cog with an envelope inside representing Microsoft 365 administration and compliance management", title: "Managed IT With Compliance Built In", desc: "Proactive monitoring, security updates, endpoint protection, and cloud backup \u2014 with GDPR, NIS2, and DORA compliance checks integrated into the service. Not bolted on as an extra." },
+              { img: iconMfaPadlock, alt: "Glass padlock representing secure SharePoint document management for professional firms", title: "Secure Document Management", desc: "A properly structured SharePoint environment for sensitive client files, board minutes, CRO filings, and regulatory documents. Version-controlled, access-restricted, and backed up automatically." },
+              { img: iconGdprShield, alt: "Glass shield with a tick and EU stars representing cybersecurity for professional services firms", title: "Cybersecurity for Your Risk Profile", desc: "Phishing protection, email security hardening, staff awareness training, and incident response planning. Documented and audit-ready for when clients or regulators ask." },
+              { img: iconAccessibilityEaa, alt: "Glass accessibility symbol representing an EAA-compliant website for professional firms", title: "A Website That Reflects Your Standards", desc: "Clean, credible, and compliant with GDPR, cookie regulations, and the European Accessibility Act. Built to attract the right clients and demonstrate the professionalism your firm stands for." },
+              { img: iconComplianceCheck, alt: "Glass clipboard with ticks representing DORA readiness and audit-ready compliance documentation", title: "DORA Readiness (Financial Services)", desc: "If your firm is a credit union, investment firm, insurance undertaking or broker, or similar regulated financial entity, DORA requires your technology to meet operational resilience standards. I ensure your systems qualify and provide documentation." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                  <item.icon className="text-accent mb-4" size={28} />
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 mb-4"
+                    loading="lazy"
+                  />
                   <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">{item.desc}</p>
                 </div>
@@ -217,9 +230,9 @@ export default function ProfessionalServices() {
           <FadeIn>
             <Accordion type="single" collapsible className="w-full space-y-3">
               {[
-                { id: "ps-1", q: "What regulations apply to my firm?", a: "At minimum: GDPR (you handle personal data), ePrivacy (your website uses cookies), and the European Accessibility Act (if you offer services online). If you\u2019re in financial services, DORA applies directly. If you\u2019re in a supply chain for larger regulated entities, NIS2 may apply. I\u2019ll assess exactly what\u2019s relevant in our initial review." },
-                { id: "ps-2", q: "Can you help us pass a client\u2019s IT security assessment?", a: "Yes. Larger clients and corporate counterparties increasingly require professional firms to demonstrate IT security standards. I implement the measures needed and provide documentation to prove compliance." },
-                { id: "ps-3", q: "Do you handle data migration from old systems?", a: "Yes. I migrate email (Gmail, POP/IMAP, legacy Exchange), files, contacts, and calendars to Microsoft 365 safely, with zero data loss." },
+                { id: "ps-1", q: "What regulations apply to my firm?", a: "At minimum: GDPR (you handle personal data), ePrivacy (your website uses cookies), and the European Accessibility Act (if you offer services online). If you\u2019re in financial services, DORA applies directly. If you\u2019re in a supply chain for larger regulated entities, NIS2 may apply. Solicitors also face Law Society of Ireland requirements, and accountants Chartered Accountants Ireland / CPA Ireland obligations. I\u2019ll assess exactly what\u2019s relevant in our initial review." },
+                { id: "ps-2", q: "Can you help us pass a client\u2019s IT security assessment?", a: "Yes. Larger clients and corporate counterparties increasingly require professional firms to demonstrate IT security standards \u2014 often citing Article 32 of GDPR or NIS2 supplier questionnaires. I implement the technical measures needed and provide documentation to prove compliance." },
+                { id: "ps-3", q: "Do you handle data migration from old systems?", a: "Yes. I migrate email (Gmail, Google Workspace, POP/IMAP, legacy Exchange), files, contacts, and calendars to Microsoft 365 safely, with zero data loss." },
                 { id: "ps-4", q: "Is this more expensive than a generic IT provider?", a: "Not necessarily. The difference is that compliance is included in the service \u2014 not billed as an expensive add-on. For regulated firms, this often makes my service more cost-effective than a generic provider who doesn\u2019t understand your obligations." },
                 { id: "ps-5", q: "What about DORA specifically?", a: "DORA applies to specific regulated financial entities: banks, credit unions, investment firms, insurance undertakings and intermediaries, pension funds, payment institutions, and similar. General accountancy or legal practices are not in scope unless they also perform regulated financial activities such as MiFID-regulated investment advice. If you serve financial sector clients under a supplier relationship, those clients may perform DORA-driven due diligence on your IT \u2014 I can help you respond. If you\u2019re unsure whether DORA applies to your firm, I can review your services against the regulation\u2019s scope for free." },
               ].map((faq) => (
@@ -230,6 +243,34 @@ export default function ProfessionalServices() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Related services */}
+      <section className="py-20 bg-[#f3f4f5] border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-3 inline-block">Related Services</span>
+            <h2 className="text-2xl">Each Building Block in Detail</h2>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: "/managed-it-support", title: "Managed IT Support", desc: "Fixed-fee proactive IT with Microsoft 365 admin, compliance monitoring, and direct access to me." },
+              { href: "/microsoft-365", title: "Microsoft 365", desc: "The secure email, Teams, Teams Phone, and SharePoint platform your firm runs on \u2014 configured for regulated environments." },
+              { href: "/cybersecurity", title: "Cybersecurity & Compliance", desc: "Full NIS2, GDPR, EAA and ePrivacy framework beyond the technical baseline here." },
+              { href: "/dora-compliance", title: "DORA Compliance", desc: "For regulated financial firms \u2014 banks, credit unions, investment firms, insurance undertakings and brokers, pension funds." },
+            ].map((item) => (
+              <StaggerItem key={item.href}>
+                <Link href={item.href}>
+                  <div className="bg-white p-6 rounded-2xl card-hover cursor-pointer h-full">
+                    <h3 className="text-base mb-2">{item.title}</h3>
+                    <p className="text-foreground text-sm font-sans mb-3">{item.desc}</p>
+                    <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Learn more <ArrowRight size={14} className="ml-1" /></span>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
