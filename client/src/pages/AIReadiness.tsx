@@ -5,6 +5,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import heroCopilotInAction from "@assets/ai-hero-copilot-in-action.webp";
 
 export default function AIReadiness() {
   return (
@@ -13,26 +14,38 @@ export default function AIReadiness() {
       {/* Hero */}
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">AI Readiness &amp; Microsoft Copilot</span>
-            <h1 className="display-sm text-white mb-6">
-              Microsoft 365 Copilot &amp; AI Readiness for Small Business &mdash; Practical, Not Hype
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You've heard about AI, ChatGPT, and <Link href="/microsoft-365" className="text-accent underline decoration-accent/50 hover:decoration-accent">Microsoft 365</Link> Copilot. You're not sure what it can actually do for a business like yours &mdash; or where to start. I help small businesses cut through the noise, navigate the EU AI Act in plain English, and implement <strong>Microsoft 365 Copilot</strong>, <strong>Copilot Chat</strong>, or (where it fits) <strong>Copilot Studio</strong> and Azure OpenAI &mdash; with data access and permissions configured properly. Genuine productivity gains, no buzzwords.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact#send-message">
-                <Button size="lg">Book an AI Consultation</Button>
-              </Link>
-              <a href="#what-it-does">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  See What Copilot Does &darr;
-                </Button>
-              </a>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">AI Readiness &amp; Microsoft Copilot</span>
+              <h1 className="display-sm text-white mb-6">
+                Microsoft 365 Copilot &amp; AI Readiness for Small Business &mdash; Practical, Not Hype
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                You've heard about AI, ChatGPT, and <Link href="/microsoft-365" className="text-accent underline decoration-accent/50 hover:decoration-accent">Microsoft 365</Link> Copilot. You're not sure what it can actually do for a business like yours &mdash; or where to start. I help small businesses cut through the noise, navigate the EU AI Act in plain English, and implement <strong>Microsoft 365 Copilot</strong>, <strong>Copilot Chat</strong>, or (where it fits) <strong>Copilot Studio</strong> and Azure OpenAI &mdash; with data access and permissions configured properly. Genuine productivity gains, no buzzwords.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact#send-message">
+                  <Button size="lg">Book an AI Consultation</Button>
+                </Link>
+                <a href="#what-it-does">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    See What Copilot Does &darr;
+                  </Button>
+                </a>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroCopilotInAction}
+                alt="A laptop on a small Irish-office desk showing Microsoft 365 Copilot summarising a client email thread in Word, with handwritten notes, a coffee cup and reading glasses on the desk"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 

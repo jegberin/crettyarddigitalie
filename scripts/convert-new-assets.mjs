@@ -76,6 +76,9 @@ const jobs = [
 
   // Cybersecurity hero (MFA in action)
   ['cyber-hero-mfa-in-action.png', 'cyber-hero-mfa-in-action.webp'],
+
+  // AI Readiness hero (Copilot in action)
+  ['ai-hero-copilot-in-action.png', 'ai-hero-copilot-in-action.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -88,6 +91,7 @@ const HERO_FILES = new Set([
   'mit-hero-admin-console.webp',
   'network-hero-sme-install.webp',
   'cyber-hero-mfa-in-action.webp',
+  'ai-hero-copilot-in-action.webp',
 ]);
 
 let totalIn = 0;
