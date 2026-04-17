@@ -726,7 +726,7 @@ export default function GetAQuote() {
               <p className="text-[#1DB48F] text-xs sm:text-sm font-semibold uppercase tracking-[2px] mb-3">
                 Get A Quote
               </p>
-              <h1 className="font-heading text-3xl sm:text-5xl font-bold leading-tight mb-4">
+              <h1 className="display-sm text-white mb-4">
                 Tell me what you need.
                 <br />
                 <span className="text-[#1DB48F]">I&rsquo;ll come back with real numbers.</span>

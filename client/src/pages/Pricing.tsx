@@ -72,14 +72,14 @@ const bundles = [
 ];
 
 const individualPricing = [
-  { category: "Web Design", items: [
+  { category: "Web Design", href: "/web-design", items: [
     { service: "Starter website (1\u20133 pages)", price: "From \u20ac799 + \u20ac49/mo care" },
     { service: "Business website (4\u20137 pages)", price: "From \u20ac1,299 + \u20ac49/mo care" },
     { service: "Custom website / redesign", price: "Quoted on scope" },
     { service: "Website Care Plan (Standard)", price: "\u20ac49/month" },
     { service: "Website Care Plan (Premium)", price: "\u20ac79/month" },
   ]},
-  { category: "Microsoft 365 & Teams Phone", items: [
+  { category: "Microsoft 365 & Teams Phone", href: "/microsoft-365", items: [
     { service: "Basic setup (1\u20135 users)", price: "From \u20ac350" },
     { service: "Full migration & setup (5\u201320 users)", price: "From \u20ac600" },
     { service: "GDPR & security hardening", price: "From \u20ac150" },
@@ -87,18 +87,18 @@ const individualPricing = [
     { service: "Teams Phone calling plan", price: "From \u20ac7.50/user/mo" },
     { service: "Monthly support & admin", price: "From \u20ac50/month" },
   ]},
-  { category: "Managed IT Support", items: [
+  { category: "Managed IT Support", href: "/managed-it-support", items: [
     { service: "Essential (1\u20135 users)", price: "From \u20ac45/user/month" },
     { service: "Professional (5\u201315 users)", price: "From \u20ac75/user/month" },
     { service: "Comprehensive (regulated firms)", price: "From \u20ac110/user/month" },
   ]},
-  { category: "Network & Wi-Fi", items: [
+  { category: "Network & Wi-Fi", href: "/network-wifi-security", items: [
     { service: "Wi-Fi health check", price: "From \u20ac150" },
     { service: "Small office network setup", price: "From \u20ac400" },
     { service: "Full network design & install", price: "From \u20ac800" },
     { service: "Firewall & security config", price: "From \u20ac300" },
   ]},
-  { category: "Cybersecurity & Compliance", items: [
+  { category: "Cybersecurity & Compliance", href: "/cybersecurity", items: [
     { service: "Security audit & health check", price: "From \u20ac200" },
     { service: "Web Compliance Audit (GDPR + cookies + EAA)", price: "From \u20ac250" },
     { service: "IT Resilience Audit (NIS2 + DORA where applicable)", price: "From \u20ac300" },
@@ -106,7 +106,7 @@ const individualPricing = [
     { service: "Cookie consent setup", price: "From \u20ac150" },
     { service: "Staff cyber awareness training", price: "From \u20ac250" },
   ]},
-  { category: "AI & Microsoft Copilot", items: [
+  { category: "AI & Microsoft Copilot", href: "/ai-readiness", items: [
     { service: "AI Readiness Assessment", price: "From \u20ac150" },
     { service: "Copilot setup & training", price: "From \u20ac250" },
     { service: "AI Strategy Consultation", price: "From \u20ac400" },
@@ -123,11 +123,11 @@ export default function Pricing() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">Bundles &amp; Pricing</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
+            <h1 className="display-sm text-white mb-6">
               One Provider. One Monthly Cost. Everything Your Business Needs.
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              Stop juggling three providers, five invoices, and nobody taking responsibility. Digital Foundation Bundles give you your website, email, phone system, IT support, and security in one integrated package &mdash; built by one person, for one predictable monthly cost.
+              Stop juggling three providers, five invoices, and nobody taking responsibility. Digital Foundation Bundles give small businesses across Laois, Carlow, Kilkenny, and remotely across Ireland their website, email, phone system, IT support, and security in one integrated package &mdash; built by one person, for one predictable monthly cost.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">
@@ -175,12 +175,22 @@ export default function Pricing() {
                   <p className="text-xs font-headline font-bold text-accent/80 bg-accent/10 rounded-lg px-3 py-2 mb-6">{bundle.grant}</p>
 
                   <ul className="space-y-2.5 flex-1 mb-6">
-                    {bundle.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
-                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
-                        {item}
-                      </li>
-                    ))}
+                    {bundle.items.map((item, j) => {
+                      // Inline-link the DORA readiness bullet in the Growth bundle to /dora-compliance
+                      const doraPrefix = "DORA readiness";
+                      const hasDora = item.startsWith(doraPrefix);
+                      return (
+                        <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
+                          <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                          {hasDora ? (
+                            <span>
+                              <Link href="/dora-compliance" className="text-accent hover:underline font-headline font-bold">{doraPrefix}</Link>
+                              {item.slice(doraPrefix.length)}
+                            </span>
+                          ) : item}
+                        </li>
+                      );
+                    })}
                   </ul>
 
                   <Link href="/contact#send-message">
@@ -192,6 +202,23 @@ export default function Pricing() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Guided quote calculator cross-link */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn>
+            <div className="bg-accent/5 border border-accent/20 p-6 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex-1">
+                <p className="font-headline font-bold text-primary mb-1">Prefer a guided calculator?</p>
+                <p className="text-sm text-foreground font-sans">Use the 6-step quote tool to mix and match services and see a ballpark estimate instantly &mdash; no contact required until you&rsquo;re ready.</p>
+              </div>
+              <Link href="/get-a-quote">
+                <Button variant="outline" className="shrink-0">Get a Quote &rarr;</Button>
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -234,9 +261,16 @@ export default function Pricing() {
             {individualPricing.map((cat, i) => (
               <FadeIn key={i} delay={i * 0.05}>
                 <div className="bg-[#f3f4f5] rounded-2xl overflow-hidden">
-                  <div className="bg-primary px-6 py-3">
+                  <Link
+                    href={cat.href}
+                    className="bg-primary px-6 py-3 flex items-center justify-between group hover:bg-primary/90 transition-colors"
+                    data-testid={`link-pricing-category-${cat.href}`}
+                  >
                     <h3 className="text-white font-headline font-bold text-sm">{cat.category}</h3>
-                  </div>
+                    <span className="text-white/80 text-xs font-headline font-bold inline-flex items-center gap-1 group-hover:text-white transition-colors">
+                      Full details <ArrowRight size={12} />
+                    </span>
+                  </Link>
                   <div className="divide-y divide-gray-200">
                     {cat.items.map((item, j) => (
                       <div key={j} className="flex items-center justify-between px-6 py-3.5">
