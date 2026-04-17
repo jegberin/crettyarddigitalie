@@ -142,8 +142,8 @@ export default function HowItWorks() {
                     { day: "Day 7\u201310", title: "Training & Handover", desc: "Training session for your team. Quick-reference guide provided. I\u2019m available for any questions." },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4">
-                      <div className="w-16 shrink-0">
-                        <span className="text-xs font-headline font-bold text-accent bg-accent/10 px-2 py-1 rounded">{item.day}</span>
+                      <div className="w-20 shrink-0">
+                        <span className="inline-block whitespace-nowrap text-xs font-headline font-bold text-accent bg-accent/10 px-2 py-1 rounded">{item.day}</span>
                       </div>
                       <div>
                         <h4 className="text-sm font-headline font-bold mb-1">{item.title}</h4>
