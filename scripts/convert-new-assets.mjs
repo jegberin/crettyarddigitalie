@@ -68,6 +68,11 @@ const jobs = [
   ['concept-network-design.png', 'concept-network-design.webp'],
   ['concept-wifi-mesh.png',      'concept-wifi-mesh.webp'],
   ['network-hero-sme-install.png', 'network-hero-sme-install.webp'],
+
+  // Cybersecurity services grid
+  ['concept-security-audit.png', 'concept-security-audit.webp'],
+  ['concept-mfa-padlock.png',    'concept-mfa-padlock.webp'],
+  ['concept-email-shield.png',   'concept-email-shield.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.

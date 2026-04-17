@@ -1,10 +1,16 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Shield, ShieldAlert, Lock, Mail, Users, FileCheck, CheckCircle, ArrowRight, AlertTriangle, Download, Eye } from "lucide-react";
+import { Shield, ShieldAlert, FileCheck, CheckCircle, ArrowRight, AlertTriangle, Download } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import iconSecurityAudit from "@assets/concept-security-audit.webp";
+import iconMfaPadlock from "@assets/concept-mfa-padlock.webp";
+import iconEmailShield from "@assets/concept-email-shield.webp";
+import iconTraining from "@assets/concept-training.webp";
+import iconEndpointSecurity from "@assets/concept-endpoint-security.webp";
+import iconCloudBackup from "@assets/concept-cloud-backup.webp";
 
 export default function Cybersecurity() {
   return (
@@ -117,16 +123,23 @@ export default function Cybersecurity() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {[
-              { icon: Eye, title: "Security Audit & Health Check", desc: "I review your email, devices, network, and cloud accounts against Cyber Essentials baselines. You get a plain-English report showing what\u2019s at risk and what to fix first.", price: "From \u20ac200" },
-              { icon: Lock, title: "Multi-Factor Authentication (MFA)", desc: "The single most effective thing any business can do. I configure MFA (phishing-resistant FIDO2 / passkeys where it matters) across Microsoft 365, email, and critical accounts.", price: "From \u20ac100" },
-              { icon: Mail, title: "Email Security Hardening", desc: "Advanced phishing protection via Microsoft Defender for Office 365, spam filtering, and email authentication (SPF, DKIM, DMARC) \u2014 stops criminals sending emails that look like they came from you.", price: "From \u20ac150" },
-              { icon: Users, title: "Staff Cyber Awareness Training", desc: "Over 90% of attacks start with a human mistake. Practical, jargon-free training so your team spots phishing and social engineering.", price: "From \u20ac250" },
-              { icon: Shield, title: "Endpoint Protection (EDR)", desc: "Business-grade endpoint detection and response (EDR) using Microsoft Defender for Endpoint \u2014 real behavioural protection for laptops, desktops, and mobiles, not the consumer kind.", price: "Included in Managed IT" },
-              { icon: Download, title: "Backup & Recovery Planning", desc: "Automated backups with immutable snapshots and tested recovery so ransomware becomes an inconvenience, not a catastrophe. Zero Trust by default.", price: "Included in Managed IT" },
+              { img: iconSecurityAudit, alt: "Glass magnifying glass over a glass checklist representing a security audit and health check", title: "Security Audit & Health Check", desc: "I review your email, devices, network, and cloud accounts against Cyber Essentials baselines. You get a plain-English report showing what\u2019s at risk and what to fix first.", price: "From \u20ac200" },
+              { img: iconMfaPadlock, alt: "Glass padlock representing multi-factor authentication and account security", title: "Multi-Factor Authentication (MFA)", desc: "The single most effective thing any business can do. I configure MFA (phishing-resistant FIDO2 / passkeys where it matters) across Microsoft 365, email, and critical accounts.", price: "From \u20ac100" },
+              { img: iconEmailShield, alt: "Glass envelope with a glass shield representing email security hardening", title: "Email Security Hardening", desc: "Advanced phishing protection via Microsoft Defender for Office 365, spam filtering, and email authentication (SPF, DKIM, DMARC) \u2014 stops criminals sending emails that look like they came from you.", price: "From \u20ac150" },
+              { img: iconTraining, alt: "Glass lightbulb with a glass speech bubble representing staff cyber awareness training", title: "Staff Cyber Awareness Training", desc: "Over 90% of attacks start with a human mistake. Practical, jargon-free training so your team spots phishing and social engineering.", price: "From \u20ac250" },
+              { img: iconEndpointSecurity, alt: "Glass laptop with a padlock in its screen representing endpoint detection and response (EDR)", title: "Endpoint Protection (EDR)", desc: "Business-grade endpoint detection and response (EDR) using Microsoft Defender for Endpoint \u2014 real behavioural protection for laptops, desktops, and mobiles, not the consumer kind.", price: "Included in Managed IT" },
+              { img: iconCloudBackup, alt: "Glass cloud containing a shield with a circular-arrow representing immutable backups and recovery", title: "Backup & Recovery Planning", desc: "Automated backups with immutable snapshots and tested recovery so ransomware becomes an inconvenience, not a catastrophe. Zero Trust by default.", price: "Included in Managed IT" },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                  <item.icon className="text-accent mb-4" size={28} />
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-20 mb-4"
+                    loading="lazy"
+                  />
                   <h3 className="text-lg mb-2">{item.title}</h3>
                   <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">{item.desc}</p>
                   <p className="text-sm font-headline font-bold text-accent">{item.price}</p>
