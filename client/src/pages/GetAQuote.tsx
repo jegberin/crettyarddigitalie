@@ -613,7 +613,11 @@ export default function GetAQuote() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [touched, setTouched] = useState({ name: false, email: false });
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    phone: false,
+  });
 
   const ballpark = useMemo(() => calculateBallpark(state), [state]);
 
@@ -643,9 +647,15 @@ export default function GetAQuote() {
     if (state.step === 3) return true; // all sub-answers optional
     if (state.step === 4) return Boolean(state.timing);
     if (state.step === 5) {
-      const { name, email } = state.contact;
+      const { name, email, phone, contactMethod } = state.contact;
+      const nameOk = name.trim().length >= 2;
       const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-      return name.trim().length >= 2 && emailValid;
+      const phoneDigits = phone.replace(/\D/g, "");
+      const phoneValid = phoneDigits.length >= 7;
+      if (contactMethod === "phone" || contactMethod === "whatsapp") {
+        return nameOk && phoneValid;
+      }
+      return nameOk && emailValid;
     }
     return true;
   };
@@ -670,7 +680,7 @@ export default function GetAQuote() {
   };
 
   const handleSubmit = async () => {
-    setTouched({ name: true, email: true });
+    setTouched({ name: true, email: true, phone: true });
     if (!canProceed()) return;
 
     setSubmitting(true);
@@ -1430,8 +1440,8 @@ function Step5Contact({
   onChange,
 }: {
   value: QuoteState["contact"];
-  touched: { name: boolean; email: boolean };
-  onTouch: (k: "name" | "email") => void;
+  touched: { name: boolean; email: boolean; phone: boolean };
+  onTouch: (k: "name" | "email" | "phone") => void;
   onChange: (v: QuoteState["contact"]) => void;
 }) {
   const set = <K extends keyof QuoteState["contact"]>(
@@ -1441,13 +1451,26 @@ function Step5Contact({
     onChange({ ...value, [key]: val });
   };
 
+  const phonePreferred =
+    value.contactMethod === "phone" || value.contactMethod === "whatsapp";
+  const emailRequired = !phonePreferred;
+  const phoneRequired = phonePreferred;
+
   const nameError =
     touched.name && value.name.trim().length < 2
       ? "Please enter your name"
       : null;
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.email.trim());
   const emailError =
-    touched.email && !emailValid ? "Please enter a valid email" : null;
+    emailRequired && touched.email && !emailValid
+      ? "Please enter a valid email"
+      : null;
+  const phoneDigits = value.phone.replace(/\D/g, "");
+  const phoneValid = phoneDigits.length >= 7;
+  const phoneError =
+    phoneRequired && touched.phone && !phoneValid
+      ? "Please enter a valid phone number"
+      : null;
 
   return (
     <motion.div
@@ -1503,25 +1526,6 @@ function Step5Contact({
             placeholder="Kelly Plumbing Ltd"
             autoComplete="organization"
           />
-          <Field
-            label="Email"
-            required
-            type="email"
-            error={emailError}
-            value={value.email}
-            onChange={(v) => set("email", v)}
-            onBlur={() => onTouch("email")}
-            placeholder="sarah@kellyplumbing.ie"
-            autoComplete="email"
-          />
-          <Field
-            label="Phone (optional)"
-            type="tel"
-            value={value.phone}
-            onChange={(v) => set("phone", v)}
-            placeholder="087 123 4567"
-            autoComplete="tel"
-          />
         </div>
 
         <div className="mt-5">
@@ -1547,6 +1551,38 @@ function Step5Contact({
               );
             })}
           </div>
+          <p className="mt-2 text-xs text-gray-500">
+            {phonePreferred
+              ? value.contactMethod === "whatsapp"
+                ? "I'll WhatsApp you — please give me a mobile number below."
+                : "I'll give you a call — please give me a phone number below."
+              : "I'll reply by email — please give me a valid email below."}
+          </p>
+        </div>
+
+        <div className="mt-5 grid sm:grid-cols-2 gap-5">
+          <Field
+            label={emailRequired ? "Email" : "Email (optional)"}
+            required={emailRequired}
+            type="email"
+            error={emailError}
+            value={value.email}
+            onChange={(v) => set("email", v)}
+            onBlur={() => onTouch("email")}
+            placeholder="sarah@kellyplumbing.ie"
+            autoComplete="email"
+          />
+          <Field
+            label={phoneRequired ? "Phone" : "Phone (optional)"}
+            required={phoneRequired}
+            type="tel"
+            error={phoneError}
+            value={value.phone}
+            onChange={(v) => set("phone", v)}
+            onBlur={() => onTouch("phone")}
+            placeholder="087 123 4567"
+            autoComplete="tel"
+          />
         </div>
 
         <div className="mt-5">
@@ -1600,7 +1636,11 @@ function Field({
     <div>
       <label className="block text-sm font-medium text-[#002157] mb-1.5">
         {label}
-        {required && <span className="text-red-500 ml-1">*</span>}
+        {required && (
+          <span className="text-[#1DB48F] ml-1" aria-hidden="true">
+            *
+          </span>
+        )}
       </label>
       <input
         type={type}
