@@ -3,4 +3,6 @@ dist
 docs
 .git
 .DS_Store
+.env
+.env.*
 *.tar.gz

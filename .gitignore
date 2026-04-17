@@ -5,6 +5,11 @@ server/public
 vite.config.ts.*
 *.tar.gz
 
+# Local env; use .env.example as the template
+.env
+.env.local
+.env.*.local
+
 # Tooling / scratch
 .replit
 .agents/
