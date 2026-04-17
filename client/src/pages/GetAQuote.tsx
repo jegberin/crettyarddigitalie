@@ -2017,7 +2017,7 @@ function BallparkView({ ballpark }: { ballpark: Ballpark }) {
             To use the voucher, you apply through your Local Enterprise Office
             after a free &ldquo;Digital for Business&rdquo; consultation.{" "}
             <Link
-              href="/grants"
+              href="/grants-funding"
               className="text-[#1DB48F] font-semibold hover:underline inline-flex items-center gap-1"
             >
               See full grant details
