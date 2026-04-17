@@ -4,8 +4,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { MessageCircle, Clock, FileText, CheckCircle, MapPin, Calculator, Phone, Mail } from "lucide-react";
+import joeyPhoto from "@assets/joey-profile-photo.webp";
+
+// Shared input styling for the "modern filled" form style:
+// soft gray background at rest, white on focus, teal focus ring + border.
+const FIELD_CLASS =
+  "h-12 bg-[#f7f8fa] border border-gray-200 rounded-xl px-4 text-[15px] font-sans shadow-none focus-visible:ring-2 focus-visible:ring-accent/30 focus-visible:border-accent focus-visible:bg-white transition-colors";
+const LABEL_CLASS = "text-sm font-headline font-bold text-primary mb-1.5";
+const REQUIRED_ASTERISK = <span className="text-accent" aria-hidden="true">*</span>;
 
 // Google Analytics / Ads gtag is injected globally via index.html.
 // Narrow the window shape here so call sites are type-safe.
@@ -260,6 +275,21 @@ export default function Contact() {
 
             <FadeIn delay={0.15}>
               <div id="send-message" className="bg-white p-8 border border-gray-200/60 rounded-2xl shadow-sm">
+                <div className="flex items-center gap-3 mb-5 pb-5 border-b border-gray-100" data-testid="block-joey-trust">
+                  <img
+                    src={joeyPhoto}
+                    alt="Joey, founder of Crettyard Digital"
+                    className="w-14 h-14 rounded-full object-cover object-top ring-2 ring-accent/10 shrink-0"
+                    width="56"
+                    height="56"
+                    loading="lazy"
+                  />
+                  <div>
+                    <p className="text-xs font-sans text-muted-foreground">Your message goes directly to</p>
+                    <p className="text-sm font-headline font-bold text-primary">Joey &mdash; no account managers, no chatbots.</p>
+                  </div>
+                </div>
+
                 <h3 className="text-xl mb-2" data-testid="text-form-heading">Send a Message</h3>
                 <p className="text-foreground/80 text-sm mb-1 font-sans">It only takes a minute. I'll get back to you within one business day.</p>
                 <p className="text-foreground/70 text-xs mb-6 font-sans">No obligation — if I'm not the right fit, I'll tell you honestly.</p>
@@ -286,9 +316,9 @@ export default function Contact() {
                   >
 
                     <div className="grid sm:grid-cols-2 gap-5">
-                      <div className="space-y-1">
-                        <Label htmlFor="name" className="text-sm font-headline font-bold text-foreground uppercase tracking-wide">
-                          Name <span className="text-red-500" aria-hidden="true">*</span>
+                      <div>
+                        <Label htmlFor="name" className={LABEL_CLASS}>
+                          Name {REQUIRED_ASTERISK}
                         </Label>
                         <Input
                           id="name"
@@ -298,16 +328,16 @@ export default function Contact() {
                           value={values.name}
                           onChange={(e) => handleChange("name", e.target.value)}
                           onBlur={() => handleBlur("name")}
-                          className="rounded-none border-0 border-b border-gray-300 focus-visible:ring-0 focus-visible:border-accent h-10 bg-transparent px-0 shadow-none"
+                          className={FIELD_CLASS}
                           data-testid="input-name"
                           aria-required="true"
                           aria-describedby={touched.name && errors.name ? "error-name" : undefined}
                         />
                         {touched.name && <FieldError message={errors.name} />}
                       </div>
-                      <div className="space-y-1">
-                        <Label htmlFor="email" className="text-sm font-headline font-bold text-foreground uppercase tracking-wide">
-                          Email <span className="text-red-500" aria-hidden="true">*</span>
+                      <div>
+                        <Label htmlFor="email" className={LABEL_CLASS}>
+                          Email {REQUIRED_ASTERISK}
                         </Label>
                         <Input
                           id="email"
@@ -318,7 +348,7 @@ export default function Contact() {
                           value={values.email}
                           onChange={(e) => handleChange("email", e.target.value)}
                           onBlur={() => handleBlur("email")}
-                          className="rounded-none border-0 border-b border-gray-300 focus-visible:ring-0 focus-visible:border-accent h-10 bg-transparent px-0 shadow-none"
+                          className={FIELD_CLASS}
                           data-testid="input-email"
                           aria-required="true"
                         />
@@ -326,22 +356,22 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <div className="space-y-1">
-                      <Label htmlFor="business-name" className="text-sm font-headline font-bold text-foreground uppercase tracking-wide">Business Name</Label>
+                    <div>
+                      <Label htmlFor="business-name" className={LABEL_CLASS}>Business Name</Label>
                       <Input
                         id="business-name"
                         name="business_name"
                         placeholder="Your business name (optional)"
                         value={values.businessName}
                         onChange={(e) => handleChange("businessName", e.target.value)}
-                        className="rounded-none border-0 border-b border-gray-300 focus-visible:ring-0 focus-visible:border-accent h-10 bg-transparent px-0 shadow-none"
+                        className={FIELD_CLASS}
                         data-testid="input-business-name"
                       />
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-5">
-                      <div className="space-y-1">
-                        <Label htmlFor="phone" className="text-sm font-headline font-bold text-foreground uppercase tracking-wide">Phone (optional)</Label>
+                      <div>
+                        <Label htmlFor="phone" className={LABEL_CLASS}>Phone <span className="text-muted-foreground font-normal">(optional)</span></Label>
                         <Input
                           id="phone"
                           name="phone"
@@ -349,38 +379,42 @@ export default function Contact() {
                           placeholder="08..."
                           value={values.phone}
                           onChange={(e) => handleChange("phone", e.target.value)}
-                          className="rounded-none border-0 border-b border-gray-300 focus-visible:ring-0 focus-visible:border-accent h-10 bg-transparent px-0 shadow-none"
+                          className={FIELD_CLASS}
                           data-testid="input-phone"
                         />
                       </div>
-                      <div className="space-y-1">
-                        <Label htmlFor="service" className="text-sm font-headline font-bold text-foreground uppercase tracking-wide">What can I help with?</Label>
-                        <select
-                          id="service"
-                          name="service"
-                          className="flex h-10 w-full rounded-none border-0 border-b border-gray-300 bg-transparent px-0 py-2 text-sm focus:outline-none focus:border-accent font-sans transition-colors"
-                          data-testid="select-service"
+                      <div>
+                        <Label htmlFor="service" className={LABEL_CLASS}>What can I help with?</Label>
+                        <Select
                           value={values.service}
-                          onChange={(e) => handleChange("service", e.target.value)}
+                          onValueChange={(v) => handleChange("service", v)}
                         >
-                          <option value="" disabled>Select a service</option>
-                          <option value="new-website">New website</option>
-                          <option value="website-redesign">Website redesign</option>
-                          <option value="microsoft-365">Microsoft 365 &amp; Teams Phone</option>
-                          <option value="managed-it">Managed IT Support</option>
-                          <option value="network-wifi">Network &amp; Wi‑Fi</option>
-                          <option value="cybersecurity">Cybersecurity &amp; Compliance</option>
-                          <option value="ai-copilot">AI &amp; Microsoft Copilot</option>
-                          <option value="digital-bundle">Digital Foundation Bundle</option>
-                          <option value="grant-advice">Government Grant Advice</option>
-                          <option value="not-sure">Not sure yet</option>
-                        </select>
+                          <SelectTrigger
+                            id="service"
+                            className={FIELD_CLASS}
+                            data-testid="select-service"
+                          >
+                            <SelectValue placeholder="Select a service" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="new-website">New website</SelectItem>
+                            <SelectItem value="website-redesign">Website redesign</SelectItem>
+                            <SelectItem value="microsoft-365">Microsoft 365 &amp; Teams Phone</SelectItem>
+                            <SelectItem value="managed-it">Managed IT Support</SelectItem>
+                            <SelectItem value="network-wifi">Network & Wi‑Fi</SelectItem>
+                            <SelectItem value="cybersecurity">Cybersecurity & Compliance</SelectItem>
+                            <SelectItem value="ai-copilot">AI & Microsoft Copilot</SelectItem>
+                            <SelectItem value="digital-bundle">Digital Foundation Bundle</SelectItem>
+                            <SelectItem value="grant-advice">Government Grant Advice</SelectItem>
+                            <SelectItem value="not-sure">Not sure yet</SelectItem>
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
 
-                    <div className="space-y-1">
-                      <Label htmlFor="message" className="text-sm font-headline font-bold text-foreground uppercase tracking-wide">
-                        Message <span className="text-red-500" aria-hidden="true">*</span>
+                    <div>
+                      <Label htmlFor="message" className={LABEL_CLASS}>
+                        Message {REQUIRED_ASTERISK}
                       </Label>
                       <Textarea
                         id="message"
@@ -390,7 +424,7 @@ export default function Contact() {
                         value={values.message}
                         onChange={(e) => handleChange("message", e.target.value)}
                         onBlur={() => handleBlur("message")}
-                        className="rounded-none border-0 border-b border-gray-300 focus-visible:ring-0 focus-visible:border-accent min-h-[120px] bg-transparent px-0 shadow-none resize-none font-sans"
+                        className="min-h-[140px] bg-[#f7f8fa] border border-gray-200 rounded-xl px-4 py-3 text-[15px] font-sans shadow-none resize-none focus-visible:ring-2 focus-visible:ring-accent/30 focus-visible:border-accent focus-visible:bg-white transition-colors"
                         data-testid="input-message"
                         aria-required="true"
                       />
