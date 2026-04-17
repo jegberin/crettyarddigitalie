@@ -5,7 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
-import { MessageCircle, Clock, FileText, CheckCircle, MapPin, Calculator } from "lucide-react";
+import { MessageCircle, Clock, FileText, CheckCircle, MapPin, Calculator, Phone, Mail } from "lucide-react";
+
+// Google Analytics / Ads gtag is injected globally via index.html.
+// Narrow the window shape here so call sites are type-safe.
+declare global {
+  interface Window {
+    gtag?: (command: string, targetOrEvent: string, params?: Record<string, unknown>) => void;
+  }
+}
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
@@ -69,7 +77,7 @@ export default function Contact() {
 
       if (response.ok) {
         setSubmitted("success");
-        (window as any).gtag?.("event", "conversion", { send_to: "AW-18044040603/aBUrCJPXsZAcEJvriJxD" });
+        window.gtag?.("event", "conversion", { send_to: "AW-18044040603/aBUrCJPXsZAcEJvriJxD" });
       } else {
         setSubmitted("error");
       }
@@ -84,7 +92,7 @@ export default function Contact() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <FadeIn>
             <span className="eyebrow mb-5 inline-block" data-testid="text-contact-eyebrow">Get in Touch</span>
-            <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6" data-testid="text-contact-heading">
+            <h1 className="display-sm mb-6" data-testid="text-contact-heading">
               No Jargon. No Pressure. Just a Friendly Chat About Your Business.
             </h1>
             <p className="text-xl text-foreground leading-relaxed max-w-2xl mx-auto font-sans font-normal" data-testid="text-contact-intro">
@@ -95,7 +103,7 @@ export default function Contact() {
             </p>
             <p className="mt-3 text-sm text-foreground/80 font-sans flex items-center justify-center gap-1.5" data-testid="text-service-area-reminder">
               <MapPin size={14} className="text-accent" />
-              Serving Laois, Carlow, Kilkenny, and surrounding counties
+              Serving Laois, Carlow, Kilkenny, Kildare, Offaly, Tipperary &amp; the wider Midlands
             </p>
           </FadeIn>
         </div>
@@ -224,8 +232,29 @@ export default function Contact() {
               </div>
 
               <div className="mt-8 p-5 bg-[#f3f4f5] rounded-2xl">
-                <p className="text-sm font-headline font-bold mb-1">Prefer email?</p>
-                <a href="mailto:info@crettyarddigital.ie" className="text-accent hover:underline text-sm font-sans" data-testid="link-email">info@crettyarddigital.ie</a>
+                <p className="text-sm font-headline font-bold mb-3">Prefer a direct channel?</p>
+                <ul className="space-y-2.5 text-sm font-sans">
+                  <li className="flex items-start gap-2">
+                    <Mail size={16} className="text-accent shrink-0 mt-0.5" />
+                    <a href="mailto:info@crettyarddigital.ie" className="text-accent hover:underline" data-testid="link-email">info@crettyarddigital.ie</a>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Phone size={16} className="text-accent shrink-0 mt-0.5" />
+                    <a href="tel:+353879700701" className="text-accent hover:underline" data-testid="link-phone">+353 87 970 0701</a>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <MessageCircle size={16} className="text-accent shrink-0 mt-0.5" />
+                    <a
+                      href="https://wa.me/353879700701?text=Hi%2C%20I%20found%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20services."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent hover:underline"
+                      data-testid="link-whatsapp"
+                    >
+                      Message me on WhatsApp
+                    </a>
+                  </li>
+                </ul>
               </div>
             </FadeIn>
 
@@ -371,7 +400,7 @@ export default function Contact() {
                     <Button type="submit" className="w-full" data-testid="button-submit">
                       Send Message
                     </Button>
-                    <p className="text-sm text-foreground/80 text-center font-sans">No spam. Your details are only used to reply to your enquiry.</p>
+                    <p className="text-sm text-foreground/80 text-center font-sans">No spam. Your details are only used to reply to your enquiry. See the <Link href="/privacy-policy" className="text-accent hover:underline">privacy policy</Link> for how your data is handled.</p>
                   </form>
                 )}
               </div>

@@ -63,7 +63,7 @@ export default function About() {
                 <Briefcase className="text-accent mt-1 shrink-0" size={22} />
                 <div>
                   <h3 className="text-lg mb-2">Professional Services</h3>
-                  <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">Accountants, solicitors, consultants, financial advisors &mdash; businesses where trust matters from the first impression, and where data security and regulatory compliance (GDPR, DORA, NIS2) aren't optional.</p>
+                  <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal">Accountants, solicitors, consultants, financial advisors &mdash; businesses where trust matters from the first impression, and where data security and regulatory compliance (<Link href="/cybersecurity" className="text-accent hover:underline">GDPR, NIS2</Link>, <Link href="/dora-compliance" className="text-accent hover:underline">DORA</Link>) aren't optional.</p>
                 </div>
               </div>
             </StaggerItem>
@@ -116,7 +116,6 @@ export default function About() {
                     width="200"
                     height="200"
                     loading="eager"
-                    fetchPriority="high"
                   />
                 </div>
                 <p className="text-center mt-3 text-sm font-headline font-bold text-primary">Joey</p>
@@ -198,7 +197,7 @@ export default function About() {
                 ))}
               </div>
               <p className="text-white text-sm font-sans">
-                For web design, Microsoft 365 setup, AI consultancy, and cloud-based services, I work with businesses remotely across all of Ireland.
+                For web design, Microsoft 365 setup, AI consultancy, and cloud-based services, I work remotely with businesses anywhere in Ireland &mdash; Dublin, Cork, Galway, Limerick, Waterford, and every county in between.
               </p>
             </div>
           </FadeIn>
@@ -229,6 +228,35 @@ export default function About() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* ── Testimonials ─────────────────────────────────────────── */}
+          <FadeIn className="mb-20">
+            <span className="eyebrow mb-5 inline-block">What Clients Say</span>
+            <h2 className="text-3xl mb-8">Real Words From Real Clients</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Link href="/portfolio#project-bm-custom-furniture" className="block bg-[#f3f4f5] p-7 rounded-2xl card-hover group" data-testid="card-testimonial-barry">
+                <p className="text-foreground text-[15px] leading-relaxed font-sans italic mb-4">
+                  &ldquo;Joey built us a website that actually looks as good as the furniture we make. Within weeks of launching, we were getting enquiries from people who found us on Google &mdash; that never happened before.&rdquo;
+                </p>
+                <p className="font-headline font-bold text-primary text-sm">Barry &mdash; BM Custom Furniture</p>
+                <p className="text-xs text-muted-foreground mb-3">Carlow/Laois border</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Read the case study <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+              </Link>
+              <Link href="/portfolio#project-nurney-plant-civil" className="block bg-[#f3f4f5] p-7 rounded-2xl card-hover group" data-testid="card-testimonial-brian">
+                <p className="text-foreground text-[15px] leading-relaxed font-sans italic mb-4">
+                  &ldquo;Joey did the lot for us &mdash; a professional website, Microsoft 365 so we have proper email between the office and the lads on site, and sorted our Wi-Fi so it works in every room. Can&rsquo;t recommend him enough.&rdquo;
+                </p>
+                <p className="font-headline font-bold text-primary text-sm">Brian &mdash; Nurney Plant and Civil</p>
+                <p className="text-xs text-muted-foreground mb-3">Co. Carlow</p>
+                <span className="text-accent text-sm font-headline font-bold inline-flex items-center">Read the case study <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></span>
+              </Link>
+            </div>
+            <p className="text-center mt-6">
+              <Link href="/portfolio" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                See the full portfolio <ArrowRight size={14} className="ml-1" />
+              </Link>
+            </p>
+          </FadeIn>
 
           {/* ── Services Overview ────────────────────────────────────── */}
           <FadeIn className="mb-14">
