@@ -5,6 +5,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import heroTending from "@assets/website-care-hero-tending.webp";
 
 const standardItems = [
   "Reliable, fast EU-hosted infrastructure (Ireland data residency)",
@@ -36,26 +37,38 @@ export default function WebsiteCare() {
       {/* Hero */}
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">Website Care Plans</span>
-            <h1 className="display-sm text-white mb-6">
-              Website Care Plans &mdash; Every Website I Build Is Protected From Day One
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              A website isn't a "build it and forget it" project. Without regular updates, security monitoring, and maintenance, even the best website becomes slow, vulnerable, and outdated &mdash; and Core Web Vitals, malware scans and broken links start working against you in Google Search Console. That's why every website I build comes with a mandatory care plan &mdash; EU-hosted with Ireland data residency &mdash; so your investment is protected and your site keeps performing.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href="#plans">
-                <Button size="lg">Choose a Plan</Button>
-              </a>
-              <Link href="/contact#send-message">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Book a Free Consultation
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">Website Care Plans</span>
+              <h1 className="display-sm text-white mb-6">
+                Website Care Plans &mdash; Every Website I Build Is Protected From Day One
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                A website isn't a "build it and forget it" project. Without regular updates, security monitoring, and maintenance, even the best website becomes slow, vulnerable, and outdated &mdash; and Core Web Vitals, malware scans and broken links start working against you in Google Search Console. That's why every website I build comes with a mandatory care plan &mdash; EU-hosted with Ireland data residency &mdash; so your investment is protected and your site keeps performing.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="#plans">
+                  <Button size="lg">Choose a Plan</Button>
+                </a>
+                <Link href="/contact#send-message">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    Book a Free Consultation
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroTending}
+                alt="A thriving potted indoor plant on a wooden desk next to a tablet showing a clean website uptime dashboard with an SSL padlock and healthy status indicators \u2014 the metaphor for ongoing website care"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
