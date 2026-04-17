@@ -4,6 +4,7 @@ import { MessageCircle, Wrench, Rocket, HeartPulse, CheckCircle, ArrowRight, Quo
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import joeyImg from "@assets/joey-profile-photo.webp";
 
 export default function HowItWorks() {
   return (
@@ -12,19 +13,40 @@ export default function HowItWorks() {
       {/* Hero */}
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">How It Works</span>
-            <h1 className="display-sm text-white mb-6">
-              What Actually Happens When You Work With Me
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You've seen the services and the pricing. Now here's exactly what the experience looks like &mdash; from first conversation to launch to month twelve and beyond. No surprises, no hidden steps, and no jargon.
-            </p>
-            <Link href="/contact#send-message">
-              <Button size="lg">Book a Free Consultation</Button>
-            </Link>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">How It Works</span>
+              <h1 className="display-sm text-white mb-6">
+                What Actually Happens When You Work With Me
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                You've seen the services and the pricing. Now here's exactly what the experience looks like &mdash; from first conversation to launch to month twelve and beyond. No surprises, no hidden steps, and no jargon.
+              </p>
+              <Link href="/contact#send-message">
+                <Button size="lg">Book a Free Consultation</Button>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.1} className="hidden md:flex justify-center">
+              <div className="relative">
+                <div className="w-64 lg:w-72 aspect-square rounded-full overflow-hidden shadow-2xl ring-4 ring-white/10">
+                  <img
+                    src={joeyImg}
+                    alt="Joey — founder of Crettyard Digital, the person you'll deal with directly on every project"
+                    className="w-full h-full object-cover object-top"
+                    width="400"
+                    height="400"
+                    loading="eager"
+                    data-testid="img-joey-hero"
+                  />
+                </div>
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white rounded-full px-5 py-2 shadow-lg whitespace-nowrap">
+                  <p className="text-xs font-headline font-bold text-primary">Hi, I'm Joey &mdash;</p>
+                  <p className="text-xs text-muted-foreground font-sans -mt-0.5">the person doing the work.</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
