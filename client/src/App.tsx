@@ -117,7 +117,7 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   },
   "/dora-compliance": {
     title: "DORA Compliance for Credit Unions, Investment Firms & Insurance in Ireland | Crettyard Digital",
-    description: "DORA-ready IT services for financial sector firms in Ireland. Ensure your systems meet banking-grade operational resilience standards.",
+    description: "DORA-ready IT services for Irish financial sector firms. ICT Risk Management Framework, TLPT readiness, third-party risk documentation, and Central Bank of Ireland-aligned resilience since DORA took effect on 17 January 2025.",
   },
   "/pricing": {
     title: "Digital Foundation Bundles & Pricing \u2014 Website, Email, IT & Security | Crettyard Digital",
@@ -270,6 +270,8 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
     { question: "Does DORA apply to a small accountancy practice?", answer: "Generally, no. Standard accountancy work (tax, bookkeeping, audit) is not in DORA scope. DORA applies to regulated financial entities: banks, credit unions, investment firms, insurance undertakings, pension funds, and similar. If your practice provides MiFID-regulated investment advice, that activity could fall in scope." },
     { question: "Does this apply to Crettyard Digital too?", answer: "Crettyard Digital is not a designated critical ICT third-party service provider under DORA (that designation is made by European Supervisory Authorities for providers whose failure would impact the financial system). Regulated financial clients must perform due diligence on all ICT providers; I supply the documentation and contractual terms needed to satisfy that." },
     { question: "How is DORA different from NIS2?", answer: "NIS2 covers critical infrastructure broadly. DORA is specifically for financial services, with additional resilience testing and third-party risk obligations." },
+    { question: "What does a DORA readiness assessment involve?", answer: "I review your current IT setup \u2014 email security, backup systems, network configuration, endpoint protection, access controls, and incident response capabilities \u2014 against DORA\u2019s ICT Risk Management Framework and the supporting Regulatory Technical Standards. You get a prioritised report showing what\u2019s compliant, what needs fixing, and what it will cost." },
+    { question: "How long does it take to become DORA-ready?", answer: "It depends on your current setup. Some firms are already close and just need documentation and a few configuration changes. Others may need more significant upgrades \u2014 particularly around incident reporting timelines, resilience testing (including Threat-Led Penetration Testing where scoped in), and cloud concentration risk documentation. I\u2019ll give you a realistic timeline after the initial assessment." },
   ],
   "/trades": [
     { question: "How much does a website cost for a tradesperson?", answer: "Between \u20ac799 and \u20ac1,299 for a professional website. Note: bespoke website builds aren\u2019t eligible for the Grow Digital Voucher, though CRM, job tracking, or e-commerce software may qualify." },
