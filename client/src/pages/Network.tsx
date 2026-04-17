@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Building2, Wrench, HelpCircle, ArrowRight, PiggyBank, Quote, Server } from "lucide-react";
-import serviceImg from "@assets/service-network-wifi.webp";
+import serviceImg from "@assets/network-hero-sme-install.webp";
 import iconNetworkDesign from "@assets/concept-network-design.webp";
 import iconWifiMesh from "@assets/concept-wifi-mesh.webp";
 import iconEndpointSecurity from "@assets/concept-endpoint-security.webp";
@@ -73,7 +73,7 @@ export default function NetworkWifi() {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={serviceImg}
-                  alt="Neatly organised business network rack with structured Cat6a ethernet cabling and a wall-mounted Wi-Fi 6E access point in a professional Irish office environment"
+                  alt="Tidy small-business network install \u2014 a wall-mounted rack with Cat6a patch panel, PoE switch and firewall, plus a ceiling-mounted Wi-Fi 6E access point in a professional Irish office environment"
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover"
