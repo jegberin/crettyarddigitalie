@@ -79,6 +79,12 @@ const jobs = [
 
   // AI Readiness hero (Copilot in action)
   ['ai-hero-copilot-in-action.png', 'ai-hero-copilot-in-action.webp'],
+
+  // Managed Hardware: hero + product visuals (desktop.png / server.png
+  // arrived with generic names; rename on conversion for SEO)
+  ['hardware-hero-fresh-install.png', 'hardware-hero-fresh-install.webp'],
+  ['desktop.png',                     'hardware-business-desktop.webp'],
+  ['server.png',                      'hardware-onsite-server.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.
@@ -92,6 +98,7 @@ const HERO_FILES = new Set([
   'network-hero-sme-install.webp',
   'cyber-hero-mfa-in-action.webp',
   'ai-hero-copilot-in-action.webp',
+  'hardware-hero-fresh-install.webp',
 ]);
 
 let totalIn = 0;

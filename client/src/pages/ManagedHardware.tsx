@@ -5,6 +5,9 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import heroFreshInstall from "@assets/hardware-hero-fresh-install.webp";
+import imgBusinessDesktop from "@assets/hardware-business-desktop.webp";
+import imgOnsiteServer from "@assets/hardware-onsite-server.webp";
 
 export default function ManagedHardware() {
   return (
@@ -13,26 +16,38 @@ export default function ManagedHardware() {
       {/* Hero */}
       <section className="relative bg-primary overflow-hidden py-20 md:py-28">
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">Managed Hardware</span>
-            <h1 className="display-sm text-white mb-6">
-              Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use, Across Laois, Carlow, Kilkenny &amp; the Midlands
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              Turn it on, log in, get back to work. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across &mdash; thanks to Windows Autopilot and Microsoft Intune device enrolment done before the kit leaves me. No setup week. No lost productivity. No IT headaches. You focus on your business &mdash; I do the tech.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact#send-message">
-                <Button size="lg">Book a Free Consultation</Button>
-              </Link>
-              <a href="#how-it-works">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  See How It Works &darr;
-                </Button>
-              </a>
-            </div>
-          </FadeIn>
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn direction="up">
+              <span className="eyebrow mb-4 inline-block">Managed Hardware</span>
+              <h1 className="display-sm text-white mb-6">
+                Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use, Across Laois, Carlow, Kilkenny &amp; the Midlands
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8">
+                Turn it on, log in, get back to work. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across &mdash; thanks to Windows Autopilot and Microsoft Intune device enrolment done before the kit leaves me. No setup week. No lost productivity. No IT headaches. You focus on your business &mdash; I do the tech.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact#send-message">
+                  <Button size="lg">Book a Free Consultation</Button>
+                </Link>
+                <a href="#how-it-works">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    See How It Works &darr;
+                  </Button>
+                </a>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" delay={0.1}>
+              <img
+                src={heroFreshInstall}
+                alt="A compact modern mini-PC behind a slim monitor showing Windows 11 with Microsoft 365, on a tidy Irish small-office desk on install day with keyboard, mouse and cables cleanly routed"
+                width={1920}
+                height={1080}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                loading="eager"
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -115,59 +130,79 @@ export default function ManagedHardware() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Business Desktop */}
             <FadeIn>
-              <div className="bg-[#f3f4f5] p-8 rounded-2xl h-full flex flex-col" data-testid="card-desktop">
-                <Monitor className="text-accent mb-5" size={32} />
-                <h3 className="text-xl mb-3">Business Desktop</h3>
-                <p className="text-foreground text-[15px] font-sans leading-relaxed mb-5">
-                  A compact, modern PC that sits neatly behind your monitor or under your desk. Fast enough for anything a small business needs &mdash; browser work, Microsoft 365, accounting software, video calls, design tools, the lot.
-                </p>
-                <ul className="space-y-2 mb-6 flex-grow">
-                  {[
-                    "Compact form factor (fits behind a monitor)",
-                    "Quiet enough for a shared office",
-                    "Significantly lower power draw than old towers",
-                    "Multiple monitor support",
-                    "Windows 11 Pro, properly licensed",
-                    "Full-disk encryption enabled",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[14px] font-sans">
-                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={14} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-muted-foreground font-sans border-t border-gray-200 pt-4">
-                  Ideal for: office staff, professional services, admin roles, anyone working across browser apps and productivity tools.
-                </p>
+              <div className="bg-[#f3f4f5] rounded-2xl h-full flex flex-col overflow-hidden" data-testid="card-desktop">
+                <img
+                  src={imgBusinessDesktop}
+                  alt="Compact business desktop mini-PC with Windows 11 Pro running a small Irish-office workstation"
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                <div className="p-8 flex flex-col flex-grow">
+                  <Monitor className="text-accent mb-5" size={32} />
+                  <h3 className="text-xl mb-3">Business Desktop</h3>
+                  <p className="text-foreground text-[15px] font-sans leading-relaxed mb-5">
+                    A compact, modern PC that sits neatly behind your monitor or under your desk. Fast enough for anything a small business needs &mdash; browser work, Microsoft 365, accounting software, video calls, design tools, the lot.
+                  </p>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {[
+                      "Compact form factor (fits behind a monitor)",
+                      "Quiet enough for a shared office",
+                      "Significantly lower power draw than old towers",
+                      "Multiple monitor support",
+                      "Windows 11 Pro, properly licensed",
+                      "Full-disk encryption enabled",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-[14px] font-sans">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={14} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-muted-foreground font-sans border-t border-gray-200 pt-4">
+                    Ideal for: office staff, professional services, admin roles, anyone working across browser apps and productivity tools.
+                  </p>
+                </div>
               </div>
             </FadeIn>
 
             {/* On-Site Server / NAS */}
             <FadeIn delay={0.1}>
-              <div className="bg-[#f3f4f5] p-8 rounded-2xl h-full flex flex-col" data-testid="card-server">
-                <Server className="text-accent mb-5" size={32} />
-                <h3 className="text-xl mb-3">On-Site Server &amp; NAS</h3>
-                <p className="text-foreground text-[15px] font-sans leading-relaxed mb-5">
-                  A small-footprint server for shared files, automated backups, and light business apps. Fits in a cupboard, not a server room. Replaces that dodgy shared drive on Mary&rsquo;s laptop with something proper.
-                </p>
-                <ul className="space-y-2 mb-6 flex-grow">
-                  {[
-                    "Shared files accessible from any device",
-                    "Automated, monitored backups",
-                    "Multi-drive storage with redundancy",
-                    "Fast internal networking",
-                    "Choice of Linux, flexible NAS, or Windows Server",
-                    "Encryption at rest, user access controls",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[14px] font-sans">
-                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={14} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-muted-foreground font-sans border-t border-gray-200 pt-4">
-                  Ideal for: shared drives, line-of-business apps, on-site backup target, small teams that need reliable file storage without the cloud-only cost.
-                </p>
+              <div className="bg-[#f3f4f5] rounded-2xl h-full flex flex-col overflow-hidden" data-testid="card-server">
+                <img
+                  src={imgOnsiteServer}
+                  alt="A compact on-site small-business server / NAS unit with multi-drive storage for shared files and automated backups"
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                <div className="p-8 flex flex-col flex-grow">
+                  <Server className="text-accent mb-5" size={32} />
+                  <h3 className="text-xl mb-3">On-Site Server &amp; NAS</h3>
+                  <p className="text-foreground text-[15px] font-sans leading-relaxed mb-5">
+                    A small-footprint server for shared files, automated backups, and light business apps. Fits in a cupboard, not a server room. Replaces that dodgy shared drive on Mary&rsquo;s laptop with something proper.
+                  </p>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {[
+                      "Shared files accessible from any device",
+                      "Automated, monitored backups",
+                      "Multi-drive storage with redundancy",
+                      "Fast internal networking",
+                      "Choice of Linux, flexible NAS, or Windows Server",
+                      "Encryption at rest, user access controls",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-[14px] font-sans">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={14} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-muted-foreground font-sans border-t border-gray-200 pt-4">
+                    Ideal for: shared drives, line-of-business apps, on-site backup target, small teams that need reliable file storage without the cloud-only cost.
+                  </p>
+                </div>
               </div>
             </FadeIn>
           </div>
