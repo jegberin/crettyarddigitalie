@@ -252,6 +252,7 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
     { question: "I\u2019m just a tradesperson \u2014 do I need cybersecurity?", answer: "If you use email, send invoices, or store customer info \u2014 yes. Phishing doesn\u2019t care about business size. And larger clients increasingly ask about your security." },
     { question: "Web Compliance Audit vs IT Resilience Audit?", answer: "Web Compliance = your website (GDPR, cookies, accessibility). IT Resilience = your network and Microsoft 365 (NIS2, plus DORA where applicable, and security)." },
     { question: "How much does compliance cost?", answer: "Cookie consent from \u20ac150. Full NIS2 readiness from \u20ac500. Clear quote after free assessment." },
+    { question: "Can you help pass a client\u2019s IT security assessment?", answer: "Yes. Larger clients and corporate counterparties increasingly require their suppliers to demonstrate IT security standards (NIS2 supply-chain, ISO 27001-aligned questionnaires, Cyber Essentials). I implement the technical measures and provide documentation to prove compliance." },
   ],
   "/ai-readiness": [
     { question: "Do I need Microsoft 365 to use AI?", answer: "Not necessarily, but Copilot is the most practical tool for M365 users. My assessment can recommend other options too." },
