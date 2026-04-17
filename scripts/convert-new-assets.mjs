@@ -94,6 +94,10 @@ const jobs = [
 
   // How It Works hero (Joey at desk)
   ['how-it-works-hero-joey-at-desk.png', 'how-it-works-hero-joey-at-desk.webp'],
+
+  // Home service-tile refresh (Web Design, AI & Copilot)
+  ['concept-web-design.png', 'concept-web-design.webp'],
+  ['concept-ai-copilot.png', 'concept-ai-copilot.webp'],
 ];
 
 // Heroes get higher quality + bigger max dimension; icons stay compact.

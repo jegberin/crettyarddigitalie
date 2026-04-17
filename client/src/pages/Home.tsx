@@ -16,8 +16,8 @@ import project4 from "@assets/portfolio-more-than-points.webp";
 import project5 from "@assets/portfolio-crettyard-ie.webp";
 import joeyPhoto from "@assets/joey-profile-photo.webp";
 import getFoundIllustration from "@assets/concept-your-business-found.webp";
-import serviceIconWebDesign from "@assets/service-icon-web-design.webp";
-import serviceIconAICopilot from "@assets/service-icon-ai-copilot.webp";
+import iconWebDesign from "@assets/concept-web-design.webp";
+import iconAICopilot from "@assets/concept-ai-copilot.webp";
 import icon365Admin from "@assets/concept-365-admin.webp";
 import iconItHelpdesk from "@assets/concept-it-helpdesk.webp";
 import iconWifiMesh from "@assets/concept-wifi-mesh.webp";
@@ -41,8 +41,8 @@ type Service = {
 const services: Service[] = [
   {
     num: "01",
-    image: serviceIconWebDesign,
-    imageAlt: "Glass-effect illustration of a computer monitor displaying code brackets",
+    image: iconWebDesign,
+    imageAlt: "Glass browser window with a smaller glass smartphone beside it representing responsive web design",
     title: "Web Design",
     desc: (
       <>
@@ -105,8 +105,8 @@ const services: Service[] = [
   },
   {
     num: "06",
-    image: serviceIconAICopilot,
-    imageAlt: "Glass brain with neural-network connections",
+    image: iconAICopilot,
+    imageAlt: "Glass four-pointed sparkle with connected spheres representing AI and Microsoft Copilot",
     title: "AI & Microsoft Copilot",
     desc: "Practical AI that saves your team real hours every week. I help you understand what AI can do for your business and implement tools like Microsoft Copilot for genuine productivity gains.",
     price: "Consultations from \u20ac150",
