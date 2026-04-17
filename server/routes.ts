@@ -7,8 +7,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
   apiVersion: "2025-01-27.acacia" as any,
 });
 
-const EVERYTHING_INCLUDED_PRICE_ID = "price_1TM5r5Dl4HQCKMGyQZ0n9gza";
-
 const BASE_PRICES: Record<string, number> = {
   "1-3": 499,
   "4-7": 899,
@@ -789,49 +787,6 @@ export async function registerRoutes(
     } catch (err) {
       console.error("[parental] Unexpected error:", err);
       return res.status(500).json({ error: "An unexpected error occurred. Please contact info@crettyarddigital.ie directly." });
-    }
-  });
-
-  // ── Stripe subscription checkout ─────────────────────────────────
-  app.get("/api/subscribe/config", (_req, res) => {
-    res.json({ publishableKey: process.env.STRIPE_PUBLISHABLE_KEY || "" });
-  });
-
-  app.post("/api/subscribe/create-session", async (req, res) => {
-    try {
-      const origin =
-        (req.headers.origin as string) ||
-        `https://${req.headers.host}`;
-
-      const session = await stripe.checkout.sessions.create({
-        line_items: [{ price: EVERYTHING_INCLUDED_PRICE_ID, quantity: 1 }],
-        mode: "subscription",
-        currency: "eur",
-        ui_mode: "embedded" as any,
-        return_url: `${origin}/subscribe?session_id={CHECKOUT_SESSION_ID}`,
-      });
-
-      return res.json({ clientSecret: session.client_secret });
-    } catch (err: any) {
-      console.error("[subscribe] Stripe error:", err?.message || err);
-      return res.status(500).json({ error: "Failed to create checkout session. Please try again or contact info@crettyarddigital.ie." });
-    }
-  });
-
-  app.get("/api/subscribe/session-status", async (req, res) => {
-    try {
-      const { session_id } = req.query;
-      if (!session_id || typeof session_id !== "string") {
-        return res.status(400).json({ error: "Missing session_id" });
-      }
-      const session = await stripe.checkout.sessions.retrieve(session_id);
-      return res.json({
-        status: session.status,
-        customer_email: (session.customer_details as any)?.email ?? null,
-      });
-    } catch (err: any) {
-      console.error("[subscribe] Status error:", err?.message || err);
-      return res.status(500).json({ error: "Could not retrieve session." });
     }
   });
 

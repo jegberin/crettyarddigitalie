@@ -18,7 +18,6 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsAndConditions from "@/pages/TermsAndConditions";
 import CookiePolicy from "@/pages/CookiePolicy";
 import GetAQuote from "@/pages/GetAQuote";
-import Subscribe from "@/pages/Subscribe";
 
 // New service pages
 import ManagedIT from "@/pages/ManagedIT";
@@ -181,11 +180,6 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   "/get-a-quote": {
     title: "Get A Quote — Crettyard Digital | Laois, Carlow & Kilkenny",
     description: "Tell me what you need — websites, Microsoft 365, managed IT, hardware, networks, cybersecurity. Six short steps, ballpark estimate on the spot, fixed quote within a business day.",
-    noindex: true,
-  },
-  "/subscribe": {
-    title: "Everything Included Subscription | Crettyard Digital",
-    description: "Subscribe to the Crettyard Digital Everything Included web design package.",
     noindex: true,
   },
 };
@@ -471,8 +465,6 @@ function Router() {
 
   return (
     <Switch>
-      {/* Subscribe gets its own minimal checkout layout */}
-      <Route path="/subscribe" component={Subscribe} />
       <Route>
         {() => (
           <div className="min-h-screen flex flex-col">

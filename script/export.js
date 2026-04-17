@@ -23,8 +23,7 @@ const routes = [
   { path: '/terms-and-conditions', file: 'terms-and-conditions.html' },
   { path: '/cookie-policy', file: 'cookie-policy.html' },
   { path: '/parental-controls', file: 'parental-controls.html' },
-  { path: '/get-a-quote', file: 'get-a-quote.html' },
-  { path: '/subscribe', file: 'subscribe.html' }
+  { path: '/get-a-quote', file: 'get-a-quote.html' }
 ];
 
 function rewriteLinks(html) {
@@ -284,7 +283,7 @@ async function exportStatic() {
       });
       const page = await browser.newPage();
 
-      const interactivePages = new Set(['get-a-quote.html', 'contact.html', 'parental-controls.html', 'subscribe.html']);
+      const interactivePages = new Set(['get-a-quote.html', 'contact.html', 'parental-controls.html']);
 
       for (const route of routes) {
         console.log(`Exporting ${route.path} to ${route.file}...`);
