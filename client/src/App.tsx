@@ -1,5 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -35,6 +35,11 @@ import ProfessionalServices from "@/pages/ProfessionalServices";
 // New operational pages
 import HowItWorks from "@/pages/HowItWorks";
 import DORACompliance from "@/pages/DORACompliance";
+
+// Blog — lazy-loaded so react-markdown + Shiki only ship when someone visits /blog/*
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const BlogTag = lazy(() => import("@/pages/BlogTag"));
 
 // Local SEO landing pages
 import WebDesignLaois from "@/pages/WebDesignLaois";
@@ -129,6 +134,10 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   "/how-it-works": {
     title: "How It Works \u2014 What to Expect When You Work With Crettyard Digital",
     description: "From first conversation to launch to month twelve \u2014 here\u2019s exactly what happens when you work with Crettyard Digital. No surprises, no jargon.",
+  },
+  "/blog": {
+    title: "Notes & Guides \u2014 Blog | Crettyard Digital",
+    description: "Plain-English articles on websites, IT, Microsoft 365, cybersecurity, NIS2 and the Grow Digital Voucher for small businesses in Ireland.",
   },
   "/web-design-laois": {
     title: "Web Design Laois \u2014 Professional Websites for Small Businesses | Crettyard Digital",
@@ -342,6 +351,9 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
 
 function RouteSEO() {
   const [location] = useLocation();
+  // Blog post and tag pages set their own SEO inline (metadata is param-dependent).
+  // The /blog index itself still flows through pageSEO below.
+  if (location.startsWith("/blog/")) return null;
   const seo = pageSEO[location];
   if (!seo) return null;
 
@@ -470,6 +482,7 @@ function Router() {
           <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">
+              <Suspense fallback={null}>
               <Switch>
                 {/* Core pages */}
                 <Route path="/" component={Home} />
@@ -500,6 +513,11 @@ function Router() {
                 <Route path="/how-it-works" component={HowItWorks} />
                 <Route path="/get-a-quote" component={GetAQuote} />
 
+                {/* Blog — ORDER MATTERS: /blog/tag/:tag must be BEFORE /blog/:slug */}
+                <Route path="/blog" component={Blog} />
+                <Route path="/blog/tag/:tag" component={BlogTag} />
+                <Route path="/blog/:slug" component={BlogPost} />
+
                 {/* Local SEO landing pages */}
                 <Route path="/web-design-laois" component={WebDesignLaois} />
                 <Route path="/web-design-carlow" component={WebDesignCarlow} />
@@ -518,6 +536,7 @@ function Router() {
                 {/* 404 */}
                 <Route component={NotFound} />
               </Switch>
+              </Suspense>
             </main>
             <Footer />
             <WhatsAppButton />

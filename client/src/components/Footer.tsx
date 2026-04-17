@@ -98,6 +98,7 @@ export function Footer() {
                   <li><Link href="/grants-funding" className="text-white/80 hover:text-white transition-colors text-sm">Grants &amp; Funding</Link></li>
                   <li><Link href="/how-it-works" className="text-white/80 hover:text-white transition-colors text-sm">How It Works</Link></li>
                   <li><Link href="/portfolio" className="text-white/80 hover:text-white transition-colors text-sm">Portfolio</Link></li>
+                  <li><Link href="/blog" className="text-white/80 hover:text-white transition-colors text-sm">Blog</Link></li>
                   <li><Link href="/about" className="text-white/80 hover:text-white transition-colors text-sm">About</Link></li>
                   <li><Link href="/contact" className="text-white/80 hover:text-white transition-colors text-sm">Contact</Link></li>
                   <li><a href="https://client.crettyarddigital.ie" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm" data-testid="link-footer-client-login">Client Login</a></li>

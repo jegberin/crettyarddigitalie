@@ -1,12 +1,16 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
 import { rm, readFile } from "fs/promises";
+import { generateSitemap } from "./generate-sitemap";
 
 // Server deps to bundle inline; everything else stays external.
 const allowlist = ["express", "resend"];
 
 async function buildAll() {
   await rm("dist", { recursive: true, force: true });
+
+  console.log("generating sitemap...");
+  await generateSitemap();
 
   console.log("building client...");
   await viteBuild();

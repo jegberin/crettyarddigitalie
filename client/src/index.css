@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -299,3 +301,65 @@
   from { opacity: 0; transform: translateY(0.45em); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* Blog body styling: overrides the Tailwind Typography prose defaults
+   with the site's brand tokens. Apply as `prose prose-navy` on the
+   article wrapper. Shiki-highlighted <pre> blocks keep their own
+   background — the overrides below strip prose's dark pre styles. */
+.prose-navy {
+  --tw-prose-body: #2d3436;
+  --tw-prose-headings: #002157;
+  --tw-prose-lead: #44464f;
+  --tw-prose-links: #1DB48F;
+  --tw-prose-bold: #002157;
+  --tw-prose-counters: #44464f;
+  --tw-prose-bullets: #1DB48F;
+  --tw-prose-hr: #e1e3e4;
+  --tw-prose-quotes: #002157;
+  --tw-prose-quote-borders: #1DB48F;
+  --tw-prose-captions: #6b6e76;
+  --tw-prose-code: #002157;
+  --tw-prose-pre-code: inherit;
+  --tw-prose-pre-bg: transparent;
+  --tw-prose-th-borders: #d1d5db;
+  --tw-prose-td-borders: #e5e7eb;
+}
+.prose-navy :where(h1, h2, h3, h4):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-headline);
+  letter-spacing: -0.01em;
+}
+.prose-navy :where(a):not(:where([class~="not-prose"] *)) {
+  text-decoration-color: color-mix(in srgb, #1DB48F 50%, transparent);
+  text-underline-offset: 3px;
+}
+.prose-navy :where(a:hover):not(:where([class~="not-prose"] *)) {
+  text-decoration-color: #1DB48F;
+}
+/* Shiki owns <pre> colour tokens. Strip Typography's dark pre defaults but
+   give the block a GitHub-style light panel so it visually separates from
+   the prose body. */
+.prose-navy :where(pre):not(:where([class~="not-prose"] *)) {
+  background: #f6f8fa !important;
+  color: inherit;
+  padding: 0;
+  margin: 1.5em 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.prose-navy :where(pre) > code {
+  display: block;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.65;
+  background: transparent !important;
+}
+.prose-navy :where(code):not(pre code):not(:where([class~="not-prose"] *)) {
+  background: #f3f4f5;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+.prose-navy :where(code)::before,
+.prose-navy :where(code)::after { content: none; }

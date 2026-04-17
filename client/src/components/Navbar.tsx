@@ -25,6 +25,7 @@ const moreLinks = [
   { label: "Grants & Funding", path: "/grants-funding" },
   { label: "How It Works", path: "/how-it-works" },
   { label: "Portfolio", path: "/portfolio" },
+  { label: "Blog", path: "/blog" },
   { label: "About", path: "/about" },
 ];
 
@@ -161,6 +162,11 @@ export function Navbar() {
             <li>
               <Link href="/portfolio" className={linkClass(location === "/portfolio")}>
                 Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className={linkClass(location === "/blog" || location.startsWith("/blog/"))}>
+                Blog
               </Link>
             </li>
             <li>

@@ -5,11 +5,44 @@ interface SEOProps {
   description: string;
   canonicalPath?: string;
   noindex?: boolean;
+  ogType?: "website" | "article";
+  publishedTime?: string; // ISO date, only used when ogType="article"
+  tags?: string[]; // only used when ogType="article"
+  ogImage?: string; // absolute or root-relative path
 }
 
-export function SEO({ title, description, canonicalPath = "/", noindex = false }: SEOProps) {
+function upsertMeta(
+  selector: string,
+  attr: "name" | "property",
+  key: string,
+  value: string,
+) {
+  let el = document.head.querySelector<HTMLMetaElement>(selector);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", value);
+}
+
+function removeMeta(selector: string) {
+  document.head.querySelectorAll(selector).forEach((el) => el.remove());
+}
+
+export function SEO({
+  title,
+  description,
+  canonicalPath = "/",
+  noindex = false,
+  ogType = "website",
+  publishedTime,
+  tags,
+  ogImage,
+}: SEOProps) {
   useEffect(() => {
     document.title = title;
+
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute("content", description);
@@ -28,6 +61,42 @@ export function SEO({ title, description, canonicalPath = "/", noindex = false }
     if (twTitle) twTitle.setAttribute("content", title);
     const twDesc = document.querySelector('meta[name="twitter:description"]');
     if (twDesc) twDesc.setAttribute("content", description);
+
+    // og:type
+    upsertMeta('meta[property="og:type"]', "property", "og:type", ogType);
+
+    // og:image (per-page override)
+    if (ogImage) {
+      const url = ogImage.startsWith("http")
+        ? ogImage
+        : `https://crettyarddigital.ie${ogImage.startsWith("/") ? "" : "/"}${ogImage}`;
+      upsertMeta('meta[property="og:image"]', "property", "og:image", url);
+      upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", url);
+    }
+
+    // article:* meta — only for ogType=article; clean them up otherwise
+    if (ogType === "article") {
+      if (publishedTime) {
+        upsertMeta(
+          'meta[property="article:published_time"]',
+          "property",
+          "article:published_time",
+          publishedTime,
+        );
+      }
+      removeMeta('meta[property="article:tag"]');
+      if (tags && tags.length > 0) {
+        for (const tag of tags) {
+          const el = document.createElement("meta");
+          el.setAttribute("property", "article:tag");
+          el.setAttribute("content", tag);
+          document.head.appendChild(el);
+        }
+      }
+    } else {
+      removeMeta('meta[property="article:published_time"]');
+      removeMeta('meta[property="article:tag"]');
+    }
 
     const canonical = document.querySelector('link[rel="canonical"]');
     const canonicalUrl = `https://crettyarddigital.ie${canonicalPath}`;
@@ -48,7 +117,7 @@ export function SEO({ title, description, canonicalPath = "/", noindex = false }
         robotsMeta.setAttribute("content", "index,follow");
       }
     }
-  }, [title, description, canonicalPath, noindex]);
+  }, [title, description, canonicalPath, noindex, ogType, publishedTime, tags, ogImage]);
 
   return null;
 }
@@ -257,6 +326,57 @@ export function PortfolioSchema() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
     </>
+  );
+}
+
+export function BlogPostingSchema({
+  title,
+  description,
+  datePublished,
+  dateModified,
+  author,
+  url,
+  coverImage,
+}: {
+  title: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+  author: string;
+  url: string;
+  coverImage?: string;
+}) {
+  const absoluteImage = coverImage
+    ? coverImage.startsWith("http")
+      ? coverImage
+      : `https://crettyarddigital.ie${coverImage.startsWith("/") ? "" : "/"}${coverImage}`
+    : undefined;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: { "@type": "Person", name: author },
+    publisher: {
+      "@type": "Organization",
+      name: "Crettyard Digital",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://crettyarddigital.ie/favicon.png",
+      },
+    },
+    ...(absoluteImage ? { image: absoluteImage } : {}),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
   );
 }
 

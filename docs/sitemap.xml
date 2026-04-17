@@ -7,7 +7,6 @@
   <url><loc>https://crettyarddigital.ie/portfolio</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/about</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/how-it-works</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-
   <!-- Service pages -->
   <url><loc>https://crettyarddigital.ie/web-design</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/microsoft-365</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
@@ -18,25 +17,29 @@
   <url><loc>https://crettyarddigital.ie/ai-readiness</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/website-care-plans</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/grants-funding</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-
   <!-- Compliance -->
   <url><loc>https://crettyarddigital.ie/dora-compliance</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-
   <!-- Sector pages -->
   <url><loc>https://crettyarddigital.ie/trades</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/professional-services</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
-
   <!-- Local SEO: Web Design -->
   <url><loc>https://crettyarddigital.ie/web-design-laois</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/web-design-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/web-design-kilkenny</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-
   <!-- Local SEO: IT Support -->
   <url><loc>https://crettyarddigital.ie/it-support-laois</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/it-support-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/it-support-kilkenny</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-
   <!-- Local SEO: Other services -->
   <url><loc>https://crettyarddigital.ie/microsoft-365-setup-ireland</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/network-wifi-laois-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Blog -->
+  <url><loc>https://crettyarddigital.ie/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/blog/microsoft-365-setup-checklist</loc><lastmod>2026-04-17</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Blog tag filters -->
+  <url><loc>https://crettyarddigital.ie/blog/tag/cybersecurity</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/blog/tag/getting-started</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/blog/tag/microsoft-365</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
 </urlset>
