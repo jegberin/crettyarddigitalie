@@ -16,11 +16,11 @@ export default function ManagedHardware() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
             <span className="eyebrow mb-4 inline-block">Managed Hardware</span>
-            <h1 className="display-heading text-white mb-6 leading-tight">
-              Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use
+            <h1 className="display-sm text-white mb-6">
+              Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use, Across Laois, Carlow, Kilkenny &amp; the Midlands
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              Turn it on, log in, get back to work. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across. No setup week. No lost productivity. No IT headaches. You focus on your business &mdash; I do the tech.
+              Turn it on, log in, get back to work. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across &mdash; thanks to Windows Autopilot and Microsoft Intune device enrolment done before the kit leaves me. No setup week. No lost productivity. No IT headaches. You focus on your business &mdash; I do the tech.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">
@@ -47,13 +47,13 @@ export default function ManagedHardware() {
           <StaggerContainer className="grid md:grid-cols-3 gap-6">
             {[
               { title: "Running PCs from 2018?", desc: "Hardware that groans when you open a browser. Machines still on Windows 10 (unsupported since October 2025). Starting to crash or slow to a crawl by mid-morning." },
-              { title: "Shared drive on someone&rsquo;s PC?", desc: "Critical business files stored on one person&rsquo;s laptop. No real backup. When they&rsquo;re out sick, everything grinds to a halt. One dropped laptop away from disaster." },
-              { title: "Keep meaning to sort it?", desc: "You know the setup needs an overhaul. You&rsquo;ve been putting it off because the thought of picking kit, installing software, migrating data, and training staff feels like a fortnight&rsquo;s worth of misery." },
+              { title: "Shared drive on someone\u2019s PC?", desc: "Critical business files stored on one person\u2019s laptop. No real backup. When they\u2019re out sick, everything grinds to a halt. One dropped laptop away from disaster." },
+              { title: "Keep meaning to sort it?", desc: "You know the setup needs an overhaul. You\u2019ve been putting it off because the thought of picking kit, installing software, migrating data, and training staff feels like a fortnight\u2019s worth of misery." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-[#f3f4f5] p-7 rounded-2xl h-full">
-                  <h3 className="text-lg mb-3" dangerouslySetInnerHTML={{ __html: item.title }} />
-                  <p className="text-foreground text-[15px] font-sans leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                  <h3 className="text-lg mb-3">{item.title}</h3>
+                  <p className="text-foreground text-[15px] font-sans leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -74,17 +74,17 @@ export default function ManagedHardware() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
             {[
-              { icon: Zap, title: "Productive from day one", desc: "Your new PC or server arrives with Windows, your apps, your files, your email, your printer &mdash; everything. Log in, open your browser, you&rsquo;re working. No setup wizard, no day lost to configuration." },
-              { icon: HardDrive, title: "Your data is already there", desc: "I handle the data migration from your old machines. Documents, photos, mail archives, bookmarks &mdash; it&rsquo;s all where you expect it. You don&rsquo;t lift a finger and you don&rsquo;t lose a file." },
-              { icon: Lock, title: "Secure from the first login", desc: "Full-disk encryption enabled. Strong admin controls. Multi-factor authentication on your accounts. Proper business-grade setup, not the out-of-the-box defaults that leave you exposed." },
-              { icon: Phone, title: "One number when something&rsquo;s wrong", desc: "If anything ever goes sideways, you ring me. I already know your setup because I built it. No ticketing queue, no explaining your environment to a stranger, no waiting days for a callback." },
+              { icon: Zap, title: "Productive from day one", desc: "Your new PC or server arrives with Windows, your apps, your files, your email, your printer \u2014 everything. Log in, open your browser, you\u2019re working. No setup wizard, no day lost to configuration." },
+              { icon: HardDrive, title: "Your data is already there", desc: "I handle the data migration from your old machines. Documents, photos, mail archives, bookmarks \u2014 it\u2019s all where you expect it. You don\u2019t lift a finger and you don\u2019t lose a file." },
+              { icon: Lock, title: "Secure from the first login", desc: "Full-disk encryption enabled. Strong admin controls. Multi-factor authentication on your accounts. Microsoft Defender for Endpoint baseline enforced via Intune. Proper business-grade setup, not the out-of-the-box defaults that leave you exposed." },
+              { icon: Phone, title: "One number when something\u2019s wrong", desc: "If anything ever goes sideways, you ring me. I already know your setup because I built it. No ticketing queue, no explaining your environment to a stranger, no waiting days for a callback." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-7 rounded-2xl card-hover shadow-sm flex gap-5">
                   <item.icon className="text-accent shrink-0 mt-1" size={28} />
                   <div>
-                    <h3 className="text-lg mb-2" dangerouslySetInnerHTML={{ __html: item.title }} />
-                    <p className="text-foreground text-[15px] font-sans leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                    <h3 className="text-lg mb-2">{item.title}</h3>
+                    <p className="text-foreground text-[15px] font-sans leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -193,12 +193,12 @@ export default function ManagedHardware() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Full-disk encryption", desc: "Every drive encrypted (BitLocker on Windows, LUKS on Linux). Lose a laptop? The data on it is unreadable. Recovery keys stored centrally and securely." },
-              { title: "Multi-factor authentication", desc: "MFA on all administrative access and business cloud accounts. No more &ldquo;password123&rdquo; standing between attackers and your business." },
-              { title: "Automated monitored backups", desc: "Workstations back up to the on-site NAS and/or cloud. Ransomware, hardware failure, or a deleted folder doesn&rsquo;t mean permanent data loss." },
-              { title: "Hardened baseline configuration", desc: "Current patches applied. Legacy protocols disabled. Local firewall active. Secure remote management setup. The defaults most suppliers leave open." },
-              { title: "Documented controls", desc: "You get a written record of what&rsquo;s been configured &mdash; useful when larger customers send you supply-chain security questionnaires under NIS2." },
-              { title: "Supports your compliance obligations", desc: "Technical controls that support your GDPR, NIS2, and (where relevant) DORA obligations. I&rsquo;ll tell you plainly what this does and doesn&rsquo;t cover." },
+              { title: "Full-disk encryption", desc: "Every drive encrypted (BitLocker on Windows, LUKS on Linux). Lose a laptop? The data on it is unreadable. Recovery keys stored centrally and securely, managed via Microsoft Intune." },
+              { title: "Multi-factor authentication", desc: "MFA on all administrative access and business cloud accounts. No more \u201Cpassword123\u201D standing between attackers and your business." },
+              { title: "Automated monitored backups", desc: "Workstations back up to the on-site NAS and/or cloud. Ransomware, hardware failure, or a deleted folder doesn\u2019t mean permanent data loss." },
+              { title: "Hardened baseline + Defender for Endpoint", desc: "Current patches applied via Intune / Autopilot. Legacy protocols disabled. Local firewall active. Microsoft Defender for Endpoint enrolled. Secure remote management set up. The defaults most suppliers leave open." },
+              { title: "Documented controls", desc: "You get a written record of what\u2019s been configured \u2014 useful when larger customers send you supply-chain security questionnaires under NIS2 or ask about EU Cyber Resilience Act (CRA) posture." },
+              { title: "Supports your compliance obligations", desc: "Technical controls that support your GDPR, NIS2, and (where relevant) DORA obligations. I\u2019ll tell you plainly what this does and doesn\u2019t cover." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-6 rounded-2xl shadow-sm">
@@ -206,7 +206,7 @@ export default function ManagedHardware() {
                     <ShieldCheck className="text-accent shrink-0 mt-0.5" size={20} />
                     <h3 className="text-base font-headline font-bold text-primary">{item.title}</h3>
                   </div>
-                  <p className="text-foreground text-[15px] font-sans leading-relaxed ml-8" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                  <p className="text-foreground text-[15px] font-sans leading-relaxed ml-8">{item.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -235,12 +235,12 @@ export default function ManagedHardware() {
 
           <StaggerContainer className="space-y-4">
             {[
-              { num: "01", icon: Phone, title: "Free discovery call", desc: "We talk about what you&rsquo;re running now, what&rsquo;s causing you grief, how many people need kit, what apps you rely on, and where you want to be. About 30 minutes." },
-              { num: "02", icon: Package, title: "Fixed-price proposal", desc: "Within 48 hours I come back with a fixed-price proposal: exactly what you&rsquo;re getting, how much it costs, and when it&rsquo;ll be delivered. No surprises, no &ldquo;plus VAT on request&rdquo; nonsense." },
-              { num: "03", icon: CheckCircle, title: "You approve, I order", desc: "Once you&rsquo;re happy, I place the hardware order and start preparing your configuration. You get a delivery date up front." },
-              { num: "04", icon: ShieldCheck, title: "Build, harden, migrate", desc: "I build each system: install Windows properly licensed, apply all updates, configure security controls, install your apps, and migrate your data from old machines &mdash; all before it ever reaches your office." },
+              { num: "01", icon: Phone, title: "Free discovery call", desc: "We talk about what you\u2019re running now, what\u2019s causing you grief, how many people need kit, what apps you rely on, and where you want to be. About 30 minutes." },
+              { num: "02", icon: Package, title: "Fixed-price proposal", desc: "Within 48 hours I come back with a fixed-price proposal: exactly what you\u2019re getting, how much it costs, and when it\u2019ll be delivered. No surprises, no \u201Cplus VAT on request\u201D nonsense." },
+              { num: "03", icon: CheckCircle, title: "You approve, I order", desc: "Once you\u2019re happy, I place the hardware order and start preparing your configuration via Windows Autopilot. You get a delivery date up front." },
+              { num: "04", icon: ShieldCheck, title: "Build, harden, migrate", desc: "I build each system: install Windows properly licensed, apply all updates, enrol into Intune, configure Defender baselines, install your apps, and migrate your data from old machines \u2014 all before it ever reaches your office." },
               { num: "05", icon: Truck, title: "On-site install day", desc: "I come to you, set up the equipment, connect it to your network and peripherals, and run through the basics. Your team starts working on the new kit the same day." },
-              { num: "06", icon: UserCheck, title: "Handover &amp; quick training", desc: "A short walkthrough so your team knows what&rsquo;s changed, where files are, and how backups work. Written summary left with you for reference." },
+              { num: "06", icon: UserCheck, title: "Handover & quick training", desc: "A short walkthrough so your team knows what\u2019s changed, where files are, and how backups work. Written summary left with you for reference." },
               { num: "07", icon: Clock, title: "Ongoing support (optional)", desc: "Add Hardware Care or a Managed IT plan for ongoing monitoring, updates, and priority support. One phone number forever." },
             ].map((step, i) => (
               <StaggerItem key={i}>
@@ -248,8 +248,8 @@ export default function ManagedHardware() {
                   <span className="text-2xl font-headline font-extrabold text-primary/30 shrink-0 w-12 pt-1">{step.num}</span>
                   <step.icon className="text-accent shrink-0 mt-1" size={22} />
                   <div className="flex-grow">
-                    <h3 className="text-base font-headline font-bold text-primary mb-1" dangerouslySetInnerHTML={{ __html: step.title }} />
-                    <p className="text-foreground text-[15px] font-sans leading-relaxed" dangerouslySetInnerHTML={{ __html: step.desc }} />
+                    <h3 className="text-base font-headline font-bold text-primary mb-1">{step.title}</h3>
+                    <p className="text-foreground text-[15px] font-sans leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -356,7 +356,7 @@ export default function ManagedHardware() {
                 { id: "mh-2", q: "How long does my team lose to the rollout?", a: "Effectively nothing. I do the build and configuration off-site. We can swap and install the new systems in an evening. Typically takes a few hours for a small office. Your team goes home and comes in the next day to meet the new systems \u2014 ready to work." },
                 { id: "mh-3", q: "What if the hardware fails?", a: "Every device ships with manufacturer warranty. With optional Hardware Care, I handle the swap-out myself: priority replacement, I keep spare units on hand, and you\u2019re back up the same or next business day. Without Hardware Care, warranty claims go direct to the manufacturer (I\u2019ll help you with the process). Either way, your data is backed up \u2014 a hardware failure doesn\u2019t mean lost work." },
                 { id: "mh-4", q: "Do you supply the Windows licence?", a: "Yes. Every desktop includes a proper, full OEM Windows 11 Pro licence sourced from an authorised EU distributor. Not grey-market, not pre-activated keys of dubious origin. If you\u2019re ever audited, your licences are legitimate." },
-                { id: "mh-5", q: "Can I buy the hardware myself and just pay you to set it up?", a: "I don\u2019t work that way, and here\u2019s why: the outcome I\u2019m selling is \u201carrives ready to work, properly configured, properly supported.\u201d If you source your own hardware, I can\u2019t guarantee compatibility, licence legitimacy, warranty terms, or ongoing support. For set-up-only work on existing kit, see my Managed IT service instead." },
+                { id: "mh-5", q: "Can I buy the hardware myself and just pay you to set it up?", a: "I don\u2019t work that way, and here\u2019s why: the outcome I\u2019m selling is \u201carrives ready to work, properly configured, properly supported.\u201d If you source your own hardware, I can\u2019t guarantee compatibility, licence legitimacy, warranty terms, or ongoing support. For set-up-only work on existing kit, see the Managed IT service page instead." },
                 { id: "mh-6", q: "What about hybrid or remote workers?", a: "Desktops are delivered to wherever the user is based. Full remote setup is included \u2014 VPN access can be configured, cloud file sync, Microsoft 365 integration." },
                 { id: "mh-7", q: "Is this suitable for heavy workloads like CAD, video editing, or large datasets?", a: "The Business Plus tier handles most professional workloads comfortably. For specialist needs (CAD, 3D modelling, video production, scientific computing) we\u2019d spec something more powerful \u2014 just ask. What I don\u2019t do is gaming PCs, crypto mining rigs, or hardware outside the business-computing remit." },
                 { id: "mh-8", q: "Does this help with NIS2 / GDPR compliance?", a: "Yes, as a supporting measure \u2014 not as the whole solution. Every system ships with technical controls (encryption, MFA, backups, hardened configuration, documented setup) that larger customers will ask about in supply-chain questionnaires. But compliance is about policies and processes too, not just hardware. See the cybersecurity & compliance page for the full picture." },
@@ -373,9 +373,34 @@ export default function ManagedHardware() {
         </div>
       </section>
 
+      {/* Nurney Plant and Civil proof block */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn>
+            <div className="bg-[#f3f4f5] p-8 md:p-10 rounded-2xl">
+              <div className="flex items-start gap-4 mb-4">
+                <ShieldCheck className="text-accent shrink-0 mt-1" size={28} />
+                <div>
+                  <p className="text-[13px] font-headline font-bold uppercase tracking-wider text-accent mb-2">Hardware + server + network in one rollout</p>
+                  <p className="text-foreground text-lg leading-relaxed font-sans mb-4">
+                    For County Carlow plant-hire firm Nurney Plant and Civil, a single engagement delivered the full Digital Foundation: business desktops, an on-site server for shared files and backups, Microsoft 365, and hardened business Wi-Fi &mdash; all configured, migrated, and supported end-to-end.
+                  </p>
+                  <p className="font-headline font-bold text-primary text-sm">Brian, Nurney Plant and Civil &mdash; Co. Carlow</p>
+                </div>
+              </div>
+              <div className="mt-4 pl-0 md:pl-12">
+                <Link href="/portfolio#project-nurney-plant-civil" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
+                  View full case study &rarr;
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Cross-links to related services */}
       <section className="py-20 bg-[#f3f4f5]">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn className="text-center mb-10">
             <span className="eyebrow mb-5 inline-block">Works With</span>
             <h2 className="text-3xl mb-3">Part of a Complete Setup</h2>
@@ -384,16 +409,17 @@ export default function ManagedHardware() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { href: "/managed-it-support", title: "Managed IT Support", desc: "Ongoing monitoring, updates, and priority support for your new kit \u2014 and everything else." },
-              { href: "/microsoft-365", title: "Microsoft 365", desc: "Professional email, cloud file storage, and Teams \u2014 pre-configured on your new devices." },
-              { href: "/cybersecurity", title: "Cybersecurity &amp; Compliance", desc: "The full security layer: threat protection, compliance frameworks, staff training." },
+              { href: "/managed-it-support", title: "Managed IT Support", desc: "Ongoing monitoring, Intune management, patching, and priority support for your new kit \u2014 and everything else." },
+              { href: "/microsoft-365", title: "Microsoft 365", desc: "Professional email, cloud file storage, Teams, and Copilot \u2014 pre-configured on your new devices." },
+              { href: "/network-wifi-security", title: "Network & Wi-Fi", desc: "Business-grade networks and Wi-Fi 6/6E/7 that your new hardware plugs straight into." },
+              { href: "/cybersecurity", title: "Cybersecurity & Compliance", desc: "The full security layer: threat protection, NIS2 documentation, staff training." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <Link href={item.href}>
                   <div className="bg-white p-6 rounded-2xl card-hover shadow-sm h-full cursor-pointer">
-                    <h3 className="text-base font-headline font-bold text-primary mb-2" dangerouslySetInnerHTML={{ __html: item.title }} />
+                    <h3 className="text-base font-headline font-bold text-primary mb-2">{item.title}</h3>
                     <p className="text-foreground text-[14px] font-sans mb-3">{item.desc}</p>
                     <span className="text-accent font-headline font-bold text-sm">Learn more &rarr;</span>
                   </div>
