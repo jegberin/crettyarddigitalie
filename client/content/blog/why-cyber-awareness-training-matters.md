@@ -9,7 +9,7 @@ tags:
   - Small Business
 author: Joey
 coverImage: /blog/images/why-cyber-awareness-training-matters.jpg
-coverImageAlt: "A small group sitting around a table in a bright meeting room"
+coverImageAlt: "A diverse business team meeting around a table in a modern office"
 draft: false
 ---
 
