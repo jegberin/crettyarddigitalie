@@ -15,25 +15,33 @@
   },
   "observability": {
     "enabled": true
-  },
-
-  // Markdown-for-Agents cache. The scheduled handler renders each route via
-  // Cloudflare Browser Rendering's /markdown endpoint and stashes the result
-  // here; the fetch handler reads from this when Accept: text/markdown matches.
-  // Create the namespace once with:
-  //   npx wrangler kv namespace create MARKDOWN_CACHE
-  // and paste the returned id below.
-  "kv_namespaces": [
-    {
-      "binding": "MARKDOWN_CACHE",
-      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
-    }
-  ],
-
-  // Daily refresh at 04:10 UTC (low traffic). Free Browser Rendering quota is
-  // 10 min/day; ~30 routes × ~3 s = ~1.5 min/day plus 10 s spacing between
-  // calls to stay under the 1-request-per-10-s rate limit.
-  "triggers": {
-    "crons": ["10 4 * * *"]
   }
+
+  // ─── Markdown-for-Agents (commented out until KV namespace exists) ──────────
+  //
+  // To enable agent-facing markdown alternates:
+  //   1. npx wrangler kv namespace create MARKDOWN_CACHE
+  //   2. Paste the returned id into the kv_namespaces block below.
+  //   3. npx wrangler secret put CF_ACCOUNT_ID            (your CF account id)
+  //   4. npx wrangler secret put CF_API_TOKEN             (token w/ Browser Rendering: Edit)
+  //   5. npx wrangler secret put MARKDOWN_REFRESH_SECRET  (any random string)
+  //   6. Uncomment the kv_namespaces and triggers blocks below, commit, push.
+  //   7. POST https://crettyarddigital.ie/api/refresh-markdown
+  //      with header: x-refresh-secret: <MARKDOWN_REFRESH_SECRET>
+  //      to populate the cache without waiting for the cron.
+  //
+  // The Worker fetch handler is already defensive: while these blocks stay
+  // commented out, agent requests for text/markdown fall through to the SPA
+  // HTML — Link headers and the rest of the site keep working.
+  //
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "MARKDOWN_CACHE",
+  //     "id": "REPLACE_WITH_KV_NAMESPACE_ID"
+  //   }
+  // ],
+  //
+  // "triggers": {
+  //   "crons": ["10 4 * * *"]
+  // }
 }
