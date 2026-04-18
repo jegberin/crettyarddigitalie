@@ -246,7 +246,7 @@ export default function Home() {
               "No website means no way to show your work or explain what makes you different",
               "Word-of-mouth alone eventually slows down \u2014 and you have no backup plan",
               "New EU regulations mean your technology may need to meet legal standards",
-              "Every month without a proper online presence is a month of lost work",
+              "Every month without a proper online presence is a month of less work",
             ].map((point, i) => (
               <StaggerItem key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="text-accent shrink-0 mt-1" size={18} />
