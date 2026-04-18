@@ -8,8 +8,13 @@
   "url": "https://crettyarddigital.ie",
   "email": "info@crettyarddigital.ie",
   "telephone": "+353879700701",
-  "image": "https://crettyarddigital.ie/opengraph.jpg",
-  "logo": "https://crettyarddigital.ie/favicon.png",
+  "image": "https://crettyarddigital.ie/logo.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://crettyarddigital.ie/logo.png",
+    "width": 612,
+    "height": 212
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Crettyard",

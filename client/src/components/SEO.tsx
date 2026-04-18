@@ -126,11 +126,19 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://crettyarddigital.ie/#organization",
     name: "Crettyard Digital",
     description: "Web design, Microsoft 365 setup, managed IT, cybersecurity, and network solutions for small businesses across Ireland.",
     url: "https://crettyarddigital.ie",
     email: "info@crettyarddigital.ie",
     telephone: "+353879700701",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://crettyarddigital.ie/logo.png",
+      width: 612,
+      height: 212
+    },
+    image: "https://crettyarddigital.ie/logo.png",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Crettyard",
@@ -361,7 +369,9 @@ export function BlogPostingSchema({
       name: "Crettyard Digital",
       logo: {
         "@type": "ImageObject",
-        url: "https://crettyarddigital.ie/favicon.png",
+        url: "https://crettyarddigital.ie/logo.png",
+        width: 612,
+        height: 212,
       },
     },
     ...(absoluteImage ? { image: absoluteImage } : {}),
