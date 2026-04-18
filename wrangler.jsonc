@@ -15,5 +15,25 @@
   },
   "observability": {
     "enabled": true
+  },
+
+  // Markdown-for-Agents cache. The scheduled handler renders each route via
+  // Cloudflare Browser Rendering's /markdown endpoint and stashes the result
+  // here; the fetch handler reads from this when Accept: text/markdown matches.
+  // Create the namespace once with:
+  //   npx wrangler kv namespace create MARKDOWN_CACHE
+  // and paste the returned id below.
+  "kv_namespaces": [
+    {
+      "binding": "MARKDOWN_CACHE",
+      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
+    }
+  ],
+
+  // Daily refresh at 04:10 UTC (low traffic). Free Browser Rendering quota is
+  // 10 min/day; ~30 routes × ~3 s = ~1.5 min/day plus 10 s spacing between
+  // calls to stay under the 1-request-per-10-s rate limit.
+  "triggers": {
+    "crons": ["10 4 * * *"]
   }
 }

@@ -10,6 +10,13 @@ interface Env {
   ASSETS: Fetcher;
   RESEND_API_KEY?: string;
   RESEND_SENDER?: string;
+  // Markdown-for-Agents cache (see wrangler.jsonc → kv_namespaces).
+  MARKDOWN_CACHE?: KVNamespace;
+  // Cloudflare credentials for the Browser Rendering REST API.
+  CF_ACCOUNT_ID?: string;
+  CF_API_TOKEN?: string;
+  // Optional shared secret to gate the manual /api/refresh-markdown endpoint.
+  MARKDOWN_REFRESH_SECRET?: string;
 }
 
 const VALID_BUSINESS_TYPES = new Set([
@@ -300,8 +307,154 @@ function withLinkHeaders(response: Response): Response {
   });
 }
 
+// ─── Markdown for Agents ─────────────────────────────────────────────────────
+// Routes the scheduled handler refreshes daily. Slugs match request paths:
+// `/grants-funding` -> KV key `grants-funding`; `/` -> KV key `index`.
+const MARKDOWN_ROUTES: readonly string[] = [
+  "/",
+  "/about",
+  "/contact",
+  "/portfolio",
+  "/web-design",
+  "/microsoft-365",
+  "/managed-it-support",
+  "/managed-hardware",
+  "/network-wifi-security",
+  "/cybersecurity",
+  "/ai-readiness",
+  "/website-care-plans",
+  "/trades",
+  "/professional-services",
+  "/dora-compliance",
+  "/pricing",
+  "/grants-funding",
+  "/how-it-works",
+  "/get-a-quote",
+  "/web-design-laois",
+  "/web-design-carlow",
+  "/web-design-kilkenny",
+  "/it-support-laois",
+  "/it-support-carlow",
+  "/it-support-kilkenny",
+  "/microsoft-365-setup-ireland",
+  "/network-wifi-laois-carlow",
+  "/privacy-policy",
+  "/terms-and-conditions",
+  "/cookie-policy",
+];
+
+const SITE_ORIGIN = "https://crettyarddigital.ie";
+
+function wantsMarkdown(request: Request): boolean {
+  const accept = request.headers.get("accept");
+  if (!accept) return false;
+  // Match `text/markdown` anywhere in the Accept header — q-values aren't
+  // worth wrestling with, the agent listing markdown is signal enough.
+  return /(?:^|,\s*)text\/markdown(?:\s*;|\s*,|\s*$)/i.test(accept);
+}
+
+function pathToSlug(pathname: string): string | null {
+  if (pathname === "/" || pathname === "") return "index";
+  const trimmed = pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+  if (!trimmed || trimmed.includes("/") || trimmed.includes(".")) return null;
+  return trimmed;
+}
+
+function slugToKey(pathname: string): string | null {
+  // Same mapping the scheduled handler uses, so reads and writes line up.
+  return pathToSlug(pathname);
+}
+
+function approximateTokens(body: string): number {
+  return Math.max(1, Math.ceil(body.length / 4));
+}
+
+async function tryServeMarkdownFromCache(env: Env, url: URL): Promise<Response | null> {
+  if (!env.MARKDOWN_CACHE) return null;
+  const key = slugToKey(url.pathname);
+  if (!key) return null;
+
+  const md = await env.MARKDOWN_CACHE.get(key);
+  if (!md) return null;
+
+  const headers = new Headers();
+  headers.set("content-type", "text/markdown; charset=utf-8");
+  headers.set("x-markdown-tokens", String(approximateTokens(md)));
+  headers.set("vary", "accept");
+  // Browsers/agents may cache for 5 min; the scheduled job refreshes daily.
+  headers.set("cache-control", "public, max-age=300");
+  headers.set("link", LINK_HEADER);
+  return new Response(md, { status: 200, headers });
+}
+
+async function fetchMarkdownFromBrowserRendering(
+  pathname: string,
+  env: Env,
+): Promise<string> {
+  if (!env.CF_ACCOUNT_ID || !env.CF_API_TOKEN) {
+    throw new Error("CF_ACCOUNT_ID / CF_API_TOKEN secret not set");
+  }
+  const target = `${SITE_ORIGIN}${pathname}`;
+  const endpoint = `https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/browser-rendering/markdown`;
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${env.CF_API_TOKEN}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      url: target,
+      gotoOptions: { waitUntil: "networkidle0", timeout: 30000 },
+    }),
+  });
+
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`Browser Rendering ${response.status}: ${detail.slice(0, 300)}`);
+  }
+  const data = (await response.json()) as { success: boolean; result?: string; errors?: unknown };
+  if (!data.success || typeof data.result !== "string") {
+    throw new Error(`Browser Rendering returned no markdown: ${JSON.stringify(data).slice(0, 300)}`);
+  }
+  return data.result;
+}
+
+async function refreshAllMarkdown(env: Env, ctx: ExecutionContext): Promise<{ ok: number; failed: number }> {
+  if (!env.MARKDOWN_CACHE) {
+    console.error("[markdown] MARKDOWN_CACHE binding not configured; cannot refresh.");
+    return { ok: 0, failed: MARKDOWN_ROUTES.length };
+  }
+  let ok = 0;
+  let failed = 0;
+  for (const route of MARKDOWN_ROUTES) {
+    try {
+      const md = await fetchMarkdownFromBrowserRendering(route, env);
+      const key = pathToSlug(route);
+      if (!key) {
+        console.warn(`[markdown] skipping ${route} (no slug)`);
+        continue;
+      }
+      // Cache for 7 days so a few failed refreshes don't expire the content.
+      await env.MARKDOWN_CACHE.put(key, md, { expirationTtl: 60 * 60 * 24 * 7 });
+      ok += 1;
+      console.log(`[markdown] refreshed ${route} (${md.length} bytes)`);
+    } catch (err) {
+      failed += 1;
+      console.error(`[markdown] ${route}:`, err instanceof Error ? err.message : err);
+    }
+    // Free-tier rate limit: 1 request per 10s. Use waitUntil so the loop body
+    // doesn't have to await timers when running in scheduled context.
+    await new Promise((r) => setTimeout(r, 10_500));
+  }
+  console.log(`[markdown] refresh complete: ${ok} ok, ${failed} failed`);
+  // Reference ctx so it isn't a lint/unused-arg complaint; future hook point
+  // if any of the inner waitUntils need to outlive the current request.
+  ctx.waitUntil(Promise.resolve());
+  return { ok, failed };
+}
+
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/contact") {
@@ -313,7 +466,35 @@ export default {
       return handleQuote(request, env);
     }
 
+    // Manual one-shot to populate / refresh the markdown cache without waiting
+    // for the next cron firing. Gated by MARKDOWN_REFRESH_SECRET so it can't
+    // be triggered by anyone scanning the site.
+    if (url.pathname === "/api/refresh-markdown") {
+      if (request.method !== "POST") return json({ error: "Method not allowed." }, 405);
+      const expected = env.MARKDOWN_REFRESH_SECRET;
+      const provided = request.headers.get("x-refresh-secret");
+      if (!expected || provided !== expected) return json({ error: "Unauthorized." }, 401);
+      ctx.waitUntil(
+        refreshAllMarkdown(env, ctx).catch((err) => console.error("[markdown] refresh failed:", err)),
+      );
+      return json({ accepted: true, message: "Refresh started in background." }, 202);
+    }
+
+    // Markdown content negotiation: when an agent asks for text/markdown and
+    // we have a cached alternate, serve that. Otherwise fall through to the
+    // SPA HTML so the request still succeeds.
+    if ((request.method === "GET" || request.method === "HEAD") && wantsMarkdown(request)) {
+      const md = await tryServeMarkdownFromCache(env, url);
+      if (md) return md;
+    }
+
     const response = await env.ASSETS.fetch(request);
     return withLinkHeaders(response);
+  },
+
+  async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
+    // ctx.waitUntil keeps the worker alive past the cron event for the full
+    // refresh duration (~5 min for 30 routes with rate-limit spacing).
+    ctx.waitUntil(refreshAllMarkdown(env, ctx).then(() => undefined));
   },
 } satisfies ExportedHandler<Env>;
