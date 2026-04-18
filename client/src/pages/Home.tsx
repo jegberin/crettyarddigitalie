@@ -236,7 +236,7 @@ export default function Home() {
             <span className="eyebrow mb-5 inline-block">Why It Matters</span>
             <h2 className="text-3xl md:text-4xl mb-6" data-testid="text-presence-heading">If Customers Can't Find You Online, They're Finding Your Competitors</h2>
             <p className="text-lg text-foreground mb-10 leading-relaxed font-sans font-normal">
-              Someone in your area just searched Google for exactly what you do &mdash; "plumber Carlow," "furniture maker Laois," "cleaner near me." They didn't find you. They found a competitor whose website looked professional, had a proper email address, and had a phone number they could tap. That competitor got the job. You didn't even know you were in the running.
+              Someone in your area just searched Google for exactly what you do &mdash; "plumber Carlow," "furniture maker Laois," "cleaner near me." They didn't find you. They found a competitor whose website looked professional, had a proper email address, and had a phone number they could tap. That competitor got the job. You didn't even know you weren't in the running.
             </p>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 gap-6 text-left">
