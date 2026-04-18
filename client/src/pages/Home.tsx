@@ -236,7 +236,7 @@ export default function Home() {
             <span className="eyebrow mb-5 inline-block">Why It Matters</span>
             <h2 className="text-3xl md:text-4xl mb-6" data-testid="text-presence-heading">If Customers Can't Find You Online, They're Finding Your Competitors</h2>
             <p className="text-lg text-foreground mb-10 leading-relaxed font-sans font-normal">
-              Someone in your area just searched Google for exactly what you do &mdash; "plumber Carlow," "furniture maker Laois," "cleaner near me." They didn't find you. They found a competitor whose website looked professional, had a proper email address, and had a phone number they could tap. That competitor got the job. You didn't even know you were in the running.
+              Someone in your area just searched Google for exactly what you do &mdash; "plumber Carlow," "furniture maker Laois," "cleaner near me." They didn't find you. They found a competitor whose website looked professional, had a proper email address, and had a phone number they could tap. That competitor got the job. You didn't even know you weren't in the running.
             </p>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 gap-6 text-left">
@@ -246,7 +246,7 @@ export default function Home() {
               "No website means no way to show your work or explain what makes you different",
               "Word-of-mouth alone eventually slows down \u2014 and you have no backup plan",
               "New EU regulations mean your technology may need to meet legal standards",
-              "Every month without a proper online presence is a month of lost work",
+              "Every month without a proper online presence is a month of less work",
             ].map((point, i) => (
               <StaggerItem key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="text-accent shrink-0 mt-1" size={18} />
@@ -345,9 +345,9 @@ export default function Home() {
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: <Clock size={24} />, title: "Avoid Costly Rebuilds", desc: "A \u20ac300 website needs replacing within a year. Getting it right means a site that lasts and grows with your business." },
-              { icon: <TrendingUp size={24} />, title: "Stop Missing Leads", desc: "Every month without a proper online presence is a month of lost enquiries going to a competitor who bothered to invest." },
+              { icon: <TrendingUp size={24} />, title: "Stop Missing Leads", desc: "Every month without a proper online presence is a month of lost enquiries going to a competitor who did invest in a website." },
               { icon: <Shield size={24} />, title: "Avoid Security & Legal Risks", desc: "Poorly configured setups leave security gaps. With NIS2 and GDPR enforcement tightening, that\u2019s now a legal problem too." },
-              { icon: <MessageCircle size={24} />, title: "No More Patchwork Fixes", desc: "Stop paying different people to bodge the same problems. One integrated setup replaces years of expensive firefighting." },
+              { icon: <MessageCircle size={24} />, title: "No More Patchwork Fixes", desc: "Stop paying different people to patch the same problems. One integrated setup replaces years of expensive break-fixes." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="text-center">
