@@ -2,7 +2,7 @@
 slug: email-security-basics-growing-companies
 title: "Email security basics for growing Irish companies"
 description: "The email security fundamentals every growing SME should have in place — from SPF, DKIM, and DMARC to phishing filters and staff training."
-date: 2026-02-23
+date: 2025-12-22
 tags:
   - Cybersecurity
   - Email Security

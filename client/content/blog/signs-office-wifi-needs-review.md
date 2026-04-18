@@ -2,7 +2,7 @@
 slug: signs-office-wifi-needs-review
 title: "Signs your office Wi-Fi needs a review (and what to do first)"
 description: "Seven everyday signals that your small business Wi-Fi is overdue for a proper review — with the fixes that usually make the biggest difference."
-date: 2026-03-23
+date: 2026-02-16
 tags:
   - Networking
   - Wi-Fi

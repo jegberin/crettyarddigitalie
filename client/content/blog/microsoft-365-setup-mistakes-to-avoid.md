@@ -2,7 +2,7 @@
 slug: microsoft-365-setup-mistakes-to-avoid
 title: "Microsoft 365 setup mistakes to avoid — an SME field guide"
 description: "The configuration mistakes that cost small businesses the most time and money after a Microsoft 365 rollout, and how to spot them before they bite."
-date: 2026-03-30
+date: 2026-03-02
 tags:
   - Microsoft 365
   - Small Business

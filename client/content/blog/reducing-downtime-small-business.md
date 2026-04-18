@@ -2,7 +2,7 @@
 slug: reducing-downtime-small-business
 title: "Reducing downtime in a small business — a practical guide"
 description: "Plain, actionable moves to cut unplanned IT downtime in a small Irish business — covering broadband, power, email, backups, and the handful of gaps that cost the most."
-date: 2026-02-09
+date: 2025-12-01
 tags:
   - Managed IT
   - Business Continuity

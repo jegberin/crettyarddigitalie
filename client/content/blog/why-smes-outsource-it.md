@@ -2,7 +2,7 @@
 slug: why-smes-outsource-it
 title: "Why SMEs outsource IT — and when it actually makes sense"
 description: "The honest reasons Irish small businesses move from in-house or ad-hoc IT to an outsourced provider, and how to tell if you're ready."
-date: 2025-12-29
+date: 2025-10-13
 tags:
   - Managed IT
   - Small Business

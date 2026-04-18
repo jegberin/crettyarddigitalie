@@ -2,7 +2,7 @@
 slug: website-care-plans-what-they-include
 title: "Website care plans — what they include and why they matter"
 description: "What a website care plan actually covers, why Irish SMEs should have one, and how to tell a real care plan from a hosting invoice dressed up as support."
-date: 2026-04-13
+date: 2026-04-06
 tags:
   - Web Design
   - Website Care Plans

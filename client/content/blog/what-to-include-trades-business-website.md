@@ -2,7 +2,7 @@
 slug: what-to-include-trades-business-website
 title: "What to include on a trades business website — the essentials"
 description: "The specific pages, content, and features that an Irish trades business website needs to win local leads — and the pretty extras that do not matter."
-date: 2025-12-01
+date: 2025-09-15
 tags:
   - Web Design
   - Trades

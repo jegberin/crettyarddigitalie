@@ -2,7 +2,7 @@
 slug: sharepoint-onedrive-teams-explained
 title: "SharePoint, OneDrive, Teams — what each one is actually for"
 description: "A plain-English guide to when to use SharePoint, OneDrive, and Teams in a small business Microsoft 365 tenant — and how to stop files ending up in the wrong place."
-date: 2026-03-30
+date: 2026-03-09
 tags:
   - Microsoft 365
   - SharePoint

@@ -2,7 +2,7 @@
 slug: phishing-risks-microsoft-365
 title: "Phishing risks in Microsoft 365 — what SMEs should actually watch for"
 description: "A plain-English look at how phishing attacks hit Microsoft 365 tenants at small Irish businesses, the patterns that work, and the controls that shut most of them down."
-date: 2026-04-06
+date: 2026-03-16
 tags:
   - Cybersecurity
   - Microsoft 365

@@ -2,7 +2,7 @@
 slug: it-support-considerations-trades-businesses
 title: "IT support considerations for Irish trades businesses"
 description: "What a trades business in Ireland actually needs from IT support — reliable Wi-Fi, mobile-friendly workflows, cloud storage, and the security to keep it all safe."
-date: 2026-01-19
+date: 2025-11-03
 tags:
   - Trades
   - Managed IT

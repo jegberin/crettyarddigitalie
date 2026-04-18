@@ -2,7 +2,7 @@
 slug: cost-of-weak-passwords-mfa
 title: "The real cost of weak passwords and missing MFA in a small business"
 description: "What weak password and MFA practices actually cost a small Irish business — in euros, hours, and reputation — and the plain fixes that close most of the gap."
-date: 2026-03-09
+date: 2026-01-19
 tags:
   - Cybersecurity
   - Passwords

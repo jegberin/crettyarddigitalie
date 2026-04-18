@@ -2,7 +2,7 @@
 slug: accessibility-basics-small-business-websites
 title: "Accessibility basics for small business websites — a practical start"
 description: "The accessibility changes that matter most on a small Irish business website, why they help every visitor, and how to stay on the right side of the European Accessibility Act."
-date: 2026-03-02
+date: 2026-01-05
 tags:
   - Web Design
   - Accessibility

@@ -2,7 +2,7 @@
 slug: securing-microsoft-365-small-business
 title: "Securing Microsoft 365 for a small business — a plain-English walkthrough"
 description: "The practical security steps that actually move the needle on a Microsoft 365 tenant for an Irish SME — without turning the admin console into a full-time job."
-date: 2026-02-16
+date: 2025-12-08
 tags:
   - Microsoft 365
   - Cybersecurity

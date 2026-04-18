@@ -2,7 +2,7 @@
 slug: preparing-an-sme-for-ai-safely
 title: "Preparing an SME for AI safely — a step-by-step plan"
 description: "How an Irish small business can get ready to use AI tools without leaking data, wasting budget, or running into regulatory problems."
-date: 2026-03-09
+date: 2026-01-26
 tags:
   - AI Readiness
   - Small Business

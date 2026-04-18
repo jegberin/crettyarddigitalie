@@ -2,7 +2,7 @@
 slug: page-speed-local-business-websites
 title: "Page speed for local business websites — what actually matters"
 description: "A plain guide to making a small business website load fast on real Irish phones. Covers the big wins, what Core Web Vitals really measure, and what to ignore."
-date: 2026-03-16
+date: 2026-02-02
 tags:
   - Web Design
   - Performance
