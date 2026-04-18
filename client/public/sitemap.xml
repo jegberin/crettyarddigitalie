@@ -26,10 +26,20 @@
   <url><loc>https://crettyarddigital.ie/web-design-laois</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/web-design-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/web-design-kilkenny</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/web-design-dublin</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/web-design-cork</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/web-design-galway</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/web-design-limerick</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/web-design-waterford</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <!-- Local SEO: IT Support -->
   <url><loc>https://crettyarddigital.ie/it-support-laois</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/it-support-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/it-support-kilkenny</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/it-support-dublin</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/it-support-cork</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/it-support-galway</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/it-support-limerick</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/it-support-waterford</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <!-- Local SEO: Other services -->
   <url><loc>https://crettyarddigital.ie/microsoft-365-setup-ireland</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/network-wifi-laois-carlow</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>

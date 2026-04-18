@@ -1,12 +1,12 @@
 import { useState, useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, XCircle, ArrowRight, Shield, Clock, TrendingUp, MessageCircle, BadgeEuro, Briefcase, Monitor, MapPin, Users } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, Shield, Clock, TrendingUp, MessageCircle, BadgeEuro } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { TrustBadges } from "@/components/TrustBadges";
+import { StatsStrip } from "@/components/StatsStrip";
 import { AnimatedTetrahedron } from "@/components/AnimatedTetrahedron";
-import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import project1 from "@assets/portfolio-bm-custom-furniture.webp";
@@ -184,12 +184,12 @@ export default function Home() {
         <div className="container mx-auto px-4 max-w-6xl relative z-10 flex-1 flex items-center">
           <div className="grid md:grid-cols-2 gap-12 items-center py-20 w-full">
             <FadeIn direction="up">
-              <span className="eyebrow mb-6 inline-block" data-testid="text-eyebrow">Crettyard Digital &mdash; Laois, Carlow &amp; Kilkenny</span>
+              <span className="eyebrow mb-6 inline-block" data-testid="text-eyebrow">Crettyard Digital &mdash; Ireland-Wide</span>
               <h1
                 className="display-heading text-white mb-8 leading-none"
                 data-testid="text-hero-heading"
               >
-                <span className="sr-only">Web Design, Microsoft 365 &amp; Managed IT for Small Businesses in Laois, Carlow &amp; Kilkenny &mdash; </span>
+                <span className="sr-only">Web Design, Microsoft 365 &amp; Managed IT for Small Businesses Across Ireland &mdash; </span>
                 <CharReveal text="Help Your" startDelay={200} /><br />
                 <CharReveal text="Business" startDelay={580} /><br />
                 <span
@@ -201,7 +201,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-white text-lg mb-10 leading-relaxed font-sans font-normal max-w-lg" data-testid="text-hero-subheading">
-                I build websites, set up professional email, and manage IT for small businesses across Laois, Carlow, Kilkenny, and the Midlands. Enterprise-grade quality. Plain-English service. One person to call &mdash; no runaround.
+                I build websites, set up professional email, and manage IT for small businesses across Ireland. Enterprise-grade quality. Plain-English service. One person to call &mdash; no runaround.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link href="/contact#send-message">
@@ -227,27 +227,7 @@ export default function Home() {
       </section>
 
       {/* ── Stats Strip ───────────────────────────────────────────── */}
-      <section className="py-14 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
-            {[
-              { target: 15, suffix: "+", label: "Years Enterprise IT", icon: Briefcase },
-              { target: 10, suffix: "+", label: "Websites Launched", icon: Monitor },
-              { target: 6, suffix: "", label: "Counties Served", icon: MapPin },
-              { target: 100, suffix: "%", label: "Small Business Focus", icon: Users },
-              { target: 50, suffix: "%", label: "Up to 50% Grant Funding", icon: BadgeEuro },
-            ].map((stat, i) => (
-              <StaggerItem key={i} className="flex flex-col items-center">
-                <stat.icon className="text-accent mb-2" size={28} aria-hidden="true" />
-                <span className="display-counter text-primary" data-testid={`stat-counter-${i}`}>
-                  <AnimatedCounter target={stat.target} suffix={stat.suffix} />
-                </span>
-                <span className="eyebrow mt-2">{stat.label}</span>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+      <StatsStrip />
 
       {/* ── The Problem ───────────────────────────────────────────── */}
       <section className="bg-white py-28">
@@ -488,7 +468,7 @@ export default function Home() {
                 <span className="eyebrow mb-5 inline-block">Meet Joey</span>
                 <h2 id="meet-joey-heading" className="text-3xl md:text-4xl mb-5" data-testid="text-meet-joey-heading">Hi, I&rsquo;m Joey &mdash; and I&rsquo;ll be the one building your site and supporting your IT.</h2>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-5">
-                  Fifteen years inside Microsoft, Intel, and Dell taught me how enterprise IT actually works. Now I bring that experience to small businesses in Laois, Carlow, and Kilkenny &mdash; in plain English, with one person to call, and no runaround.
+                  Fifteen years inside Microsoft, Intel, and Dell taught me how enterprise IT actually works. Now I bring that experience to small businesses across Ireland &mdash; in plain English, with one person to call, and no runaround.
                 </p>
                 <Link href="/about" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors" data-testid="link-meet-joey-about">
                   More about me <ArrowRight size={14} className="ml-1" />

@@ -4,7 +4,7 @@
   "@id": "https://crettyarddigital.ie/#organization",
   "name": "Crettyard Digital",
   "alternateName": "Crettyard Digital Ireland",
-  "description": "Web design, Microsoft 365 setup, managed IT, cybersecurity, and network solutions for small businesses in Laois, Carlow, Kilkenny, Kildare, Offaly, and Tipperary.",
+  "description": "Web design, Microsoft 365 setup, managed IT, cybersecurity, and network solutions for small businesses across Ireland.",
   "url": "https://crettyarddigital.ie",
   "email": "info@crettyarddigital.ie",
   "telephone": "+353879700701",
@@ -21,14 +21,7 @@
     "latitude": 52.8534,
     "longitude": -7.1574
   },
-  "areaServed": [
-    { "@type": "AdministrativeArea", "name": "County Laois" },
-    { "@type": "AdministrativeArea", "name": "County Carlow" },
-    { "@type": "AdministrativeArea", "name": "County Kilkenny" },
-    { "@type": "AdministrativeArea", "name": "County Kildare" },
-    { "@type": "AdministrativeArea", "name": "County Offaly" },
-    { "@type": "AdministrativeArea", "name": "County Tipperary" }
-  ],
+  "areaServed": { "@type": "Country", "name": "Ireland" },
   "serviceType": [
     "Web Design",
     "Microsoft 365 Setup",

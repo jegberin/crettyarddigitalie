@@ -127,7 +127,7 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Crettyard Digital",
-    description: "Web design, Microsoft 365 setup, and network solutions for small businesses in Laois, Carlow, Kilkenny, and surrounding areas.",
+    description: "Web design, Microsoft 365 setup, managed IT, cybersecurity, and network solutions for small businesses across Ireland.",
     url: "https://crettyarddigital.ie",
     email: "info@crettyarddigital.ie",
     telephone: "+353879700701",
@@ -142,13 +142,8 @@ export function LocalBusinessSchema() {
       latitude: 52.8534,
       longitude: -7.1574
     },
-    areaServed: [
-      { "@type": "AdministrativeArea", name: "County Laois" },
-      { "@type": "AdministrativeArea", name: "County Carlow" },
-      { "@type": "AdministrativeArea", name: "County Kilkenny" },
-      { "@type": "AdministrativeArea", name: "County Kildare" }
-    ],
-    serviceType: ["Web Design", "Microsoft 365 Setup", "Network & Wi-Fi Solutions", "Business Email Setup", "Website Maintenance"],
+    areaServed: { "@type": "Country", name: "Ireland" },
+    serviceType: ["Web Design", "Microsoft 365 Setup", "Managed IT Support", "Network & Wi-Fi Solutions", "Cybersecurity", "Business Email Setup", "Website Maintenance"],
     priceRange: "€€"
   };
 
@@ -181,7 +176,7 @@ export function ServiceSchema({
     },
     areaServed: {
       "@type": "AdministrativeArea",
-      name: areaServed ?? "Laois, Carlow, Kilkenny, Ireland"
+      name: areaServed ?? "Ireland"
     }
   };
 
@@ -220,7 +215,7 @@ export function AboutPageSchema() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Crettyard Digital",
-    description: "Crettyard Digital is run by Joey, bringing enterprise IT experience to small businesses in Laois, Carlow, and Kilkenny. Plain English, no jargon, direct communication.",
+    description: "Crettyard Digital is run by Joey, bringing enterprise IT experience to small businesses across Ireland. Plain English, no jargon, direct communication.",
     url: "https://crettyarddigital.ie/about.html",
     mainEntity: {
       "@type": "Person",
@@ -262,7 +257,7 @@ export function PortfolioSchema() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Crettyard Digital Portfolio & Case Studies",
-    description: "Case studies of web design, Microsoft 365, and IT projects delivered for small businesses in Carlow, Laois, and the Irish Midlands.",
+    description: "Case studies of web design, Microsoft 365, and IT projects delivered for small businesses across Ireland.",
     url: base,
     mainEntity: {
       "@type": "ItemList",
@@ -393,7 +388,7 @@ export function ContactPageSchema() {
       url: "https://crettyarddigital.ie",
       email: "info@crettyarddigital.ie",
       telephone: "+353879700701",
-      areaServed: "Laois, Carlow, Kilkenny, Ireland"
+      areaServed: "Ireland"
     }
   };
 

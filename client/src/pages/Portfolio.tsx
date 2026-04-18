@@ -132,7 +132,7 @@ export default function Portfolio() {
               Every case study here started the same way &mdash; a business owner who knew they needed better technology but wasn't sure where to start. I helped them get found on Google, look professional, and grow their business.
             </p>
             <p className="text-lg text-foreground leading-relaxed font-sans">
-              These aren't template sites or generic setups. Each project below was built around the business's specific goals, customers, and location &mdash; across Carlow, Laois, and the Midlands.
+              These aren't template sites or generic setups. Each project below was built around the business's specific goals, customers, and location &mdash; with clients ranging from Carlow and Laois to wherever the next Irish small business calls from.
             </p>
           </FadeIn>
         </div>
@@ -351,10 +351,10 @@ export default function Portfolio() {
       <section className="py-20 bg-[#f3f4f5] border-t border-gray-100">
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn className="text-center mb-10">
-            <span className="eyebrow mb-3 inline-block">Local Coverage</span>
-            <h2 className="text-2xl">Looking for Local Web Design or IT Support?</h2>
+            <span className="eyebrow mb-3 inline-block">County-Specific Hubs</span>
+            <h2 className="text-2xl">Looking for Web Design or IT Support in Your County?</h2>
             <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">
-              I work with small businesses across the south-east Midlands. Pick your county for tailored pricing, sector angles, and LEO grant guidance.
+              I work with small businesses in every county in Ireland. Pick yours for tailored pricing, sector angles, and LEO grant guidance.
             </p>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">

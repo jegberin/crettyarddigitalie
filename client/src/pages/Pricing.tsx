@@ -127,7 +127,7 @@ export default function Pricing() {
               One Provider. One Monthly Cost. Everything Your Business Needs.
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              Stop juggling three providers, five invoices, and nobody taking responsibility. Digital Foundation Bundles give small businesses across Laois, Carlow, Kilkenny, and remotely across Ireland their website, email, phone system, IT support, and security in one integrated package &mdash; built by one person, for one predictable monthly cost.
+              Stop juggling three providers, five invoices, and nobody taking responsibility. Digital Foundation Bundles give small businesses across Ireland their website, email, phone system, IT support, and security in one integrated package &mdash; built by one person, for one predictable monthly cost.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">

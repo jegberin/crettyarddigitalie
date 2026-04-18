@@ -34,8 +34,8 @@ const faqItems = [
     a: "I offer optional support packages for monitoring, maintenance, and troubleshooting. But even without a package, I'm always just a call or message away if something goes wrong."
   },
   {
-    q: "Do you cover areas outside Laois and Carlow?",
-    a: "I'm based on the Laois/Carlow border but regularly work across the Midlands and South-East including Kilkenny. Get in touch and we'll figure it out."
+    q: "How far will you travel for an on-site network install?",
+    a: "My home base is on the Laois/Carlow border, and most on-site work lands in the Midlands, South-East, and Greater Dublin without fuss. For projects further afield I'm happy to travel anywhere in Ireland — just factor in travel. Get in touch and we'll figure it out."
   },
 ];
 
@@ -54,7 +54,7 @@ export default function NetworkWifi() {
                 Business Network &amp; Wi&#8209;Fi Solutions for Offices and Workshops
               </h1>
               <p className="text-xl text-foreground mb-8 leading-relaxed font-sans font-normal">
-                Dropped connections, Wi&#8209;Fi dead spots, and unreliable internet cost your business time and money every single day. I design, install, and secure networks for small businesses across Laois, Carlow, Kilkenny, and the Irish Midlands using Ubiquiti UniFi, MikroTik, and TP-Link Omada equipment &mdash; Wi&#8209;Fi 6, Wi&#8209;Fi 6E and Wi&#8209;Fi 7; Cat6a or Cat7 structured cabling (Cat8 for specialist runs); and CRA-compliant firewalls. Real coverage, real security, no consumer-grade shortcuts.
+                Dropped connections, Wi&#8209;Fi dead spots, and unreliable internet cost your business time and money every single day. I design, install, and secure networks for small businesses across Ireland using Ubiquiti UniFi, MikroTik, and TP-Link Omada equipment &mdash; Wi&#8209;Fi 6, Wi&#8209;Fi 6E and Wi&#8209;Fi 7; Cat6a or Cat7 structured cabling (Cat8 for specialist runs); and CRA-compliant firewalls. Real coverage, real security, no consumer-grade shortcuts.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact#send-message">

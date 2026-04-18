@@ -5,6 +5,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { StatsStrip } from "@/components/StatsStrip";
 import iconHospitality from "@assets/concept-hospitality-dining.webp";
 import iconProfessional from "@assets/concept-professional-services.webp";
 import iconRetail from "@assets/concept-retail-craft.webp";
@@ -36,6 +37,8 @@ export default function ITSupportKilkenny() {
           </FadeIn>
         </div>
       </section>
+
+      <StatsStrip />
 
       <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">

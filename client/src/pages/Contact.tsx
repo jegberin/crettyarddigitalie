@@ -114,11 +114,11 @@ export default function Contact() {
               Whether you have a clear plan or just a rough question, get in touch. I'll get back to you within one business day with honest, plain-English advice. Every conversation starts with listening &mdash; not selling.
             </p>
             <p className="mt-6 text-sm text-foreground/80 font-headline font-bold tracking-wide" data-testid="text-trust-line">
-              Fast response &middot; Local support &middot; Plain-English advice &middot; Grant and compliance guidance included
+              Fast response &middot; Nationwide coverage &middot; Plain-English advice &middot; Grant and compliance guidance included
             </p>
             <p className="mt-3 text-sm text-foreground/80 font-sans flex items-center justify-center gap-1.5" data-testid="text-service-area-reminder">
               <MapPin size={14} className="text-accent" />
-              Serving Laois, Carlow, Kilkenny, Kildare, Offaly, Tipperary &amp; the wider Midlands
+              Serving small businesses across all 32 counties in Ireland
             </p>
           </FadeIn>
         </div>
@@ -230,7 +230,7 @@ export default function Contact() {
             <FadeIn>
               <h2 className="text-3xl mb-6" data-testid="text-service-area-heading">Service Area</h2>
               <p className="text-foreground mb-8 text-[15px] leading-relaxed font-sans font-normal">
-                Based near Crettyard on the Laois–Carlow border. I primarily serve businesses in Laois, Carlow, Kilkenny, Kildare, Offaly, Tipperary, and nearby counties, but I am able to work remotely across Ireland for cloud and web projects.
+                Headquartered near Crettyard on the Laois–Carlow border, working with small businesses in every county in Ireland. Website, Microsoft 365, cybersecurity, AI, and managed IT work runs nationwide as standard. For network installs and on-site hardware delivery, distance is no barrier — just factor in travel.
               </p>
 
               <div className="bg-[#f3f4f5] aspect-video rounded-2xl overflow-hidden shadow-sm" data-testid="map-container">

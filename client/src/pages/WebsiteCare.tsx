@@ -217,7 +217,7 @@ export default function WebsiteCare() {
           </FadeIn>
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { href: "/web-design", title: "Web Design", desc: "How new websites are built \u2014 Laois, Carlow, Kilkenny, and across Ireland. Every build includes a mandatory care plan." },
+              { href: "/web-design", title: "Web Design", desc: "How new websites are built for small businesses across Ireland. Every build includes a mandatory care plan." },
               { href: "/cybersecurity", title: "Cybersecurity & Compliance", desc: "The security and compliance layer beyond the technical care plan \u2014 NIS2, GDPR, phishing protection, staff training." },
               { href: "/managed-it-support", title: "Managed IT Support", desc: "Pair your website care with fixed-fee proactive IT for the rest of your business \u2014 Microsoft 365, devices, network." },
               { href: "/grants-funding", title: "Grants & Funding", desc: "Care plans aren\u2019t voucher-eligible, but new subscription-based platforms may qualify for the Grow Digital Voucher." },

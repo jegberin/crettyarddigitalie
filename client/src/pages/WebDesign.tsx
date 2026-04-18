@@ -33,10 +33,10 @@ export default function WebDesign() {
             <FadeIn>
               <span className="eyebrow mb-5 inline-block">Web Design</span>
               <h1 className="display-sm mb-6" data-testid="text-page-title">
-                <span className="sr-only">Web Design for Small Businesses in Laois, Carlow &amp; Kilkenny &mdash; </span>A Website That Works as Hard as You Do
+                <span className="sr-only">Web Design for Small Businesses Across Ireland &mdash; </span>A Website That Works as Hard as You Do
               </h1>
               <p className="text-xl text-foreground mb-4 leading-relaxed font-sans font-normal" data-testid="text-intro">
-                Your website should be your hardest-working employee &mdash; appearing on Google when locals search for what you do, looking professional on every device, and turning visitors into phone calls and enquiries. I build websites specifically for tradespeople, service businesses, and local SMEs across Laois, Carlow, Kilkenny, and the Midlands.
+                Your website should be your hardest-working employee &mdash; appearing on Google when customers in your area search for what you do, looking professional on every device, and turning visitors into phone calls and enquiries. I build websites for tradespeople, service businesses, and small SMEs across Ireland.
               </p>
               <p className="text-sm font-headline font-bold text-accent mb-8">
                 Every site includes ongoing care and security &middot; Fixed quotes, no surprises
@@ -530,8 +530,8 @@ export default function WebDesign() {
           {/* ── By County ────────────────────────────────────────────── */}
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">By County</span>
-            <h2 className="text-3xl" data-testid="text-counties-heading">Local Web Design Across the South-East Midlands</h2>
-            <p className="text-foreground mt-4 max-w-2xl mx-auto leading-relaxed font-sans font-normal">Each county has its own search patterns, market dynamics, and LEO. Pick yours for tailored pricing, sector angles, and grant guidance.</p>
+            <h2 className="text-3xl" data-testid="text-counties-heading">County-Specific Web Design Across Ireland</h2>
+            <p className="text-foreground mt-4 max-w-2xl mx-auto leading-relaxed font-sans font-normal">Every county has its own search patterns, market dynamics, and LEO. Pick yours for tailored pricing, sector angles, and grant guidance.</p>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-8 mb-24" data-testid="county-pages">

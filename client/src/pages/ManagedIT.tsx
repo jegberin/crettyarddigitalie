@@ -293,8 +293,8 @@ export default function ManagedIT() {
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn className="text-center mb-10">
             <span className="eyebrow mb-3 inline-block">By County</span>
-            <h2 className="text-2xl">Local IT Support Across the South-East Midlands</h2>
-            <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">Each county has its own sector mix and compliance angle. Pick yours for tailored managed IT pricing and on-site coverage detail.</p>
+            <h2 className="text-2xl">County-Specific Managed IT Across Ireland</h2>
+            <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">Every county has its own sector mix and compliance angle. Pick yours for tailored managed IT pricing, on-site notes, and LEO grant guidance.</p>
           </FadeIn>
           <StaggerContainer className="grid md:grid-cols-3 gap-6">
             {[

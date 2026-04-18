@@ -5,6 +5,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { StatsStrip } from "@/components/StatsStrip";
 import heroLaois from "@assets/wd-laois-hero-portlaoise-dusk.webp";
 import conceptMap from "@assets/wd-laois-concept-growing-map.webp";
 import iconLocalSeo from "@assets/concept-local-seo.webp";
@@ -50,6 +51,8 @@ export default function WebDesignLaois() {
           </div>
         </div>
       </section>
+
+      <StatsStrip />
 
       {/* Laois business landscape */}
       <section className="py-28 bg-white">

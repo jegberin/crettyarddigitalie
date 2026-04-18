@@ -26,7 +26,7 @@ export default function Trades() {
               Websites, Email, and IT Built Specifically for Tradespeople and Contractors
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              You're brilliant at what you do &mdash; but when someone searches Google for an electrician, a plumber, or a builder in Laois, Carlow, Kilkenny or the wider Midlands, they find your competitors instead. And increasingly, the bigger contractors you work for are asking about your IT security. I solve both problems &mdash; with technology that works, explained in plain English.
+              You're brilliant at what you do &mdash; but when someone in your area searches Google for an electrician, a plumber, or a builder, they find your competitors instead. And increasingly, the bigger contractors you work for are asking about your IT security. I solve both problems for trade businesses anywhere in Ireland &mdash; with technology that works, explained in plain English.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">

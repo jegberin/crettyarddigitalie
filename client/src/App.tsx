@@ -45,9 +45,19 @@ const BlogTag = lazy(() => import("@/pages/BlogTag"));
 import WebDesignLaois from "@/pages/WebDesignLaois";
 import WebDesignCarlow from "@/pages/WebDesignCarlow";
 import WebDesignKilkenny from "@/pages/WebDesignKilkenny";
+import WebDesignDublin from "@/pages/WebDesignDublin";
+import WebDesignCork from "@/pages/WebDesignCork";
+import WebDesignGalway from "@/pages/WebDesignGalway";
+import WebDesignLimerick from "@/pages/WebDesignLimerick";
+import WebDesignWaterford from "@/pages/WebDesignWaterford";
 import ITSupportLaois from "@/pages/ITSupportLaois";
 import ITSupportCarlow from "@/pages/ITSupportCarlow";
 import ITSupportKilkenny from "@/pages/ITSupportKilkenny";
+import ITSupportDublin from "@/pages/ITSupportDublin";
+import ITSupportCork from "@/pages/ITSupportCork";
+import ITSupportGalway from "@/pages/ITSupportGalway";
+import ITSupportLimerick from "@/pages/ITSupportLimerick";
+import ITSupportWaterford from "@/pages/ITSupportWaterford";
 import Microsoft365Ireland from "@/pages/Microsoft365Ireland";
 import NetworkLaoisCarlow from "@/pages/NetworkLaoisCarlow";
 
@@ -57,6 +67,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CookieBanner } from "@/components/CookieBanner";
 import { SEO, LocalBusinessSchema, ServiceSchema, FAQSchema, AboutPageSchema, ContactPageSchema, PortfolioSchema } from "@/components/SEO";
+import { COUNTIES } from "@/data/countyContent";
 
 // ═══════════════════════════════════════════════════════════
 //  SEO metadata for every page
@@ -64,12 +75,12 @@ import { SEO, LocalBusinessSchema, ServiceSchema, FAQSchema, AboutPageSchema, Co
 
 const pageSEO: Record<string, { title: string; description: string; noindex?: boolean }> = {
   "/": {
-    title: "Web Design & IT Support \u2014 Laois, Carlow & Kilkenny | Crettyard Digital",
-    description: "Professional websites, Microsoft 365 & managed IT for small businesses in Laois, Carlow & Kilkenny. Enterprise experience. Grow Digital Voucher Ready.",
+    title: "Web Design & IT Support for Small Businesses Across Ireland | Crettyard Digital",
+    description: "Professional websites, Microsoft 365 & managed IT for small businesses across Ireland. Enterprise experience. Grow Digital Voucher Ready. Serving all 32 counties.",
   },
   "/about": {
-    title: "About Crettyard Digital \u2014 Enterprise IT Experience for Local Small Businesses in Laois & Carlow",
-    description: "Run by Joey, Crettyard Digital brings 15+ years of enterprise IT experience from Microsoft, Intel, and Dell to small businesses across Laois, Carlow, Kilkenny, and the Irish Midlands.",
+    title: "About Crettyard Digital \u2014 Enterprise IT Experience for Irish Small Businesses",
+    description: "Run by Joey, Crettyard Digital brings 15+ years of enterprise IT experience from Microsoft, Intel, and Dell to small businesses across Ireland.",
   },
   "/contact": {
     title: "Get in Touch \u2014 Free Consultation, No Obligation | Crettyard Digital",
@@ -77,27 +88,27 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   },
   "/portfolio": {
     title: "Our Work \u2014 Websites and IT Projects With Measurable Results | Crettyard Digital",
-    description: "Real websites and IT projects for small businesses in Ireland \u2014 with measurable outcomes. See how local businesses increased enquiries and modernised their operations.",
+    description: "Real websites and IT projects for small businesses across Ireland \u2014 with measurable outcomes. See how Irish businesses increased enquiries and modernised their operations.",
   },
   "/web-design": {
-    title: "Web Design Laois, Carlow & Kilkenny \u2014 From \u20ac799 | Crettyard Digital",
-    description: "Custom-built websites for tradespeople and small businesses in Laois, Carlow & Kilkenny. Mobile-friendly, SEO-optimised, EAA-compliant. From \u20ac799.",
+    title: "Web Design for Irish Small Businesses \u2014 From \u20ac799 | Crettyard Digital",
+    description: "Custom-built websites for tradespeople and small businesses across Ireland. Mobile-friendly, SEO-optimised, EAA-compliant. From \u20ac799.",
   },
   "/microsoft-365": {
     title: "Microsoft 365 Setup, Business Email & Teams Phone for Small Businesses in Ireland | Crettyard Digital",
     description: "Expert Microsoft 365 setup, professional business email, Teams, OneDrive, SharePoint, and Teams Phone for small businesses. GDPR-compliant. Migration and training included.",
   },
   "/managed-it-support": {
-    title: "Managed IT Support for Small Businesses in Laois, Carlow & Kilkenny | Crettyard Digital",
-    description: "Proactive managed IT support for small businesses across Laois, Carlow, and the Irish Midlands. Fixed monthly pricing, compliance included. From \u20ac45 per user per month.",
+    title: "Managed IT Support for Small Businesses Across Ireland | Crettyard Digital",
+    description: "Proactive managed IT support for small businesses across Ireland. Fixed monthly pricing, compliance included. From \u20ac45 per user per month.",
   },
   "/managed-hardware": {
     title: "Business PCs & Servers, Delivered Ready to Use | Crettyard Digital",
     description: "Turnkey business desktops and on-site servers for small Irish businesses. Fully configured, licensed, encrypted, and with your data migrated before delivery. Log in and get to work. From \u20ac899 per device.",
   },
   "/network-wifi-security": {
-    title: "Business Network & Wi-Fi Solutions for Offices and Workshops in Laois & Carlow | Crettyard Digital",
-    description: "Reliable network design, Wi-Fi installation, security, and support for offices, workshops, and retail spaces in Laois, Carlow, Kilkenny, and the Irish Midlands.",
+    title: "Business Network & Wi-Fi Solutions for Irish Offices and Workshops | Crettyard Digital",
+    description: "Reliable network design, Wi-Fi installation, security, and support for offices, workshops, and retail spaces across Ireland. UniFi, MikroTik, TP-Link Omada.",
   },
   "/cybersecurity": {
     title: "Cybersecurity & Compliance for Small Businesses in Ireland | NIS2, GDPR, Accessibility | Crettyard Digital",
@@ -171,6 +182,46 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
     title: "Business Network & Wi-Fi Installation in Laois and Carlow | Crettyard Digital",
     description: "Business-grade network design, Cat6a / Cat7 cabling, Wi-Fi 6E and Wi-Fi 7 installation, and UniFi / MikroTik hardware for offices, workshops, and retail spaces in Laois and Carlow. On-site surveys, no remote guesswork.",
   },
+  "/web-design-dublin": {
+    title: "Web Design Dublin \u2014 Agency-Quality Without the Dublin Markup | Crettyard Digital",
+    description: "Professional website design for Dublin SMEs \u2014 Dublin city, Swords, Tallaght, Blanchardstown, D\u00fan Laoghaire. Enterprise-grade delivery without city-agency pricing. From \u20ac799. Grow Digital Voucher ready across all four Dublin LEOs.",
+  },
+  "/web-design-cork": {
+    title: "Web Design Cork \u2014 For Pharma Suppliers, Hospitality & SMEs | Crettyard Digital",
+    description: "Plain-English web design for Cork SMEs \u2014 Cork city, Ballincollig, Midleton, Kinsale, West Cork. Pharma-supplier ready, hospitality-booking focused, no Dublin markup. From \u20ac799.",
+  },
+  "/web-design-galway": {
+    title: "Web Design Galway \u2014 Medtech Supply Chain & Tourism Sites | Crettyard Digital",
+    description: "Professional website design for Galway SMEs \u2014 Galway city, Salthill, Oranmore, Connemara, Tuam. Medtech-supplier documentation, tourism booking flow, bilingual (Irish / English) where needed. From \u20ac799.",
+  },
+  "/web-design-limerick": {
+    title: "Web Design Limerick \u2014 Manufacturing, Hospitality & Ryder Cup Ready | Crettyard Digital",
+    description: "Web design for Limerick SMEs \u2014 Limerick city, Castletroy, Newcastle West, Adare. Manufacturing supply-chain ready, hospitality build-up to the 2027 Ryder Cup. From \u20ac799.",
+  },
+  "/web-design-waterford": {
+    title: "Web Design Waterford \u2014 Pharma, Greenway Tourism & Professional Firms | Crettyard Digital",
+    description: "Web design for Waterford SMEs \u2014 Waterford city, Dungarvan, Tramore, Copper Coast. GSK-supplier ready, Greenway-tourism focused, professional firm SEO. From \u20ac799.",
+  },
+  "/it-support-dublin": {
+    title: "IT Support Dublin \u2014 Enterprise-Grade Managed IT for Dublin SMEs | Crettyard Digital",
+    description: "Proactive managed IT support for Dublin SMEs \u2014 D2 professional firms, startups, consultancies. MFA, Microsoft 365 administration, NIS2 supply-chain documentation. From \u20ac45 per user per month.",
+  },
+  "/it-support-cork": {
+    title: "IT Support Cork \u2014 Managed IT for Pharma Suppliers and Hospitality | Crettyard Digital",
+    description: "Managed IT for Cork SMEs \u2014 Apple/Pfizer/Eli Lilly supply chain, Kinsale hospitality, Midleton food producers. Vendor-audit documentation, POS-ready networks. From \u20ac45 per user per month.",
+  },
+  "/it-support-galway": {
+    title: "IT Support Galway \u2014 Managed IT for Medtech Suppliers & Tourism Operators | Crettyard Digital",
+    description: "Managed IT for Galway SMEs \u2014 Medtronic / Boston Scientific supply chain, Connemara tourism, Salthill hospitality. Audit-ready documentation, bilingual 365 support. From \u20ac45 per user per month.",
+  },
+  "/it-support-limerick": {
+    title: "IT Support Limerick \u2014 Manufacturing IT & Hospitality Networks | Crettyard Digital",
+    description: "Managed IT for Limerick SMEs \u2014 Regeneron / Johnson & Johnson suppliers, Adare hospitality, Castletroy tech. Vendor-audit documentation, peak-season network reliability. From \u20ac45 per user per month.",
+  },
+  "/it-support-waterford": {
+    title: "IT Support Waterford \u2014 GSK Suppliers, Greenway Tourism & Professional Firms | Crettyard Digital",
+    description: "Managed IT for Waterford SMEs \u2014 GlaxoSmithKline supply chain, Copper Coast / Greenway hospitality, professional firms. Audit-ready documentation, isolated guest Wi-Fi. From \u20ac45 per user per month.",
+  },
   "/privacy-policy": {
     title: "Privacy Policy | Crettyard Digital",
     description: "How Crettyard Digital collects, uses, stores, and protects your personal data.",
@@ -187,7 +238,7 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
     noindex: true,
   },
   "/get-a-quote": {
-    title: "Get A Quote — Crettyard Digital | Laois, Carlow & Kilkenny",
+    title: "Get A Quote — Crettyard Digital",
     description: "Tell me what you need — websites, Microsoft 365, managed IT, hardware, networks, cybersecurity. Six short steps, ballpark estimate on the spot, fixed quote within a business day.",
     noindex: true,
   },
@@ -197,7 +248,15 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
 //  FAQ data for structured data (FAQPage schema)
 // ═══════════════════════════════════════════════════════════
 
+const countyFaqEntries: Array<[string, { question: string; answer: string }[]]> = Object
+  .values(COUNTIES)
+  .flatMap((p) => [
+    [`/web-design-${p.slug}`, p.faqsWebDesign.map((f) => ({ question: f.q, answer: f.a }))] as [string, { question: string; answer: string }[]],
+    [`/it-support-${p.slug}`, p.faqsItSupport.map((f) => ({ question: f.q, answer: f.a }))] as [string, { question: string; answer: string }[]],
+  ]);
+
 const faqData: Record<string, { question: string; answer: string }[]> = {
+  ...Object.fromEntries(countyFaqEntries),
   "/": [
     { question: "I already have a Facebook page \u2014 do I really need a website?", answer: "Facebook is useful for engagement, but it won\u2019t help you appear on Google when someone searches \u2018plumber near me\u2019 or \u2018furniture maker Carlow.\u2019 A website is something you own and control \u2014 it works around the clock, ranks on search engines, and gives potential customers the confidence to call you." },
     { question: "I\u2019m not very technical \u2014 will this be complicated?", answer: "That\u2019s exactly why I do what I do. I handle all the technical work and explain everything in plain English. You don\u2019t need to know anything about hosting, DNS, code, or compliance regulations." },
@@ -366,19 +425,19 @@ function RouteSEO() {
 
       {/* Service schemas */}
       {location === "/web-design" && (
-        <ServiceSchema name="Professional Website Design" description="Custom website design for small businesses in Laois, Carlow, Kilkenny, and surrounding areas. Mobile-friendly, SEO-optimised, accessibility-compliant. From \u20ac799. Government grants available." />
+        <ServiceSchema name="Professional Website Design" description="Custom website design for small businesses across Ireland. Mobile-friendly, SEO-optimised, accessibility-compliant. From \u20ac799. Government grants available." areaServed="Ireland" />
       )}
       {location === "/microsoft-365" && (
         <ServiceSchema name="Microsoft 365 Setup, Business Email & Teams Phone" description="Professional Microsoft 365 setup, business email, Teams, OneDrive, SharePoint, and Teams Phone for small businesses in Ireland. GDPR-compliant. Migration and training included." />
       )}
       {location === "/managed-it-support" && (
-        <ServiceSchema name="Managed IT Support for Small Business" description="Proactive managed IT support. Fixed monthly pricing from \u20ac45/user/month. Microsoft 365 admin, endpoint security, compliance management, and direct support." />
+        <ServiceSchema name="Managed IT Support for Small Business" description="Proactive managed IT support for small businesses across Ireland. Fixed monthly pricing from \u20ac45/user/month. Microsoft 365 admin, endpoint security, compliance management, and direct support." areaServed="Ireland" />
       )}
       {location === "/managed-hardware" && (
         <ServiceSchema name="Managed Hardware Supply for Small Business" description="Turnkey business PCs and on-site servers delivered ready to use. Fully configured, licensed, encrypted, and migrated. Compact miniPCs from \u20ac899 per device; on-site servers from \u20ac2,499. Optional Hardware Care from \u20ac19/device/month." />
       )}
       {location === "/network-wifi-security" && (
-        <ServiceSchema name="Business Network & Wi-Fi Solutions" description="Network design, Wi-Fi installation, security, and support for offices, workshops, and retail spaces across Laois, Carlow, and the Irish Midlands." />
+        <ServiceSchema name="Business Network & Wi-Fi Solutions" description="Network design, Wi-Fi installation, security, and support for offices, workshops, and retail spaces across Ireland." areaServed="Ireland" />
       )}
       {location === "/cybersecurity" && (
         <ServiceSchema name="Cybersecurity & Compliance Services" description="Cybersecurity audits, NIS2 readiness, GDPR compliance, phishing protection, staff awareness training, and European Accessibility Act audits for small businesses in Ireland." />
@@ -421,6 +480,38 @@ function RouteSEO() {
       )}
       {location === "/network-wifi-laois-carlow" && (
         <ServiceSchema name="Business Network & Wi-Fi Installation in Laois and Carlow" description="On-site network design, Cat6a / Cat7 structured cabling (Cat8 for specialist runs), Wi-Fi 6E / Wi-Fi 7 mesh installation, CRA-compliant firewalls, and guest Wi-Fi isolation for offices, workshops, warehouses, and retail across Laois and Carlow. From \u20ac150 Wi-Fi health check, \u20ac400 small-office setup, \u20ac800 full design and install." areaServed="Laois and Carlow, Ireland" />
+      )}
+
+      {/* Dublin / Cork / Galway / Limerick / Waterford service schemas */}
+      {location === "/web-design-dublin" && (
+        <ServiceSchema name="Web Design in County Dublin" description="Web design for Dublin SMEs \u2014 Dublin city, Swords, Tallaght, Blanchardstown, D\u00fan Laoghaire. Enterprise-grade delivery, no city-agency markup. From \u20ac799." areaServed="County Dublin, Ireland" />
+      )}
+      {location === "/web-design-cork" && (
+        <ServiceSchema name="Web Design in County Cork" description="Web design for Cork SMEs \u2014 Cork city, Ballincollig, Midleton, Kinsale, and West Cork. Pharma-supplier ready, hospitality-booking focused. From \u20ac799." areaServed="County Cork, Ireland" />
+      )}
+      {location === "/web-design-galway" && (
+        <ServiceSchema name="Web Design in County Galway" description="Web design for Galway SMEs \u2014 Galway city, Salthill, Oranmore, Connemara, and Tuam. Medtech supply-chain documentation and tourism booking flow. Bilingual builds where needed. From \u20ac799." areaServed="County Galway, Ireland" />
+      )}
+      {location === "/web-design-limerick" && (
+        <ServiceSchema name="Web Design in County Limerick" description="Web design for Limerick SMEs \u2014 Limerick city, Castletroy, Newcastle West, and Adare. Manufacturing supply-chain awareness, Ryder Cup-era hospitality readiness. From \u20ac799." areaServed="County Limerick, Ireland" />
+      )}
+      {location === "/web-design-waterford" && (
+        <ServiceSchema name="Web Design in County Waterford" description="Web design for Waterford SMEs \u2014 Waterford city, Dungarvan, Tramore, and the Copper Coast. GSK-supplier ready, Greenway tourism-booking focused. From \u20ac799." areaServed="County Waterford, Ireland" />
+      )}
+      {location === "/it-support-dublin" && (
+        <ServiceSchema name="Managed IT Support in County Dublin" description="Proactive managed IT for Dublin SMEs \u2014 D2 professional firms, startups, consultancies. MFA, Microsoft 365 administration, NIS2 supply-chain documentation. From \u20ac45 per user per month." areaServed="County Dublin, Ireland" />
+      )}
+      {location === "/it-support-cork" && (
+        <ServiceSchema name="Managed IT Support in County Cork" description="Managed IT for Cork SMEs \u2014 Apple / Pfizer / Eli Lilly supply-chain suppliers, Kinsale hospitality, Midleton food producers. Vendor-audit documentation, POS-ready networks. From \u20ac45 per user per month." areaServed="County Cork, Ireland" />
+      )}
+      {location === "/it-support-galway" && (
+        <ServiceSchema name="Managed IT Support in County Galway" description="Managed IT for Galway SMEs \u2014 Medtronic / Boston Scientific / Merit Medical supply chain, Connemara tourism, Salthill hospitality. Audit-ready documentation, bilingual 365 support. From \u20ac45 per user per month." areaServed="County Galway, Ireland" />
+      )}
+      {location === "/it-support-limerick" && (
+        <ServiceSchema name="Managed IT Support in County Limerick" description="Managed IT for Limerick SMEs \u2014 Regeneron / Johnson & Johnson suppliers, Adare hospitality, Castletroy tech. Vendor-audit documentation, peak-season network reliability. From \u20ac45 per user per month." areaServed="County Limerick, Ireland" />
+      )}
+      {location === "/it-support-waterford" && (
+        <ServiceSchema name="Managed IT Support in County Waterford" description="Managed IT for Waterford SMEs \u2014 GlaxoSmithKline supply chain, Copper Coast and Greenway hospitality, professional firms. Audit-ready documentation, isolated guest Wi-Fi. From \u20ac45 per user per month." areaServed="County Waterford, Ireland" />
       )}
 
       {/* Page-type schemas */}
@@ -522,9 +613,19 @@ function Router() {
                 <Route path="/web-design-laois" component={WebDesignLaois} />
                 <Route path="/web-design-carlow" component={WebDesignCarlow} />
                 <Route path="/web-design-kilkenny" component={WebDesignKilkenny} />
+                <Route path="/web-design-dublin" component={WebDesignDublin} />
+                <Route path="/web-design-cork" component={WebDesignCork} />
+                <Route path="/web-design-galway" component={WebDesignGalway} />
+                <Route path="/web-design-limerick" component={WebDesignLimerick} />
+                <Route path="/web-design-waterford" component={WebDesignWaterford} />
                 <Route path="/it-support-laois" component={ITSupportLaois} />
                 <Route path="/it-support-carlow" component={ITSupportCarlow} />
                 <Route path="/it-support-kilkenny" component={ITSupportKilkenny} />
+                <Route path="/it-support-dublin" component={ITSupportDublin} />
+                <Route path="/it-support-cork" component={ITSupportCork} />
+                <Route path="/it-support-galway" component={ITSupportGalway} />
+                <Route path="/it-support-limerick" component={ITSupportLimerick} />
+                <Route path="/it-support-waterford" component={ITSupportWaterford} />
                 <Route path="/microsoft-365-setup-ireland" component={Microsoft365Ireland} />
                 <Route path="/network-wifi-laois-carlow" component={NetworkLaoisCarlow} />
 

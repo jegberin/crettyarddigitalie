@@ -5,6 +5,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { StatsStrip } from "@/components/StatsStrip";
 import heroCarlow from "@assets/wd-carlow-hero-tullow-construction-dawn.webp";
 
 export default function WebDesignCarlow() {
@@ -45,6 +46,8 @@ export default function WebDesignCarlow() {
           </div>
         </div>
       </section>
+
+      <StatsStrip />
 
       {/* Carlow business landscape */}
       <section className="py-28 bg-white">

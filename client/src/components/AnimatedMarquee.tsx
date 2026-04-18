@@ -6,7 +6,7 @@ const ITEMS = [
   { label: "Cybersecurity",          sub: "NIS2 · GDPR · EAA" },
   { label: "AI & Copilot",           sub: "Practical Productivity" },
   { label: "Government Grants",      sub: "Up to 50% Funded" },
-  { label: "Local IT Support",       sub: "Laois · Carlow · Kilkenny" },
+  { label: "Ireland-Wide Coverage",  sub: "32 Counties · Remote-First" },
 ];
 
 export function AnimatedMarquee() {

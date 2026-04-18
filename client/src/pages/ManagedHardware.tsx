@@ -21,7 +21,7 @@ export default function ManagedHardware() {
             <FadeIn direction="up">
               <span className="eyebrow mb-4 inline-block">Managed Hardware</span>
               <h1 className="display-sm text-white mb-6">
-                Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use, Across Laois, Carlow, Kilkenny &amp; the Midlands
+                Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use, Anywhere in Ireland
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
                 Turn it on, log in, get back to work. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across &mdash; thanks to Windows Autopilot and Microsoft Intune device enrolment done before the kit leaves me. No setup week. No lost productivity. No IT headaches. You focus on your business &mdash; I do the tech.

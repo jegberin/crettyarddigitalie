@@ -20,7 +20,7 @@ export default function About() {
               Enterprise Experience. Small Business Focus. One Person to Call.
             </h1>
             <p className="text-xl text-foreground leading-relaxed max-w-2xl mx-auto font-sans font-normal">
-              Based on the Laois&ndash;Carlow border, I work with tradespeople, contractors, and local businesses who need reliable websites, professional email, solid IT, and proper security &mdash; without the jargon, the runaround, or the corporate price tag.
+              Headquartered in Crettyard on the Laois&ndash;Carlow border, I work with tradespeople, contractors, and small businesses across Ireland who need reliable websites, professional email, solid IT, and proper security &mdash; without the jargon, the runaround, or the corporate price tag.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
               <Link href="/contact#send-message">
@@ -110,7 +110,7 @@ export default function About() {
                 <div className="aspect-square rounded-full overflow-hidden shadow-sm">
                   <img
                     src={joeyImg}
-                    alt="Joey — founder of Crettyard Digital, based in Laois-Carlow"
+                    alt="Joey — founder of Crettyard Digital, based in Crettyard, Co. Laois"
                     className="w-full h-full object-cover object-top"
                     data-testid="img-joey"
                     width="200"
@@ -177,27 +177,12 @@ export default function About() {
                 <div>
                   <h2 className="text-2xl text-white mb-2">Where I Work</h2>
                   <p className="text-white font-sans font-normal leading-relaxed">
-                    Based near Crettyard on the Laois&ndash;Carlow border. For on-site work I primarily serve:
+                    I work with small businesses in every county in Ireland. Websites, Microsoft 365, managed IT, cybersecurity, AI and Copilot projects all run nationwide as standard &mdash; no location surcharge, no &ldquo;we don&rsquo;t cover that area&rdquo; conversations.
                   </p>
                 </div>
               </div>
-              <div className="grid sm:grid-cols-3 gap-4 mb-6">
-                {[
-                  { county: "County Laois", examples: "Portlaoise, Portarlington, Abbeyleix, Mountmellick, Mountrath, Stradbally, Durrow" },
-                  { county: "County Carlow", examples: "Carlow town, Tullow, Muinebheag (Bagenalstown), Borris, Leighlinbridge" },
-                  { county: "County Kilkenny", examples: "Kilkenny city, Castlecomer, Graiguenamanagh, Thomastown, Callan" },
-                  { county: "County Kildare", examples: "Athy, Monasterevin, Newbridge, Kildare town (south Kildare)" },
-                  { county: "County Offaly", examples: "Tullamore, Portarlington, Birr, Edenderry" },
-                  { county: "County Tipperary", examples: "Thurles, Roscrea, Templemore, and north Tipperary" },
-                ].map((area, i) => (
-                  <div key={i} className="bg-white/10 rounded-xl p-4">
-                    <p className="font-headline font-bold text-white text-sm mb-1">{area.county}</p>
-                    <p className="text-white text-xs font-sans">{area.examples}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-white text-sm font-sans">
-                For web design, Microsoft 365 setup, AI consultancy, and cloud-based services, I work remotely with businesses anywhere in Ireland &mdash; Dublin, Cork, Galway, Limerick, Waterford, and every county in between.
+              <p className="text-white text-sm font-sans leading-relaxed">
+                My home base is Crettyard, Co. Laois &mdash; so if you&rsquo;d prefer to meet in person, I&rsquo;m easy to reach from anywhere in the Midlands, South-East, and Greater Dublin. For clients further afield, a Teams or WhatsApp call works just as well as a site visit for most of what I do.
               </p>
             </div>
           </FadeIn>

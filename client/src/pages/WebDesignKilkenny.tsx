@@ -5,6 +5,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { StatsStrip } from "@/components/StatsStrip";
 import heroKilkenny from "@assets/wd-kilkenny-hero-medieval-mile-dusk.webp";
 import iconHospitality from "@assets/concept-hospitality-dining.webp";
 import iconRetail from "@assets/concept-retail-craft.webp";
@@ -50,6 +51,8 @@ export default function WebDesignKilkenny() {
           </div>
         </div>
       </section>
+
+      <StatsStrip />
 
       {/* Kilkenny business landscape */}
       <section className="py-28 bg-white">

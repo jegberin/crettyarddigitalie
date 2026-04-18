@@ -37,11 +37,8 @@ export function Footer() {
                   <a href="mailto:info@crettyarddigital.ie" className="hover:text-accent transition-colors" data-testid="link-footer-email">info@crettyarddigital.ie</a>
                 </p>
               </address>
-              <p className="text-white/80 text-sm leading-relaxed mb-2">
-                Serving Laois, Carlow, Kilkenny, Kildare, Offaly, Tipperary, and beyond.
-              </p>
               <p className="text-white/80 text-sm leading-relaxed mb-5">
-                Remote services available across Ireland.
+                Serving small businesses across Ireland &mdash; with our home base in Crettyard, Co. Laois.
               </p>
               <p className="text-white font-semibold text-xs mb-5 bg-accent/20 rounded-lg px-3 py-2 leading-relaxed">
                 Grow Digital Voucher Ready
