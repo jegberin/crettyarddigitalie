@@ -345,7 +345,7 @@ export default function Home() {
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: <Clock size={24} />, title: "Avoid Costly Rebuilds", desc: "A \u20ac300 website needs replacing within a year. Getting it right means a site that lasts and grows with your business." },
-              { icon: <TrendingUp size={24} />, title: "Stop Missing Leads", desc: "Every month without a proper online presence is a month of lost enquiries going to a competitor who bothered to invest." },
+              { icon: <TrendingUp size={24} />, title: "Stop Missing Leads", desc: "Every month without a proper online presence is a month of lost enquiries going to a competitor who did invest in a website." },
               { icon: <Shield size={24} />, title: "Avoid Security & Legal Risks", desc: "Poorly configured setups leave security gaps. With NIS2 and GDPR enforcement tightening, that\u2019s now a legal problem too." },
               { icon: <MessageCircle size={24} />, title: "No More Patchwork Fixes", desc: "Stop paying different people to bodge the same problems. One integrated setup replaces years of expensive firefighting." },
             ].map((item, i) => (
