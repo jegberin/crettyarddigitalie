@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { BadgeEuro, CheckCircle, XCircle, MapPin, AlertTriangle, ExternalLink } from "lucide-react";
+import { CheckCircle, XCircle, MapPin, ExternalLink } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -26,7 +26,7 @@ const notEligible = [
 
 // Common rejection / delay reasons
 const pitfalls = [
-  { reason: "Skipping the Digital for Business step", fix: "You must complete a free Digital for Business consultation before applying. There is no shortcut \u2014 this is the gateway to the voucher." },
+  { reason: "Going to LEO unprepared", fix: "The Digital for Business report is what your voucher funds against \u2014 if it doesn't recommend what your business actually needs, your project doesn't get funded for it. Talk to us first so you know what to ask the consultant for." },
   { reason: "Applying for something that's not eligible", fix: "Bespoke websites, hardware, and ongoing services don't qualify. Matching your project to the scheme's rules is the single most important step." },
   { reason: "Paying invoices before approval", fix: "Any expense incurred before your voucher is officially approved cannot be claimed. Wait for your approval letter first." },
   { reason: "Incomplete quote documentation", fix: "Your quotes need proper business details (tax registration number or CRO number, itemised costs, clear scope). Missing details cause delays." },
@@ -84,7 +84,7 @@ export default function Grants() {
             </p>
           </FadeIn>
 
-          <FadeIn className="mb-10">
+          <FadeIn>
             <div className="bg-accent/5 border border-accent/20 p-7 rounded-2xl">
               <h3 className="text-lg mb-4">The Key Facts</h3>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -103,20 +103,6 @@ export default function Grants() {
                     <span className="text-[15px] font-headline font-bold text-primary">{fact.value}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn>
-            <div className="bg-amber-50/60 border border-amber-200 p-6 rounded-2xl">
-              <div className="flex items-start gap-3">
-                <AlertTriangle className="text-amber-600 shrink-0 mt-1" size={22} />
-                <div>
-                  <h3 className="text-base font-headline font-bold mb-2 text-primary">Mandatory first step: Digital for Business</h3>
-                  <p className="text-foreground text-[15px] font-sans">
-                    Before you can apply for a Grow Digital Voucher, you must complete a <strong>Digital for Business</strong> consultation. This is a free LEO service &mdash; up to 3 days of a consultant's time &mdash; who reviews your business and produces a report recommending digital tools. The voucher funds what the report recommends. There is no shortcut past this step.
-                  </p>
-                </div>
               </div>
             </div>
           </FadeIn>
@@ -150,43 +136,8 @@ export default function Grants() {
         </div>
       </section>
 
-      {/* What is NOT eligible - CRITICAL */}
-      <section className="py-28 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <FadeIn className="text-center mb-14">
-            <span className="eyebrow mb-5 inline-block">Important: What's Not Covered</span>
-            <h2 className="text-3xl mb-4">Ineligible Expenditure</h2>
-            <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal max-w-2xl mx-auto">
-              This is where most websites and digital agencies mislead clients. Be clear on what the scheme does <strong>not</strong> cover:
-            </p>
-          </FadeIn>
-
-          <StaggerContainer className="grid sm:grid-cols-2 gap-6">
-            {notEligible.map((item, i) => (
-              <StaggerItem key={i}>
-                <div className="bg-red-50/40 border border-red-100 p-6 rounded-2xl">
-                  <div className="flex items-start gap-3 mb-2">
-                    <XCircle className="text-red-400 shrink-0 mt-1" size={20} />
-                    <h3 className="text-base font-headline font-bold text-primary">{item.title}</h3>
-                  </div>
-                  <p className="text-foreground text-[15px] font-sans ml-8">{item.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          <FadeIn className="mt-10">
-            <div className="bg-[#f3f4f5] p-6 rounded-2xl text-center">
-              <p className="text-foreground text-[15px] font-sans">
-                <strong>The bottom line:</strong> the Grow Digital Voucher is a software adoption grant, not a general "digital project" grant. If you need a custom <Link href="/web-design" className="text-accent hover:underline">WordPress site</Link> built, that part of your project is <strong>not</strong> fundable. But if you're rolling out new <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>, a CRM, an e-commerce platform, or <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity software</Link>, that <em>is</em> the kind of project the voucher is designed for.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* Where Crettyard Digital fits in */}
-      <section className="py-28 bg-[#f3f4f5]">
+      <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">My Role</span>
@@ -198,25 +149,25 @@ export default function Grants() {
 
           <StaggerContainer className="grid sm:grid-cols-2 gap-6 mb-10">
             <StaggerItem>
-              <div className="bg-white p-6 rounded-2xl shadow-sm">
+              <div className="bg-[#f3f4f5] p-6 rounded-2xl">
                 <h3 className="text-base font-headline font-bold mb-2 text-primary">Scheme-compliant invoicing</h3>
                 <p className="text-foreground text-[15px] font-sans">I invoice with proper business details (tax registration, itemised scope) so your claim goes through cleanly.</p>
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="bg-white p-6 rounded-2xl shadow-sm">
+              <div className="bg-[#f3f4f5] p-6 rounded-2xl">
                 <h3 className="text-base font-headline font-bold mb-2 text-primary">Honest scope advice</h3>
                 <p className="text-foreground text-[15px] font-sans">I'll tell you plainly which parts of your project are fundable under the voucher and which aren't.</p>
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="bg-white p-6 rounded-2xl shadow-sm">
+              <div className="bg-[#f3f4f5] p-6 rounded-2xl">
                 <h3 className="text-base font-headline font-bold mb-2 text-primary">Service alignment</h3>
                 <p className="text-foreground text-[15px] font-sans"><Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link> setup, CRM implementation, e-commerce platforms, <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity</Link> rollouts, and <Link href="/ai-readiness" className="text-accent hover:underline">Microsoft Copilot</Link> readiness &mdash; all things I do that fit the scheme.</p>
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="bg-white p-6 rounded-2xl shadow-sm">
+              <div className="bg-[#f3f4f5] p-6 rounded-2xl">
                 <h3 className="text-base font-headline font-bold mb-2 text-primary">Documentation support</h3>
                 <p className="text-foreground text-[15px] font-sans">I'll provide the quotes, invoices, and project confirmation your LEO needs for drawdown.</p>
               </div>
@@ -238,7 +189,7 @@ export default function Grants() {
       </section>
 
       {/* The process */}
-      <section className="py-28 bg-white">
+      <section className="py-28 bg-[#f3f4f5]">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">The Process</span>
@@ -247,45 +198,22 @@ export default function Grants() {
 
           <StaggerContainer className="space-y-4 mb-14" staggerDelay={0.08}>
             {[
-              { num: "01", title: "Contact your LEO about Digital for Business", desc: "This is your first move. It's free, and the report from this consultation is the gateway to the voucher. Takes a few weeks to arrange." },
-              { num: "02", title: "Complete the Digital for Business project", desc: "The consultant spends up to 3 days reviewing your business, researching options, and producing a recommendations report." },
-              { num: "03", title: "Scope your voucher project", desc: "Based on the report, decide what software and services you want to fund. This is where I can help scope the setup and configuration." },
-              { num: "04", title: "Gather quotes", desc: "Get written quotes from your chosen suppliers (including me, if relevant). Quotes must have proper business details." },
-              { num: "05", title: "Submit your application", desc: "You submit to your LEO with your Digital for Business report, quotes, and supporting documents. You do this, not me." },
-              { num: "06", title: "Wait for approval", desc: "Do not incur any costs before approval. Timelines vary by LEO, typically a few weeks." },
-              { num: "07", title: "Implement the project", desc: "Once approved, suppliers do the work. I deliver my part; the software subscription runs for its first year." },
-              { num: "08", title: "Claim the grant", desc: "You submit paid invoices and completion declaration to your LEO. They pay 50% to you directly." },
+              { num: "01", title: "Talk to me first (free, no commitment)", desc: "Before you contact your LEO, have a quick chat with me. I'll explain what to ask for in your Digital for Business consultation, what software fits your business, and how to scope the project so your voucher works hardest for you. Going in prepared makes the whole thing faster and gets you a stronger report." },
+              { num: "02", title: "Contact your LEO about Digital for Business", desc: "This is the gateway to the voucher and it's free. Takes a few weeks to arrange. With our prep, you'll know exactly what to ask the consultant for." },
+              { num: "03", title: "Complete the Digital for Business consultation", desc: "An independent consultant reviews your business and produces a recommendations report. Their time on the file is up to 3 days spread over several weeks \u2014 you don't sit through a course. Most of the work happens in the background." },
+              { num: "04", title: "Scope your voucher project", desc: "Based on the report, decide what software and services you want to fund. I'll help shape the setup, configuration, and training scope so it lines up cleanly with what's eligible." },
+              { num: "05", title: "Gather quotes", desc: "Get written quotes from your chosen suppliers (including me, if relevant). Quotes must have proper business details." },
+              { num: "06", title: "Submit your application", desc: "You submit to your LEO with your Digital for Business report, quotes, and supporting documents. You do this, not me." },
+              { num: "07", title: "Wait for approval", desc: "Do not incur any costs before approval. Timelines vary by LEO, typically a few weeks." },
+              { num: "08", title: "Implement the project", desc: "Once approved, suppliers do the work. I deliver my part; the software subscription runs for its first year." },
+              { num: "09", title: "Claim the grant", desc: "You submit paid invoices and completion declaration to your LEO. They pay 50% to you directly." },
             ].map((step, i) => (
               <StaggerItem key={i}>
-                <div className="bg-[#f3f4f5] p-5 rounded-2xl flex gap-4 items-start">
+                <div className="bg-white p-5 rounded-2xl flex gap-4 items-start">
                   <span className="text-2xl font-headline font-extrabold text-primary/30 shrink-0 w-12">{step.num}</span>
                   <div>
                     <h3 className="text-base font-headline font-bold text-primary mb-1">{step.title}</h3>
                     <p className="text-foreground text-[15px] font-sans">{step.desc}</p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Common pitfalls */}
-      <section className="py-28 bg-[#f3f4f5]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <FadeIn className="text-center mb-14">
-            <span className="eyebrow mb-5 inline-block">Avoid These Mistakes</span>
-            <h2 className="text-3xl mb-4">Common Reasons Applications Fail or Stall</h2>
-          </FadeIn>
-
-          <StaggerContainer className="space-y-4">
-            {pitfalls.map((item, i) => (
-              <StaggerItem key={i}>
-                <div className="bg-white p-6 rounded-2xl shadow-sm flex gap-5 items-start">
-                  <XCircle className="text-red-400 shrink-0 mt-1" size={20} />
-                  <div>
-                    <h3 className="text-base font-headline font-bold text-primary mb-1">{item.reason}</h3>
-                    <p className="text-foreground text-[15px] font-sans">{item.fix}</p>
                   </div>
                 </div>
               </StaggerItem>
@@ -346,6 +274,65 @@ export default function Grants() {
               ))}
             </Accordion>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* What is NOT eligible \u2014 placed near the end so positive content reads first */}
+      <section className="py-28 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Important: What's Not Covered</span>
+            <h2 className="text-3xl mb-4">Ineligible Expenditure</h2>
+            <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal max-w-2xl mx-auto">
+              This is where most websites and digital agencies mislead clients. Be clear on what the scheme does <strong>not</strong> cover:
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid sm:grid-cols-2 gap-6">
+            {notEligible.map((item, i) => (
+              <StaggerItem key={i}>
+                <div className="bg-red-50/40 border border-red-100 p-6 rounded-2xl">
+                  <div className="flex items-start gap-3 mb-2">
+                    <XCircle className="text-red-400 shrink-0 mt-1" size={20} />
+                    <h3 className="text-base font-headline font-bold text-primary">{item.title}</h3>
+                  </div>
+                  <p className="text-foreground text-[15px] font-sans ml-8">{item.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="mt-10">
+            <div className="bg-[#f3f4f5] p-6 rounded-2xl text-center">
+              <p className="text-foreground text-[15px] font-sans">
+                <strong>The bottom line:</strong> the Grow Digital Voucher is a software adoption grant, not a general "digital project" grant. If you need a custom <Link href="/web-design" className="text-accent hover:underline">WordPress site</Link> built, that part of your project is <strong>not</strong> fundable. But if you're rolling out new <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>, a CRM, an e-commerce platform, or <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity software</Link>, that <em>is</em> the kind of project the voucher is designed for.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Common pitfalls */}
+      <section className="py-28 bg-[#f3f4f5]">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Avoid These Mistakes</span>
+            <h2 className="text-3xl mb-4">Common Reasons Applications Fail or Stall</h2>
+          </FadeIn>
+
+          <StaggerContainer className="space-y-4">
+            {pitfalls.map((item, i) => (
+              <StaggerItem key={i}>
+                <div className="bg-white p-6 rounded-2xl shadow-sm flex gap-5 items-start">
+                  <XCircle className="text-red-400 shrink-0 mt-1" size={20} />
+                  <div>
+                    <h3 className="text-base font-headline font-bold text-primary mb-1">{item.reason}</h3>
+                    <p className="text-foreground text-[15px] font-sans">{item.fix}</p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
