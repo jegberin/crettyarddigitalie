@@ -7,11 +7,11 @@
 // against "Dublin agencies" or similar competitors — the business is
 // nationwide, not an alternative to a city agency.
 
-import heroDublin from "@assets/wd-dublin-hero-hapenny-bridge-dusk.jpg";
-import heroCork from "@assets/wd-cork-hero-city-streets.jpg";
-import heroGalway from "@assets/wd-galway-hero-river-sunset.jpg";
-import heroLimerick from "@assets/wd-limerick-hero-shannon-riverside.jpg";
-import heroWaterford from "@assets/wd-waterford-hero-peoples-park.jpg";
+import heroDublin from "@assets/wd-dublin-hero-hapenny-bridge-dusk.webp";
+import heroCork from "@assets/wd-cork-hero-city-streets.webp";
+import heroGalway from "@assets/wd-galway-hero-river-sunset.webp";
+import heroLimerick from "@assets/wd-limerick-hero-shannon-riverside.webp";
+import heroWaterford from "@assets/wd-waterford-hero-peoples-park.webp";
 
 export type CountySlug = "dublin" | "cork" | "galway" | "limerick" | "waterford";
 
