@@ -15,17 +15,17 @@ draft: false
 
 # Email security basics for growing Irish companies
 
-Email is still where most business-impacting attacks start. Not because email is particularly broken, but because it is the front door to everything else — Microsoft 365 tenants, payment approvals, client conversations, and admin passwords all flow through it at some point. If you want one area to get right before anything else, this is it.
+Email is still where most business-impacting attacks start. Not because email is particularly broken, but because it is the front door to everything else — Microsoft 365 tenants (the environments that hold your users, mail, and files), payment approvals, client conversations, and admin passwords all flow through it at some point. If you want one area to get right before anything else, this is it.
 
 This post walks through the email security basics that a growing Irish company should have in place. Not a technical deep dive. The handful of controls that stop the vast majority of attacks against small businesses.
 
 ## The three records your domain needs
 
-Before you touch any user setting, open your DNS and make sure three records are published and configured correctly: SPF, DKIM, and DMARC. Together they control who is allowed to send email from your domain and what happens if someone tries to forge it.
+Before you touch any user setting, open your DNS (the internet's address book, where your domain's settings live) and make sure three records are published and configured correctly: SPF, DKIM, and DMARC. Together they control who is allowed to send email from your domain and what happens if someone tries to forge it.
 
 ### SPF (Sender Policy Framework)
 
-SPF is a DNS record that lists which mail servers are allowed to send email on behalf of your domain. Microsoft 365, Google Workspace, Mailchimp, and your CRM all have specific SPF includes they ask you to add. The standard record for an M365 domain looks like `v=spf1 include:spf.protection.outlook.com -all`.
+SPF is a DNS record that lists which mail servers are allowed to send email on behalf of your domain. Microsoft 365, Google Workspace, Mailchimp, and your CRM all have specific SPF includes they ask you to add. The standard record for an M365 (Microsoft 365) domain looks like `v=spf1 include:spf.protection.outlook.com -all`.
 
 The `-all` at the end tells receiving servers to reject anything claiming to be from your domain that does not match the record. Many small businesses have `~all` (soft fail) or no SPF record at all. `~all` is better than nothing, but `-all` is the target once your mail flows are stable.
 
@@ -39,7 +39,7 @@ On Microsoft 365, you enable DKIM from the Defender portal after publishing two 
 
 DMARC is the policy that ties SPF and DKIM together. It tells receiving servers what to do when an email claiming to be from your domain fails both checks: do nothing (`p=none`), quarantine it (`p=quarantine`), or reject it outright (`p=reject`).
 
-The right approach is to start with `p=none` and a reporting address (an `rua=` tag pointing to an inbox you will actually read), watch the reports for two to four weeks to make sure legitimate senders are not being missed, and then move to `p=reject`. A DMARC reject policy makes domain forgery effectively impossible, which is one of the highest-value and lowest-cost anti-phishing moves an SME can make.
+The right approach is to start with `p=none` and a reporting address (an `rua=` tag pointing to an inbox you will actually read), watch the reports for two to four weeks to make sure legitimate senders are not being missed, and then move to `p=reject`. A DMARC reject policy makes domain forgery effectively impossible, which is one of the highest-value and lowest-cost anti-phishing moves an SME (small or medium-sized business) can make.
 
 Our [phishing risks in Microsoft 365](/blog/phishing-risks-microsoft-365) post covers the anti-phishing side in more depth.
 
@@ -47,7 +47,7 @@ Our [phishing risks in Microsoft 365](/blog/phishing-risks-microsoft-365) post c
 
 Multi-factor authentication on every email account. Owner, finance, reception, sales, everyone. The mailbox that gets compromised is almost always the one where MFA was "about to be set up."
 
-The details matter. Use an authenticator app, not SMS if you can avoid it — SMS is vulnerable to SIM-swap attacks that target small-business owners. Use number matching in Microsoft Authenticator so that MFA fatigue attacks do not work. And set a policy that MFA cannot be disabled without admin approval.
+The details matter. Use an authenticator app, not SMS if you can avoid it — SMS is vulnerable to SIM-swap attacks (where an attacker tricks a phone carrier into moving your number to their SIM) that target small-business owners. Use number matching in Microsoft Authenticator so that MFA fatigue attacks do not work. And set a policy that MFA cannot be disabled without admin approval.
 
 ## Tune your spam and phishing filter
 

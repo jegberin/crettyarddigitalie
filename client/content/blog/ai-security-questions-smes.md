@@ -15,9 +15,9 @@ draft: false
 
 # Security questions to ask before adopting an AI tool in your business
 
-AI tools are showing up in every corner of small business now — the CRM has a "summarise this thread" button, the accountant's software has an AI categoriser, the video-call tool has a meeting summariser, and at least two members of staff are quietly pasting customer emails into ChatGPT to draft replies. None of that is bad. But the normal controls a business would apply to any new supplier often aren't being applied to AI tools, because the rollout didn't feel like a procurement decision.
+AI tools are showing up in every corner of small business now — the CRM (customer relationship management system — where you track contacts and deals) has a "summarise this thread" button, the accountant's software has an AI categoriser, the video-call tool has a meeting summariser, and at least two members of staff are quietly pasting customer emails into ChatGPT to draft replies. None of that is bad. But the normal controls a business would apply to any new supplier often aren't being applied to AI tools, because the rollout didn't feel like a procurement decision.
 
-This post is a short, practical list of security questions to ask before turning on an AI feature or rolling out a new AI app. None of them are exotic — they're the same questions you'd ask of any SaaS supplier — but applying them consistently is where most small businesses can lift their game quickly.
+This post is a short, practical list of security questions to ask before turning on an AI feature or rolling out a new AI app. None of them are exotic — they're the same questions you'd ask of any SaaS (software-as-a-service — tools you rent online rather than install) supplier — but applying them consistently is where most small businesses can lift their game quickly.
 
 ## The starting assumption
 
@@ -30,12 +30,12 @@ What's new is volume and enthusiasm. Staff try a new tool in a week, not a quart
 The single most important question. Before anyone signs up, get specific:
 
 - What information is entered into prompts or uploaded as files?
-- Does the tool read from an existing system (email, calendar, SharePoint, CRM)?
+- Does the tool read from an existing system (email, calendar, SharePoint — Microsoft's shared document library — CRM)?
 - What permissions does it ask for on sign-in? If it wants full mailbox read access, that's a serious decision, not a tick-box.
 
 Write this down before you start. Not as a compliance document — just a sentence or two. "We plan to use X to summarise customer support emails. That means X will see every email in the support mailbox, including customer names, phone numbers, and occasionally payment disputes."
 
-Now read that sentence back. Is that okay with your business, and is it okay under GDPR for your customers?
+Now read that sentence back. Is that okay with your business, and is it okay under GDPR (General Data Protection Regulation — the EU data protection law) for your customers?
 
 ## 2. Where is the data stored and processed?
 
@@ -105,8 +105,8 @@ Any serious SaaS provider has these ready. Any that doesn't is either very new o
 
 AI tools often need to be added to your existing:
 
-- Single sign-on (ideally, the tool supports SSO with Microsoft Entra or Google Workspace)
-- MFA policy (access to the tool should require the same MFA as your other apps)
+- Single sign-on (ideally, the tool supports SSO — one business login that opens every approved app — with Microsoft Entra or Google Workspace)
+- MFA policy (multi-factor authentication — the second code on your phone when you log in — access to the tool should require the same MFA as your other apps)
 - Offboarding process (when a staff member leaves, their access to every AI tool is revoked)
 
 If the tool can't be integrated into your existing identity system, you're taking on a parallel set of credentials to manage. For one tool that's manageable. For ten, it's a nightmare.

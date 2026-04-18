@@ -15,7 +15,7 @@ draft: false
 
 # Website care plans — what they include and why they matter
 
-Most business websites I see in Ireland have one thing in common: nobody has touched them since the day they launched. The designer handed over a login, the owner filed it in a drawer, and two years later the site is running an outdated version of WordPress, the SSL certificate is throwing warnings in Chrome, and the contact form has been quietly broken for eight months.
+Most business websites I see in Ireland have one thing in common: nobody has touched them since the day they launched. The designer handed over a login, the owner filed it in a drawer, and two years later the site is running an outdated version of WordPress, the SSL certificate (the little padlock in the browser bar that makes a site "https" and secure) is throwing warnings in Chrome, and the contact form has been quietly broken for eight months.
 
 A care plan is the boring, unglamorous answer to that drift. It is not a support contract in the helpdesk sense. It is a standing arrangement to keep your site secure, fast, and functional month after month — so that the thing you paid to build is still doing its job a year later.
 
@@ -35,7 +35,7 @@ There is no single industry definition, which is part of the problem. Before you
 
 **Small content updates.** A short monthly allowance for text tweaks, image swaps, new team photos, updated opening hours. Not a redesign budget — a way to stop small edits turning into a three-week project every time.
 
-**Performance checks.** Monthly or quarterly review of page load speed, Core Web Vitals, and image weight. Sites slow down over time as plugins accumulate and content grows. A care plan is how you catch the slide.
+**Performance checks.** Monthly or quarterly review of page load speed, Core Web Vitals (Google's three scores for how a page feels to load), and image weight. Sites slow down over time as plugins accumulate and content grows. A care plan is how you catch the slide.
 
 **A monthly or quarterly report.** One page, plain English. What was updated, what was backed up, any issues seen, any actions recommended.
 
@@ -45,11 +45,11 @@ If a "care plan" only includes hosting and an email address to send emergencies 
 
 The costs of not having a care plan are not theoretical. Three patterns come up repeatedly.
 
-**Sites get hacked, quietly.** A small business site rarely gets targeted by name. It gets swept up by a bot that scans the whole internet for a particular vulnerable plugin version and installs a script that sends spam or injects SEO links into the footer. You do not notice until Google flags the site, your email starts bouncing because your domain is on a blocklist, or a customer phones to say the homepage is redirecting to a Russian pharmacy.
+**Sites get hacked, quietly.** A small business site rarely gets targeted by name. It gets swept up by a bot that scans the whole internet for a particular vulnerable plugin version and installs a script that sends spam or injects SEO (search engine optimisation — how you rank on Google) links into the footer. You do not notice until Google flags the site, your email starts bouncing because your domain is on a blocklist, or a customer phones to say the homepage is redirecting to a Russian pharmacy.
 
 **Sites go down at the worst possible moment.** The phone call I get most often starts with "our site was fine last week." Usually it is a plugin auto-update that collided with an older theme, a cron job that stopped running, or a host migration that silently broke the contact form. When there is no care plan, nobody is watching.
 
-**Small fixes become big projects.** An SME that has not touched its site in 18 months often cannot make a simple change without three days of work to update everything first. The lift each time grows. Care plans spread that work out so no one month is painful.
+**Small fixes become big projects.** An SME (small or medium-sized business) that has not touched its site in 18 months often cannot make a simple change without three days of work to update everything first. The lift each time grows. Care plans spread that work out so no one month is painful.
 
 ## What a fair care plan costs
 
@@ -61,7 +61,7 @@ At [Crettyard Digital](/) we publish what our care plans include on the [website
 
 ## What care plans do not cover
 
-Worth being clear about. A care plan is not a redesign contract. It will not rebuild your site when your brand changes, migrate you to a new CMS, or write a full content refresh. Those are separate projects.
+Worth being clear about. A care plan is not a redesign contract. It will not rebuild your site when your brand changes, migrate you to a new CMS (content management system — the platform you edit your site in, like WordPress), or write a full content refresh. Those are separate projects.
 
 It is also not marketing. Care plans keep the site working; they do not drive traffic. If you want leads, that is a conversation about SEO, local search, Google Business Profile, content, and ads — a different budget line.
 

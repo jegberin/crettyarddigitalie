@@ -21,7 +21,7 @@ This post walks through what those mundane gaps actually cost when they're explo
 
 ## Where the risk actually comes from
 
-For an SME, the overwhelming source of credential risk is not a targeted attacker picking your business out of the crowd. It's automated. Two patterns dominate:
+For an SME (small or medium-sized business), the overwhelming source of credential risk is not a targeted attacker picking your business out of the crowd. It's automated. Two patterns dominate:
 
 **Credential stuffing.** A database of email addresses and passwords is leaked from a breached website — something a staff member signed up for years ago. Attackers take that list and try the same email-password pair against hundreds of business services: Microsoft 365, Google Workspace, banking portals, CRMs. If your accountant used the same password on a 2017 fitness forum that she uses for her business mailbox, the attackers find that in seconds and walk in.
 
@@ -39,9 +39,9 @@ A typical Microsoft 365 mailbox compromise at a small Irish business, in the way
 
 **Client trust and reputation.** Every supplier and client on the affected mailbox gets notified. Some of them will wonder whether you're the kind of business who's safe to deal with. Quantifying this is hard, but it's never zero.
 
-**Insurance excess and claim friction.** If you have cyber cover, the excess will be in the low thousands. If you don't, the whole bill is yours. Most small business policies don't cover BEC unless specifically added.
+**Insurance excess and claim friction.** If you have cyber cover, the excess will be in the low thousands. If you don't, the whole bill is yours. Most small business policies don't cover BEC (business email compromise — an attacker hijacking a real mailbox to reroute payments) unless specifically added.
 
-**Your time.** The hardest to cost. A mailbox compromise at an SME typically eats a full working week of the owner or MD, because they're the only ones who can authorise communications with clients and the bank.
+**Your time.** The hardest to cost. A mailbox compromise at an SME typically eats a full working week of the owner or MD (managing director), because they're the only ones who can authorise communications with clients and the bank.
 
 Sum that up and a single compromise commonly sits in the €15,000-€50,000 range for an Irish SME, all-in. That's assuming you catch it quickly and the attacker doesn't also encrypt your laptops on the way out.
 
@@ -53,13 +53,13 @@ Against that, the cost of enforcing MFA and a decent password policy is approxim
 
 Not optional, not per-user-choice, not "we'll turn it on for sensitive staff first." Every account, every login. Microsoft 365 Business plans include this. Google Workspace includes this. Every banking portal you'd care about includes this. Turn it on.
 
-Microsoft's own published data on M365 accounts shows that enabling MFA blocks the overwhelming majority of automated account compromise attempts. It's the single highest-leverage security control available to a small business.
+Microsoft's own published data on M365 (Microsoft 365) accounts shows that enabling MFA blocks the overwhelming majority of automated account compromise attempts. It's the single highest-leverage security control available to a small business.
 
 ### 2. Use number-matching MFA, not "tap to approve"
 
 The old push-to-approve MFA ("you'll get a notification on your phone, just tap Approve") was a huge step up from passwords alone. Attackers adapted. They spam the user with approval prompts at 11pm until they tap "Approve" just to stop the buzzing.
 
-Number matching — where the login screen shows a code and the user types it into their phone — defeats this cleanly. Microsoft Authenticator has supported it for some time and it's the default on newer tenants. If yours is older, enable it in the admin centre. It costs nothing and takes a few minutes.
+Number matching — where the login screen shows a code and the user types it into their phone — defeats this cleanly. Microsoft Authenticator has supported it for some time and it's the default on newer tenants (your Microsoft 365 environment — the container that holds your users, email, and files). If yours is older, enable it in the admin centre. It costs nothing and takes a few minutes.
 
 ### 3. Ban password reuse (technically, not just in policy)
 
@@ -69,15 +69,15 @@ Password managers for a small team are inexpensive and turn this whole problem f
 
 ### 4. Move to longer passwords, not more complex ones
 
-The old NIST guidance — "eight characters, at least one uppercase, one number, one symbol" — is out of date. Current guidance from the NCSC, NIST, and every serious source is: **length beats complexity.** Three random words — `correct-horse-battery-staple` — is dramatically stronger than `P@ssw0rd1!` and much easier to remember.
+The old NIST (the US National Institute of Standards and Technology, which publishes widely-followed security guidance) advice — "eight characters, at least one uppercase, one number, one symbol" — is out of date. Current guidance from the NCSC (the UK National Cyber Security Centre), NIST, and every serious source is: **length beats complexity.** Three random words — `correct-horse-battery-staple` — is dramatically stronger than `P@ssw0rd1!` and much easier to remember.
 
 Updating your password policy is a small change with a large effect, and it removes the frustration staff feel with arbitrary complexity rules. More on this sort of baseline on our [cybersecurity](/cybersecurity) page.
 
 ### 5. Block legacy authentication
 
-This is the biggest technical win most SMEs don't know they're missing. Legacy email authentication protocols — POP3, IMAP, and older SMTP without OAuth — don't support MFA. If they're enabled on your tenant, an attacker with a password can bypass MFA entirely by connecting via one of these old protocols.
+This is the biggest technical win most SMEs don't know they're missing. Legacy authentication means old ways of logging in that pre-date modern security. Legacy email authentication protocols — POP3, IMAP, and older SMTP (the old mail protocols that email programs use to send and receive messages) without OAuth (a modern "sign-in with your account" handshake that lets MFA do its job) — don't support MFA. If they're enabled on your tenant, an attacker with a password can bypass MFA entirely by connecting via one of these old protocols.
 
-Microsoft now blocks legacy auth by default for new tenants, but older tenants may still have it enabled. Check your Conditional Access settings. This single toggle closes an attack vector that attackers specifically look for.
+Microsoft now blocks legacy auth by default for new tenants, but older tenants may still have it enabled. Check your Conditional Access settings (the rules in Microsoft 365 that decide who can sign in, from where, and under what conditions). This single toggle closes an attack vector that attackers specifically look for.
 
 ## Where the "I'll get to it later" trap lives
 
@@ -85,7 +85,7 @@ Two patterns I see constantly in small Irish businesses:
 
 **"The owner doesn't need MFA — it's just inconvenient."** The owner is usually the most valuable target in the business, with access to everything and authority to authorise payments. Exempting them from MFA is like installing a security system at your home but leaving the master bedroom window open.
 
-**"We turned on MFA but left a service account without it."** Often there's one old account — `scanner@yourbusiness.ie`, `admin@yourbusiness.ie`, the account the accountant's software uses — that was exempted "just until we work out how to make it work with MFA." That account is now the attacker's front door.
+**"We turned on MFA but left a service account without it."** A service account is a non-human login used by a piece of software or a device. Often there's one old account — `scanner@yourbusiness.ie`, `admin@yourbusiness.ie`, the account the accountant's software uses — that was exempted "just until we work out how to make it work with MFA." That account is now the attacker's front door.
 
 Audit every account. No exemptions.
 
@@ -95,7 +95,7 @@ If you're not sure where you stand, do these three things in the next hour:
 
 1. **Check every staff member has MFA enrolled.** In the M365 admin centre, under Users > Active users > Multi-factor authentication. Any row that says "Disabled" needs attention.
 2. **Check your Conditional Access policies.** Specifically, is legacy authentication blocked? If there's no policy for it, create one.
-3. **Run the Microsoft Secure Score report.** It's a free, built-in audit that tells you the specific controls you're missing, with an estimated risk-reduction for each. It's not a perfect tool, but for a small business tenant it's a good starting point.
+3. **Run the Microsoft Secure Score report** (Microsoft's own 0-100 scorecard of how well-locked-down your tenant is). It's a free, built-in audit that tells you the specific controls you're missing, with an estimated risk-reduction for each. It's not a perfect tool, but for a small business tenant it's a good starting point.
 
 None of these cost money. All of them take under an hour for a ten-person business.
 

@@ -17,7 +17,7 @@ draft: false
 
 Accessibility on a small business website gets either ignored or turned into a panic project. Both are mistakes. The truth sits in the middle: there are a handful of accessibility basics that any competent web build should cover, they make the site better for every visitor, and they keep you on the right side of the rules — including the European Accessibility Act, which applies to many Irish businesses from June 2025.
 
-This post is a short, practical list of what matters most on a small business site. Not a full WCAG audit. The 80% of the benefit you can get in an afternoon with a decent developer.
+This post is a short, practical list of what matters most on a small business site. Not a full WCAG (Web Content Accessibility Guidelines — the international standard for accessible websites) audit. The 80% of the benefit you can get in an afternoon with a decent developer.
 
 ## What "accessibility" actually means
 
@@ -35,11 +35,11 @@ A well-designed website works for all of these without the owner having to think
 
 Three practical reasons.
 
-**Legal.** The European Accessibility Act (EAA) applies from 28 June 2025 and covers a broad range of consumer-facing digital services, including e-commerce websites and apps, banking services, and transport. The Competition and Consumer Protection Commission (CCPC) is the market surveillance authority for much of this in Ireland. Whether your specific site is in scope depends on what you sell and to whom, but the direction of travel is clear: accessible digital services are becoming the expected standard, not a niche.
+**Legal.** The European Accessibility Act (EAA) — the EU law setting accessibility requirements for certain digital services — applies from 28 June 2025 and covers a broad range of consumer-facing digital services, including e-commerce websites and apps, banking services, and transport. The Competition and Consumer Protection Commission (CCPC) is the market surveillance authority for much of this in Ireland. Whether your specific site is in scope depends on what you sell and to whom, but the direction of travel is clear: accessible digital services are becoming the expected standard, not a niche.
 
-**Commercial.** Roughly one in seven people in Ireland has some form of disability. If your website is unusable for them, you have excluded a meaningful slice of the market. You have also degraded the experience for older visitors and for anyone on a slow connection or a small screen.
+**Commercial.** For any Irish SME (small or medium-sized business), roughly one in seven people in Ireland has some form of disability. If your website is unusable for them, you have excluded a meaningful slice of the market. You have also degraded the experience for older visitors and for anyone on a slow connection or a small screen.
 
-**SEO and general quality.** Accessible sites are generally better-built sites. Screen readers and search engines read pages in similar ways — with proper heading structure, meaningful links, and clear text. An accessible site tends to rank better and load faster.
+**SEO (search engine optimisation — how you rank on Google) and general quality.** Accessible sites are generally better-built sites. Screen readers and search engines read pages in similar ways — with proper heading structure, meaningful links, and clear text. An accessible site tends to rank better and load faster.
 
 ## The changes that make the biggest difference
 
@@ -47,7 +47,7 @@ If you do nothing else, do these. They are cheap, they are fast, and they cover 
 
 ### 1. Colour contrast that meets WCAG AA
 
-Text that is too light against its background is the single most common accessibility failure on small business sites. The WCAG AA standard requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. Most designers have a checker built into their tool; any browser extension will flag problems in minutes.
+Text that is too light against its background is the single most common accessibility failure on small business sites. The WCAG AA standard (the mid-tier level most sites aim for) requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. Most designers have a checker built into their tool; any browser extension will flag problems in minutes.
 
 Light grey text on a white background looks sleek in a design file and is unreadable for people with low vision. Aim higher than the minimum ratio where you can.
 
@@ -59,7 +59,7 @@ Good alt text is short, specific, and describes the image's function in context.
 
 ### 3. Keyboard navigation
 
-Many people cannot use a mouse. The whole site needs to be reachable with Tab, Enter, and the arrow keys. Dropdown menus, image galleries, form fields, and pop-ups all need keyboard alternatives. The focus indicator — the outline that shows where you are on the page — should be visible, not removed in CSS "because it looks untidy."
+Many people cannot use a mouse. The whole site needs to be reachable with Tab, Enter, and the arrow keys. Dropdown menus, image galleries, form fields, and pop-ups all need keyboard alternatives. The focus indicator — the outline that shows where you are on the page — should be visible, not removed in CSS (the styling code that controls how a site looks) "because it looks untidy."
 
 Try it on your own site. Close your laptop lid enough that the mouse is unusable, Tab through the homepage, and see if you can reach every interactive element.
 

@@ -33,7 +33,7 @@ Business-class access points are engineered for density. They handle dozens of c
 
 ## 3. Guest Wi-Fi is the same network as your business Wi-Fi
 
-Giving clients the same SSID and password your staff use is a standard, easy mistake. It's also one of the biggest everyday security risks in an Irish SME. A guest's compromised laptop shouldn't be on the same network as your accounts server. A contractor's phone shouldn't need to be trusted like a staff device.
+Giving clients the same SSID (Wi-Fi network name) and password your staff use is a standard, easy mistake. It's also one of the biggest everyday security risks in an Irish SME (small or medium-sized enterprise). A guest's compromised laptop shouldn't be on the same network as your accounts server. A contractor's phone shouldn't need to be trusted like a staff device.
 
 A sensible setup has a proper guest network — separate SSID, isolated from business traffic, bandwidth-capped so a visitor streaming YouTube can't flatten the call quality for the whole office. It takes an afternoon to set up and it costs nothing on most business-grade kit. More on this in the [network and Wi-Fi security](/network-wifi-security) service page.
 
@@ -52,11 +52,11 @@ The fix is almost always the right number of access points in the right places, 
 
 Ask your current IT person, or yourself: how many devices are on the Wi-Fi right now? Can you list them? Can you kick one off if a laptop goes missing?
 
-If the answer is "I'd have to log into the router and scroll through a list of MAC addresses I don't recognise," then you don't really know what's on your network — and neither does anyone else. Business-grade Wi-Fi gives you a clean dashboard showing every device, who it belongs to, when it joined, and how much bandwidth it's using. That visibility is the first step to actually securing the network, not just hoping.
+If the answer is "I'd have to log into the router and scroll through a list of MAC addresses (unique device IDs) I don't recognise," then you don't really know what's on your network — and neither does anyone else. Business-grade Wi-Fi gives you a clean dashboard showing every device, who it belongs to, when it joined, and how much bandwidth it's using. That visibility is the first step to actually securing the network, not just hoping.
 
 ## 6. A printer, a card reader, or a till takes the whole thing down
 
-When one device misbehaves and everybody's internet slows, something is wrong with the way your network is segmented. A well-designed office network separates traffic — staff devices on one VLAN, guests on another, payment terminals on a third, IoT devices on a fourth — so one badly-behaved printer can't chew up the bandwidth of every laptop in the building.
+When one device misbehaves and everybody's internet slows, something is wrong with the way your network is segmented. A well-designed office network separates traffic — staff devices on one VLAN (a virtual sub-network that keeps groups of devices apart), guests on another, payment terminals on a third, IoT (Internet of Things — printers, cameras, thermostats) devices on a fourth — so one badly-behaved printer can't chew up the bandwidth of every laptop in the building.
 
 Segmentation also limits blast radius on the security side. If an attacker compromises the smart thermostat (yes, this happens), they shouldn't be able to pivot to the file server from there. Cheap consumer kit puts everything on one flat network. Business kit doesn't have to.
 
@@ -84,8 +84,8 @@ It's the sort of thing that takes half a day for a small office and a full day f
 If a review isn't on the cards this month, a few things you can check yourself:
 
 - **Change the default admin password** on your router. Many are still set to the factory default.
-- **Turn off WPS.** Convenient for home use, but trivial to attack and not needed in a business.
-- **Make sure you're on WPA3 or WPA2, never WEP or open.** WEP was broken before most of your staff were born.
+- **Turn off WPS (Wi-Fi Protected Setup — the push-button pairing feature).** Convenient for home use, but trivial to attack and not needed in a business.
+- **Make sure you're on WPA3 or WPA2 (the modern Wi-Fi encryption standards), never WEP or open.** WEP was broken before most of your staff were born.
 - **Split guest Wi-Fi onto a different SSID** with a different password, and don't share that password with staff.
 - **Reboot the kit once.** It shouldn't be necessary, but if you haven't restarted the router in six months, do it — and notice if the problems go away for a few days and then come back. That's a diagnostic in itself.
 
@@ -94,7 +94,7 @@ If a review isn't on the cards this month, a few things you can check yourself:
 For a ten-to-thirty-person office in Ireland, the building blocks tend to look similar:
 
 - A proper business firewall (not the router the broadband provider shipped)
-- A managed switch with enough PoE ports to power your access points
+- A managed switch with enough PoE (Power over Ethernet — power delivered down the network cable) ports to power your access points
 - Two to four Wi-Fi 6 or 6E access points, placed by survey, not by guess
 - Separate SSIDs for staff, guests, and IoT / operational devices
 - A central controller or cloud dashboard you can actually use

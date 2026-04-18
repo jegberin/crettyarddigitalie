@@ -17,7 +17,7 @@ draft: false
 
 "Proactive IT support" is the kind of phrase that sounds like it means something specific and usually does not. One provider's proactive support is another's break/fix with a monthly invoice. Before you sign a managed contract, it is worth understanding what actually sits behind the term — what work gets done, when, and how you know.
 
-This post is a practical breakdown of what proactive IT support looks like for a small or mid-sized Irish business. Not every provider will do all of it. Every provider should be able to tell you which parts they do and which parts they do not.
+This post is a practical breakdown of what proactive IT support looks like for a small or mid-sized Irish business (SME — small and medium enterprise). Not every provider will do all of it. Every provider should be able to tell you which parts they do and which parts they do not.
 
 ## The shape of proactive support
 
@@ -27,7 +27,7 @@ The work divides roughly into five areas: monitoring, patching, backups, securit
 
 ## Monitoring
 
-Every device that matters — servers, main PCs, network switches, firewalls, backup appliances — should have a monitoring agent on it. The agent reports to a central console that the provider watches. When something crosses a threshold (disk filling up, backup failing, CPU pinned, server unreachable), an alert is raised and someone acts on it.
+Every device that matters — servers, main PCs, network switches, firewalls, backup appliances — should have a monitoring agent on it. The agent reports to a central console that the provider watches. When something crosses a threshold (disk filling up, backup failing, CPU — the computer's main processor — pinned, server unreachable), an alert is raised and someone acts on it.
 
 In practice this means your provider often knows there is a problem before you do. A common example: the shared drive on the office server starts filling up on a Thursday. Monitoring flags it, the engineer adds capacity or clears old logs, and on Friday morning nothing has changed for you. That is what proactive looks like when it is working.
 
@@ -61,7 +61,7 @@ If your provider cannot describe their restore test process, you do not have wor
 At the small-business end of the market, proactive security usually looks like:
 
 - Modern endpoint protection (Microsoft Defender for Business, or equivalent) on every device, centrally monitored.
-- MFA enforced on email and any cloud administrative consoles.
+- MFA (multi-factor authentication — that second code on your phone when you log in) enforced on email and any cloud administrative consoles.
 - Staff accounts reviewed against the HR list quarterly to catch leavers with active access.
 - Email filtering and anti-phishing configured and tuned.
 - Admin accounts separated from day-to-day user accounts.
@@ -85,13 +85,13 @@ This is where the "managed" in managed IT actually earns its keep. An hour a qua
 
 Worth being clear about the edges, because this is where disputes happen.
 
-**Project work.** Office moves, server replacements, M365 migrations, new website builds. These are separate budgets and separate engagements, though a good managed provider will quote them at a fair rate and know your environment already.
+**Project work.** Office moves, server replacements, M365 (Microsoft 365) migrations, new website builds. These are separate budgets and separate engagements, though a good managed provider will quote them at a fair rate and know your environment already.
 
 **Third-party vendor management.** If your accounting software breaks, your provider can often help liaise with the vendor, but they cannot fix the software itself. Most contracts include a fair amount of this coordination; make sure yours does.
 
 **Individual device repair beyond a threshold.** If a laptop has a failed screen, that is a hardware repair, not a support call. Many providers offer managed hardware as a separate service — our [managed hardware](/managed-hardware) page explains what that covers.
 
-**Out-of-hours response for free.** Some providers include 24/7 response. Most include business-hours coverage with an emergency escalation path after hours. Read the SLA, not the marketing page.
+**Out-of-hours response for free.** Some providers include 24/7 response. Most include business-hours coverage with an emergency escalation path after hours. Read the SLA (service level agreement — the written promise of response times), not the marketing page.
 
 ## How this compares to break/fix
 
@@ -108,7 +108,7 @@ Ask the provider to send their service level agreement in plain English. Look fo
 
 - **Response times** — how long until someone acknowledges a ticket?
 - **Resolution targets** — how long until a major outage is expected to be resolved?
-- **What counts as P1, P2, P3** — and examples.
+- **What counts as P1, P2, P3** — priority levels, roughly "everything down", "serious but working around it", and "minor" — and examples.
 - **Escalation path** — who you call if the first responder is not enough.
 - **Exclusions** — what is explicitly not covered.
 

@@ -15,17 +15,17 @@ draft: false
 
 # Signs your business website is quietly costing you leads
 
-Most SME websites don't fail loudly. They just quietly underperform — ten potential enquiries a month become three, and nobody joins the dots. The site technically works, the owner has seen it on their phone once, and so the problem never gets named. But the cost is real, and it compounds month after month.
+Most SME (small or medium-sized business) websites don't fail loudly. They just quietly underperform — ten potential enquiries a month become three, and nobody joins the dots. The site technically works, the owner has seen it on their phone once, and so the problem never gets named. But the cost is real, and it compounds month after month.
 
 This is a plain list of the signs I watch for when a business tells me their website "isn't bringing in much". None of them are cosmetic. Each one maps to an action you can take in the next fortnight.
 
 ## 1. It takes more than three seconds to load on mobile
 
-Speed is the first filter. If a visitor lands on your homepage from a Google search on a 4G phone and nothing useful is on screen by the three-second mark, a sizeable share of them bounce before they've seen your logo. The pattern is well-documented in Google's own performance research and in the Core Web Vitals standards used for ranking.
+Speed is the first filter. If a visitor lands on your homepage from a Google search on a 4G phone and nothing useful is on screen by the three-second mark, a sizeable share of them bounce before they've seen your logo. The pattern is well-documented in Google's own performance research and in the Core Web Vitals standards (Google's three performance scores for how a page feels to load) used for ranking.
 
 A few common culprits on Irish SME sites:
 
-- Hero images uploaded straight from a DSLR at 6MB each
+- Hero images uploaded straight from a DSLR (a digital SLR camera) at 6MB each
 - A heavy page builder loading ten fonts the design doesn't actually use
 - Third-party chat widgets and cookie banners that block rendering
 - A cheap shared hosting plan doing its honest best for €3 a month
@@ -46,7 +46,7 @@ A decent site should have:
 
 - A phone number in the top-right of every page, clickable on mobile
 - A short contact form on the homepage itself, not buried
-- A single, unambiguous call-to-action per section — "Request a quote", "Book a free call", "See pricing"
+- A single, unambiguous call-to-action (the button or link you want the visitor to click) per section — "Request a quote", "Book a free call", "See pricing"
 
 If you want a concrete benchmark, look at how the [get a quote flow](/get-a-quote) or [contact form](/contact) sits on our own site. The goal is never to be clever; it's to make the next action so obvious a tired visitor on a train can take it.
 
@@ -69,7 +69,7 @@ Regular, light upkeep — a monthly pass by somebody who knows what they're look
 
 ## 6. The forms don't actually work
 
-I see this every month. Somebody changes a DNS record, or the SMTP password rotates, or an email address stops existing after a staff change, and the contact form quietly breaks. The site looks fine. The submissions just go nowhere. The business blames "a quiet month" and keeps paying for ads.
+I see this every month. Somebody changes a DNS record (the settings that point your domain at your site and email), or the SMTP password rotates (the email-sending credentials), or an email address stops existing after a staff change, and the contact form quietly breaks. The site looks fine. The submissions just go nowhere. The business blames "a quiet month" and keeps paying for ads.
 
 A simple rule: once a quarter, test every form on your website with a real message from a real email account. If nothing arrives, find out why. Better yet, set up a monitoring tool that submits a test form every day and emails you when delivery fails.
 

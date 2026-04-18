@@ -15,9 +15,9 @@ draft: false
 
 # Preparing an SME for AI safely — a step-by-step plan
 
-A year or two ago, "AI at work" meant a handful of early adopters running ChatGPT in a separate browser window. That has changed. Copilot is baked into Microsoft 365, Google has Gemini across Workspace, and every business application from accounting to marketing has grown an AI feature in the settings page. Even the quietest Irish SMEs are now using AI whether they meant to or not.
+A year or two ago, "AI at work" meant a handful of early adopters running ChatGPT in a separate browser window. That has changed. Copilot is baked into Microsoft 365, Google has Gemini across Workspace, and every business application from accounting to marketing has grown an AI feature in the settings page. Even the quietest Irish SMEs (small and medium-sized enterprises) are now using AI whether they meant to or not.
 
-The question for a small business is no longer "should we use AI?" It is "how do we use it without leaking data, embarrassing ourselves, or bumping into GDPR?" This post is a practical plan for getting ready.
+The question for a small business is no longer "should we use AI?" It is "how do we use it without leaking data, embarrassing ourselves, or bumping into GDPR (General Data Protection Regulation — the EU data protection law)?" This post is a practical plan for getting ready.
 
 ## Start with what you already have
 
@@ -25,7 +25,7 @@ Before you buy anything new, take a short inventory of where AI is already sitti
 
 - Microsoft 365 — Copilot features in Word, Excel, Outlook, Teams.
 - Google Workspace — Gemini in Gmail and Docs.
-- Your CRM — suggested email replies, lead scoring, summarisation.
+- Your CRM (customer relationship management system — where you track contacts and deals) — suggested email replies, lead scoring, summarisation.
 - Accounting software — anomaly detection, bank reconciliation suggestions.
 - Marketing platforms — generated subject lines, segmentation, image tools.
 - Staff using personal AI accounts — ChatGPT, Claude, Grammarly, Notion AI.
@@ -34,7 +34,7 @@ The last one is the one most owners miss. If nobody has said anything, the answe
 
 ## Decide what data AI tools can see
 
-This is the heart of readiness. Every AI tool sits somewhere on a spectrum from "runs entirely in your Microsoft 365 tenant on your own data" to "consumer account on a personal device that sends whatever you paste into a vendor's training pipeline." Both are legitimate uses. They are very different risks.
+This is the heart of readiness. Every AI tool sits somewhere on a spectrum from "runs entirely in your Microsoft 365 tenant (your organisation's private slice of Microsoft's cloud) on your own data" to "consumer account on a personal device that sends whatever you paste into a vendor's training pipeline." Both are legitimate uses. They are very different risks.
 
 The three questions to ask about any AI tool your business uses:
 
@@ -83,7 +83,7 @@ Put a five-minute screen recording in your onboarding so each new hire configure
 
 ## Train staff on what "good use" looks like
 
-Most AI incidents I see at SMEs are human errors, not tool failures. A staff member pastes a client's NDA into a public chatbot to ask for a summary; a junior emails a draft that confidently quotes a regulation that does not exist; a marketing person generates an image that looks suspiciously like a competitor's photo.
+Most AI incidents I see at SMEs are human errors, not tool failures. A staff member pastes a client's NDA (non-disclosure agreement) into a public chatbot to ask for a summary; a junior emails a draft that confidently quotes a regulation that does not exist; a marketing person generates an image that looks suspiciously like a competitor's photo.
 
 A short training session — 30 minutes, twice a year — covering three things prevents most of this:
 
@@ -97,10 +97,10 @@ Pair this with a live example or two — something recent that made the news —
 
 AI sits on top of your existing IT. If the fundamentals are weak, AI amplifies the weaknesses rather than solving them. The prerequisites:
 
-- MFA enforced on every account AI tools connect to.
-- Single sign-on where the licence supports it.
+- MFA (multi-factor authentication — that second code on your phone when you log in) enforced on every account AI tools connect to.
+- Single sign-on (SSO — one business login that opens every approved app) where the licence supports it.
 - Role-based access to files, so Copilot does not surface HR documents to everyone when you ask it to summarise the company drive.
-- Audit logs enabled on the M365 tenant.
+- Audit logs enabled on the M365 (Microsoft 365) tenant.
 
 We go deeper on this foundation in our [security questions before adopting AI tools](/blog/ai-security-questions-smes) post. It is worth reading before you deploy Copilot to staff.
 

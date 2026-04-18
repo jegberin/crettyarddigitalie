@@ -15,7 +15,7 @@ draft: false
 
 # AI policy basics for SMEs — a one-page template you can actually use
 
-The best AI policy for a small business is the one staff will actually read and follow. That rules out twenty-page legal documents, obscure risk taxonomies, and copy-paste frameworks from enterprises with in-house compliance teams. What an Irish SME needs is a one-page document that says clearly: here is what you can use, here is what you cannot, here is what to do if you are unsure.
+The best AI policy for a small business is the one staff will actually read and follow. That rules out twenty-page legal documents, obscure risk taxonomies, and copy-paste frameworks from enterprises with in-house compliance teams. What an Irish SME (small or medium-sized enterprise) needs is a one-page document that says clearly: here is what you can use, here is what you cannot, here is what to do if you are unsure.
 
 This post walks through what a practical policy covers, with a worked template you can adapt. Fifteen minutes of work, and a set of rules that makes the rest of your AI adoption simpler.
 
@@ -37,7 +37,7 @@ Keep it to six short sections. Any more and people stop reading.
 2. **Approved tools.** The specific tools the business has sanctioned, with a short note on what each is for.
 3. **What data is allowed in AI tools.** What goes in, what never goes in, with examples.
 4. **Output and responsibility.** Who is responsible for AI-generated work and how it should be reviewed before it leaves the business.
-5. **Privacy and security.** MFA, account hygiene, data retention settings, what to do if something goes wrong.
+5. **Privacy and security.** MFA (multi-factor authentication — that second code on your phone when you log in), account hygiene, data retention settings, what to do if something goes wrong.
 6. **Who to ask.** The named person or team staff should contact if they are unsure.
 
 Six sections, one page. It should be readable in three minutes.
@@ -108,7 +108,7 @@ That said, obligations on users of AI systems do exist — around transparency, 
 
 ## GDPR is the one to get right
 
-For Irish SMEs, the rule that matters most in practice is still GDPR. If you put personal data into an AI tool that processes or retains it, you have a data processor relationship that needs a DPA, a lawful basis, and a record in your processing register.
+For Irish SMEs, the rule that matters most in practice is still GDPR (General Data Protection Regulation — the EU data protection law). If you put personal data into an AI tool that processes or retains it, you have a data processor relationship that needs a DPA (data processing agreement — the contract required under GDPR when a third party handles personal data for you), a lawful basis, and a record in your processing register.
 
 The practical application: your approved tools should all be ones you have a DPA with. Free, personal-account chatbots do not meet that standard. This is why the policy draws the line the way it does — it is not arbitrary, it is GDPR-shaped.
 

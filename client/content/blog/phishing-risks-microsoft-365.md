@@ -15,13 +15,13 @@ draft: false
 
 # Phishing risks in Microsoft 365 — what SMEs should actually watch for
 
-Phishing is the most boring category of attack, and also the one that actually costs Irish small businesses money. The average incident I see at an SME doesn't come from a sophisticated nation-state. It comes from a convincing-looking email that tricked one member of staff into giving up their Microsoft 365 password on a page that looked like login.microsoftonline.com but wasn't.
+Phishing is the most boring category of attack, and also the one that actually costs Irish small businesses money. The average incident I see at an SME (small or medium-sized business) doesn't come from a sophisticated nation-state. It comes from a convincing-looking email that tricked one member of staff into giving up their Microsoft 365 password on a page that looked like login.microsoftonline.com but wasn't.
 
-This post is about the specific ways phishing lands in a Microsoft 365 environment, what attackers do after they're in, and the handful of controls that stop the majority of attempts before they matter. None of it is theoretical — these are the patterns the NCSC and Microsoft's own Defender teams flag most often for small businesses.
+This post is about the specific ways phishing lands in a Microsoft 365 environment, what attackers do after they're in, and the handful of controls that stop the majority of attempts before they matter. None of it is theoretical — these are the patterns the NCSC (the UK National Cyber Security Centre) and Microsoft's own Defender teams flag most often for small businesses.
 
 ## Why Microsoft 365 is such a common target
 
-If you run a small business in Ireland, there's a very good chance you're on Microsoft 365. Email, calendar, documents, Teams, the whole working day sits inside one tenant. That's enormously useful. It also means that a single compromised login — not a whole fleet of them — gives an attacker a lot of leverage.
+If you run a small business in Ireland, there's a very good chance you're on Microsoft 365. Email, calendar, documents, Teams, the whole working day sits inside one tenant (your Microsoft 365 environment — the container that holds your users, mail, and files). That's enormously useful. It also means that a single compromised login — not a whole fleet of them — gives an attacker a lot of leverage.
 
 A standard phishing kit doesn't need to be clever. It needs to do three things: land in the inbox, look like Microsoft, and capture the password. Once the attacker has the credentials, they'll try a login from somewhere plausible and see what the account is allowed to do. That's where the real damage happens.
 
@@ -29,9 +29,9 @@ A standard phishing kit doesn't need to be clever. It needs to do three things: 
 
 ### 1. The "shared document" bait
 
-An email arrives from a name the staff member recognises — a supplier, an accountant, a client — with a line like "Please review the attached quote." The link goes to a page branded to look like SharePoint or OneDrive. The user clicks, sees a Microsoft-style login box, and enters their password. The page forwards to a real, harmless PDF so nothing feels wrong.
+An email arrives from a name the staff member recognises — a supplier, an accountant, a client — with a line like "Please review the attached quote." The link goes to a page branded to look like SharePoint (Microsoft's shared document library) or OneDrive (Microsoft's personal file storage). The user clicks, sees a Microsoft-style login box, and enters their password. The page forwards to a real, harmless PDF so nothing feels wrong.
 
-This is the single most common path to a compromised M365 account at an Irish SME. The tell, once you're looking, is usually the URL — a domain no one recognises, or a Microsoft-looking domain with one letter off. The users who fall for it are busy, not careless.
+This is the single most common path to a compromised M365 (Microsoft 365) account at an Irish SME. The tell, once you're looking, is usually the URL — a domain no one recognises, or a Microsoft-looking domain with one letter off. The users who fall for it are busy, not careless.
 
 ### 2. Business email compromise (BEC)
 
@@ -41,13 +41,13 @@ The Garda National Cyber Crime Bureau and the NCSC have both flagged BEC as one 
 
 ### 3. MFA fatigue
 
-MFA is brilliant and should be on every account. But once an attacker has a password, a handful of them try simple prompt-spam: pushing authentication requests to the user's phone at 11pm, over and over, until the user taps "Approve" just to make it stop. Sometimes it's paired with a phone call from "IT support" explaining the prompts.
+MFA (multi-factor authentication — that second code or phone prompt you approve when you log in) is brilliant and should be on every account. But once an attacker has a password, a handful of them try simple prompt-spam: pushing authentication requests to the user's phone at 11pm, over and over, until the user taps "Approve" just to make it stop. Sometimes it's paired with a phone call from "IT support" explaining the prompts.
 
 The fix is number matching — a mode in Microsoft Authenticator where the user has to type a code shown on the login screen, not just tap "Approve." Microsoft has made number matching the default, but older tenants still need it explicitly enforced.
 
 ### 4. OAuth consent phishing
 
-This one is nastier because it doesn't need the user's password at all. An email sends the user to a legitimate Microsoft login page, where they're asked to grant permission to an app called something innocuous — "Secure Documents", "Invoice Viewer". The user clicks "Accept." The app now has permission to read the user's mailbox, search OneDrive, or send email on their behalf.
+OAuth is the "sign in with your Microsoft account" handshake that lets one app get limited access to another. This one is nastier because it doesn't need the user's password at all. An email sends the user to a legitimate Microsoft login page, where they're asked to grant permission to an app called something innocuous — "Secure Documents", "Invoice Viewer". The user clicks "Accept." The app now has permission to read the user's mailbox, search OneDrive, or send email on their behalf.
 
 Microsoft's guidance is to restrict user consent so that non-admin users can't grant permissions to third-party applications, or to require admin approval for anything beyond a short allow-list. This is a one-time setting and costs nothing; most tenants I audit still have it wide open.
 
@@ -55,7 +55,7 @@ Microsoft's guidance is to restrict user consent so that non-admin users can't g
 
 For businesses with a recognisable brand, attackers register near-miss domains — yourfirm-accounts.ie, yourfirm.co, yourfirmie.com — and use them to send invoices to your clients. You only find out when a client calls asking why they've been sent a payment reminder from an address you don't own.
 
-There's no silver bullet here, but SPF, DKIM, and DMARC records on your own domain do two things at once: they make it harder for attackers to spoof you directly, and they let your own email platform reject forgeries that arrive from anywhere. A DMARC policy set to "reject" is one of the highest-value, lowest-cost anti-phishing moves an SME can make.
+There's no silver bullet here, but SPF, DKIM, and DMARC (three email authentication records you publish in your domain's DNS that together prove a message really came from you) records on your own domain do two things at once: they make it harder for attackers to spoof you directly, and they let your own email platform reject forgeries that arrive from anywhere. A DMARC policy set to "reject" is one of the highest-value, lowest-cost anti-phishing moves an SME can make.
 
 ## What attackers do once they're in
 
@@ -65,7 +65,7 @@ If you want to build useful intuition for which controls matter, it's worth know
 2. **Register their own MFA method** on the account, so they keep access even after the password is reset
 3. **Read the mailbox for money-related threads** — accountants, suppliers, clients, solicitors
 4. **Send an invoice or payment-detail change** from the legitimate account at exactly the right moment
-5. **Move laterally** to SharePoint or OneDrive, looking for bank details, client lists, or anything marketable
+5. **Move laterally** (pivot from one compromised account into other systems) to SharePoint or OneDrive, looking for bank details, client lists, or anything marketable
 
 Everything after step one is optional for the attacker. Step one — the inbox rule — is nearly universal, because it's what keeps the victim blind to what's happening.
 
@@ -75,7 +75,7 @@ None of these are expensive. All of them come with a standard Microsoft 365 Busi
 
 **Enforced MFA with number matching.** Mandatory for every user, no exceptions, no "legacy auth" loophole. Microsoft Authenticator with number matching shuts down MFA fatigue attacks. This is the baseline.
 
-**Conditional Access policies.** Block sign-ins from countries you don't operate in. Require a compliant device for admin roles. Require re-authentication when a session is risky. These policies quietly stop the majority of credential-theft attacks from turning into actual compromises.
+**Conditional Access policies** (rules in Microsoft 365 that decide who can sign in, from where, and under what conditions)**.** Block sign-ins from countries you don't operate in. Require a compliant device for admin roles. Require re-authentication when a session is risky. These policies quietly stop the majority of credential-theft attacks from turning into actual compromises.
 
 **Restrict third-party app consent.** Don't let end users authorise apps on behalf of the tenant. Either require admin approval or allow only apps from publishers you've vetted.
 

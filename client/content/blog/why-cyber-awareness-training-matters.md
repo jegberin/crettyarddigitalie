@@ -15,7 +15,7 @@ draft: false
 
 # Why cyber awareness training matters for SMEs — and how to do it well
 
-For a small business in Ireland, the cheapest and most effective cybersecurity control is a staff team that knows what phishing looks like, understands why MFA matters, and knows who to tell when something looks wrong. No paid product beats that for return on money spent.
+For a small business in Ireland, the cheapest and most effective cybersecurity control is a staff team that knows what phishing looks like, understands why MFA (multi-factor authentication — that second code on your phone when you log in) matters, and knows who to tell when something looks wrong. No paid product beats that for return on money spent.
 
 Unfortunately, most "cyber awareness training" does not achieve this. It is either a once-a-year compliance video nobody remembers, or an expensive platform that sends endless simulated phishing emails and turns the whole topic into background noise. This post is about why the training matters and how to run it so it actually changes behaviour.
 
@@ -29,7 +29,7 @@ Everything about how the training is designed should flow from that framing.
 
 ## Why it punches above its weight
 
-Almost every major incident at an SME I see in Ireland is, at some step in its chain, a human one. The phishing email that got clicked. The password that was reused. The staff member who authorised a supplier bank change over email without phoning. The junior who gave their password to "IT support" over the phone because they were panicking about a deadline.
+Almost every major incident at an SME (small or medium-sized enterprise) I see in Ireland is, at some step in its chain, a human one. The phishing email that got clicked. The password that was reused. The staff member who authorised a supplier bank change over email without phoning. The junior who gave their password to "IT support" over the phone because they were panicking about a deadline.
 
 Good technical controls reduce the frequency of these moments. Good training reduces the chance they become incidents when they happen. The two work together and neither replaces the other.
 
@@ -42,7 +42,7 @@ The specific scenarios training helps with:
 - **Tailgating and pretexting** — physical and phone-based social engineering.
 - **AI misuse** — not pasting sensitive data into public chatbots.
 
-Our [phishing risks in Microsoft 365](/blog/phishing-risks-microsoft-365) post walks through the specific M365 angles.
+Our [phishing risks in Microsoft 365](/blog/phishing-risks-microsoft-365) post walks through the specific M365 (Microsoft 365) angles.
 
 ## What good training looks like
 
@@ -81,9 +81,9 @@ A half-day of content for a typical SME, split across two or three sessions per 
 5. **What to do if you think you clicked on something** — who to tell, no blame, speed matters.
 6. **AI use** — what to never paste into public AI tools, approved tools and settings. More in our [AI policy basics for SMEs](/blog/ai-policy-basics-smes) post.
 7. **Physical security and visitors** — not letting strangers into the office, not leaving laptops in cars.
-8. **Data protection basics** — GDPR in plain English, what "personal data" means for your role, who the data protection lead is.
+8. **Data protection basics** — GDPR (General Data Protection Regulation — the EU data protection law) in plain English, what "personal data" means for your role, who the data protection lead is.
 
-The mix depends on the business. An accountancy firm spends more on BEC. A retailer spends more on payment fraud. A medical clinic spends more on data protection.
+The mix depends on the business. An accountancy firm spends more on BEC (business email compromise — attackers posing as staff or suppliers to redirect payments). A retailer spends more on payment fraud. A medical clinic spends more on data protection.
 
 ## Phishing simulations — use sparingly and kindly
 

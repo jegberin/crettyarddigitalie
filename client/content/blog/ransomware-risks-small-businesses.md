@@ -33,11 +33,11 @@ The entry points are unglamorous. None of them are new. All of them are still wo
 
 **Phishing emails with attachments.** A Word document or PDF that asks the user to "enable content" or click a link. Behind the click is a malware downloader that quietly establishes a foothold. This is still the most common initial access vector seen at SMEs.
 
-**Stolen passwords reused across services.** A staff member used the same password on a personal site that got breached. The credential list ended up on a criminal forum. An attacker tried the same password against your Microsoft 365 tenant and it worked.
+**Stolen passwords reused across services.** A staff member used the same password on a personal site that got breached. The credential list ended up on a criminal forum. An attacker tried the same password against your Microsoft 365 tenant (your organisation's private slice of Microsoft's cloud) and it worked.
 
-**Exposed remote desktop.** Someone set up RDP to the office PC during lockdown, opened port 3389 on the router, and forgot. Scanners find these within hours. Once inside, the attacker has the same access the staff member has.
+**Exposed remote desktop.** Someone set up RDP (Remote Desktop Protocol — Windows' built-in way to control a PC from elsewhere) to the office PC during lockdown, opened port 3389 on the router, and forgot. Scanners find these within hours. Once inside, the attacker has the same access the staff member has.
 
-**Unpatched edge devices.** A firewall or VPN appliance with a known vulnerability that was not updated. These make the news every few months — enterprise brands you would recognise. Small firms are rarely the named victim, but they get caught in the same sweeps.
+**Unpatched edge devices.** A firewall or VPN (virtual private network — an encrypted tunnel into the office) appliance with a known vulnerability that was not updated. These make the news every few months — enterprise brands you would recognise. Small firms are rarely the named victim, but they get caught in the same sweeps.
 
 **Managed service provider compromise.** If your IT provider is breached, their tooling — remote monitoring agents, management consoles — becomes the attacker's tooling. This is part of why you should ask your provider what their own security posture looks like.
 
@@ -55,7 +55,7 @@ From that point it is a two-week project at minimum. Rebuilding servers, restori
 
 There is no single silver bullet, but the controls below account for the vast majority of prevented incidents at the small-business end of the market. None of them require enterprise budgets.
 
-**Multi-factor authentication on every account.** Every email account, every remote access, every admin login. MFA alone neutralises the password-reuse attack path and makes most phishing campaigns unprofitable. See more on this in the [cost of weak passwords and MFA practices](/blog/cost-of-weak-passwords-mfa) post.
+**Multi-factor authentication on every account.** Every email account, every remote access, every admin login. MFA (that second code on your phone when you log in) alone neutralises the password-reuse attack path and makes most phishing campaigns unprofitable. See more on this in the [cost of weak passwords and MFA practices](/blog/cost-of-weak-passwords-mfa) post.
 
 **Patched operating systems and edge devices.** Windows update cannot sit at "deferred" forever. Firewalls, routers, and VPN appliances all need regular firmware updates. A care plan or managed agreement should make this automatic.
 
@@ -73,7 +73,7 @@ There is no single silver bullet, but the controls below account for the vast ma
 
 More SMEs are buying cyber cover, which is sensible. Two things to be aware of.
 
-First, insurers now require specific controls — MFA, EDR, tested backups — as a condition of cover. If those controls are not in place when you make a claim, the claim can be refused. Going through the underwriter's questionnaire honestly is a cheap way to audit your own setup.
+First, insurers now require specific controls — MFA, EDR (endpoint detection and response — the modern replacement for antivirus), tested backups — as a condition of cover. If those controls are not in place when you make a claim, the claim can be refused. Going through the underwriter's questionnaire honestly is a cheap way to audit your own setup.
 
 Second, cover is about financial loss, not prevention. A policy does not stop the attack; it helps with the clean-up bill. Treat it as the seatbelt, not the brakes.
 
@@ -83,7 +83,7 @@ If you walk in and something looks wrong, three actions in order:
 
 1. **Disconnect, do not shut down.** Pull the network cable or switch off Wi-Fi on affected machines. Leave them powered on so forensic evidence is preserved.
 2. **Call your IT provider or incident responder.** The earlier you bring in someone who has handled ransomware before, the better the outcome. If your provider does not handle incidents, ask them who they refer to.
-3. **Report it.** The Garda National Cyber Crime Bureau (GNCCB) and the NCSC Ireland both take reports. If personal data is involved, the Data Protection Commission has a 72-hour notification window under GDPR.
+3. **Report it.** The Garda National Cyber Crime Bureau (GNCCB) and the NCSC Ireland (National Cyber Security Centre — the state body for cyber incidents) both take reports. If personal data is involved, the Data Protection Commission has a 72-hour notification window under GDPR (General Data Protection Regulation — the EU data protection law).
 
 Do not pay the ransom impulsively. There are cases where payment is the only realistic option, but that call should be made with legal and insurer input, not by the owner at 8pm in a panic.
 

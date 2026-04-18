@@ -17,7 +17,7 @@ draft: false
 
 Picking an IT support provider is one of those decisions small business owners in the Irish midlands and south-east tend to rush. The phone stops working on a Tuesday, someone asks a neighbouring business for a number, and six months later you are locked into a contract you never quite evaluated. The fact that the provider is local is treated as enough.
 
-Local does matter. It is not the whole story. This post is a practical guide to choosing IT support if you are running a small business in Laois, Carlow, or Kilkenny — what "local" actually gives you, what the trade-offs are, and how to pick well.
+Local does matter. It is not the whole story. This post is a practical guide to choosing IT support if you are running a small business — an SME (small and medium enterprise) — in Laois, Carlow, or Kilkenny, covering what "local" actually gives you, what the trade-offs are, and how to pick well.
 
 ## What "local" genuinely gets you
 
@@ -47,7 +47,7 @@ The non-negotiables for any IT support provider, regardless of location:
 
 ### 1. Clear scope and written SLA
 
-A written service agreement that says plainly:
+A written service agreement (often called an SLA — service level agreement) that says plainly:
 
 - What is included in the monthly fee.
 - What is extra, and at what rate.
@@ -60,11 +60,11 @@ If the provider resists putting any of this in writing, that is a warning sign.
 
 ### 2. Security as a baseline, not an extra
 
-Good managed IT in 2026 includes MFA, endpoint protection, email security tuning, backup testing, and basic user training as part of the package. If those are all "optional extras", you are buying helpdesk, not managed IT. Our [what proactive IT support includes](/blog/what-proactive-it-support-includes) post goes into what to expect.
+Good managed IT in 2026 includes MFA (multi-factor authentication — that second code on your phone when you log in), endpoint protection (security software on every laptop and PC), email security tuning, backup testing, and basic user training as part of the package. If those are all "optional extras", you are buying helpdesk, not managed IT. Our [what proactive IT support includes](/blog/what-proactive-it-support-includes) post goes into what to expect.
 
 ### 3. Someone who answers the phone
 
-Small business IT support that relies entirely on web forms is a poor fit. You want a human to pick up in a sensible time, especially for urgent issues. Ask how that works in their setup and ask them to describe the last P1 incident they handled.
+Small business IT support that relies entirely on web forms is a poor fit. You want a human to pick up in a sensible time, especially for urgent issues. Ask how that works in their setup and ask them to describe the last P1 incident (top-priority — everything down) they handled.
 
 ### 4. Monthly or quarterly reporting
 

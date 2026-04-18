@@ -26,7 +26,7 @@ A plumber, roofer, groundworker, or electrical contractor in Ireland typically r
 - One or two people in the office doing quotes, invoices, and diary.
 - A handful of tradespeople on the road or on site.
 - A van each, with tools, paperwork, a phone.
-- Paperwork that involves suppliers, clients, Revenue, and maybe BER assessors or certifiers.
+- Paperwork that involves suppliers, clients, Revenue (the Irish tax authority), and maybe BER assessors or certifiers.
 - Work that frequently happens in places with bad mobile signal and no Wi-Fi.
 
 Any IT stack that ignores the realities of the van, the site, and the patchy signal will fail quietly. The staff will work around it, paper copies will multiply, and the office will end up rekeying everything in the evening.
@@ -37,7 +37,7 @@ The high-value upgrades for trades businesses in Ireland tend to be the same fou
 
 ### 1. A decent cloud file system
 
-Forget the file server in the office cupboard. It means the person on site cannot see the latest drawings without emailing back to the office. Move drawings, specifications, photos, and site paperwork into OneDrive or SharePoint, with sensible folders, and every team member can access everything they need from any device, anywhere with a signal. Offline sync means the last version is available even without a connection.
+Forget the file server in the office cupboard. It means the person on site cannot see the latest drawings without emailing back to the office. Move drawings, specifications, photos, and site paperwork into OneDrive (Microsoft's per-user cloud storage) or SharePoint (Microsoft's shared team file area), with sensible folders, and every team member can access everything they need from any device, anywhere with a signal. Offline sync means the last version is available even without a connection.
 
 Our [SharePoint, OneDrive, Teams — what each is for](/blog/sharepoint-onedrive-teams-explained) post breaks down where each fits.
 
@@ -75,13 +75,13 @@ Good IT support for a trades business should include making sure these systems a
 
 ## The risks worth taking seriously
 
-The security risks for a trades business are not exotic. They are the same risks every SME faces, with two twists.
+The security risks for a trades business are not exotic. They are the same risks every SME (small and medium enterprise) faces, with two twists.
 
 ### Van or site laptop loss
 
 Laptops and tablets disappear. They get left on site, stolen from vans, dropped in wet conditions. If the device was not encrypted, everything on it — client contacts, quotes, photos of homes — is now in someone else's hands.
 
-The fix is simple. Every business device should have disk encryption on (BitLocker for Windows, FileVault for Mac), an auto-lock after a few minutes, and the ability to wipe remotely. Microsoft's Intune and Apple's tools both support this. It is free on a Business Premium licence.
+The fix is simple. Every business device should have disk encryption on (BitLocker for Windows, FileVault for Mac — scrambles the data if the device is stolen), an auto-lock after a few minutes, and the ability to wipe remotely. Microsoft's Intune (a tool for managing company phones and laptops from one place) and Apple's tools both support this. It is free on a Business Premium licence.
 
 ### Phone loss and mobile access
 
@@ -92,7 +92,7 @@ Phones get lost more than laptops. A business phone with email and shared docume
 Trades businesses get targeted with payment redirection scams — fake emails claiming a supplier's bank details have changed, sent at exactly the right time in an ongoing conversation. A thousand-euro materials order becomes a thousand euro going to a scammer. Two rules cover most of this:
 
 - Any change to supplier bank details gets a phone call to the supplier, not a reply to the email.
-- MFA everywhere, so an attacker cannot log into email and run the scam from your own account.
+- MFA (multi-factor authentication — that second code on your phone when you log in) everywhere, so an attacker cannot log into email and run the scam from your own account.
 
 Our [ransomware risks for small businesses](/blog/ransomware-risks-small-businesses) post covers the broader set of threats.
 
