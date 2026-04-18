@@ -9,6 +9,11 @@ vite.config.ts.*
 .env
 .env.local
 .env.*.local
+# Wrangler reads this for local `wrangler dev` (Worker secrets/vars). Never commit.
+.dev.vars
+
+# Wrangler local state and build cache. Production deploys build fresh from worker/index.ts.
+.wrangler/
 
 # Tooling / scratch
 .replit
