@@ -273,6 +273,33 @@ async function handleQuote(request: Request, env: Env): Promise<Response> {
   }
 }
 
+// Discovery resources advertised to agents via Link headers (RFC 8288).
+// Relations are from the IANA Link Relations registry; see RFC 9727 §3 for
+// rel="api-catalog" and the OpenAPI spec for service-desc / service-doc.
+const LINK_HEADER = [
+  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+  '</.well-known/openapi.json>; rel="service-desc"; type="application/openapi+json"',
+  '</pricing>; rel="service-doc"; type="text/html"',
+  '</.well-known/organization.jsonld>; rel="describedby"; type="application/ld+json"',
+].join(", ");
+
+function withLinkHeaders(response: Response): Response {
+  // Only attach the discovery Link header to HTML navigations, not to images
+  // or JS bundles.
+  const ct = response.headers.get("content-type") ?? "";
+  if (!ct.includes("text/html")) return response;
+  const headers = new Headers(response.headers);
+  // Append rather than overwrite so any existing Link headers (e.g. preload
+  // hints) are preserved.
+  const existing = headers.get("link");
+  headers.set("link", existing ? `${existing}, ${LINK_HEADER}` : LINK_HEADER);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
@@ -286,6 +313,7 @@ export default {
       return handleQuote(request, env);
     }
 
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+    return withLinkHeaders(response);
   },
 } satisfies ExportedHandler<Env>;

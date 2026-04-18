@@ -1,0 +1,67 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://crettyarddigital.ie/#organization",
+  "name": "Crettyard Digital",
+  "alternateName": "Crettyard Digital Ireland",
+  "description": "Web design, Microsoft 365 setup, managed IT, cybersecurity, and network solutions for small businesses in Laois, Carlow, Kilkenny, Kildare, Offaly, and Tipperary.",
+  "url": "https://crettyarddigital.ie",
+  "email": "info@crettyarddigital.ie",
+  "telephone": "+353879700701",
+  "image": "https://crettyarddigital.ie/opengraph.jpg",
+  "logo": "https://crettyarddigital.ie/favicon.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Crettyard",
+    "addressRegion": "Co. Laois",
+    "addressCountry": "IE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.8534,
+    "longitude": -7.1574
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "County Laois" },
+    { "@type": "AdministrativeArea", "name": "County Carlow" },
+    { "@type": "AdministrativeArea", "name": "County Kilkenny" },
+    { "@type": "AdministrativeArea", "name": "County Kildare" },
+    { "@type": "AdministrativeArea", "name": "County Offaly" },
+    { "@type": "AdministrativeArea", "name": "County Tipperary" }
+  ],
+  "serviceType": [
+    "Web Design",
+    "Microsoft 365 Setup",
+    "Managed IT Support",
+    "Network and Wi-Fi Solutions",
+    "Cybersecurity",
+    "AI and Microsoft Copilot Readiness",
+    "Grow Digital Voucher Ready Services"
+  ],
+  "priceRange": "\u20ac\u20ac",
+  "sameAs": [
+    "https://crettyarddigital.ie"
+  ],
+  "potentialAction": [
+    {
+      "@type": "ContactAction",
+      "name": "Contact via API",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://crettyarddigital.ie/api/contact",
+        "httpMethod": "POST",
+        "contentType": "application/json"
+      }
+    },
+    {
+      "@type": "RequestAction",
+      "name": "Request a quote",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://crettyarddigital.ie/api/quote",
+        "httpMethod": "POST",
+        "contentType": "application/json"
+      }
+    }
+  ]
+}

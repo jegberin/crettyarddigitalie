@@ -1,0 +1,165 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Crettyard Digital Public API",
+    "description": "Endpoints exposed by the Crettyard Digital marketing site for contact and quote submissions. These endpoints are intended for the site's own forms; programmatic use should respect the rate limits and contact info@crettyarddigital.ie for partnership integrations.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Crettyard Digital",
+      "email": "info@crettyarddigital.ie",
+      "url": "https://crettyarddigital.ie/contact"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://crettyarddigital.ie/terms-and-conditions"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://crettyarddigital.ie",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/api/contact": {
+      "post": {
+        "summary": "Submit a contact enquiry",
+        "operationId": "submitContact",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Submission accepted",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SuccessResponse" }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/quote": {
+      "post": {
+        "summary": "Submit a quote request from the quote builder",
+        "operationId": "submitQuote",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/QuoteRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Quote request accepted",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SuccessResponse" }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ContactRequest": {
+        "type": "object",
+        "required": ["name", "email", "message"],
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "phone": { "type": "string" },
+          "businessName": { "type": "string" },
+          "service": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      },
+      "QuoteRequest": {
+        "type": "object",
+        "required": ["contact", "services"],
+        "properties": {
+          "contact": {
+            "type": "object",
+            "required": ["name", "email"],
+            "properties": {
+              "name": { "type": "string" },
+              "email": { "type": "string", "format": "email" },
+              "businessName": { "type": "string" },
+              "phone": { "type": "string" },
+              "contactMethod": { "type": "string", "enum": ["email", "phone", "whatsapp"] },
+              "notes": { "type": "string" }
+            }
+          },
+          "businessType": {
+            "type": "string",
+            "enum": ["tradesperson", "professional", "retail", "regulated-financial", "manufacturing", "other"]
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["website", "m365", "phone", "managed-it", "network", "cybersecurity", "hardware", "ai", "grants", "not-sure"]
+            }
+          },
+          "timing": { "type": "string", "enum": ["asap", "this-quarter", "next-quarter", "exploring"] }
+        }
+      },
+      "SuccessResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean" }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": { "type": "string" }
+        }
+      }
+    }
+  }
+}

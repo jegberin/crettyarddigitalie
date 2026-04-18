@@ -1,0 +1,39 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://crettyarddigital.ie/",
+      "service-desc": [
+        {
+          "href": "https://crettyarddigital.ie/.well-known/openapi.json",
+          "type": "application/openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://crettyarddigital.ie/pricing",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
+      "anchor": "https://crettyarddigital.ie/api/contact",
+      "title": "Contact form submission",
+      "describedby": [
+        {
+          "href": "https://crettyarddigital.ie/.well-known/openapi.json",
+          "type": "application/openapi+json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://crettyarddigital.ie/api/quote",
+      "title": "Quote request submission",
+      "describedby": [
+        {
+          "href": "https://crettyarddigital.ie/.well-known/openapi.json",
+          "type": "application/openapi+json"
+        }
+      ]
+    }
+  ]
+}

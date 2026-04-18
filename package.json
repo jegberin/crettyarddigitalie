@@ -11,7 +11,6 @@
     "build:client": "tsx script/generate-sitemap.ts && vite build",
     "deploy": "npm run build:client && wrangler deploy",
     "start": "NODE_ENV=production node dist/index.cjs",
-    "export": "node script/export.js",
     "check": "tsc"
   },
   "dependencies": {
@@ -54,7 +53,6 @@
     "autoprefixer": "^10.4.21",
     "esbuild": "^0.28.0",
     "postcss": "^8.5.6",
-    "puppeteer": "^24.38.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.20.5",

@@ -1,7 +1,7 @@
 // Build-time sitemap generator.
 // Scans client/content/blog/*.md, combines with the hand-maintained static URL
-// set below, and writes sitemap.xml to both client/public/ and docs/ so the
-// runtime server and the optional static export stay aligned.
+// set below, and writes sitemap.xml into client/public/ so vite copies it into
+// the deployed assets.
 //
 // Runs automatically at the start of `npm run build` (see script/build.ts).
 
@@ -22,10 +22,7 @@ function splitFrontmatter(raw: string): { data: Record<string, unknown>; content
 
 const ROOT = path.resolve(process.cwd());
 const BLOG_DIR = path.join(ROOT, "client", "content", "blog");
-const OUTPUTS = [
-  path.join(ROOT, "client", "public", "sitemap.xml"),
-  path.join(ROOT, "docs", "sitemap.xml"),
-];
+const OUTPUTS = [path.join(ROOT, "client", "public", "sitemap.xml")];
 const BASE_URL = "https://crettyarddigital.ie";
 
 type StaticEntry = {
