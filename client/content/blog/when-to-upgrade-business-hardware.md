@@ -2,7 +2,7 @@
 slug: when-to-upgrade-business-hardware
 title: "When to upgrade business hardware — a practical SME checklist"
 description: "How to tell when laptops, PCs, servers, and network gear have become a drag on productivity — and how to plan hardware refresh without wasted spend."
-date: 2026-03-16
+date: 2026-02-09
 tags:
   - Managed Hardware
   - Small Business

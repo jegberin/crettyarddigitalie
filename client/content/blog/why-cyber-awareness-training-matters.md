@@ -2,7 +2,7 @@
 slug: why-cyber-awareness-training-matters
 title: "Why cyber awareness training matters for SMEs — and how to do it well"
 description: "Why staff cyber training is one of the highest-value security investments an Irish SME can make, and how to run it so people actually learn."
-date: 2025-12-15
+date: 2025-09-29
 tags:
   - Cybersecurity
   - Staff Training

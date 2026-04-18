@@ -2,7 +2,7 @@
 slug: ransomware-risks-small-businesses
 title: "Ransomware risks for small businesses — a practical guide"
 description: "How ransomware actually reaches Irish SMEs, what a typical incident looks like, and the handful of controls that make the biggest difference."
-date: 2026-04-06
+date: 2026-03-23
 tags:
   - Cybersecurity
   - Ransomware

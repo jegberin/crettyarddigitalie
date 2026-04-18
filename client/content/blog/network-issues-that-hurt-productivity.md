@@ -2,7 +2,7 @@
 slug: network-issues-that-hurt-productivity
 title: "Network issues that quietly hurt SME productivity"
 description: "The everyday network problems that cost Irish small businesses real time and money — slow Wi-Fi, flaky VPNs, overloaded switches — and how to fix them."
-date: 2026-02-02
+date: 2025-11-17
 tags:
   - Network
   - Productivity

@@ -2,7 +2,7 @@
 slug: signs-business-website-costing-you-leads
 title: "Signs your business website is quietly costing you leads"
 description: "Practical signs your small business website is losing you enquiries — and what to fix first. Written for Irish SMEs, trades, and professional services firms."
-date: 2026-04-13
+date: 2026-03-30
 tags:
   - Web Design
   - Lead Generation

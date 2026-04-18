@@ -2,7 +2,7 @@
 slug: break-fix-vs-managed-it
 title: "Break/fix vs managed IT — what actually makes sense for an SME"
 description: "A practical comparison of break/fix and managed IT support for Irish small businesses: what each model costs, what each covers, and when to switch."
-date: 2026-02-09
+date: 2025-11-24
 tags:
   - Managed IT
   - IT Support

@@ -2,7 +2,7 @@
 slug: budget-friendly-cyber-improvements
 title: "Budget-friendly cyber improvements every SME can make this quarter"
 description: "A practical set of cybersecurity improvements for Irish small businesses that cost little or nothing — and make the biggest difference against real attacks."
-date: 2026-01-12
+date: 2025-10-27
 tags:
   - Cybersecurity
   - Small Business

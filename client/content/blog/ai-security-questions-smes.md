@@ -2,7 +2,7 @@
 slug: ai-security-questions-smes
 title: "Security questions to ask before adopting an AI tool in your business"
 description: "A practical checklist of security questions every Irish small business should ask before rolling out an AI tool, from ChatGPT to Microsoft Copilot to niche SaaS."
-date: 2026-03-02
+date: 2026-01-12
 tags:
   - AI Readiness
   - Cybersecurity

@@ -2,7 +2,7 @@
 slug: when-to-review-m365-licences
 title: "When to review Microsoft 365 licences and permissions"
 description: "Why an Irish SME should review Microsoft 365 licences and permissions every quarter, what to look for, and how to trim waste without breaking anything."
-date: 2026-01-05
+date: 2025-10-20
 tags:
   - Microsoft 365
   - Cost Control

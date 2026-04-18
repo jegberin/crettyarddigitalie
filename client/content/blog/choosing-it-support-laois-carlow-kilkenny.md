@@ -2,7 +2,7 @@
 slug: choosing-it-support-laois-carlow-kilkenny
 title: "Choosing IT support in Laois, Carlow, and Kilkenny"
 description: "A practical guide for SMEs in Laois, Carlow, and Kilkenny on how to choose an IT support provider — what local means, what to ask, and what to avoid."
-date: 2025-12-08
+date: 2025-09-22
 tags:
   - Managed IT
   - Local

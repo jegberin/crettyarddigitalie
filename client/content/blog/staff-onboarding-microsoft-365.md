@@ -2,7 +2,7 @@
 slug: staff-onboarding-microsoft-365
 title: "Staff onboarding with Microsoft 365 — a practical playbook"
 description: "A step-by-step process for onboarding a new staff member in a small business Microsoft 365 tenant — from licence to laptop to day-one handover — done in under an hour."
-date: 2026-02-23
+date: 2025-12-29
 tags:
   - Microsoft 365
   - Onboarding

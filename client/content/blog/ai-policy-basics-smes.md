@@ -2,7 +2,7 @@
 slug: ai-policy-basics-smes
 title: "AI policy basics for SMEs — a one-page template you can actually use"
 description: "Why small businesses need an AI use policy, what it should cover, and a simple template that fits on one page and staff will read."
-date: 2026-01-26
+date: 2025-11-10
 tags:
   - AI Readiness
   - Policy

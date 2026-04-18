@@ -2,7 +2,7 @@
 slug: web-design-professional-services
 title: "Web design tips for Irish professional services firms"
 description: "What Irish solicitors, accountants, clinics, and consultants should actually focus on in a website — minus the generic advice. Built for firms whose buyers are wary and thorough."
-date: 2026-02-16
+date: 2025-12-15
 tags:
   - Web Design
   - Professional Services

@@ -2,7 +2,7 @@
 slug: what-secure-office-networking-includes
 title: "What secure office networking actually includes for an SME"
 description: "The network security basics every small Irish office should have in place — firewalls, segmentation, Wi-Fi, remote access — explained in plain English."
-date: 2025-12-22
+date: 2025-10-06
 tags:
   - Network
   - Cybersecurity

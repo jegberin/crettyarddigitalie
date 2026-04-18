@@ -2,7 +2,7 @@
 slug: what-proactive-it-support-includes
 title: "What proactive IT support actually includes (and what it does not)"
 description: "A plain-English breakdown of what good proactive IT support looks like for an Irish SME — the monitoring, maintenance, and quiet work that stops problems happening."
-date: 2026-03-23
+date: 2026-02-23
 tags:
   - Managed IT
   - Small Business
