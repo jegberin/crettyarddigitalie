@@ -23,9 +23,9 @@ This post is the short, practical sequence I run through for a new Microsoft 365
 
 The common mistake is doing the whole onboarding on the morning of day one, with the new hire watching. Push as much as possible into the week before.
 
-**Confirm the details with whoever's hiring.** First name, last name, preferred name if different, their role, their manager, their start date. Phone number they'll have for MFA setup. Home address if you're couriering equipment. Write this down in one place — ideally a shared HR or IT onboarding template.
+**Confirm the details with whoever's hiring.** First name, last name, preferred name if different, their role, their manager, their start date. Phone number they'll have for MFA (multi-factor authentication — that second code or prompt at login) setup. Home address if you're couriering equipment. Write this down in one place — ideally a shared HR or IT onboarding template.
 
-**Decide the licence.** For most Irish SMEs, the choice is between Microsoft 365 Business Basic, Business Standard, and Business Premium. Premium is the only tier that includes Intune (device management), Defender for Business, and Azure AD Premium P1 features — which is what you want for any serious security posture. Business Standard is fine for users who don't need full device management. A clear licence-decision rule, documented somewhere, saves thinking time every hire.
+**Decide the licence.** For most Irish SMEs (small and medium-sized businesses), the choice is between Microsoft 365 Business Basic, Business Standard, and Business Premium. Premium is the only tier that includes Intune (device management), Defender for Business, and Azure AD Premium P1 features — which is what you want for any serious security posture. Business Standard is fine for users who don't need full device management. A clear licence-decision rule, documented somewhere, saves thinking time every hire.
 
 **Decide the email address.** Usually firstname@ or firstname.lastname@. Pick a convention and stick to it — inconsistency causes trouble later when customers try to guess.
 
@@ -45,10 +45,10 @@ Small detail, big payoff. If these are populated, they show up in Outlook and Te
 
 For onboarding to scale, you want role-based groups, not ad-hoc permissions. A sales hire should be added to a "Sales" security group that already has access to:
 
-- The Sales SharePoint site
-- The sales shared mailbox
+- The Sales SharePoint site (Microsoft's shared document library)
+- The sales shared mailbox (a team inbox multiple people can read from, like sales@)
 - The sales Teams channel
-- Any sales-specific Conditional Access policies
+- Any sales-specific Conditional Access policies (rules that decide who can sign in, from where, and under what conditions)
 
 Adding the person to one group handles all of the above. Adding them to seven individual resources manually is a recipe for inconsistency and drift.
 
@@ -74,9 +74,9 @@ Add them to the Teams channels appropriate to their role. Check that they can jo
 
 ### 8. Prepare the laptop
 
-If they're getting a new laptop, ideally you're using Windows Autopilot or similar. The laptop ships from the supplier directly to the user. On first login, it self-configures — joins Entra ID, enrols in Intune, installs the approved apps, applies the policies — without IT ever physically touching the device.
+If they're getting a new laptop, ideally you're using Windows Autopilot or similar. The laptop ships from the supplier directly to the user. On first login, it self-configures — joins Entra ID (Microsoft's identity service, where your user accounts live), enrols in Intune, installs the approved apps, applies the policies — without IT ever physically touching the device.
 
-If you're not on Autopilot yet, the manual version is: set up the laptop with the standard image, install the core apps (Office, Teams, browser, any business-critical software), enable BitLocker encryption, enrol in Intune, then hand it over.
+If you're not on Autopilot yet, the manual version is: set up the laptop with the standard image, install the core apps (Office, Teams, browser, any business-critical software), enable BitLocker encryption (the built-in Windows full-disk encryption that protects data if the laptop is stolen), enrol in Intune, then hand it over.
 
 ### 9. Apply the device policy
 

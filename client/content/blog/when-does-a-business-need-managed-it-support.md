@@ -15,7 +15,7 @@ draft: false
 
 # When does a small business need managed IT support?
 
-Most Irish SMEs don't wake up one Monday and decide they need managed IT. It creeps up. A laptop won't join the Wi-Fi, a shared mailbox suddenly won't send, a former employee still has access to SharePoint, and nobody can remember who set up the backups — or whether they ever ran. By the time someone asks "should we have a proper IT provider?", the business is already losing hours every week to small problems that compound.
+Most Irish SMEs (small and medium enterprises) don't wake up one Monday and decide they need managed IT. It creeps up. A laptop won't join the Wi-Fi, a shared mailbox (an inbox multiple staff can read from, like info@) suddenly won't send, a former employee still has access to SharePoint (the Microsoft file-sharing system your team uses for documents), and nobody can remember who set up the backups — or whether they ever ran. By the time someone asks "should we have a proper IT provider?", the business is already losing hours every week to small problems that compound.
 
 This post is a plain read on when ad-hoc support stops being enough and a managed service starts to earn its keep. No sales pitch — just the signals I see in businesses across Laois, Carlow, and Kilkenny, and what to look for if you decide it's time to make the move.
 
@@ -27,7 +27,7 @@ Before the signals, a quick definition — because the phrase gets thrown around
 
 **Managed IT** is a fixed monthly arrangement where a provider takes ongoing responsibility for your systems. That typically includes monitoring, patching, user account management, backup verification, security controls, and a defined response time when something does go wrong. You're paying for prevention, not firefighting.
 
-The practical difference is that under managed IT, most of the issues that used to turn into tickets simply stop happening, because someone is watching and updating the environment before the user notices. For a plain-language starting point on what good looks like, the [NCSC's SME guidance](https://www.ncsc.gov.ie/guidance/) is a useful reference.
+The practical difference is that under managed IT, most of the issues that used to turn into tickets simply stop happening, because someone is watching and updating the environment before the user notices. For a plain-language starting point on what good looks like, the [NCSC's SME guidance](https://www.ncsc.gov.ie/guidance/) (the National Cyber Security Centre — Ireland's government cyber agency) is a useful reference.
 
 ## Six signs you've outgrown ad-hoc support
 
@@ -55,9 +55,9 @@ If you can't answer all three confidently, your backups are a hope, not a plan. 
 
 ### 4. Staff changes are messy
 
-Onboarding and offboarding are where small businesses quietly leak risk. The pattern is familiar: somebody joins, an email gets set up in a rush, they're given admin rights "just for today", and those rights never come off. Somebody leaves, their mailbox gets forwarded to a colleague, and their Microsoft 365 licence keeps billing for months. Their old OneDrive is still shared with the client.
+Onboarding and offboarding are where small businesses quietly leak risk. The pattern is familiar: somebody joins, an email gets set up in a rush, they're given admin rights "just for today", and those rights never come off. Somebody leaves, their mailbox gets forwarded to a colleague, and their Microsoft 365 licence keeps billing for months. Their old OneDrive (the personal cloud storage each Microsoft 365 user gets) is still shared with the client.
 
-A managed provider runs onboarding and offboarding as a defined process: licence assigned or revoked, MFA enrolled or removed, group memberships updated, mailbox handled per your policy, device wiped or reissued. Nothing is left to memory. If staff turnover is part of your business, this alone can justify the monthly fee — and it's tightly linked to [how your Microsoft 365 tenant is set up](/microsoft-365).
+A managed provider runs onboarding and offboarding as a defined process: licence assigned or revoked, MFA (multi-factor authentication — that second code on your phone when you log in) enrolled or removed, group memberships updated, mailbox handled per your policy, device wiped or reissued. Nothing is left to memory. If staff turnover is part of your business, this alone can justify the monthly fee — and it's tightly linked to [how your Microsoft 365 tenant is set up](/microsoft-365).
 
 ### 5. Security is "we haven't been hit yet"
 
@@ -66,7 +66,7 @@ The NCSC's guidance for Irish SMEs is blunt: a minor incident can have severe im
 A few questions that usually expose the gap:
 
 - Is MFA enforced for every user, including the owner and the accountant?
-- Is legacy email authentication (POP/IMAP without MFA) blocked?
+- Is legacy email authentication (older sign-in methods like POP/IMAP that skip MFA) blocked?
 - Are laptops encrypted and centrally managed, or just "company laptops"?
 - Would you know within 24 hours if a staff mailbox was compromised?
 
@@ -78,7 +78,7 @@ Five people sharing a single printer and a consumer router is a workable mess. F
 
 - Adding a second office or a remote/hybrid team
 - Hiring past ten employees
-- Handling client data that falls under GDPR duties you can't wing
+- Handling client data that falls under GDPR (the EU data protection rules) duties you can't wing
 - Bringing in any software that touches payments or health data
 - Moving from a shared inbox to proper shared mailboxes, Teams, and SharePoint
 
@@ -89,11 +89,11 @@ At each of those points, the margin for improvisation drops. You need somebody w
 Plans vary, but the baseline for a small Irish business should cover:
 
 - **User and device management** — joiner/leaver processes, device enrolment, patching, encryption
-- **Microsoft 365 tenant care** — licence reviews, MFA enforcement, sharing and retention policies, basic audit logging
+- **Microsoft 365 tenant care** — your tenant is your company's own walled-off area of Microsoft 365; care covers licence reviews, MFA enforcement, sharing and retention policies (rules for how long emails and files are kept), basic audit logging
 - **Backup** — including mailboxes and SharePoint/OneDrive, plus scheduled restore tests
-- **Security baseline** — endpoint protection, legacy auth blocked, Conditional Access where appropriate
+- **Security baseline** — endpoint protection (security software on every laptop and PC), legacy auth blocked, Conditional Access (rules that check who, where, and what device before letting someone sign in) where appropriate
 - **Monitoring and alerts** — somebody looks at the alerts that matter, and ignores the noise
-- **Helpdesk with a real SLA** — a response-time target you can hold them to in writing
+- **Helpdesk with a real SLA (service level agreement — a written promise of response times)** — a response-time target you can hold them to in writing
 - **A named contact** — not a ticket portal in another country with a 24-hour turnaround
 
 If you're being quoted a suspiciously cheap number, the usual missing pieces are backup verification, security baseline work, and joiner/leaver processes. Those are the bits that hurt most when they're absent.

@@ -29,7 +29,7 @@ If a member of staff is ever unsure where to save something, ask: "Would it matt
 
 ## OneDrive in detail
 
-OneDrive is one person's private cloud storage. Every licensed M365 user gets 1TB by default — plenty for most staff. Files you save there are yours, backed up to the cloud, and available on any signed-in device. You can share individual files with colleagues, but the default is private.
+OneDrive is one person's private cloud storage. Every licensed M365 (Microsoft 365) user gets 1TB by default — plenty for most staff. Files you save there are yours, backed up to the cloud, and available on any signed-in device. You can share individual files with colleagues, but the default is private.
 
 Good uses:
 
@@ -49,7 +49,7 @@ Fix this by making SharePoint the default for work files, and by running a prope
 
 ## SharePoint in detail
 
-SharePoint is where the business keeps its shared documents. In practice, most SMEs end up with one SharePoint site per area of the business — Finance, HR, Sales, Operations — plus a site for each significant project or client, depending on how you work.
+SharePoint is where the business keeps its shared documents. In practice, most SMEs (small and medium-sized businesses) end up with one SharePoint site per area of the business — Finance, HR, Sales, Operations — plus a site for each significant project or client, depending on how you work.
 
 Each SharePoint site has:
 

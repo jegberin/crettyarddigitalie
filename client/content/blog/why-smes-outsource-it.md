@@ -17,7 +17,7 @@ draft: false
 
 "We're just going to keep doing it ourselves for now" is a perfectly respectable answer for a small business when it comes to IT. I would never try to talk someone out of it if it is working. The question is whether it is actually working, or whether the business has quietly drifted into a position where the owner is the de-facto IT manager and nobody planned it that way.
 
-This post is about the honest reasons Irish SMEs eventually outsource IT, the shapes that tend to be a good fit, and how to tell whether you are ready.
+This post is about the honest reasons Irish SMEs (small and medium enterprises) eventually outsource IT, the shapes that tend to be a good fit, and how to tell whether you are ready.
 
 ## The usual story
 
@@ -39,7 +39,7 @@ The test: what could the owner be doing in those hours? If the honest answer is 
 
 The second reason is the quiet accumulation of risk. A small business that grew from five to twenty staff without an IT plan usually has:
 
-- Inconsistent MFA coverage.
+- Inconsistent MFA (multi-factor authentication — that second code on your phone when you log in) coverage.
 - Backups that are not tested.
 - Staff with more access than they need.
 - An unpatched firewall or two.
@@ -75,7 +75,7 @@ Outside these, the case for outsourcing most of the IT function at SME scale get
 
 **Fully managed IT.** External provider handles everything — helpdesk, infrastructure, security, projects. The right fit for most small businesses without an in-house IT function.
 
-**Project-only.** An external provider handles specific engagements (M365 migration, network refresh, website build) and you run everything else yourself. Useful when you want help on the big moves only.
+**Project-only.** An external provider handles specific engagements (M365 — Microsoft 365 — migration, network refresh, website build) and you run everything else yourself. Useful when you want help on the big moves only.
 
 The right answer depends on the size of the business, the risk appetite, and how much the owner wants to think about IT day to day.
 

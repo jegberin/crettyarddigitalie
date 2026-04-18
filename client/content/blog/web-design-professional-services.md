@@ -27,7 +27,7 @@ Visitors to a professional services website are asking a single question in a ha
 
 Not "is their site pretty?" Not "are their services explained?" Just: can I trust them.
 
-Every design and content decision should earn against that question. Anything that looks corporate-but-empty, or slick-but-anonymous, quietly fails the trust test even when it ticks every UX box. The firms who win on this are frequently the ones with the least flashy sites — but with visible people, clear language, and no marketing fluff.
+Every design and content decision should earn against that question. Anything that looks corporate-but-empty, or slick-but-anonymous, quietly fails the trust test even when it ticks every UX (user experience — how easy and pleasant a site is to use) box. The firms who win on this are frequently the ones with the least flashy sites — but with visible people, clear language, and no marketing fluff.
 
 ## 1. Show real people, named, early
 
@@ -82,7 +82,7 @@ What doesn't:
 - "Schedule a consultation" with no indication of cost
 - No phone number, or a phone number hidden in the footer
 
-A single, clear, low-commitment call-to-action on every page. Different verbs for different services, but always small and specific. You can see a version of this approach on our [how it works](/how-it-works) page.
+A single, clear, low-commitment call-to-action (the button or link you want the visitor to click) on every page. Different verbs for different services, but always small and specific. You can see a version of this approach on our [how it works](/how-it-works) page.
 
 ## 6. Get your local search right
 
@@ -109,7 +109,7 @@ For professional services, a clean, legible, calm design almost always beats som
 
 ## 9. Compliance details, visible but quiet
 
-Professional services firms carry regulatory obligations — professional body registration, GDPR, in some cases AML requirements, professional indemnity insurance. These should appear on the site in the footer or an About page: law society number, accountancy body membership, clinic registration. Not because buyers read them often, but because their absence is conspicuous when present in competitors' sites.
+Professional services firms carry regulatory obligations — professional body registration, GDPR (the EU's data protection rules), in some cases AML (anti-money-laundering) requirements, professional indemnity insurance. These should appear on the site in the footer or an About page: law society number, accountancy body membership, clinic registration. Not because buyers read them often, but because their absence is conspicuous when present in competitors' sites.
 
 One sentence in the footer is usually enough. Don't make it a wall.
 

@@ -15,15 +15,15 @@ draft: false
 
 # Budget-friendly cyber improvements every SME can make this quarter
 
-One of the quiet truths of cybersecurity for Irish small businesses is that the high-value controls are not the expensive ones. The things that stop the real attacks — phishing, password reuse, outdated software, loose permissions — are mostly either free or included in software you already pay for. The expensive enterprise tools rarely pay back at SME scale.
+One of the quiet truths of cybersecurity for Irish small businesses (SMEs — small and medium-sized enterprises) is that the high-value controls are not the expensive ones. The things that stop the real attacks — phishing, password reuse, outdated software, loose permissions — are mostly either free or included in software you already pay for. The expensive enterprise tools rarely pay back at SME scale.
 
 This post is a list of cyber improvements a small business can make this quarter for little or no extra money. No vendor pitches. No licence upgrades unless they genuinely pay back. A pragmatic list ordered roughly by return on effort.
 
 ## 1. Turn on MFA everywhere (free)
 
-If there is only time for one improvement, this is it. MFA on every business account — email, cloud apps, banking, accounting, admin consoles. Authenticator app rather than SMS where possible.
+If there is only time for one improvement, this is it. MFA (multi-factor authentication — that second code on your phone when you log in) on every business account — email, cloud apps, banking, accounting, admin consoles. Authenticator app rather than SMS where possible.
 
-MFA alone blocks the overwhelming majority of automated credential-theft attacks. It costs nothing on any Microsoft 365 plan or on most banking and SaaS platforms. The investment is a couple of hours of setup and a short session to walk staff through it.
+MFA alone blocks the overwhelming majority of automated credential-theft attacks. It costs nothing on any Microsoft 365 plan or on most banking and SaaS (software-as-a-service — tools you rent online rather than install) platforms. The investment is a couple of hours of setup and a short session to walk staff through it.
 
 ## 2. Roll out a password manager (low cost)
 
@@ -41,15 +41,15 @@ This takes 15 minutes and costs nothing. The admin account does not need its own
 
 ## 4. Review and remove orphaned user accounts (free)
 
-Walk the list of users in your Microsoft 365 tenant. For each one, confirm: is this person still employed here? If not, disable their account, reset the password, and either convert the mailbox to a shared one or delete it. Reassign the licence.
+Walk the list of users in your Microsoft 365 tenant (your organisation's private slice of Microsoft's cloud). For each one, confirm: is this person still employed here? If not, disable their account, reset the password, and either convert the mailbox to a shared one or delete it. Reassign the licence.
 
 Most SMEs have at least a couple of leaver accounts still active. Each one is a free entry point for an attacker and a wasted licence spend. A quarterly review keeps it clean.
 
 ## 5. Publish DMARC on your domain (free)
 
-SPF and DKIM are table stakes; DMARC is the free control most Irish SMEs still have not configured. Start with `p=none` and a reporting address, watch for two to four weeks, then move to `p=reject`.
+SPF (Sender Policy Framework) and DKIM (DomainKeys Identified Mail) are table stakes — the two DNS records that say which servers are allowed to send email for your domain. DMARC (Domain-based Message Authentication, Reporting and Conformance — the policy that tells receiving mail servers what to do when a message fails those checks) is the free control most Irish SMEs still have not configured. Start with `p=none` and a reporting address, watch for two to four weeks, then move to `p=reject`.
 
-DMARC at reject stops attackers forging emails from your domain to your clients and suppliers. That is one of the highest-value anti-fraud moves available and it only costs DNS changes. Our [email security basics for growing companies](/blog/email-security-basics-growing-companies) post has step-by-step.
+DMARC at reject stops attackers forging emails from your domain to your clients and suppliers. That is one of the highest-value anti-fraud moves available and it only costs DNS (Domain Name System — the records your domain uses on the public internet) changes. Our [email security basics for growing companies](/blog/email-security-basics-growing-companies) post has step-by-step.
 
 ## 6. Turn on Defender for Business if you have Business Premium (no extra cost if licensed)
 
@@ -59,13 +59,13 @@ If you are on Business Standard, the upgrade to Premium is modest per user per m
 
 ## 7. Block auto-forwarding out of Microsoft 365 (free)
 
-A common attacker trick after compromising an M365 mailbox is to set up a forwarding rule that copies every email to an external address. In the admin console, block external auto-forwarding at the tenant level. Any legitimate forwarding exception can be granted by a specific admin policy.
+A common attacker trick after compromising an M365 (Microsoft 365) mailbox is to set up a forwarding rule that copies every email to an external address. In the admin console, block external auto-forwarding at the tenant level. Any legitimate forwarding exception can be granted by a specific admin policy.
 
 ## 8. Configure device encryption (free on most modern devices)
 
-BitLocker on Windows (Pro edition), FileVault on macOS, device encryption on iPhones and Android phones. All of these are built in and free. They turn "laptop stolen from the van" from a data breach into an inconvenience.
+BitLocker (Microsoft's built-in disk encryption that scrambles the drive so a stolen laptop is unreadable) on Windows (Pro edition), FileVault on macOS, device encryption on iPhones and Android phones. All of these are built in and free. They turn "laptop stolen from the van" from a data breach into an inconvenience.
 
-For an SME, the process is: check every business device has encryption enabled, store the recovery keys centrally (M365 Entra does this automatically for joined devices), and include encryption check in the device setup runbook.
+For an SME, the process is: check every business device has encryption enabled, store the recovery keys centrally (M365 Entra ID — Microsoft's cloud identity service, formerly Azure AD — does this automatically for joined devices), and include encryption check in the device setup runbook.
 
 ## 9. Set up automatic patching (free, requires discipline)
 

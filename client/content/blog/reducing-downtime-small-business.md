@@ -25,7 +25,7 @@ In my experience across small businesses in Laois, Carlow, and Kilkenny, unplann
 
 1. Internet connection failing
 2. Power cut
-3. Key SaaS platform (Microsoft 365, CRM, payment terminal) going down
+3. Key SaaS platform (software-as-a-service — apps you rent online, like Microsoft 365, a CRM, or a payment terminal) going down
 4. Laptop or desktop breaking, with no quick replacement
 5. Cyber incident (mailbox compromise, ransomware, phishing)
 6. Human mistake during a change — a config push, a misclick in the admin console
@@ -38,7 +38,7 @@ A single fibre line is fine until the day it isn't. Work on the pole down the ro
 
 **The cheap fix: a 4G/5G failover router.** For around €20-40 a month plus the hardware cost, a router with a SIM slot can keep the business online when the main line goes down. Traffic switches over automatically. Staff might notice the internet feels slightly slower for an hour; they don't have to go home.
 
-**The structured fix: a second, different provider.** Many small businesses don't need this, but for operations where an offline hour costs thousands — payments, healthcare, regulated professional services — a second line from a different ISP, using different physical infrastructure, gets you true redundancy. Worth the extra €40-60 a month for the businesses that genuinely need it.
+**The structured fix: a second, different provider.** Many small businesses don't need this, but for operations where an offline hour costs thousands — payments, healthcare, regulated professional services — a second line from a different ISP (internet service provider), using different physical infrastructure, gets you true redundancy. Worth the extra €40-60 a month for the businesses that genuinely need it.
 
 Both options assume your router can handle failover. The cheap consumer router that came with your broadband typically can't. A business-grade router — the kind included in a proper [network and Wi-Fi](/network-wifi-security) setup — usually does.
 
@@ -46,7 +46,7 @@ Both options assume your router can handle failover. The cheap consumer router t
 
 A four-minute power blip shouldn't take your day down, but if the server in the cupboard or the switch in the comms rack loses power abruptly, it frequently needs a sit-down to come back up cleanly.
 
-**A small UPS on the critical gear** — the firewall, the switch, the server if you have one — costs €150-300 and holds the kit up through short power cuts, giving it a clean shutdown on longer ones. For a business that still has any on-site infrastructure, it's a trivial investment against a recurring problem.
+**A small UPS (uninterruptible power supply — a battery box that bridges short power cuts) on the critical gear** — the firewall, the switch, the server if you have one — costs €150-300 and holds the kit up through short power cuts, giving it a clean shutdown on longer ones. For a business that still has any on-site infrastructure, it's a trivial investment against a recurring problem.
 
 If you've moved entirely to the cloud (no on-premises server, no file server, no on-site phones), the UPS picture shifts — you care about the broadband router, the Wi-Fi, and the access points, not a server. The principle is the same; the list of things to protect is smaller.
 
@@ -78,7 +78,7 @@ Every small business has "backups". Not every small business has tested their ba
 
 The sensible pattern:
 
-- **Back up what matters, not everything.** Microsoft 365 data, customer databases, shared drives, anything unique to your business. The OS, the apps, the downloads folder — rebuild from a clean install.
+- **Back up what matters, not everything.** Microsoft 365 data, customer databases, shared drives, anything unique to your business. The OS (operating system), the apps, the downloads folder — rebuild from a clean install.
 - **Test a restore once a quarter.** Pick a random file from three months ago and restore it. If it works, note the date. If it doesn't, find out why and fix it.
 - **Keep at least one backup offsite or cloud-hosted.** Not on the same physical site. Not on the same network. Ransomware attacks on SMEs specifically target local backups.
 
@@ -90,7 +90,7 @@ The most expensive downtime most Irish SMEs experience isn't broadband or power 
 
 The controls that keep downtime low here are the same ones that keep breach risk low:
 
-- Enforced MFA (covered in our [weak passwords and MFA](/blog/cost-of-weak-passwords-mfa) post)
+- Enforced MFA (multi-factor authentication — that second code on your phone when you log in; covered in our [weak passwords and MFA](/blog/cost-of-weak-passwords-mfa) post)
 - Current patches on every device
 - Encrypted laptops
 - Sensible email filtering and anti-phishing policy

@@ -15,7 +15,7 @@ draft: false
 
 # Break/fix vs managed IT — what actually makes sense for an SME
 
-The question comes up fairly often with small business owners in Ireland. They have been running on break/fix — calling a local technician when something goes wrong and paying for the hour — and they are wondering whether a managed IT contract would actually save money. The honest answer is: it depends on the size of the business, the tolerance for downtime, and a few specific risk factors. This post walks through how to think about it.
+The question comes up fairly often with small business owners in Ireland. They have been running on break/fix — calling a local technician when something goes wrong and paying for the hour — and they are wondering whether a managed IT contract would actually save money. The honest answer is: it depends on the size of the business, the tolerance for downtime, and a few specific risk factors. This post walks through how to think about it, particularly for SMEs (small and medium enterprises).
 
 ## The two models in one paragraph each
 
@@ -44,7 +44,7 @@ The crossover happens somewhere around five to ten users, or sooner if the busin
 - **The bill is unpredictable.** One quarter is €400; the next is €2,800 because something broke. Cash flow hates this.
 - **Issues pile up because each call costs money.** Staff work around problems rather than report them. Small annoyances become big ones.
 - **Nobody is patching.** The technician fixes what breaks; nobody is watching whether Windows updates are applying, whether firewall firmware is current, whether backups are actually running.
-- **Security is not proactive.** MFA never gets rolled out. Staff reuse passwords. The tenant has never been reviewed. When something does happen, you find out weeks later.
+- **Security is not proactive.** MFA (multi-factor authentication — that second code on your phone when you log in) never gets rolled out. Staff reuse passwords. The tenant (your company's own walled-off area of Microsoft 365) has never been reviewed. When something does happen, you find out weeks later.
 - **The incident response is slow.** You call on Monday morning, the technician is booked until Wednesday, the business loses two days.
 
 Each of those is a cost that does not appear on the break/fix invoice but shows up in lost hours and eventually in a larger incident.
@@ -94,7 +94,7 @@ Switching from break/fix to managed is not a big project, but do it deliberately
 
 - A sample monthly report.
 - Their restore test procedure.
-- What happens in the first 30 minutes of a P1 incident.
+- What happens in the first 30 minutes of a P1 incident (P1 being the top priority — everything down or a serious breach).
 - How their contract termination works (month-to-month or annual, notice period, offboarding help).
 - What is included, what is extra, written in plain English.
 

@@ -44,7 +44,7 @@ The more impactful check. Microsoft's licence matrix for small businesses looks 
 
 - **Business Basic** — cloud apps, email, Teams, OneDrive. No desktop Office. Roughly €6 per user per month at current list prices in Ireland.
 - **Business Standard** — everything in Basic plus desktop Office apps. Around €12.
-- **Business Premium** — everything in Standard plus Defender for Business, Intune, conditional access, Azure AD Premium P1. Around €22.
+- **Business Premium** — everything in Standard plus Defender for Business, Intune (Microsoft's device-management tool for laptops and phones), conditional access (rules that decide who can sign in, from where, and under what conditions), Azure AD Premium P1 (the licence tier that unlocks those identity features). Around €22.
 - **Apps for business** — desktop Office only, no email. Around €9.
 - **Frontline (F1, F3)** — lightweight licences for shift workers. Lower cost, reduced features.
 
@@ -63,13 +63,13 @@ More on the security-driven case for Premium in our [securing Microsoft 365 for 
 
 ## Leaver handling
 
-The single biggest source of wasted licence spend at Irish SMEs. The workflow should be:
+The single biggest source of wasted licence spend at Irish SMEs (small and medium-sized businesses). The workflow should be:
 
 1. On the leaving date, block sign-in on the account.
 2. Reset the password to a random value.
-3. Remove all MFA methods and recovery methods.
+3. Remove all MFA (multi-factor authentication — the second code or prompt at login) methods and recovery methods.
 4. Remove admin roles and group memberships.
-5. If the mailbox needs to be retained, convert it to a shared mailbox (free, no licence needed) or apply a litigation hold on the licensed mailbox for the required period.
+5. If the mailbox needs to be retained, convert it to a shared mailbox (an unlicensed mailbox the team can still read from — free) or apply a litigation hold (a setting that preserves the mailbox's contents so nothing can be deleted) on the licensed mailbox for the required period.
 6. Reassign the licence to a new user or unassign it.
 7. Export OneDrive contents to a named folder owned by the leaver's manager.
 
@@ -113,7 +113,7 @@ A few that catch people:
 
 **Deleting a user too fast.** When a staff member leaves, keep the account in disabled state for 30 to 90 days before deletion. That covers any forgotten services or forwarded emails that need recovery.
 
-**Changing licences at renewal without checking what breaks.** Some features are tied to specific SKUs in non-obvious ways. Test on a non-critical user first.
+**Changing licences at renewal without checking what breaks.** Some features are tied to specific SKUs (specific product codes — different licence bundles) in non-obvious ways. Test on a non-critical user first.
 
 **Downgrading a Premium user who uses Intune.** If Intune-managed devices lose their licence, the policies stop applying. Confirm nothing will break.
 

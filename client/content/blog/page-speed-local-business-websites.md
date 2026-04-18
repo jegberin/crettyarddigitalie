@@ -23,7 +23,7 @@ This post is that shortlist. If you fix these, your site will load fast on a 4G 
 
 Two reasons. The first is obvious: a slow site loses visitors. Google's own field data, and every independent study done since 2018, tells the same story — the probability of a bounce climbs sharply between one and five seconds. A site that takes six seconds to show anything useful is hemorrhaging visitors before the logo renders.
 
-The second reason is search rankings. Google uses Core Web Vitals as a ranking signal. If you're within a whisker of competitors on relevance and content, the faster site wins the ranking fight. For a local business where most competitors are on slow, bloated WordPress templates, this is a surprisingly easy edge to claim.
+The second reason is search rankings. Google uses Core Web Vitals (a set of three performance scores Google uses to judge how a page feels to load) as a ranking signal. If you're within a whisker of competitors on relevance and content, the faster site wins the ranking fight. For a local business where most competitors are on slow, bloated WordPress templates, this is a surprisingly easy edge to claim.
 
 ## What Google actually measures
 
@@ -41,7 +41,7 @@ You can check all three for your site, for free, in Google's PageSpeed Insights 
 
 ### 1. Compress your hero image
 
-This is, without exaggeration, the single most common speed problem on Irish SME websites. A 4MB photograph straight off a photographer's camera, uploaded to the homepage, and shown to every visitor before anything else loads. A phone on 4G will take three or four seconds just to pull it down.
+This is, without exaggeration, the single most common speed problem on Irish SME (small or medium-sized business) websites. A 4MB photograph straight off a photographer's camera, uploaded to the homepage, and shown to every visitor before anything else loads. A phone on 4G will take three or four seconds just to pull it down.
 
 The fix: compress images before upload. A hero image should be under 300KB for most sites, under 150KB if you can manage it without visible loss. Tools like Squoosh (free, browser-based, from Google) will take any image and spit out a smaller version in a modern format. Use WebP where possible — it's supported by every browser that matters and is typically 25-35% smaller than JPEG at the same quality.
 
@@ -53,7 +53,7 @@ The fix: pick two fonts, in the weights you actually use, and drop the rest. If 
 
 ### 3. Remove plugins you don't need
 
-WordPress sites in particular accumulate plugins like ivy — analytics, chat, cookie banners, social feeds, sliders, lead magnets, three different SEO plugins that duplicate each other. Each one adds JavaScript and CSS to every page, whether you use it on that page or not.
+WordPress sites in particular accumulate plugins like ivy — analytics, chat, cookie banners, social feeds, sliders, lead magnets, three different SEO plugins that duplicate each other. Each one adds JavaScript and CSS (the code and styling that makes a page work and look right) to every page, whether you use it on that page or not.
 
 The fix: go through your plugin list and ask "is this doing something that visibly earns its keep?" Deactivate anything you can't justify. Most sites lose nothing by dropping half their plugins and speed up dramatically.
 
@@ -61,7 +61,7 @@ The fix: go through your plugin list and ask "is this doing something that visib
 
 A €3-a-month hosting plan is competing with hundreds of other sites for the same CPU. It'll run fine at 2am; it'll struggle under load at 10am. For a business website, the difference between bargain-basement shared hosting and a decent Irish-hosted plan is usually €15-30 a month. That's often the single best-value upgrade on the whole site.
 
-Signs you've outgrown your hosting: response times (TTFB) consistently over 800ms, the site going slow when one of the other sites on the server does a mail blast, random 500 errors on weekend evenings.
+Signs you've outgrown your hosting: response times (TTFB, or time to first byte — how long the server takes to respond) consistently over 800ms, the site going slow when one of the other sites on the server does a mail blast, random 500 errors on weekend evenings.
 
 ### 5. Use a CDN for images
 

@@ -15,9 +15,9 @@ draft: false
 
 # Network issues that quietly hurt SME productivity
 
-Most Irish small businesses accept a level of network friction as normal. Teams calls drop at the same point in the office every afternoon. The Wi-Fi "always goes weird when the accounts team are on" a particular task. The VPN fails for remote staff on Thursday mornings and nobody knows why. Each individual incident is small enough to shrug off. Stacked up across twenty people over a year, they cost real money.
+Most Irish small businesses accept a level of network friction as normal. Teams calls drop at the same point in the office every afternoon. The Wi-Fi "always goes weird when the accounts team are on" a particular task. The VPN (virtual private network — an encrypted tunnel into the office) fails for remote staff on Thursday mornings and nobody knows why. Each individual incident is small enough to shrug off. Stacked up across twenty people over a year, they cost real money.
 
-This post is about the common network issues I see in SMEs and what actually fixes them. Not a deep dive. A short catalogue so you can recognise what is going on in your own office.
+This post is about the common network issues I see in SMEs (small and medium-sized enterprises) and what actually fixes them. Not a deep dive. A short catalogue so you can recognise what is going on in your own office.
 
 ## Consumer-grade Wi-Fi in a business setting
 
@@ -25,7 +25,7 @@ The single most common problem. An office that started small had a domestic Wi-F
 
 The symptoms: random slowdowns, patchy coverage, disconnects during video calls, speeds that feel fine in the morning and slow by mid-afternoon. The cause is often simple — the router is at capacity, or the radio channels are overlapping with neighbours, or it is not placed where the coverage is needed.
 
-The fix is a proper small-business Wi-Fi solution: two or three business-grade access points placed around the office, connected by cable, with separate networks for staff, guests, and IoT devices (CCTV, printers, thermostats). Our [signs office Wi-Fi needs a review](/blog/signs-office-wifi-needs-review) post has the longer version.
+The fix is a proper small-business Wi-Fi solution: two or three business-grade access points placed around the office, connected by cable, with separate networks for staff, guests, and IoT (Internet of Things — connected devices like CCTV, printers, thermostats) devices. Our [signs office Wi-Fi needs a review](/blog/signs-office-wifi-needs-review) post has the longer version.
 
 ## Single overloaded switch
 
@@ -37,7 +37,7 @@ This shows up as intermittent speed issues, packet loss that degrades voice call
 
 If guest Wi-Fi is on the same network as the office, two bad things happen. First, guest devices can, in principle, reach business resources — printers, file shares, even the server in the corner. Second, the guest traffic competes with business traffic, so one cousin's holiday photos upload crashes the office video call.
 
-Segmentation is free once the kit supports it. A guest SSID on its own VLAN, with no route to the internal network, solves both problems. If the router does not support VLANs, it is time to upgrade.
+Segmentation is free once the kit supports it. A guest SSID (Wi-Fi network name) on its own VLAN (virtual LAN — a logical sub-network that keeps groups of devices apart), with no route to the internal network, solves both problems. If the router does not support VLANs, it is time to upgrade.
 
 ## Ageing firewall with outdated firmware
 
@@ -53,7 +53,7 @@ The cheapest broadband is rarely the right answer for a business. What matters i
 
 - **Upload speed.** Lots of cheap broadband is asymmetric — 500 Mbps down, 40 Mbps up. For a modern office with cloud backup, video calls, and staff using Teams, upload is the bottleneck that shows first.
 - **Latency.** A fibre connection with consistent 10 ms latency to Dublin is a different experience from a connection averaging 40 ms with spikes to 200. Voice and video calls are very sensitive.
-- **Service level.** Business-grade broadband typically comes with a support SLA and a static IP. Residential broadband does not.
+- **Service level.** Business-grade broadband typically comes with a support SLA (service level agreement — a written response/fix commitment from the provider) and a static IP (a fixed internet address). Residential broadband does not.
 - **Redundancy.** If broadband going down for a day is a material problem, you want a backup — a second provider, a 4G/5G failover, or a separate line.
 
 For an SME that depends on its network, a business-grade connection with an SLA is worth the extra spend. It is usually a modest jump from a residential-grade deal and pays back the first time the internet drops at 9am on a Monday.
@@ -62,17 +62,17 @@ For an SME that depends on its network, a business-grade connection with an SLA 
 
 Lockdown-era VPNs are a common problem. The business rolled out remote access quickly in 2020, the configuration has not been touched since, and now there are twice as many users and different working patterns. Symptoms include staff unable to connect at peak hours, slow transfers through the VPN, and constant reconnection prompts.
 
-Modern alternatives are usually better for the average SME. For cloud-based work, a properly configured M365 tenant with conditional access removes most of the reason for a VPN in the first place. For legacy on-prem applications, a well-configured VPN is still the right tool — but it needs a review, a licence count, and modern authentication rather than a shared password.
+Modern alternatives are usually better for the average SME. For cloud-based work, a properly configured M365 (Microsoft 365 — the cloud subscription that includes Outlook, Teams, Word, Excel) tenant (your organisation's private slice of Microsoft's cloud) with conditional access (rules that only let sign-ins through if they meet conditions like device, location, or risk) removes most of the reason for a VPN in the first place. For legacy on-prem applications, a well-configured VPN is still the right tool — but it needs a review, a licence count, and modern authentication rather than a shared password.
 
 ## Printers on Wi-Fi, trying their best
 
 Printers are the quiet disaster of small-office networking. They drop off the network, refuse to pair with new laptops, get rediscovered by Windows under a different name each quarter, and generate more support tickets per device than almost anything else.
 
-Two fixes. First, give printers a wired connection where you can — Wi-Fi printers are a compromise that should only be made when cable runs are impossible. Second, put them on a reserved IP address via DHCP, so the printer stays findable at the same address rather than moving around.
+Two fixes. First, give printers a wired connection where you can — Wi-Fi printers are a compromise that should only be made when cable runs are impossible. Second, put them on a reserved IP address via DHCP (the system that hands out network addresses), so the printer stays findable at the same address rather than moving around.
 
 ## DNS pointing at random public resolvers
 
-The default DNS server on a small business network is often whichever resolver the broadband router picked up — or Google's 8.8.8.8, which somebody set years ago. That is not a disaster, but it is a missed opportunity.
+The default DNS (Domain Name System — the internet's phonebook that turns names like google.com into addresses) server on a small business network is often whichever resolver the broadband router picked up — or Google's 8.8.8.8, which somebody set years ago. That is not a disaster, but it is a missed opportunity.
 
 Business-grade DNS services like Quad9, Cloudflare for Teams, or Microsoft's DNS with web content filtering provide a useful layer of protection — blocking known phishing and malware domains before any click can connect. These are inexpensive or free and take a short configuration change on the firewall to roll out. Our [cybersecurity](/cybersecurity) page covers this as part of a wider baseline.
 
@@ -86,7 +86,7 @@ Basic documentation is not a consulting project. A one-page diagram showing what
 
 Three cheap checks you can do yourself:
 
-1. **Run a speed test on the wired connection near the router.** If you do not get close to your advertised speed, the issue is upstream or in the router. If you do, the issue is downstream — Wi-Fi, switch, or endpoint.
+1. **Run a speed test on the wired connection near the router.** If you do not get close to your advertised speed, the issue is upstream or in the router. If you do, the issue is downstream — Wi-Fi, switch, or endpoint (the actual laptop or device).
 2. **Walk the office with the Wi-Fi analyser on your phone.** Note signal strength in each room, then the same for any neighbour networks on overlapping channels.
 3. **Ask staff for three specific frustrations.** Not "the internet is slow." Ask when, where, doing what. Patterns emerge fast.
 

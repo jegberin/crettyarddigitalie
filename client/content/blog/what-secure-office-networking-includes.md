@@ -15,7 +15,7 @@ draft: false
 
 # What secure office networking actually includes for an SME
 
-The phrase "secure office networking" gets used loosely. It tends to mean either "we changed the Wi-Fi password" or "we signed a contract with a cybersecurity firm," with not much in between. For a small or mid-sized Irish business, the honest answer sits closer to the middle: a handful of specific choices about how your network is designed, configured, and maintained.
+The phrase "secure office networking" gets used loosely. It tends to mean either "we changed the Wi-Fi password" or "we signed a contract with a cybersecurity firm," with not much in between. For a small or mid-sized Irish business (SME — small or medium-sized enterprise), the honest answer sits closer to the middle: a handful of specific choices about how your network is designed, configured, and maintained.
 
 This post walks through what those choices look like in practice. Not a definitive network engineering guide — a plain-English overview of what a sensible small office network should include in 2026.
 
@@ -29,7 +29,7 @@ An office network has a stack of layers that each contribute to security. When p
 - **Wi-Fi access points.** How wireless devices join the network.
 - **Network segmentation.** How traffic is separated into different zones.
 - **Remote access.** How people work from outside the office.
-- **Endpoint protection.** What happens on the devices themselves.
+- **Endpoint protection.** What happens on the devices themselves (endpoints — laptops, desktops, phones).
 - **Monitoring and documentation.** Visibility and knowing how the network is set up.
 
 Each layer in turn.
@@ -47,7 +47,7 @@ Every business network should have a real firewall — not just the basic one bu
 - Stateful inspection of traffic in both directions.
 - Intrusion prevention (blocking known attack patterns).
 - Content filtering (blocking known bad domains).
-- VPN termination for remote access.
+- VPN (virtual private network — an encrypted tunnel into the office) termination for remote access.
 - Logging that is useful when something goes wrong.
 
 Brands most Irish SMEs encounter include Sophos, Fortinet, SonicWall, WatchGuard, and Meraki. Any of them, properly configured, covers what a small office needs. Any of them, left at factory defaults with outdated firmware, is a liability.
@@ -66,7 +66,7 @@ The core firewall hygiene for a small office:
 Wired network gear. Less glamorous than Wi-Fi and more important. For a small office:
 
 - Business-grade managed switches, not unmanaged consumer ones.
-- Support for VLANs, so you can separate different types of traffic.
+- Support for VLANs (virtual LANs — ways to split one physical network into separate logical ones), so you can separate different types of traffic.
 - PoE (Power over Ethernet) for access points, phones, and cameras that need it.
 - Firmware up to date.
 - A tidy patch panel that someone in the future can understand.
@@ -80,8 +80,8 @@ For a business of any size beyond a handful of people, the consumer router Wi-Fi
 - Two or three business-grade access points — Ubiquiti UniFi, TP-Link Omada, Cisco Meraki, Aruba Instant On, or similar.
 - Cabled back to the switch, not mesh repeaters.
 - Managed centrally from a single console.
-- Separate SSIDs for staff, guest, and IoT (printers, CCTV, thermostats).
-- WPA3 where supported, WPA2 at minimum.
+- Separate SSIDs (Wi-Fi network names) for staff, guest, and IoT (Internet of Things — printers, CCTV, thermostats, anything on the network that is not a normal computer).
+- WPA3 (the modern Wi-Fi encryption standard) where supported, WPA2 at minimum.
 - Strong, rotated staff Wi-Fi password — or better, 802.1X authentication with user accounts.
 
 Our [signs office Wi-Fi needs a review](/blog/signs-office-wifi-needs-review) post covers the symptoms of Wi-Fi that has been left too long.
@@ -103,9 +103,9 @@ Working from home, on the road, or from a client site requires some form of remo
 
 For most small Irish businesses, the right modern approach is:
 
-- **Microsoft 365 / cloud-first** — if email, files, Teams, and most apps are in the cloud, remote workers need a good internet connection, MFA, and conditional access, not a VPN.
+- **Microsoft 365 / cloud-first** — if email, files, Teams, and most apps are in the cloud, remote workers need a good internet connection, MFA (multi-factor authentication — that second code on your phone when you log in), and conditional access (rules that only let a sign-in through if it meets conditions like device, location, or risk level), not a VPN.
 - **VPN for specific legacy apps** — use a modern VPN with MFA, user certificates, and time-of-day restrictions. Avoid shared passwords. Terminate the VPN on the firewall rather than on an internal server.
-- **Zero-trust tools where they fit** — for businesses with sensitive workloads and budget, modern zero-trust access tools (Cloudflare Access, Tailscale, Microsoft Entra Private Access) replace VPNs with per-app access control.
+- **Zero-trust tools where they fit** — for businesses with sensitive workloads and budget, modern zero-trust access tools (the "never trust, always verify" approach — every request is checked, even from inside the network) such as Cloudflare Access, Tailscale, or Microsoft Entra Private Access replace VPNs with per-app access control.
 
 A classic mistake is leaving old VPN infrastructure in place when the business has moved to cloud. Review it regularly.
 
@@ -114,7 +114,7 @@ A classic mistake is leaving old VPN infrastructure in place when the business h
 A secure network still depends on the devices connected to it being trustworthy. The endpoint layer includes:
 
 - Modern endpoint protection (Microsoft Defender for Business, or equivalent) centrally managed.
-- OS auto-update enforced.
+- OS (operating system — Windows, macOS) auto-update enforced.
 - Disk encryption on every laptop.
 - Staff accounts without local admin rights.
 - Device management enrolment for mobile phones accessing business email.

@@ -17,7 +17,7 @@ draft: false
 
 If you run a trades business in Ireland — plumber, electrician, builder, roofer, landscaper, groundworker — your website has one job: turn visitors into phone calls or quote requests. That is the whole test. Nothing about awards, aesthetics, or brand personality matters if the phone is not ringing.
 
-This post is a practical list of what an Irish trades business website actually needs to achieve that, ordered roughly by importance. No theory, no SEO jargon. Just the pages, content, and features that move the needle.
+This post is a practical list of what an Irish trades business website actually needs to achieve that, ordered roughly by importance. No theory, no SEO (search engine optimisation — how you rank on Google) jargon. Just the pages, content, and features that move the needle.
 
 ## The shape of the visitor
 
@@ -29,7 +29,7 @@ Everything below serves those 30 seconds.
 
 On every page, at the top, tappable on mobile. No clever hiding. No "get in touch" button that hides the number behind a form. The phone number is the single highest-value piece of the site for a trades business.
 
-If you take calls through a specific mobile, put that. If you have a landline, put both. Add a "tap to call" mobile link so pressing the number dials it. This is 90% of the UX of a trades website in one design decision.
+If you take calls through a specific mobile, put that. If you have a landline, put both. Add a "tap to call" mobile link so pressing the number dials it. This is 90% of the UX (user experience — how easy the site is to use) of a trades website in one design decision.
 
 ## 2. Clear service list
 
@@ -107,7 +107,7 @@ Most modern templates get this right. The common failure is installing 12 plugin
 
 ## 12. A privacy notice and basic GDPR
 
-If the site has a contact form, it collects personal data. You need a short privacy notice explaining what happens to that data, a cookie banner if you use tracking tools, and a process to delete personal data on request. These are legal requirements under GDPR in Ireland and are enforced.
+If the site has a contact form, it collects personal data. You need a short privacy notice explaining what happens to that data, a cookie banner if you use tracking tools, and a process to delete personal data on request. These are legal requirements under GDPR (the EU's data protection rules) in Ireland and are enforced.
 
 Not a big job — a one-page privacy notice and a compliant cookie banner. Any decent web provider will set this up as standard.
 
@@ -142,7 +142,7 @@ Our [trades](/trades) service page shows how we approach these builds, and the [
 
 ## Care plan afterwards
 
-A site that works on launch day will not work a year later without some maintenance. Plugins and themes need updating, SSL certificates renewing, backups running, broken links catching. This is what a [website care plan](/website-care-plans) covers — and it is worth having in place for a trades business site that is actively sending you leads.
+A site that works on launch day will not work a year later without some maintenance. Plugins and themes need updating, SSL certificates (the padlock in the browser bar that keeps the site secure) renewing, backups running, broken links catching. This is what a [website care plan](/website-care-plans) covers — and it is worth having in place for a trades business site that is actively sending you leads.
 
 ## A short next step
 
