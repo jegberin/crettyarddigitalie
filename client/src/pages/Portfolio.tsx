@@ -23,6 +23,7 @@ interface Project {
   imageAlt: string;
   industry: string;
   services: ProjectService[]; // first entry is primary
+  relationshipLine: string;
   challenge: string;
   solution: string;
   outcome: string;
@@ -37,6 +38,7 @@ export default function Portfolio() {
       image: project1,
       imageAlt: "BM Custom Furniture — bespoke fitted furniture and wall panelling website homepage",
       industry: "Home & Interiors",
+      relationshipLine: "9 years of service · 2016–2025 · Website, hardware, bookkeeping, all support",
       services: [
         { href: "/web-design", label: "Web Design" },
       ],
@@ -51,6 +53,7 @@ export default function Portfolio() {
       image: project2,
       imageAlt: "Go Green Steam Clean — eco-friendly steam cleaning business website homepage",
       industry: "Cleaning Services",
+      relationshipLine: "Live and supported since 2025 · Monthly updates and support",
       services: [
         { href: "/web-design", label: "Web Design" },
       ],
@@ -65,6 +68,7 @@ export default function Portfolio() {
       image: project3,
       imageAlt: "Nurney Plant and Civil — plant hire and civil engineering website homepage",
       industry: "Civil Engineering & Plant Hire",
+      relationshipLine: "Live and supported since 2022 · Website, Microsoft 365, Wi-Fi",
       services: [
         { href: "/web-design", label: "Web Design" },
         { href: "/microsoft-365", label: "Microsoft 365" },
@@ -81,6 +85,7 @@ export default function Portfolio() {
       image: project4,
       imageAlt: "More Than Points — teen and parent coaching website homepage",
       industry: "Education & Coaching",
+      relationshipLine: "Live and supported since 2026 · Ongoing support",
       services: [
         { href: "/web-design", label: "Web Design" },
       ],
@@ -95,6 +100,7 @@ export default function Portfolio() {
       image: project5,
       imageAlt: "Crettyard.ie — community website for Crettyard, Co. Laois",
       industry: "Community & Local",
+      relationshipLine: "Live and supported since 2026 · Ongoing support and development",
       services: [
         { href: "/web-design", label: "Web Design" },
       ],
@@ -115,10 +121,10 @@ export default function Portfolio() {
               Portfolio &mdash; Web Design, Microsoft 365 &amp; IT Case Studies for Irish Small Businesses
             </h1>
             <p className="text-xl text-foreground mb-4 leading-relaxed font-sans font-normal" data-testid="text-portfolio-intro">
-              Every case study here started the same way &mdash; a business owner who knew they needed better technology but wasn't sure where to start. I helped them get found on Google, look professional, and grow their business.
+              These aren&rsquo;t projects I delivered and walked away from. Most are still active clients today. One ran for nine years before the relationship naturally concluded. Either way &mdash; these are relationships, not transactions.
             </p>
             <p className="text-lg text-foreground leading-relaxed font-sans">
-              These aren't template sites or generic setups. Each project below was built around the business's specific goals, customers, and location &mdash; with clients ranging from Carlow and Laois to wherever the next Irish small business calls from.
+              Each project was built around the business&rsquo;s specific goals, customers, and location. The clients below range from Carlow and Laois to wherever the next Irish small business calls from &mdash; and the work continues for as long as it&rsquo;s the right fit.
             </p>
           </FadeIn>
         </div>
@@ -155,6 +161,9 @@ export default function Portfolio() {
                         {project.industry}
                       </span>
                     </div>
+                    <p className="mt-3 text-[13px] font-headline font-semibold text-accent" data-testid={`text-relationship-${index}`}>
+                      {project.relationshipLine}
+                    </p>
                     {project.services.length > 1 && (
                       <div className="mt-3 flex items-center flex-wrap gap-2">
                         <span className="text-xs font-headline font-bold uppercase tracking-wider text-muted-foreground">Services delivered:</span>

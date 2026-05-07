@@ -113,6 +113,9 @@ export default function Contact() {
             <p className="text-xl text-foreground leading-relaxed max-w-2xl mx-auto font-sans font-normal" data-testid="text-contact-intro">
               Whether you have a clear plan or just a rough question, get in touch. I'll get back to you within one business day with honest, plain-English advice. Every conversation starts with listening &mdash; not selling.
             </p>
+            <p className="mt-5 text-base text-foreground/85 leading-relaxed max-w-2xl mx-auto font-sans" data-testid="text-credentialling">
+              Run by Joey &mdash; fifteen years inside Microsoft, Intel and Dell, 26 industry certifications, one accountable person from first call onwards.
+            </p>
             <p className="mt-6 text-sm text-foreground/80 font-headline font-bold tracking-wide" data-testid="text-trust-line">
               Fast response &middot; Nationwide coverage &middot; Plain-English advice &middot; Grant and compliance guidance included
             </p>
@@ -182,13 +185,15 @@ export default function Contact() {
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {[
-              "You need a website but don't know where to start",
-              "Your current site looks outdated or isn't bringing in enquiries",
-              "You want professional email, Teams, or a business phone system",
+              "You're spending time on IT that should not be your problem",
+              "Your IT setup is a tangle of providers and you want one accountable person",
+              "You're worried about a compliance regulation (GDPR, NIS2, EAA, DORA) and don't know where to start",
+              "A larger client is asking about your security and you need to give them a credible answer",
+              "You want professional email, Teams, or a business phone system done properly",
               "Your office Wi-Fi or network keeps causing problems",
-              "You need help with cybersecurity, GDPR, or NIS2 compliance",
-              "You're interested in a government grant for your website or digital tools",
+              "You need a website that ranks locally and integrates with your email and IT",
               "You want to explore AI tools like Microsoft Copilot",
+              "You're interested in a government grant for your website or digital tools",
               "You just want honest advice — even if you're not ready to buy yet",
             ].map((item, index) => (
               <StaggerItem key={index}>

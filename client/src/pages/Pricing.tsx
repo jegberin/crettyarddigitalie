@@ -4,10 +4,11 @@ import { CheckCircle, ArrowRight, BadgeEuro, MonitorSmartphone, Cloud, ServerCog
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { FragmentedVsIntegrated } from "@/components/FragmentedVsIntegrated";
 
 const bundles = [
   {
-    name: "Starter Bundle",
+    name: "Foundation Bundle",
     tagline: "Get Online Properly",
     target: "Solo traders and micro-businesses (1\u20133 people)",
     setup: "From \u20ac1,099",
@@ -15,17 +16,17 @@ const bundles = [
     grant: "Software elements may qualify for Grow Digital Voucher (50% up to \u20ac5,000)",
     popular: false,
     items: [
-      "Professional website (up to 3 pages)",
-      "Website Care Plan (hosting, security, backups)",
       "Microsoft 365 Business Basic (professional email)",
       "Microsoft 365 setup and configuration",
       "MFA and basic security",
       "GDPR-compliant forms and cookie consent",
+      "Professional website (up to 3 pages)",
+      "Website Care Plan (hosting, security, backups)",
       "Google Business Profile guidance",
     ],
   },
   {
-    name: "Business Bundle",
+    name: "Operations Bundle",
     tagline: "Compete and Win",
     target: "Established businesses (3\u201310 people)",
     setup: "From \u20ac2,499",
@@ -33,20 +34,20 @@ const bundles = [
     grant: "Software elements may qualify for Grow Digital Voucher (50% up to \u20ac5,000)",
     popular: true,
     items: [
-      "Professional website (4\u20137 pages, full SEO)",
-      "Website Care Plan (Premium tier)",
+      "Essential Managed IT Support",
       "Microsoft 365 Business Standard (full Office suite)",
       "Full M365 setup, migration, and training",
       "Microsoft Teams Phone",
-      "Essential Managed IT Support",
       "Network health check and Wi-Fi optimisation",
       "GDPR setup and cookie compliance",
+      "Professional website (4\u20137 pages, full SEO)",
+      "Website Care Plan (Premium tier)",
       "Web accessibility check (EAA)",
       "Google Business Profile optimisation",
     ],
   },
   {
-    name: "Growth Bundle",
+    name: "Enterprise Bundle",
     tagline: "Your Complete IT Department",
     target: "Growing businesses (10\u201320 people), professional services, regulated firms",
     setup: "Custom quoted",
@@ -54,12 +55,10 @@ const bundles = [
     grant: "Grant eligibility assessed during consultation",
     popular: false,
     items: [
-      "Custom website with conversion optimisation",
-      "Premium Website Care Plan with monthly SEO",
+      "Professional Managed IT Support (priority SLA)",
       "Microsoft 365 Business Premium (advanced security)",
       "Full migration, hardening, and team training",
       "Microsoft Teams Phone for all users",
-      "Professional Managed IT Support (priority SLA)",
       "Full network design and installation",
       "Cybersecurity audit and staff awareness training",
       "NIS2 readiness assessment",
@@ -67,6 +66,8 @@ const bundles = [
       "DORA readiness (if financial sector)",
       "Quarterly on-site IT and strategy reviews",
       "Microsoft Copilot readiness assessment",
+      "Custom website with conversion optimisation",
+      "Premium Website Care Plan with monthly SEO",
     ],
   },
 ];
@@ -140,6 +141,57 @@ export default function Pricing() {
               </a>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Five Vendors vs One Trusted Partner */}
+      <section className="py-20 bg-[#f3f4f5]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FragmentedVsIntegrated
+            eyebrow="Why Bundle"
+            heading="Five Vendors vs One Trusted Partner"
+            intro="The case for bundling isn’t price — it’s accountability. Five providers means five strategies that don’t talk to each other."
+          />
+        </div>
+      </section>
+
+      {/* Which tier is right for me? */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="mb-12">
+            <span className="eyebrow mb-5 inline-block">Choosing a Tier</span>
+            <h2 className="text-2xl md:text-3xl mb-3">Which One Is Right for Me?</h2>
+            <p className="text-foreground max-w-2xl font-sans font-normal">
+              Three tiers, sized to where the business is today. The plan grows with you &mdash; nothing locks you into a tier.
+            </p>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Foundation",
+                fit: "If you have under 5 staff and just need things running",
+                desc: "Professional email, a clean website, basic security, no surprises. The starting point most businesses need before anything else.",
+              },
+              {
+                name: "Operations",
+                fit: "If you have a small team and want everything handled",
+                desc: "Managed IT, Teams Phone, network optimised, accessibility checked, compliance baseline in place. The point where IT stops being your job.",
+              },
+              {
+                name: "Enterprise",
+                fit: "If you handle regulated data or have 10+ staff",
+                desc: "Full NIS2 / GDPR / DORA, on-site reviews, staff training, Copilot readiness, the whole picture under one roof.",
+              },
+            ].map((tier) => (
+              <StaggerItem key={tier.name}>
+                <div className="bg-[#f3f4f5] p-6 rounded-2xl h-full" data-testid={`tier-fit-${tier.name.toLowerCase()}`}>
+                  <h3 className="text-lg font-headline font-extrabold text-primary mb-1">{tier.name}</h3>
+                  <p className="text-xs font-headline font-bold text-accent uppercase tracking-wider mb-3">{tier.fit}</p>
+                  <p className="text-foreground text-[14px] font-sans leading-relaxed">{tier.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 

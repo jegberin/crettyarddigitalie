@@ -42,6 +42,81 @@ export default function HowItWorks() {
         </div>
       </section>
 
+      {/* After Launch */}
+      <section className="py-28 bg-white">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">After Launch</span>
+            <h2 className="text-3xl">I Don't Disappear. Here's What Ongoing Looks Like.</h2>
+          </FadeIn>
+
+          <StaggerContainer className="space-y-6">
+            <StaggerItem>
+              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
+                <h3 className="text-lg mb-3">Your <Link href="/website-care-plans" className="text-primary hover:text-accent transition-colors">Website Care Plan</Link> (active from day one)</h3>
+                <div className="grid sm:grid-cols-2 gap-2">
+                  {[
+                    "Hosting, backups, and security running automatically",
+                    "Uptime and performance monitored",
+                    "Content changes made within a business day of request",
+                    "Problems fixed \u2014 often before you notice",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 text-[14px] font-sans">
+                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
+                <h3 className="text-lg mb-3">Your <Link href="/managed-it-support" className="text-primary hover:text-accent transition-colors">Managed IT Plan</Link> (if applicable)</h3>
+                <div className="grid sm:grid-cols-2 gap-2">
+                  {[
+                    "Systems monitored proactively",
+                    "M365 user management handled",
+                    "Security patches applied automatically",
+                    "Direct access to me \u2014 not a helpdesk",
+                    "Quarterly or monthly reviews depending on plan",
+                    "Compliance posture kept current",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 text-[14px] font-sans">
+                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
+                <h3 className="text-lg mb-3">How Support Actually Works</h3>
+                <div className="space-y-4 text-foreground text-[15px] font-sans leading-relaxed">
+                  <p>
+                    <strong>Need a content change?</strong> Send me an email or WhatsApp. I make the change &mdash; usually within a business day &mdash; and confirm when it&rsquo;s done. No ticket, no portal.
+                  </p>
+                  <p>
+                    <strong>Something broken?</strong> Call me. I already know your setup because I built it. Fast, informed support without repeating yourself to a stranger.
+                  </p>
+                  <p>
+                    <strong>Proactive monitoring?</strong> I run tools that check your systems continuously. If something has an issue at 2am, I get an alert. Most months, you won&rsquo;t hear from me about technical issues &mdash; because I&rsquo;ve already dealt with them.
+                  </p>
+                </div>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <FadeIn className="mt-10">
+            <p className="text-center text-foreground text-[15px] font-sans italic max-w-2xl mx-auto">
+              Documentation, credentials, and runbooks are written down &mdash; not stored in anyone&rsquo;s head. Continuity is built into the operating model, not promised verbally.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Before We Start */}
       <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -169,75 +244,6 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* After Launch */}
-      <section className="py-28 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FadeIn className="text-center mb-14">
-            <span className="eyebrow mb-5 inline-block">After Launch</span>
-            <h2 className="text-3xl">I Don't Disappear. Here's What Ongoing Looks Like.</h2>
-          </FadeIn>
-
-          <StaggerContainer className="space-y-6">
-            <StaggerItem>
-              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
-                <h3 className="text-lg mb-3">Your <Link href="/website-care-plans" className="text-primary hover:text-accent transition-colors">Website Care Plan</Link> (active from day one)</h3>
-                <div className="grid sm:grid-cols-2 gap-2">
-                  {[
-                    "Hosting, backups, and security running automatically",
-                    "Uptime and performance monitored",
-                    "Content changes made within a business day of request",
-                    "Problems fixed \u2014 often before you notice",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-[14px] font-sans">
-                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </StaggerItem>
-
-            <StaggerItem>
-              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
-                <h3 className="text-lg mb-3">Your <Link href="/managed-it-support" className="text-primary hover:text-accent transition-colors">Managed IT Plan</Link> (if applicable)</h3>
-                <div className="grid sm:grid-cols-2 gap-2">
-                  {[
-                    "Systems monitored proactively",
-                    "M365 user management handled",
-                    "Security patches applied automatically",
-                    "Direct access to me \u2014 not a helpdesk",
-                    "Quarterly or monthly reviews depending on plan",
-                    "Compliance posture kept current",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-[14px] font-sans">
-                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </StaggerItem>
-
-            <StaggerItem>
-              <div className="bg-[#f3f4f5] p-7 rounded-2xl">
-                <h3 className="text-lg mb-3">How Support Actually Works</h3>
-                <div className="space-y-4 text-foreground text-[15px] font-sans leading-relaxed">
-                  <p>
-                    <strong>Need a content change?</strong> Send me an email or WhatsApp. I make the change &mdash; usually within a business day &mdash; and confirm when it&rsquo;s done. No ticket, no portal.
-                  </p>
-                  <p>
-                    <strong>Something broken?</strong> Call me. I already know your setup because I built it. Fast, informed support without repeating yourself to a stranger.
-                  </p>
-                  <p>
-                    <strong>Proactive monitoring?</strong> I run tools that check your systems continuously. If something has an issue at 2am, I get an alert. Most months, you won&rsquo;t hear from me about technical issues &mdash; because I&rsquo;ve already dealt with them.
-                  </p>
-                </div>
-              </div>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="py-20 bg-[#f3f4f5]">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -279,7 +285,7 @@ export default function HowItWorks() {
           </FadeIn>
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { href: "/pricing", title: "Bundles & Pricing", desc: "Starter / Business / Growth bundles and full individual service pricing." },
+              { href: "/pricing", title: "Bundles & Pricing", desc: "Foundation / Operations / Enterprise bundles and full individual service pricing." },
               { href: "/web-design", title: "Web Design", desc: "4-week site builds from discovery to launch, care plan included." },
               { href: "/microsoft-365", title: "Microsoft 365", desc: "Email, Teams, Teams Phone, OneDrive, and Copilot readiness." },
               { href: "/portfolio", title: "Portfolio", desc: "Real projects with client testimonials \u2014 BM Custom Furniture, Nurney Plant and Civil, and more." },
