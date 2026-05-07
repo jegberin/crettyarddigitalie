@@ -17,11 +17,6 @@ interface Env {
   CF_API_TOKEN?: string;
   // Optional shared secret to gate the manual /api/refresh-markdown endpoint.
   MARKDOWN_REFRESH_SECRET?: string;
-  // Auto-injected per-deploy metadata (see wrangler.jsonc → version_metadata).
-  // Used to detect "this is a new deploy" and kick a background markdown
-  // refresh so the cache catches up to the new HTML without waiting for the
-  // next 03:00 UTC cron firing.
-  CF_VERSION_METADATA?: { id: string; tag?: string; timestamp?: string };
 }
 
 const VALID_BUSINESS_TYPES = new Set([
@@ -442,7 +437,6 @@ async function fetchMarkdownFromBrowserRendering(
 // well within budget. A failed route is logged and the loop continues — the
 // cached version stays under its 7-day TTL until the next refresh succeeds.
 const STATUS_KEY = "__last_refresh";
-const VERSION_KEY = "__build_version";
 const ROUTE_TTL_SECONDS = 60 * 60 * 24 * 7;
 const SPACER_MS = 200; // tiny breather between sequential calls
 
@@ -499,33 +493,9 @@ async function refreshAllRoutes(env: Env): Promise<{ ok: number; failed: number;
   return { ok, failed, durationMs, results };
 }
 
-// Post-deploy auto-refresh. The version_metadata binding gives us a UUID
-// that changes on every deploy. We compare to the version stored in KV; if
-// it differs (or is missing), this is the first run after a new deploy and
-// we kick a full refresh in the background. Stamping KV BEFORE running
-// prevents a thundering herd of concurrent refreshes when many requests
-// land in the same second post-deploy. The check itself is non-blocking
-// to the user request — wrapped in waitUntil by the caller.
-async function maybeKickPostDeployRefresh(env: Env): Promise<boolean> {
-  if (!env.MARKDOWN_CACHE || !env.CF_VERSION_METADATA?.id) return false;
-  const currentVersion = env.CF_VERSION_METADATA.id;
-  const stored = await env.MARKDOWN_CACHE.get(VERSION_KEY);
-  if (stored === currentVersion) return false;
-  // Stamp first so concurrent invocations short-circuit on the next read.
-  await env.MARKDOWN_CACHE.put(VERSION_KEY, currentVersion);
-  console.log(`[markdown] post-deploy refresh kicked for version ${currentVersion} (was ${stored ?? "unset"})`);
-  await refreshAllRoutes(env);
-  return true;
-}
-
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
-
-    // First request after a new deploy kicks a background markdown refresh.
-    // The check itself is a single KV read; if the version matches, it's a
-    // no-op. Wrapped in waitUntil so this never delays the user response.
-    ctx.waitUntil(maybeKickPostDeployRefresh(env).then(() => undefined));
 
     if (url.pathname === "/api/contact") {
       if (request.method !== "POST") return json({ error: "Method not allowed." }, 405);
@@ -572,10 +542,13 @@ export default {
     return withLinkHeaders(response);
   },
 
-  async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
-    // Daily full refresh: the cron fires once per day (see wrangler.jsonc).
-    // On the paid Workers plan the 15-minute waitUntil budget comfortably
-    // covers ~40 routes × ~4 s ≈ 160 s.
-    ctx.waitUntil(refreshAllRoutes(env).then(() => undefined));
+  async scheduled(_event: ScheduledController, env: Env, _ctx: ExecutionContext): Promise<void> {
+    // Daily full refresh. We await directly instead of wrapping in
+    // ctx.waitUntil() because waitUntil is capped at 30s by the runtime
+    // regardless of trigger type — only the scheduled() handler's own
+    // 15-minute wall-time budget covers the ~40 routes × ~4 s ≈ 160 s
+    // refresh. Awaiting directly keeps the invocation alive for that full
+    // budget. (See https://developers.cloudflare.com/workers/runtime-apis/context/)
+    await refreshAllRoutes(env);
   },
 } satisfies ExportedHandler<Env>;
