@@ -101,12 +101,49 @@ const specialistServices = [
   },
 ];
 
-const webDesignPricing = [
-  { service: "Starter website (1–3 pages)", price: "From €799 + €49/mo care" },
-  { service: "Business website (4–7 pages)", price: "From €1,299 + €49/mo care" },
+const webDesignProjects = [
+  { service: "Starter website (1–3 pages)", price: "From €799" },
+  { service: "Business website (4–7 pages)", price: "From €1,299" },
   { service: "Custom website / redesign", price: "Quoted on scope" },
-  { service: "Website Care Plan (Standard)", price: "€49/month" },
-  { service: "Website Care Plan (Premium)", price: "€79/month" },
+];
+
+const carePlans = [
+  {
+    name: "Website Care Plan — Standard",
+    price: "€49",
+    unit: "per month",
+    target: "Mandatory on every website I build. Keeps your site fast, secure, and compliant.",
+    items: [
+      "Reliable, fast EU-hosted infrastructure (Ireland data residency)",
+      "SSL certificate management",
+      "Weekly automated backups with off-site copy",
+      "Monthly security and software updates",
+      "Malware scanning and removal",
+      "Uptime monitoring with alerts",
+      "Cookie consent monitoring and updates",
+      "Up to 30 minutes of minor content changes per month",
+      "Direct access to me for questions and requests",
+    ],
+    popular: false,
+  },
+  {
+    name: "Website Care Plan — Premium",
+    price: "€79",
+    unit: "per month",
+    target: "For sites that earn their keep. Adds proactive performance, SEO, and accessibility work.",
+    items: [
+      "Everything in Standard",
+      "Daily automated backups",
+      "Staging environment for safe content changes",
+      "Monthly Core Web Vitals review and speed optimisation",
+      "Priority response for support requests",
+      "Up to 60 minutes of content changes per month",
+      "Monthly SEO health check (Search Console rankings, broken links, indexing)",
+      "Quarterly analytics summary",
+      "Annual accessibility (EAA / WCAG) compliance review",
+    ],
+    popular: true,
+  },
 ];
 
 export default function Pricing() {
@@ -296,23 +333,24 @@ export default function Pricing() {
 
       {/* Section 4 — Web Design */}
       <section className="py-28 bg-[#f3f4f5]">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <FadeIn className="text-center mb-12">
             <span className="eyebrow mb-5 inline-block">Web Design</span>
             <h2 className="text-3xl md:text-4xl mb-4">A Fixed-Price Project. Then a Care Plan That Keeps It Working.</h2>
             <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
-              Web design is the one part of what I do that genuinely is a one-off project. Pricing is straightforward, fixed before work starts, and includes the ongoing care plan that every site needs.
+              Web design is the one part of what I do that genuinely is a one-off project. Pricing is straightforward and fixed before work starts. Every site comes with a mandatory care plan &mdash; that&rsquo;s how I keep your site secure, fast, and compliant after launch.
             </p>
           </FadeIn>
 
-          <FadeIn>
+          {/* Project pricing — flat table, no big numbers (these are one-offs) */}
+          <FadeIn className="max-w-3xl mx-auto mb-14">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
               <div className="bg-primary px-6 py-3 flex items-center gap-3">
                 <MonitorSmartphone className="text-white" size={20} />
-                <h3 className="text-white font-headline font-bold text-sm">Web Design</h3>
+                <h3 className="text-white font-headline font-bold text-sm">Website Build (One-Off)</h3>
               </div>
               <div className="divide-y divide-gray-200">
-                {webDesignPricing.map((item, i) => (
+                {webDesignProjects.map((item, i) => (
                   <div key={i} className="flex items-center justify-between px-6 py-3.5">
                     <span className="text-foreground text-[14px] font-sans">{item.service}</span>
                     <span className="font-headline font-bold text-sm text-primary whitespace-nowrap ml-4">{item.price}</span>
@@ -322,7 +360,42 @@ export default function Pricing() {
             </div>
           </FadeIn>
 
-          <FadeIn className="text-center mt-8">
+          {/* Care plan tier cards — same visual pattern as Managed IT */}
+          <FadeIn className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl mb-3">Care Plans &mdash; Mandatory on Every Site</h3>
+            <p className="text-foreground max-w-2xl mx-auto font-sans font-normal text-[15px]">
+              A website without ongoing maintenance is a security risk and a wasted investment. Every site I build comes with one of these two plans &mdash; factored into the project quote from day one.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {carePlans.map((plan) => (
+              <StaggerItem key={plan.name}>
+                <div className={`rounded-2xl p-8 h-full flex flex-col ${plan.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-white border border-gray-100"}`}>
+                  {plan.popular && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Most Popular</span>
+                  )}
+                  <h3 className="text-lg mb-1">{plan.name}</h3>
+                  <p className="text-4xl font-headline font-extrabold text-primary mb-0">{plan.price}</p>
+                  <p className="text-sm text-muted-foreground mb-4 font-sans">{plan.unit}</p>
+                  <p className="text-[13px] text-foreground mb-6 font-sans leading-relaxed">{plan.target}</p>
+                  <ul className="space-y-2.5 flex-1 mb-6">
+                    {plan.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/website-care-plans">
+                    <Button className="w-full" variant={plan.popular ? "default" : "outline"}>See Care Plan Details</Button>
+                  </Link>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="text-center mt-10">
             <Link href="/web-design">
               <Button variant="outline">See Web Design Details &rarr;</Button>
             </Link>
