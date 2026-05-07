@@ -4,6 +4,7 @@ import { CheckCircle, AlertTriangle, Gauge, FileText, Lock, ArrowRight } from "l
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { ContinuityCommitment } from "@/components/ContinuityCommitment";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroTending from "@assets/website-care-hero-tending.webp";
 
@@ -45,7 +46,7 @@ export default function WebsiteCare() {
                 Website Care Plans &mdash; Every Website I Build Is Protected From Day One
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
-                A website isn't a "build it and forget it" project. Without regular updates, security monitoring, and maintenance, even the best website becomes slow, vulnerable, and outdated &mdash; and Core Web Vitals, malware scans and broken links start working against you in Google Search Console. That's why every website I build comes with a mandatory care plan &mdash; EU-hosted with Ireland data residency &mdash; so your investment is protected and your site keeps performing.
+                A website isn&rsquo;t a &ldquo;build it and forget it&rdquo; project &mdash; it&rsquo;s a piece of digital infrastructure that needs the same ongoing attention as the rest of your IT. Without regular updates, security monitoring, and maintenance, even the best website becomes slow, vulnerable, and outdated &mdash; and Core Web Vitals, malware scans and broken links start working against you in Google Search Console. That&rsquo;s why every website I build comes with a mandatory care plan &mdash; EU-hosted with Ireland data residency, integrated with the same security baseline I run for managed IT clients.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#plans">
@@ -233,6 +234,12 @@ export default function WebsiteCare() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <ContinuityCommitment />
         </div>
       </section>
 

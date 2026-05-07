@@ -4,6 +4,7 @@ import { Monitor, Server, ShieldCheck, Package, Clock, Phone, Zap, Lock, HardDri
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { ContinuityCommitment } from "@/components/ContinuityCommitment";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroFreshInstall from "@assets/hardware-hero-fresh-install.webp";
 import imgBusinessDesktop from "@assets/hardware-business-desktop.webp";
@@ -24,7 +25,7 @@ export default function ManagedHardware() {
                 Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use, Anywhere in Ireland
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
-                Turn it on, log in, get back to work. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across &mdash; thanks to Windows Autopilot and Microsoft Intune device enrolment done before the kit leaves me. No setup week. No lost productivity. No IT headaches. You focus on your business &mdash; I do the tech.
+                Hardware as part of a coherent IT setup &mdash; not boxes shipped to your office hoping someone in the team can figure it out. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across &mdash; via Windows Autopilot and Microsoft Intune device enrolment done before the kit leaves me. The Intune policies and security baseline match the rest of your tenant, so day-one fits the standards already running on your other devices.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact#send-message">
@@ -462,6 +463,12 @@ export default function ManagedHardware() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <ContinuityCommitment />
         </div>
       </section>
 

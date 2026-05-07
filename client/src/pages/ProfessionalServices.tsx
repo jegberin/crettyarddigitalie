@@ -31,6 +31,9 @@ export default function ProfessionalServices() {
               <p className="text-lg md:text-xl text-white/80 mb-8">
                 You handle sensitive client data every day. Your professional reputation &mdash; whether you&rsquo;re regulated by the Law Society of Ireland, Chartered Accountants Ireland, CPA Ireland, or the Central Bank &mdash; depends on that data being secure, your email being reliable, and your technology meeting the regulatory standards your industry demands. I provide the IT infrastructure, security, and compliance you need for firms in Dublin, Cork, Galway, and right across Ireland &mdash; without the corporate price tag or the jargon.
               </p>
+              <p className="text-base md:text-lg text-accent font-headline font-bold mb-8">
+                Big-firm controls. Small-firm responsiveness. Mid-firm pricing.
+              </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact#send-message">
                   <Button size="lg">Book a Free IT &amp; Compliance Review</Button>

@@ -6,6 +6,7 @@ import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { StatsStrip } from "@/components/StatsStrip";
+import { CredentialBand } from "@/components/CredentialBand";
 import type { CountyProfile } from "@/data/countyContent";
 
 type Service = "web-design" | "it-support";
@@ -43,7 +44,7 @@ const SERVICE_COPY: Record<Service, {
     searchHeading: "What Customers Search For",
     whyHeading: "Why Work With Crettyard Digital",
     relatedTitle: "IT Support in",
-    relatedDesc: "Managed IT, Microsoft 365, and cybersecurity for the same county — fixed monthly pricing, plain-English support.",
+    relatedDesc: "Managed IT, Microsoft 365, and cybersecurity for the same county. For most clients the website is the first step in a wider IT relationship — same person to contact for everything that comes after.",
     otherServiceHref: (slug) => `/it-support-${slug}`,
     otherServiceTitle: "Managed IT Support",
     pricing: {
@@ -189,6 +190,8 @@ export function CountyLandingPage({ profile, service }: CountyLandingPageProps) 
           </StaggerContainer>
         </div>
       </section>
+
+      <CredentialBand />
 
       {/* LEO / grants */}
       <section className="py-20 bg-[#f3f4f5]">

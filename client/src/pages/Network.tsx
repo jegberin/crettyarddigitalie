@@ -9,6 +9,7 @@ import iconProactiveMonitoring from "@assets/concept-proactive-monitoring.webp";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { ContinuityCommitment } from "@/components/ContinuityCommitment";
 
 // FAQ content kept in sync with faqData["/network-wifi-security"] in App.tsx,
 // which emits the FAQPage JSON-LD. Don't emit it from this component too.
@@ -54,7 +55,7 @@ export default function NetworkWifi() {
                 Business Network &amp; Wi&#8209;Fi Solutions for Offices and Workshops
               </h1>
               <p className="text-xl text-foreground mb-8 leading-relaxed font-sans font-normal">
-                Dropped connections, Wi&#8209;Fi dead spots, and unreliable internet cost your business time and money every single day. I design, install, and secure networks for small businesses across Ireland using Ubiquiti UniFi, MikroTik, and TP-Link Omada equipment &mdash; Wi&#8209;Fi 6, Wi&#8209;Fi 6E and Wi&#8209;Fi 7; Cat6a or Cat7 structured cabling (Cat8 for specialist runs); and CRA-compliant firewalls. Real coverage, real security, no consumer-grade shortcuts.
+                Network and Wi&#8209;Fi as part of a coherent IT setup &mdash; not a one-off install you&rsquo;ll never see again. I design, install, and secure networks for small businesses across Ireland using Ubiquiti UniFi, MikroTik, and TP-Link Omada equipment &mdash; Wi&#8209;Fi 6, Wi&#8209;Fi 6E and Wi&#8209;Fi 7; Cat6a or Cat7 structured cabling (Cat8 for specialist runs); and CRA-compliant firewalls. Configured to integrate with your Microsoft 365 tenant and your wider security baseline, not as an isolated piece of plumbing.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact#send-message">
@@ -488,6 +489,12 @@ export default function NetworkWifi() {
               </Link>
             </StaggerItem>
           </StaggerContainer>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <ContinuityCommitment />
         </div>
       </section>
 

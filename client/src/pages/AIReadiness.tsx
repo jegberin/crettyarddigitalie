@@ -4,6 +4,7 @@ import { BrainCircuit, Mail, FileText, Presentation, MessageSquare, Zap, CheckCi
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { ContinuityCommitment } from "@/components/ContinuityCommitment";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroCopilotInAction from "@assets/ai-hero-copilot-in-action.webp";
 
@@ -22,7 +23,7 @@ export default function AIReadiness() {
                 Microsoft 365 Copilot &amp; AI Readiness for Small Business &mdash; Practical, Not Hype
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
-                You've heard about AI, ChatGPT, and <Link href="/microsoft-365" className="text-accent underline decoration-accent/50 hover:decoration-accent">Microsoft 365</Link> Copilot. You're not sure what it can actually do for a business like yours &mdash; or where to start. I help small businesses cut through the noise, navigate the EU AI Act in plain English, and implement <strong>Microsoft 365 Copilot</strong>, <strong>Copilot Chat</strong>, or (where it fits) <strong>Copilot Studio</strong> and Azure OpenAI &mdash; with data access and permissions configured properly. Genuine productivity gains, no buzzwords.
+                AI as part of a coherent IT setup &mdash; not bolted onto a tenant nobody hardened first. You've heard about <Link href="/microsoft-365" className="text-accent underline decoration-accent/50 hover:decoration-accent">Microsoft 365</Link> Copilot, ChatGPT, and the rest. The tricky part isn&rsquo;t what AI can do; it&rsquo;s configuring permissions, data residency, and the EU AI Act controls properly so Copilot only sees what it should. I implement <strong>Microsoft 365 Copilot</strong>, <strong>Copilot Chat</strong>, or (where it fits) <strong>Copilot Studio</strong> and Azure OpenAI on top of an already-secured Microsoft 365 baseline. Genuine productivity gains, no buzzwords.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact#send-message">
@@ -242,6 +243,12 @@ export default function AIReadiness() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      <section className="py-10 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <ContinuityCommitment />
         </div>
       </section>
 

@@ -80,10 +80,18 @@ export default function Trades() {
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             <StaggerItem>
               <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                <img src={iconLocalSeo} alt="Glass magnifying glass on a search bar representing local SEO for tradespeople" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
-                <h3 className="text-lg mb-2">A Website That Brings in Work</h3>
-                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">Professional, mobile-friendly, designed to rank on Google when locals search for your trade. Portfolio gallery, quote request form, local SEO for your area. See the <Link href="/web-design" className="text-accent hover:underline">web design page</Link> for details.</p>
-                <p className="text-sm font-headline font-bold text-accent">From &euro;799</p>
+                <img src={icon365Admin} alt="Glass cog with envelope representing managed IT and Microsoft 365 administration" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">Managed IT That Prevents Problems</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">Proactive <Link href="/managed-it-support" className="text-accent hover:underline">managed IT support</Link>: monitoring, updates, security, and support for a fixed monthly fee. When something goes wrong, one call to someone who knows your setup.</p>
+                <p className="text-sm font-headline font-bold text-accent">From &euro;45/user/mo</p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
+                <img src={iconGdprShield} alt="Glass shield representing NIS2 supply-chain security for trade businesses" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">Security That Meets Supply Chain Requirements</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">MFA, email protection, endpoint security, and backup &mdash; documented and ready to show a main contractor or council if they ask about your <Link href="/cybersecurity" className="text-accent hover:underline">NIS2 supply-chain security</Link> posture.</p>
+                <p className="text-sm font-headline font-bold text-accent">Included in plans</p>
               </div>
             </StaggerItem>
             <StaggerItem>
@@ -104,18 +112,10 @@ export default function Trades() {
             </StaggerItem>
             <StaggerItem>
               <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                <img src={icon365Admin} alt="Glass cog with envelope representing managed IT and Microsoft 365 administration" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
-                <h3 className="text-lg mb-2">Managed IT That Prevents Problems</h3>
-                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">Proactive <Link href="/managed-it-support" className="text-accent hover:underline">managed IT support</Link>: monitoring, updates, security, and support for a fixed monthly fee. When something goes wrong, one call to someone who knows your setup.</p>
-                <p className="text-sm font-headline font-bold text-accent">From &euro;45/user/mo</p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
-                <img src={iconGdprShield} alt="Glass shield representing NIS2 supply-chain security for trade businesses" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
-                <h3 className="text-lg mb-2">Security That Meets Supply Chain Requirements</h3>
-                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">MFA, email protection, endpoint security, and backup &mdash; documented and ready to show a main contractor or council if they ask about your <Link href="/cybersecurity" className="text-accent hover:underline">NIS2 supply-chain security</Link> posture.</p>
-                <p className="text-sm font-headline font-bold text-accent">Included in plans</p>
+                <img src={iconLocalSeo} alt="Glass magnifying glass on a search bar representing local SEO for tradespeople" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
+                <h3 className="text-lg mb-2">A Website That Brings in Work</h3>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">Professional, mobile-friendly, designed to rank on Google when locals search for your trade. Portfolio gallery, quote request form, local SEO for your area. See the <Link href="/web-design" className="text-accent hover:underline">web design page</Link> for details.</p>
+                <p className="text-sm font-headline font-bold text-accent">From &euro;799</p>
               </div>
             </StaggerItem>
             <StaggerItem>
@@ -126,7 +126,7 @@ export default function Trades() {
                 <p className="text-sm font-headline font-bold text-accent">Up to &euro;5,000 funding</p>
               </div>
             </StaggerItem>
-          </StaggerContainer>
+</StaggerContainer>
         </div>
       </section>
 
