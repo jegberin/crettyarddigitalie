@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Shield, ShieldAlert, FileCheck, CheckCircle, ArrowRight, AlertTriangle, Download } from "lucide-react";
+import { Shield, ShieldAlert, FileCheck, CheckCircle, ArrowRight, AlertTriangle } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -126,7 +126,7 @@ export default function Cybersecurity() {
               The good news? Most of this is preventable and manageable &mdash; with the right setup and the right guidance.
             </p>
             <p className="text-[15px] text-foreground/80 font-sans max-w-2xl mx-auto">
-              Cybersecurity fits alongside <Link href="/managed-it-support" className="text-accent hover:underline">managed IT</Link>, <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>, and <Link href="/web-design" className="text-accent hover:underline">web design</Link> \u2014 with <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link> funding available for qualifying new security subscriptions.
+              Cybersecurity fits alongside <Link href="/managed-it-support" className="text-accent hover:underline">managed IT</Link>, <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>, and <Link href="/web-design" className="text-accent hover:underline">web design</Link> &mdash; with <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link> funding available for qualifying new security subscriptions.
             </p>
           </FadeIn>
         </div>
@@ -269,19 +269,6 @@ export default function Cybersecurity() {
                   </div>
                 ))}
               </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn>
-            <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Download className="text-accent shrink-0" size={28} />
-              <div className="flex-1">
-                <p className="font-headline font-bold text-primary mb-1">Free NIS2 IT Checklist for Small Businesses</p>
-                <p className="text-sm text-foreground font-sans">A plain-English checklist covering the five things every Irish small business should have in place. Send me your email and I&rsquo;ll reply with the checklist.</p>
-              </div>
-              <Link href="/contact#send-message">
-                <Button className="shrink-0">Request Checklist</Button>
-              </Link>
             </div>
           </FadeIn>
         </div>
