@@ -92,7 +92,7 @@ export default function ManagedHardware() {
               { icon: Zap, title: "Productive from day one", desc: "Your new PC or server arrives with Windows, your apps, your files, your email, your printer \u2014 everything. Log in, open your browser, you\u2019re working. No setup wizard, no day lost to configuration." },
               { icon: HardDrive, title: "Your data is already there", desc: "I handle the data migration from your old machines. Documents, photos, mail archives, bookmarks \u2014 it\u2019s all where you expect it. You don\u2019t lift a finger and you don\u2019t lose a file." },
               { icon: Lock, title: "Secure from the first login", desc: "Full-disk encryption enabled. Strong admin controls. Multi-factor authentication on your accounts. Microsoft Defender for Endpoint baseline enforced via Intune. Proper business-grade setup, not the out-of-the-box defaults that leave you exposed." },
-              { icon: Phone, title: "One number when something\u2019s wrong", desc: "If anything ever goes sideways, you ring me. I already know your setup because I built it. No ticketing queue, no explaining your environment to a stranger, no waiting days for a callback." },
+              { icon: Phone, title: "One person to contact when something\u2019s wrong", desc: "If anything ever goes sideways, you message me directly. I already know your setup because I built it. No ticketing queue, no explaining your environment to a stranger, no waiting days for a callback." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-7 rounded-2xl card-hover shadow-sm flex gap-5">
@@ -276,7 +276,7 @@ export default function ManagedHardware() {
               { num: "04", icon: ShieldCheck, title: "Build, harden, migrate", desc: "I build each system: install Windows properly licensed, apply all updates, enrol into Intune, configure Defender baselines, install your apps, and migrate your data from old machines \u2014 all before it ever reaches your office." },
               { num: "05", icon: Truck, title: "On-site install day", desc: "I come to you, set up the equipment, connect it to your network and peripherals, and run through the basics. Your team starts working on the new kit the same day." },
               { num: "06", icon: UserCheck, title: "Handover & quick training", desc: "A short walkthrough so your team knows what\u2019s changed, where files are, and how backups work. Written summary left with you for reference." },
-              { num: "07", icon: Clock, title: "Ongoing support (optional)", desc: "Add Hardware Care or a Managed IT plan for ongoing monitoring, updates, and priority support. One phone number forever." },
+              { num: "07", icon: Clock, title: "Ongoing support (optional)", desc: "Add Hardware Care or a Managed IT plan for ongoing monitoring, updates, and priority support. One person to contact, year after year." },
             ].map((step, i) => (
               <StaggerItem key={i}>
                 <div className="bg-[#f3f4f5] p-6 rounded-2xl flex gap-5 items-start">

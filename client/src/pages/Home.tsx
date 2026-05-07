@@ -322,7 +322,7 @@ export default function Home() {
             <span className="eyebrow mb-5 inline-block">What I Do</span>
             <h2 className="text-3xl md:text-4xl mb-3" data-testid="text-services-heading">One Trusted Partner for the Full Digital Surface of Your Business</h2>
             <p className="text-foreground max-w-2xl font-sans font-normal">
-              Most agencies build you a website and disappear. Most IT companies don&rsquo;t touch websites. Almost nobody covers the whole digital surface &mdash; so most small businesses end up with five vendors and nobody accountable. I do all of it, under one roof, with one number to ring, for the long haul.
+              Most agencies build you a website and disappear. Most IT companies don&rsquo;t touch websites. Almost nobody covers the whole digital surface &mdash; so most small businesses end up with five vendors and nobody accountable. I do all of it, under one roof, with one person to contact, for the long haul.
             </p>
           </FadeIn>
 

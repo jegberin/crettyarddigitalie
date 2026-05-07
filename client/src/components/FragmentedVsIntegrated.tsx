@@ -13,11 +13,11 @@ const DEFAULT_LEFT: string[] = [
 ];
 
 const DEFAULT_RIGHT: string[] = [
-  "One number. One invoice.",
+  "One person to contact. One invoice.",
   "One person who already knows your setup",
   "Compliance handled in the background",
   "One strategy across website, email, IT, security, and AI",
-  "Same number to ring in 2030",
+  "Same person to contact in 2030",
 ];
 
 type Props = {

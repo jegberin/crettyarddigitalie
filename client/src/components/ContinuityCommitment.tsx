@@ -2,7 +2,7 @@ const ITEMS = [
   "No long lock-ins",
   "Documented exit",
   "Capacity assessed against scope",
-  "Same number to ring in 2030",
+  "Same person to contact in 2030",
 ];
 
 export function ContinuityCommitment() {
