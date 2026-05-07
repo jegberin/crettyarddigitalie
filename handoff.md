@@ -6,59 +6,36 @@ Read this first every new session. It's the fastest path from cold start to prod
 
 ---
 
-## ⚡ Active workstream — Site repositioning (multi-session)
+## Recently shipped (2026-05-07 — single day)
 
-**Status as of 2026-05-07:** All 7 phases shipped to main. Workstream complete pending Joey's final visual review of the live site.
+A multi-strand workstream landed today across positioning, pricing, and infrastructure. Future sessions don't need the in-progress detail — `git log --oneline` is the audit trail. High-level summary so you don't re-propose work that's already done:
 
-> **Once Joey confirms the live site looks right**, this whole "Active workstream" block can be deleted from handoff.md — the work is now part of the codebase, the plan file at `~/.claude/plans/harmonic-skipping-zebra.md` is the historical record, and `git log --grep "repositioning-phase"` recovers the full implementation trail.
+- **Site repositioning (7 phases)** — moved Crettyard Digital from "website builder who also does IT" to "outsourced IT partner for Irish SMEs". Web design dropped from service slot 01 to 07 across navbar, footer, marquee, services. New shared components (`CredentialBand`, `FragmentedVsIntegrated`, `ContinuityCommitment`) used across multiple pages. New "Why I'm not a website studio" section on Home. New "Built to Stay" section on About. New "Standards I Run On" + "What Ongoing Looks Like" sections on Managed IT. 26-cert grid on About. All 16 county pages cascade-updated through the template. Full plan archived at [`~/.claude/plans/harmonic-skipping-zebra.md`](C:/Users/joeye/.claude/plans/harmonic-skipping-zebra.md). Search commits with `git log --grep "repositioning-phase"`.
+- **Pricing model overhaul** — switched from line-item-heavy menu to recurring-subscription pricing. Microsoft 365 €17.50/user/month or €42.50 with phone (no setup fee). Managed IT Standard €65/user/month, Compliance Plus €95/user/month. Network / Cybersecurity / AI now "Quoted on request". Web Design unchanged (project + mandatory care plan); care plans got Standard vs Premium feature cards. Bundle terminology purged sitewide. Tier names migrated: Essential → Standard, Professional/Comprehensive → Compliance Plus. Search commits with `git log --grep "pricing\|subscription model\|care plan"`.
+- **Worker / markdown-for-agents simplification** — moved off the per-5-min single-route cursor pattern (Free-plan workaround) to a single daily `0 3 * * *` cron that refreshes all 40 routes in one firing. Plus a new post-deploy auto-refresh: every Workers Builds deploy gets a unique `version_metadata` UUID and the worker compares-and-stamps it in KV, so the first request after a deploy kicks a background full refresh. Daily cron is now defence in depth.
 
-**Strategic shift:** reposition Crettyard Digital from "website builder who also does IT" to "outsourced IT partner for Irish SMEs — covering the full digital surface, including a website if needed". Web design moves from item 01 to item 07 in service ordering.
+### Locked facts (still load-bearing for any future copy edits)
 
-**Source documents:**
-- [`~/.claude/plans/harmonic-skipping-zebra.md`](C:/Users/joeye/.claude/plans/harmonic-skipping-zebra.md) — full 7-phase implementation plan, self-contained (every copy proposal inline). **Read this first.**
-- Memory: `website_copy_forbidden_facts.md` — STRICT: never mention "Citi" or surname "Egberink" in user-facing copy. Forever rule, all sessions.
-- Memory: `joey_bio_reference.md` — locked work history, role titles, 26 IT certs grouped by vendor, project go-live years, and the inputs Joey signed off on.
+These live in memory (`joey_bio_reference.md`) and will autoload, but for fast reference:
+- **26 IT certs** (7 Microsoft · 4 Intel · 2 AWS · 9 Dell · 3 VMware · 1 Cisco)
+- **Longest single relationship: 9 years** (BM Custom Furniture, 2016–2025, completed). **Longest active: ~4 years** (Nurney Plant and Civil, since 2022).
+- **Portfolio header** acknowledges BM ended: *"Most are still active clients today. One ran for nine years before the relationship naturally concluded."*
+- **Cover arrangements** → never mentioned.
+- **"Limited new clients per quarter"** → never claimed; soft variant *"capacity assessed against scope"* is fine.
+- **Joey role titles when surfaced**: Senior Solution Engineer at Microsoft · Infrastructure and Platforms Manager at Intel · Senior System Engineer at Dell EMC.
+- **"15+ years enterprise IT"** stays — Joey is 41, computing since 14, professional IT since ~2011.
 
-**Phases (each is a separate shippable unit):**
+### Open follow-ups (deferred, not blocking)
 
-| # | Scope | Files touched | Effort | Status |
-|---|---|---|---|---|
-| 1 | Site-wide: 3 new shared components (CredentialBand, FragmentedVsIntegrated, ContinuityCommitment) + Navbar/Footer/AnimatedMarquee reorder + StatsStrip rewrite (later refined to all-counter for visual consistency) + TrustBadges 6th badge + TrustMarquee 3 new items + Home SEO title/desc reorder + Meet Joey paragraphs on Home/About/ManagedIT | components/* + App.tsx + Home/About/ManagedIT | ~half day | ✅ shipped |
-| 2 | Home rewrite: hero rotations + subhead + CTA → /how-it-works · CredentialBand under hero · Problem section reframed (fragmented IT) · Comparison block → FragmentedVsIntegrated · Smart Investment refocused · services array reordered (Web Design 07) · NEW "Why I'm not a website studio" section · Featured Projects with relationshipLine + new framing for ended BM client · Spotlight CTA heading. Trust banners later redistributed across the page (TrustBadges hero / StatsStrip after Problem / CredentialBand before Featured Projects) · "one number to ring" replaced with "one person to contact" · hero H1 tightened to two lines | Home.tsx | ~1 day | ✅ shipped |
-| 3 | About + Managed IT: About hero (new H1 + lead) · CredentialBand under About hero · Meet Joey wrap-up expansion · NEW Built-to-Stay section (with longest-relationship-9-years line) · NEW 26 Industry Certifications grid (vendor breakdown) · NEW "Built to Stay" card in Why Work With Me · ManagedIT new H1 ("Without the Department") · CredentialBand under ManagedIT hero · NEW Standards I Run On section · NEW What Ongoing Looks Like 3-column section (Month 6/12/24) · pricing footnote expansion (lock-ins, 30 days notice, exit) · ContinuityCommitment above final SpotlightCTA. Meet Joey photo later changed to float-right so text fills the surrounding white space | About.tsx + ManagedIT.tsx | ~1 day | ✅ shipped |
-| 4 | WebDesign + Cybersecurity + Microsoft 365: WebDesign hero lead rewritten (most-visible-piece-of-digital-infrastructure framing) · NEW "What you also get" prose section · NEW "Website Studio vs IT Partner" comparison block · 2 new FAQ entries (long-haul + cheaper-studio) · Cybersecurity hero gets credential mention · CredentialBand under Cybersecurity hero · "Why This Matters Now" reframed (calm competence, not threat description) · NEW closing "What Competent Looks Like" section · M365 new H1 ("Done the Way Microsoft Actually Recommends") · CredentialBand under M365 hero · NEW "default tenants are not secure tenants" callout. Cybersecurity NIS2 checklist call-out later removed; broken `\\u2014` in JSX text fixed | WebDesign.tsx + Cybersecurity.tsx + Microsoft365.tsx | ~1 day | ✅ shipped |
-| 5 | Pricing + How It Works + Contact + Portfolio: bundles renamed Foundation / Operations / Enterprise · per-bundle items reordered (IT/M365 leads, website demoted) · NEW "Which tier is right for me?" section · FragmentedVsIntegrated dropped above bundles · HowItWorks process sections reordered (After Launch first, then Before We Start, then During the Build) · continuity line added under After Launch · Related Services bundle name updated · Contact hero gets credentialling line · "Who Should Get in Touch" list reordered (IT-partner intents lead) · Portfolio header sentence rewritten (handles BM relationship ending in 2025) · `relationshipLine` field added to each project + rendered as accent-coloured line under URL/industry tag | Pricing.tsx + HowItWorks.tsx + Contact.tsx + Portfolio.tsx | ~half day | ✅ shipped |
-| 6 | Sector + remaining service + county template: Trades "What You Get" reordered (Managed IT first, Web Design at position 5) · ProfessionalServices hero gets "Big-firm controls. Small-firm responsiveness. Mid-firm pricing." line · DORACompliance untouched (per brief) · Network / ManagedHardware / AIReadiness / WebsiteCare each get hero rewritten to lead with IT-partner framing + ContinuityCommitment block above final SpotlightCTA · CountyLandingPage template gets web-design `relatedDesc` updated to bridge website → wider IT relationship + CredentialBand inserted above LEO/grants section (cascades to all 16 county pages automatically) | Trades.tsx + ProfessionalServices.tsx + Network.tsx + ManagedHardware.tsx + AIReadiness.tsx + WebsiteCare.tsx + CountyLandingPage.tsx | ~half day | ✅ shipped |
-| 7 | Sitewide cleanup + verification: greps clean for old hero phrases ("Get Found", "Win Clients" etc.), old stats ("10+ Websites Launched", "40% Less Than"), phone-number framing ("number to ring", "same number"), forbidden facts (Citi, Egberink). One county-page leak fixed on Cybersecurity.tsx (`/it-support-carlow` link → `/trades`); same line also had a `\\u2014` rendering bug fixed. Two new Web Design FAQ entries added to App.tsx `faqData` so structured data matches the visible accordion (Google FAQ rich snippets). `npm run check` + `npm run build:client` both pass. | App.tsx + Cybersecurity.tsx + handoff.md | ~half day | ✅ shipped |
-| 2 | Home page rewrite (hero, problem, comparison, services reorder, "Why I'm not a website studio" section) | Home.tsx | ~1 day |
-| 3 | About + Managed IT — both get Built-to-Stay framing + new "Standards I run on" / "What ongoing looks like" sections | About.tsx, ManagedIT.tsx | ~1 day |
-| 4 | Web Design + Cybersecurity + Microsoft 365 — hero/copy adjustments + new sections | WebDesign.tsx, Cybersecurity.tsx, Microsoft365.tsx | ~1 day |
-| 5 | Pricing (rename tiers Foundation/Operations/Enterprise) + How It Works + Contact + Portfolio | Pricing.tsx, HowItWorks.tsx, Contact.tsx, Portfolio.tsx | ~half day |
-| 6 | Trades + ProfessionalServices reorder + remaining service pages + county template (one edit cascades to all 16 county pages) | Trades.tsx, ProfessionalServices.tsx, Network/ManagedHardware/AIReadiness/WebsiteCare, CountyLandingPage.tsx | ~half day |
-| 7 | Sitewide grep cleanup + structured data sync + final verify | (cleanup only) | ~half day |
+- **GetAQuote.tsx interactive calculator** — partly aligned to the new pricing model (Managed IT multiplier 75 → 65, label updated, note updated). The multi-line breakdown still shows Microsoft third-party licence costs as separate items (€7.50 calling plan, €6–22 licence) — that's an internal estimator showing decomposition, not the public price list, so it's OK for now. **Full calculator rework is a separate session if you want the calculator UX to mirror the simplified public pricing end-to-end.**
+- **Stale `__cursor` KV key** in `MARKDOWN_CACHE` from the old per-5-min cron. Harmless orphan (KV charges nothing for one stale key). Delete manually any time via Cloudflare dashboard → KV → MARKDOWN_CACHE → KV Pairs.
+- **`MARKDOWN_REFRESH_SECRET`** — Joey wasn't sure if one was set. Set one in Cloudflare → Workers → crettyarddigitalie → Settings → Variables and Secrets if you want the manual `POST /api/refresh-markdown` endpoint to work. The daily cron and post-deploy auto-refresh don't need this secret.
 
-**Locked inputs (as of 2026-05-07):**
-- Cert count: **26 IT certs** (7 Microsoft · 4 Intel · 2 AWS · 9 Dell · 3 VMware · 1 Cisco)
-- Project go-live + status:
-  - **BM Custom Furniture** — 2016, **ENDED 2025** (9-year completed relationship; keep in featured projects, the 9-year span is the flex)
-  - **Nurney Plant and Civil** — 2022, active (website + M365 + Wi-Fi)
-  - **Go Green Steam Clean** — 2025, active (monthly updates + support)
-  - **More Than Points** — 2026, active (ongoing support)
-  - **Crettyard.ie** — 2026, active (ongoing support + development)
-- Longest single client relationship: **9 years** (BM, completed). Longest active: **going on 4 years** (Nurney, 2022 → present). Both used: 9-year as continuity proof, 4-year as "still going" credibility.
-- Portfolio header line replaced because BM is no longer active: *"These aren't projects I delivered and walked away from. Most are still active clients today. One ran for nine years before the relationship naturally concluded. Either way — these are relationships, not transactions."*
-- Cover arrangements: **DO NOT mention** anywhere
-- "Limited new clients per quarter": **NOT used** as hard claim. Softer: *"Capacity to onboard new clients is assessed against scope so existing clients keep getting the attention they pay for."*
-- Microsoft/Intel/Dell role titles: **surface concrete titles** ("Senior Solution Engineer at Microsoft, Infrastructure and Platforms Manager at Intel, Senior System Engineer at Dell EMC")
-- Meet Joey location: vary per page (three approved variants in the plan §1.7)
-- "15+ years enterprise IT" claim: **stays** — Joey is 41, has been computing since 14 (~27 years), professional IT since ~2011 (~15 years). Considers it conservative.
+### Verifications worth doing tomorrow
 
-**No open inputs.** Plan is fully unblocked. Joey says "go" → start Phase 1.
-
-**Working agreement:**
-- **Every phase ships direct to `main`.** No feature branches, no PRs. Type-check (`npm run check`), commit, push. Joey does not want to be the merge-approver. (See memory: `workflow_no_feature_branches.md`.)
-- Cloudflare Workers Builds auto-deploys from main; no staging. Deliberate pushes only.
-- Update this section as each phase lands. When all 7 phases complete, archive the plan reference and remove this whole "Active workstream" block.
+- **Daily cron first firing**: Friday 8 May 2026 at 03:00 UTC. After that, `curl https://crettyarddigital.ie/api/refresh-markdown` should show populated `lastRefresh` with `ok: 40`.
+- **Post-deploy auto-refresh**: should already have fired from this evening's deploy. Hit any URL on the site once, then check the GET endpoint — `lastRefresh` should be from a few minutes ago and `__build_version` in KV should match the latest deploy.
+- **Joey's existing-client transitions** on the new pricing model — that's outside Claude Code's scope. See pricing addendum §8 for the move-by-tier playbook (Essential → Standard, etc.) over a 60–90 day window.
 
 ---
 
@@ -89,9 +66,9 @@ git status                   # check ahead/behind
 git pull --ff-only origin main
 ```
 
-### Standard edit → push → deploy flow
+### Direct-to-main, no feature branches
 
-For small fixes (copy edits, single-file tweaks) Joey commits **directly to main**:
+**Every commit goes direct to `main`.** No feature branches, no PRs, no waiting for review. The plan-approval / chat alignment IS the review gate. (Memory: `workflow_no_feature_branches.md`.)
 
 ```bash
 git add <specific files>     # avoid `git add -A` — WEBSITE_CONTENT.md is untracked on purpose
@@ -99,32 +76,11 @@ git commit -m "fix: short imperative summary"
 git push origin main
 ```
 
-Push to `main` triggers Cloudflare Workers Builds → site is live in ~1–2 min. **There's no staging environment** — be deliberate.
-
-### Feature branch + PR flow
-
-For larger or riskier changes (new pages, route changes, schema updates, anything touching the Worker):
-
-```bash
-git checkout -b feat/short-description
-# ...edits, commits...
-git push -u origin feat/short-description
-```
-
-Then open a PR on GitHub: `https://github.com/jegberin/crettyarddigitalie/compare/main...feat/short-description` (or use the link printed by `git push`). Merge via the GitHub UI — **prefer "Squash and merge"** to keep `main` history linear (matches the existing PR pattern).
-
-After merge:
-
-```bash
-git checkout main
-git pull --ff-only origin main
-git branch -d feat/short-description           # local cleanup
-git push origin --delete feat/short-description # remote cleanup (optional)
-```
+Push to `main` triggers Cloudflare Workers Builds → site is live in ~1–2 min. **There's no staging environment** — be deliberate. Always `npm run check` before pushing.
 
 ### Commit message style
 
-Looking at recent history (`git log --oneline -20`): conventional-ish prefixes (`fix:`, `feat:`, `chore:`, `blog:`, `ci:`) but not strict. Short imperative summary. PR titles get `(#N)` appended automatically by GitHub squash-merge.
+Conventional-ish prefixes (`fix:`, `feat:`, `chore:`, `blog:`, `ci:`, `refactor:`, `docs:`) but not strict. Short imperative summary on the first line. Multi-line body for non-trivial commits. Trailers always include `Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>`.
 
 ### Files to never auto-commit
 
@@ -311,25 +267,19 @@ Both `/api/contact` and `/api/quote` exist in two places (Express dev + Worker p
 - **County landing pages** share a template ([CountyLandingPage.tsx](client/src/components/CountyLandingPage.tsx)) driven by [countyContent.ts](client/src/data/countyContent.ts).
 - **`attached_assets/` PNGs are gitignored** — only `.webp` versions get committed.
 - **Mandatory website care plans** is a business policy referenced in copy across multiple pages — don't write copy that contradicts this.
-- **No surnames for Joey** in user-facing copy (per about/trust convention).
+- **Forbidden in user-facing copy** (memory: `website_copy_forbidden_facts.md`): Joey's current employer **"Citi" / "Citibank"** and his surname **"Egberink"**. First name only. Past employers (Microsoft, Intel, Dell EMC) are fine and load-bearing positioning.
+- **No phone-number framing** in positioning copy (memory: `website_copy_no_phone_framing.md`). Use "one person to contact" not "one number to ring" — telemarketers scrape phone-related keywords.
+- **County / locality landing pages are SEO-only** (memory: `seo_only_county_pages.md`). Never link to `/web-design-{county}` or `/it-support-{county}` from user-facing parent pages, navigation, footer, or as cards. They're sitemap-only.
 - **No `.github/workflows`** — Cloudflare Workers Builds handles CI; configured in Cloudflare dashboard.
 - **WEBSITE_CONTENT.md** is a static content-audit dump (currently untracked). Don't treat it as a source of truth — it's a generated snapshot for proofreading.
 
 ---
 
-## Quick "what changed recently" (last 10 commits)
+## Quick "what changed recently"
 
-```
-7f22f43 fix: home page copy edits (#10)
-7f4aa61 fix: add favicon sizes and Organization logo for Google search (#9)
-6eccf5d fix
-0afeee3 Nation wide update
-4fc62b2 fix: cursor-based single-route batching for markdown refresh
-2588fd3 feat: enable markdown-for-agents KV cache and daily cron
-f980f0b fix: gate KV+cron behind explicit setup so deploy isn't blocked
-0455396 adding AI Agent support
-9303726 chore: stop tracking wrangler local cache
-310db37 ok
-```
+`git log --oneline -20` is the source of truth. Don't trust embedded snapshots in this file — they go stale within hours.
 
-Run `git log --oneline -20` for a fuller picture before assuming what's current.
+Useful filtered queries:
+- `git log --grep "repositioning-phase"` — the 7-phase site repositioning workstream (May 2026)
+- `git log --grep "pricing\|subscription model\|care plan"` — pricing model overhaul (May 2026)
+- `git log --grep "worker\|markdown-for-agents\|cron"` — worker infrastructure changes
