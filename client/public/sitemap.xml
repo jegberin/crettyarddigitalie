@@ -46,6 +46,8 @@
 
   <!-- Blog -->
   <url><loc>https://crettyarddigital.ie/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/blog/what-ai-readiness-means-small-business</loc><lastmod>2026-05-04</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/blog/microsoft-365-for-hybrid-teams</loc><lastmod>2026-04-20</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/when-does-a-business-need-managed-it-support</loc><lastmod>2026-04-13</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/website-care-plans-what-they-include</loc><lastmod>2026-04-06</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/signs-business-website-costing-you-leads</loc><lastmod>2026-03-30</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
@@ -87,6 +89,7 @@
   <url><loc>https://crettyarddigital.ie/blog/tag/cost-control</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/tag/cybersecurity</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/tag/email-security</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://crettyarddigital.ie/blog/tag/hybrid-work</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/tag/ireland</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/tag/it-support</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://crettyarddigital.ie/blog/tag/lead-generation</loc><priority>0.4</priority><changefreq>weekly</changefreq></url>
