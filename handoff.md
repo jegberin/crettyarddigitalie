@@ -8,7 +8,7 @@ Read this first every new session. It's the fastest path from cold start to prod
 
 ## ⚡ Active workstream — Site repositioning (multi-session)
 
-**Status as of 2026-05-07:** Phases 1 and 2 shipped to main. Phases 3-7 pending.
+**Status as of 2026-05-07:** Phases 1, 2, and 3 shipped to main. Phases 4-7 pending.
 
 **Strategic shift:** reposition Crettyard Digital from "website builder who also does IT" to "outsourced IT partner for Irish SMEs — covering the full digital surface, including a website if needed". Web design moves from item 01 to item 07 in service ordering.
 
@@ -22,7 +22,8 @@ Read this first every new session. It's the fastest path from cold start to prod
 | # | Scope | Files touched | Effort | Status |
 |---|---|---|---|---|
 | 1 | Site-wide: 3 new shared components (CredentialBand, FragmentedVsIntegrated, ContinuityCommitment) + Navbar/Footer/AnimatedMarquee reorder + StatsStrip rewrite (later refined to all-counter for visual consistency) + TrustBadges 6th badge + TrustMarquee 3 new items + Home SEO title/desc reorder + Meet Joey paragraphs on Home/About/ManagedIT | components/* + App.tsx + Home/About/ManagedIT | ~half day | ✅ shipped |
-| 2 | Home rewrite: hero rotations + subhead + CTA → /how-it-works · CredentialBand under hero · Problem section reframed (fragmented IT) · Comparison block → FragmentedVsIntegrated · Smart Investment refocused · services array reordered (Web Design 07) · NEW "Why I'm not a website studio" section · Featured Projects with relationshipLine + new framing for ended BM client · Spotlight CTA heading | Home.tsx | ~1 day | ✅ shipped |
+| 2 | Home rewrite: hero rotations + subhead + CTA → /how-it-works · CredentialBand under hero · Problem section reframed (fragmented IT) · Comparison block → FragmentedVsIntegrated · Smart Investment refocused · services array reordered (Web Design 07) · NEW "Why I'm not a website studio" section · Featured Projects with relationshipLine + new framing for ended BM client · Spotlight CTA heading. Trust banners later redistributed across the page (TrustBadges hero / StatsStrip after Problem / CredentialBand before Featured Projects) · "one number to ring" replaced with "one person to contact" · hero H1 tightened to two lines | Home.tsx | ~1 day | ✅ shipped |
+| 3 | About + Managed IT: About hero (new H1 + lead) · CredentialBand under About hero · Meet Joey wrap-up expansion · NEW Built-to-Stay section (with longest-relationship-9-years line) · NEW 26 Industry Certifications grid (vendor breakdown) · NEW "Built to Stay" card in Why Work With Me · ManagedIT new H1 ("Without the Department") · CredentialBand under ManagedIT hero · NEW Standards I Run On section · NEW What Ongoing Looks Like 3-column section (Month 6/12/24) · pricing footnote expansion (lock-ins, 30 days notice, exit) · ContinuityCommitment above final SpotlightCTA | About.tsx + ManagedIT.tsx | ~1 day | ✅ shipped |
 | 2 | Home page rewrite (hero, problem, comparison, services reorder, "Why I'm not a website studio" section) | Home.tsx | ~1 day |
 | 3 | About + Managed IT — both get Built-to-Stay framing + new "Standards I run on" / "What ongoing looks like" sections | About.tsx, ManagedIT.tsx | ~1 day |
 | 4 | Web Design + Cybersecurity + Microsoft 365 — hero/copy adjustments + new sections | WebDesign.tsx, Cybersecurity.tsx, Microsoft365.tsx | ~1 day |

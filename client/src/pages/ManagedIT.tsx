@@ -1,9 +1,11 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Quote } from "lucide-react";
+import { CheckCircle, ArrowRight, Quote, Lock, Shield, ShieldCheck, KeyRound, HardDrive, Mail, Cog, FileText, Activity, Calendar } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { CredentialBand } from "@/components/CredentialBand";
+import { ContinuityCommitment } from "@/components/ContinuityCommitment";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroAdminConsole from "@assets/mit-hero-admin-console.webp";
 import iconProactiveMonitoring from "@assets/concept-proactive-monitoring.webp";
@@ -25,7 +27,7 @@ export default function ManagedIT() {
             <FadeIn direction="up">
               <span className="eyebrow mb-4 inline-block">Managed IT Support</span>
               <h1 className="display-sm text-white mb-6">
-                Managed IT Support &mdash; Your Outsourced IT Department Without the Corporate Price Tag
+                Your Outsourced IT Department. Without the Department.
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
                 A fixed monthly fee. One accountable person. Microsoft 365 administration, endpoint security, compliance management, backup, and the boring-but-essential work that stops things breaking &mdash; handled in the background. Built on the same standards I learned across Microsoft, Intel and Dell. Designed for Irish small businesses with 1 to 50 staff who want their IT to just work &mdash; and to keep working, year after year, with the same person to contact.
@@ -54,6 +56,8 @@ export default function ManagedIT() {
           </div>
         </div>
       </section>
+
+      <CredentialBand />
 
       {/* The Problem */}
       <section className="py-28 bg-white">
@@ -112,6 +116,43 @@ export default function ManagedIT() {
         </div>
       </section>
 
+      {/* Standards I Run On */}
+      <section className="py-28 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-12">
+            <span className="eyebrow mb-5 inline-block">Standards</span>
+            <h2 className="text-3xl md:text-4xl mb-4">What I Run On</h2>
+            <p className="text-foreground max-w-2xl mx-auto font-sans font-normal">
+              These aren&rsquo;t aspirations. They&rsquo;re the defaults on every Crettyard Digital tenant.
+            </p>
+          </FadeIn>
+          <StaggerContainer className="grid sm:grid-cols-2 gap-4">
+            {[
+              { icon: ShieldCheck, title: "Microsoft Security Baselines",     desc: "Applied as the default tenant configuration, not bolted on later." },
+              { icon: Shield,      title: "NCSC Cyber Essentials baseline",   desc: "Implemented across endpoints — patching, malware, access, secure config." },
+              { icon: Lock,        title: "Zero Trust principles",            desc: "Verify explicitly. Least privilege. Assume breach." },
+              { icon: FileText,    title: "NIS2-aligned controls",            desc: "Documented for supply-chain audits when your larger clients ask." },
+              { icon: KeyRound,    title: "MFA by default",                   desc: "On every account, no exceptions, including service accounts." },
+              { icon: HardDrive,   title: "Full-disk encryption",             desc: "BitLocker on every device, enforced via Intune policy." },
+              { icon: Activity,    title: "Tested backups",                   desc: "Restored quarterly on a non-production folder. Configured doesn’t mean working." },
+              { icon: Cog,         title: "Intune-managed device estate",     desc: "Hardened device profiles, conditional access, posture checks." },
+              { icon: Mail,        title: "Email authentication",             desc: "SPF, DKIM, and DMARC configured correctly — not just set." },
+              { icon: FileText,    title: "Documented incident response",     desc: "What happens at hour one, day one, and week one. In plain English." },
+            ].map((item, i) => (
+              <StaggerItem key={i}>
+                <div className="flex gap-4 items-start bg-[#f3f4f5] p-5 rounded-xl h-full">
+                  <item.icon className="text-accent shrink-0 mt-0.5" size={20} />
+                  <div>
+                    <p className="font-headline font-bold text-primary text-[14px] leading-tight">{item.title}</p>
+                    <p className="text-foreground text-[13px] font-sans mt-1 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
       {/* Who This Is For */}
       <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -134,6 +175,67 @@ export default function ManagedIT() {
                 <div className="flex items-start gap-3 bg-[#f3f4f5] p-5 rounded-xl">
                   <CheckCircle className="text-accent shrink-0 mt-0.5" size={18} />
                   <span className="text-foreground text-[15px] font-sans">{item}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* What Ongoing Looks Like */}
+      <section className="py-28 bg-[#f3f4f5]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">What Ongoing Looks Like</span>
+            <h2 className="text-3xl md:text-4xl mb-4">Six Months In. Twelve Months In. Two Years In.</h2>
+            <p className="text-foreground max-w-2xl mx-auto font-sans font-normal">
+              Most providers don&rsquo;t write this down because they don&rsquo;t do it. Here&rsquo;s what your actual managed IT relationship looks like across the calendar.
+            </p>
+          </FadeIn>
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                heading: "Month 6",
+                items: [
+                  "First quarterly review — what’s working, what’s noisy, what’s coming up",
+                  "Patch cadence is predictable — you stop noticing it",
+                  "First licence audit completed; you only pay for users you have",
+                  "Backup restore drill on a non-production folder — confirmed working",
+                ],
+              },
+              {
+                heading: "Month 12",
+                items: [
+                  "Annual security review — your business and the threat landscape",
+                  "Compliance documentation refreshed against current GDPR / NIS2 expectations",
+                  "Year-on-year comparison: tickets prevented, downtime avoided, money saved",
+                  "Hardware refresh discussion if devices are nearing end-of-life",
+                ],
+              },
+              {
+                heading: "Month 24",
+                items: [
+                  "Strategic IT planning — Copilot, AI tooling, what’s worth adopting",
+                  "Incident response tabletop — you know what to do when, not just who to contact",
+                  "Long-term documentation handover updated; nothing is in my head only",
+                  "Renewal conversation — but the relationship is the renewal",
+                ],
+              },
+            ].map((col, i) => (
+              <StaggerItem key={i}>
+                <div className="bg-white p-7 rounded-2xl shadow-sm h-full" data-testid={`ongoing-month-${col.heading.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <div className="flex items-center gap-3 mb-5">
+                    <Calendar className="text-accent shrink-0" size={22} />
+                    <h3 className="text-xl font-headline font-extrabold text-primary">{col.heading}</h3>
+                  </div>
+                  <ul className="space-y-3 list-none m-0 p-0">
+                    {col.items.map((it, j) => (
+                      <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground leading-relaxed">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={14} />
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </StaggerItem>
             ))}
@@ -225,7 +327,7 @@ export default function ManagedIT() {
           </StaggerContainer>
 
           <FadeIn className="text-center mt-8">
-            <p className="text-foreground text-sm font-sans mb-2">All plans quoted after a free discovery call. No long-term lock-in contracts &mdash; I earn your business every month.</p>
+            <p className="text-foreground text-sm font-sans mb-2">All plans quoted after a free discovery call. No long-term lock-ins. 30 days&rsquo; notice either side. The exit is documented in the agreement &mdash; a confident provider tells you how to leave them.</p>
             <p className="text-foreground text-sm font-sans mb-4">Thinking about AI? The Comprehensive tier includes a <Link href="/ai-readiness" className="text-accent hover:underline">Microsoft 365 Copilot readiness assessment</Link>. Looking for grant funding? The M365 subscriptions inside your IT plan may qualify for the <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link>.</p>
             <Link href="/pricing">
               <Button variant="outline">See Digital Foundation Bundles &rarr;</Button>
@@ -316,6 +418,13 @@ export default function ManagedIT() {
           </StaggerContainer>
         </div>
       </section>
+
+      <section className="py-10 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <ContinuityCommitment />
+        </div>
+      </section>
+
       <SpotlightCTA
         eyebrow="Ready to Get Started?"
         heading="Stop Waiting for Things to Break"
