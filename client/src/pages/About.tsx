@@ -92,41 +92,42 @@ export default function About() {
           </StaggerContainer>
 
           {/* ── Meet Joey ───────────────────────────────────────────── */}
-          <div className="grid md:grid-cols-3 gap-12 items-start mb-20">
-            <FadeIn className="md:col-span-2 md:order-1">
-              <span className="eyebrow mb-5 inline-block">Meet Joey</span>
-              <h2 className="text-3xl mb-6">The Person Behind Crettyard Digital</h2>
-              <p className="text-lg mb-6 text-foreground leading-relaxed font-sans font-normal">
-                I'm Joey &mdash; the person behind Crettyard Digital, and the person you'll deal with directly on every project.
-              </p>
-              <p className="mb-6 text-foreground leading-relaxed font-sans font-normal">
-                Before starting this business, I spent over 15 years in enterprise IT &mdash; Senior Solution Engineer at Microsoft, Infrastructure and Platforms Manager at Intel, and Senior System Engineer at Dell EMC. Most of that time was on cloud architecture and enterprise infrastructure. 26 industry certifications, including Microsoft Azure Solutions Architect Expert. I&rsquo;ve seen how large organisations build and manage their technology: the standards they follow, the security they insist on, the reliability they demand. I&rsquo;ve also seen the rapid evolution of AI tools, cloud platforms, and cybersecurity frameworks &mdash; and I understand what it takes to implement them properly.
-              </p>
-              <p className="mb-6 text-foreground leading-relaxed font-sans font-normal">
-                I started Crettyard Digital because I saw too many small businesses getting a raw deal. Poorly built websites that needed replacing within a year. Email setups that left businesses vulnerable to phishing. Patchy Wi-Fi that dropped out at the worst moment. And when new regulations like NIS2 and stricter GDPR enforcement arrived, these businesses had no one to turn to who could explain what it meant in plain English. The same standards work at any scale &mdash; they just need translating.
-              </p>
-              <p className="text-foreground leading-relaxed font-sans font-normal">
-                When you work with me, you talk to the person doing the work. There are no account managers, no support tickets, no being passed between departments. Just honest, direct communication from someone who knows your setup because they built it.
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.2} className="md:col-span-1 md:order-2 flex justify-center md:mt-10">
-              <div className="w-44 md:w-full max-w-[200px]">
-                <div className="aspect-square rounded-full overflow-hidden shadow-sm">
-                  <img
-                    src={joeyImg}
-                    alt="Joey — founder of Crettyard Digital, based in Crettyard, Co. Laois"
-                    className="w-full h-full object-cover object-top"
-                    data-testid="img-joey"
-                    width="200"
-                    height="200"
-                    loading="eager"
-                  />
-                </div>
-                <p className="text-center mt-3 text-sm font-headline font-bold text-primary">Joey</p>
-                <p className="text-center text-sm text-muted-foreground font-sans">Founder, Crettyard Digital</p>
+          <FadeIn className="mb-20">
+            <span className="eyebrow mb-5 inline-block">Meet Joey</span>
+            <h2 className="text-3xl mb-6">The Person Behind Crettyard Digital</h2>
+
+            {/* Photo floats right on md+, so text wraps around it. Stacks normally on mobile. */}
+            <div className="md:float-right md:ml-10 md:mb-4 md:w-[220px] mx-auto mb-8 max-w-[200px]">
+              <div className="aspect-square rounded-full overflow-hidden shadow-sm">
+                <img
+                  src={joeyImg}
+                  alt="Joey — founder of Crettyard Digital, based in Crettyard, Co. Laois"
+                  className="w-full h-full object-cover object-top"
+                  data-testid="img-joey"
+                  width="200"
+                  height="200"
+                  loading="eager"
+                />
               </div>
-            </FadeIn>
-          </div>
+              <p className="text-center mt-3 text-sm font-headline font-bold text-primary">Joey</p>
+              <p className="text-center text-sm text-muted-foreground font-sans">Founder, Crettyard Digital</p>
+            </div>
+
+            <p className="text-lg mb-6 text-foreground leading-relaxed font-sans font-normal">
+              I'm Joey &mdash; the person behind Crettyard Digital, and the person you'll deal with directly on every project.
+            </p>
+            <p className="mb-6 text-foreground leading-relaxed font-sans font-normal">
+              Before starting this business, I spent over 15 years in enterprise IT &mdash; Senior Solution Engineer at Microsoft, Infrastructure and Platforms Manager at Intel, and Senior System Engineer at Dell EMC. Most of that time was on cloud architecture and enterprise infrastructure. 26 industry certifications, including Microsoft Azure Solutions Architect Expert. I&rsquo;ve seen how large organisations build and manage their technology: the standards they follow, the security they insist on, the reliability they demand. I&rsquo;ve also seen the rapid evolution of AI tools, cloud platforms, and cybersecurity frameworks &mdash; and I understand what it takes to implement them properly.
+            </p>
+            <p className="mb-6 text-foreground leading-relaxed font-sans font-normal">
+              I started Crettyard Digital because I saw too many small businesses getting a raw deal. Poorly built websites that needed replacing within a year. Email setups that left businesses vulnerable to phishing. Patchy Wi-Fi that dropped out at the worst moment. And when new regulations like NIS2 and stricter GDPR enforcement arrived, these businesses had no one to turn to who could explain what it meant in plain English. The same standards work at any scale &mdash; they just need translating.
+            </p>
+            <p className="text-foreground leading-relaxed font-sans font-normal">
+              When you work with me, you talk to the person doing the work. There are no account managers, no support tickets, no being passed between departments. Just honest, direct communication from someone who knows your setup because they built it.
+            </p>
+
+            <div className="clear-both" />
+          </FadeIn>
 
           {/* ── How I Work ──────────────────────────────────────────── */}
           <FadeIn className="mb-8">
