@@ -46,7 +46,7 @@ const services: Service[] = [
     imageAlt: "Glass headset with a speech bubble representing direct IT helpdesk support",
     title: "Managed IT Support",
     desc: "Your outsourced IT department. I monitor your systems, keep everything updated and secure, manage compliance, and fix problems before they cost you time or money. Fixed monthly pricing.",
-    price: "From \u20ac45/user/month",
+    price: "From \u20ac65/user/month",
     href: "/managed-it-support",
     linkLabel: "Explore managed IT plans",
     testId: "card-service-managedit",
@@ -58,7 +58,7 @@ const services: Service[] = [
     imageAlt: "Glass cogwheel with an envelope representing Microsoft 365 and Teams Phone administration",
     title: "Microsoft 365 & Teams Phone",
     desc: "Professional @yourbusiness.ie email, cloud file storage, Teams for collaboration, and a modern business phone system \u2014 replacing old landlines. Set up securely with GDPR compliance from day one.",
-    price: "Setup from \u20ac350",
+    price: "From \u20ac17.50/user/month",
     href: "/microsoft-365",
     linkLabel: "See how it works",
     testId: "card-service-microsoft365",
@@ -70,7 +70,7 @@ const services: Service[] = [
     imageAlt: "Glass shield with a tick and a ring of EU stars representing cybersecurity and GDPR compliance",
     title: "Cybersecurity & Compliance",
     desc: "Practical protection against phishing, ransomware, and data breaches \u2014 plus NIS2, GDPR, and European Accessibility Act compliance. Security audits, staff training, and ongoing monitoring.",
-    price: "Audits from \u20ac200",
+    price: "Quoted on request",
     href: "/cybersecurity",
     linkLabel: "See cybersecurity options",
     testId: "card-service-cybersecurity",
@@ -82,7 +82,7 @@ const services: Service[] = [
     imageAlt: "Glass Wi-Fi access point with concentric signal arcs representing mesh Wi-Fi coverage",
     title: "Network & Wi\u2011Fi",
     desc: "Business-grade network design, Wi-Fi installation, and security for offices, workshops, warehouses, and retail spaces. Dead spots eliminated, card machines connected, teams productive.",
-    price: "Health checks from \u20ac150",
+    price: "Quoted after a free site review",
     href: "/network-wifi-security",
     linkLabel: "Book a free network review",
     testId: "card-service-network",
@@ -106,7 +106,7 @@ const services: Service[] = [
     imageAlt: "Glass four-pointed sparkle with connected spheres representing AI and Microsoft Copilot",
     title: "AI & Microsoft Copilot",
     desc: "Practical AI that saves your team real hours every week. I help you understand what AI can do for your business and implement tools like Microsoft Copilot for genuine productivity gains.",
-    price: "Consultations from \u20ac150",
+    price: "Quoted on request",
     href: "/ai-readiness",
     linkLabel: "Explore AI readiness",
     testId: "card-service-ai",
@@ -357,7 +357,7 @@ export default function Home() {
           <FadeIn className="text-center mt-10">
             <Link href="/pricing">
               <Button variant="outline" size="lg">
-                See Digital Foundation Bundles &rarr;
+                See Full Pricing &rarr;
               </Button>
             </Link>
           </FadeIn>
@@ -547,7 +547,7 @@ export default function Home() {
                 { q: "I already have a Facebook page \u2014 do I really need a website?", a: "Facebook is useful for engagement, but it won\u2019t help you appear on Google when someone searches \u2018plumber near me\u2019 or \u2018furniture maker Carlow.\u2019 A website is something you own and control \u2014 it works around the clock, ranks on search engines, and gives potential customers the confidence to call you." },
                 { q: "I\u2019m not very technical \u2014 will this be complicated?", a: "That\u2019s exactly why I do what I do. I handle all the technical work and explain everything in plain English. You don\u2019t need to know anything about hosting, DNS, code, or compliance regulations. My entire approach is built for people who\u2019d rather focus on running their business." },
                 { q: "How much does a website cost?", a: "Most small business websites start from around \u20ac799 for a simple site and \u20ac1,299 for a full business site. Every website includes an ongoing care plan for hosting, security, and maintenance. I provide a clear, fixed quote after a free consultation. Bespoke website builds aren\u2019t eligible for the Grow Digital Voucher, but if your project also includes new software subscriptions like M365 or e-commerce platforms, those elements may qualify." },
-                { q: "What are the Digital Foundation Bundles?", a: "Instead of buying a website, email, and IT support separately, bundles give you everything as one integrated package \u2014 with one setup cost and one predictable monthly fee. Most clients save money compared to buying piecemeal, and everything works together because it\u2019s all built by the same person." },
+                { q: "How does the pricing work?", a: "Three recurring subscriptions cover the core: Microsoft 365 from €17.50/user/month (€42.50 with a business phone), Managed IT Standard from €65/user/month (€95 for Compliance Plus). Network, cybersecurity, and AI services are quoted on request after a free review. Web design is the only fixed-price project, from €799 plus a €49/month care plan. No setup fees on subscriptions." },
                 { q: "Do I need to worry about NIS2 or GDPR?", a: "If you collect customer data (contact forms, email lists, invoices), GDPR applies to you. If you\u2019re part of a supply chain for a larger company, NIS2 may apply too. If you sell online, the European Accessibility Act probably applies. I handle all of this as part of my services \u2014 you don\u2019t need to become an expert." },
                 { q: "Can you help with government grants?", a: "I\u2019m Grow Digital Voucher Ready \u2014 my invoicing is prepared to meet scheme requirements. The voucher covers 50% of new software subscriptions (M365, CRM, e-commerce platforms, cybersecurity) up to \u20ac5,000. It doesn\u2019t cover bespoke websites or hardware. You must complete a free Digital for Business consultation with your LEO first, then apply yourself \u2014 I can\u2019t apply for you, but I can make sure my documentation supports your claim." },
                 { q: "What is Microsoft Teams Phone?", a: "A business phone system that works through the Microsoft Teams app. Instead of a traditional landline, your team makes and receives business calls from their laptop, mobile, or desk phone \u2014 all integrated with your email and calendar. Simpler, cheaper, and far more flexible." },
@@ -570,7 +570,7 @@ export default function Home() {
         subtext="Book a free, no-obligation consultation. I'll listen to what you need, give you honest advice, and show you the most cost-effective way to get sorted &mdash; plus any grant opportunities for software elements of your project. No pressure, no jargon, no surprises."
         primaryText="Book Your Free Consultation"
         primaryHref="/contact#send-message"
-        secondaryText="See Bundles & Pricing"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

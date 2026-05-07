@@ -249,7 +249,7 @@ export default function WebsiteCare() {
         subtext="A care plan costs less per month than a single emergency fix &mdash; and prevents the need for one. Every website I build comes with a care plan as standard."
         primaryText="Get Started"
         primaryHref="/contact#send-message"
-        secondaryText="See Digital Foundation Bundles"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

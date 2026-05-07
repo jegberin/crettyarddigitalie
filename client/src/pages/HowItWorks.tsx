@@ -234,7 +234,7 @@ export default function HowItWorks() {
           <FadeIn className="mt-8">
             <Link href="/pricing" className="block bg-white p-6 rounded-2xl shadow-sm text-center card-hover group">
               <Shield className="text-accent mx-auto mb-3" size={24} />
-              <h3 className="text-base font-headline font-bold mb-2 group-hover:text-accent transition-colors">Getting a Digital Foundation Bundle?</h3>
+              <h3 className="text-base font-headline font-bold mb-2 group-hover:text-accent transition-colors">Getting Multiple Services Together?</h3>
               <p className="text-foreground text-sm font-sans max-w-xl mx-auto mb-3">
                 All of the above happens in a coordinated sequence &mdash; website, email, phone, security, and network configured together as one integrated system. That&rsquo;s the whole point.
               </p>
@@ -285,7 +285,7 @@ export default function HowItWorks() {
           </FadeIn>
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { href: "/pricing", title: "Bundles & Pricing", desc: "Foundation / Operations / Enterprise bundles and full individual service pricing." },
+              { href: "/pricing", title: "Pricing", desc: "Predictable subscriptions for Microsoft 365 and managed IT, plus fixed-price web design. Specialist services quoted on request." },
               { href: "/web-design", title: "Web Design", desc: "4-week site builds from discovery to launch, care plan included." },
               { href: "/microsoft-365", title: "Microsoft 365", desc: "Email, Teams, Teams Phone, OneDrive, and Copilot readiness." },
               { href: "/portfolio", title: "Portfolio", desc: "Real projects with client testimonials \u2014 BM Custom Furniture, Nurney Plant and Civil, and more." },

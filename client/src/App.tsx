@@ -100,7 +100,7 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   },
   "/managed-it-support": {
     title: "Managed IT Support for Small Businesses Across Ireland | Crettyard Digital",
-    description: "Proactive managed IT support for small businesses across Ireland. Fixed monthly pricing, compliance included. From \u20ac45 per user per month.",
+    description: "Proactive managed IT support for small businesses across Ireland. Fixed monthly pricing, compliance included. From \u20ac65 per user per month.",
   },
   "/managed-hardware": {
     title: "Business PCs & Servers, Delivered Ready to Use | Crettyard Digital",
@@ -135,8 +135,8 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
     description: "DORA-ready IT services for Irish financial sector firms. ICT Risk Management Framework, TLPT readiness, third-party risk documentation, and Central Bank of Ireland-aligned resilience since DORA took effect on 17 January 2025.",
   },
   "/pricing": {
-    title: "Digital Foundation Bundles & Pricing \u2014 Website, Email, IT & Security | Crettyard Digital",
-    description: "Clear, transparent pricing for websites, Microsoft 365, managed IT, and security. Digital Foundation Bundles combine everything into one predictable monthly cost.",
+    title: "Predictable Pricing for Outsourced IT | Crettyard Digital",
+    description: "Clear, transparent pricing for websites, Microsoft 365, and managed IT. Recurring subscriptions with no setup fees. Specialist services quoted on request.",
   },
   "/grants-funding": {
     title: "Grow Digital Voucher \u2014 Up to \u20ac5,000 for Digital Tools | Crettyard Digital",
@@ -204,23 +204,23 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   },
   "/it-support-dublin": {
     title: "IT Support Dublin \u2014 Enterprise-Grade Managed IT for Dublin SMEs | Crettyard Digital",
-    description: "Proactive managed IT support for Dublin SMEs \u2014 D2 professional firms, startups, consultancies. MFA, Microsoft 365 administration, NIS2 supply-chain documentation. From \u20ac45 per user per month.",
+    description: "Proactive managed IT support for Dublin SMEs \u2014 D2 professional firms, startups, consultancies. MFA, Microsoft 365 administration, NIS2 supply-chain documentation. From \u20ac65 per user per month.",
   },
   "/it-support-cork": {
     title: "IT Support Cork \u2014 Managed IT for Pharma Suppliers and Hospitality | Crettyard Digital",
-    description: "Managed IT for Cork SMEs \u2014 Apple/Pfizer/Eli Lilly supply chain, Kinsale hospitality, Midleton food producers. Vendor-audit documentation, POS-ready networks. From \u20ac45 per user per month.",
+    description: "Managed IT for Cork SMEs \u2014 Apple/Pfizer/Eli Lilly supply chain, Kinsale hospitality, Midleton food producers. Vendor-audit documentation, POS-ready networks. From \u20ac65 per user per month.",
   },
   "/it-support-galway": {
     title: "IT Support Galway \u2014 Managed IT for Medtech Suppliers & Tourism Operators | Crettyard Digital",
-    description: "Managed IT for Galway SMEs \u2014 Medtronic / Boston Scientific supply chain, Connemara tourism, Salthill hospitality. Audit-ready documentation, bilingual 365 support. From \u20ac45 per user per month.",
+    description: "Managed IT for Galway SMEs \u2014 Medtronic / Boston Scientific supply chain, Connemara tourism, Salthill hospitality. Audit-ready documentation, bilingual 365 support. From \u20ac65 per user per month.",
   },
   "/it-support-limerick": {
     title: "IT Support Limerick \u2014 Manufacturing IT & Hospitality Networks | Crettyard Digital",
-    description: "Managed IT for Limerick SMEs \u2014 Regeneron / Johnson & Johnson suppliers, Adare hospitality, Castletroy tech. Vendor-audit documentation, peak-season network reliability. From \u20ac45 per user per month.",
+    description: "Managed IT for Limerick SMEs \u2014 Regeneron / Johnson & Johnson suppliers, Adare hospitality, Castletroy tech. Vendor-audit documentation, peak-season network reliability. From \u20ac65 per user per month.",
   },
   "/it-support-waterford": {
     title: "IT Support Waterford \u2014 GSK Suppliers, Greenway Tourism & Professional Firms | Crettyard Digital",
-    description: "Managed IT for Waterford SMEs \u2014 GlaxoSmithKline supply chain, Copper Coast / Greenway hospitality, professional firms. Audit-ready documentation, isolated guest Wi-Fi. From \u20ac45 per user per month.",
+    description: "Managed IT for Waterford SMEs \u2014 GlaxoSmithKline supply chain, Copper Coast / Greenway hospitality, professional firms. Audit-ready documentation, isolated guest Wi-Fi. From \u20ac65 per user per month.",
   },
   "/privacy-policy": {
     title: "Privacy Policy | Crettyard Digital",
@@ -261,7 +261,7 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
     { question: "I already have a Facebook page \u2014 do I really need a website?", answer: "Facebook is useful for engagement, but it won\u2019t help you appear on Google when someone searches \u2018plumber near me\u2019 or \u2018furniture maker Carlow.\u2019 A website is something you own and control \u2014 it works around the clock, ranks on search engines, and gives potential customers the confidence to call you." },
     { question: "I\u2019m not very technical \u2014 will this be complicated?", answer: "That\u2019s exactly why I do what I do. I handle all the technical work and explain everything in plain English. You don\u2019t need to know anything about hosting, DNS, code, or compliance regulations." },
     { question: "How much does a website cost?", answer: "Most small business websites start from around \u20ac799 for a simple site and \u20ac1,299 for a full business site. Every website includes an ongoing care plan. I provide a clear, fixed quote after a free consultation. Bespoke website builds aren\u2019t eligible for the Grow Digital Voucher, but new software subscriptions like M365 or e-commerce platforms may qualify." },
-    { question: "What are the Digital Foundation Bundles?", answer: "Instead of buying a website, email, and IT support separately, bundles give you everything as one integrated package \u2014 with one setup cost and one predictable monthly fee." },
+    { question: "How does the pricing work?", answer: "Three recurring subscriptions cover the core: Microsoft 365 from €17.50/user/month (€42.50 with a business phone), Managed IT Standard from €65/user/month (€95 for Compliance Plus). Network, cybersecurity, and AI services are quoted on request after a free review. Web design is the only fixed-price project, from €799 plus a €49/month care plan." },
     { question: "Do I need to worry about NIS2 or GDPR?", answer: "If you collect customer data, GDPR applies. If you\u2019re part of a supply chain for a larger company, NIS2 may apply. If you sell online, the European Accessibility Act probably applies. I handle all of this as part of my services." },
     { question: "Can you help with government grants?", answer: "I\u2019m Grow Digital Voucher Ready. The voucher covers 50% of new software subscriptions up to \u20ac5,000. It doesn\u2019t fund bespoke websites. You apply through your LEO after completing a Digital for Business consultation \u2014 I provide scheme-compliant invoicing to support your claim." },
     { question: "What is Microsoft Teams Phone?", answer: "A business phone system that works through the Microsoft Teams app. Your team makes and receives calls from their laptop, mobile, or desk phone \u2014 all integrated with email and calendar. No separate phone company needed." },
@@ -287,7 +287,7 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
   ],
   "/managed-it-support": [
     { question: "Is this only for bigger businesses?", answer: "Not at all. Many clients are 1\u20135 person businesses. Even a sole trader benefits from proper email, device, and compliance management." },
-    { question: "Is compliance really included?", answer: "Yes. GDPR checks are included in every plan. NIS2 supply-chain readiness is included at Professional and Comprehensive tiers. DORA readiness is included at Comprehensive for regulated financial clients where DORA applies." },
+    { question: "Is compliance really included?", answer: "Yes. GDPR checks are included in every plan. NIS2 supply-chain readiness, DORA-aligned controls, and audit-ready evidence are included at the Compliance Plus tier for regulated firms." },
     { question: "How is this different from calling someone when things break?", answer: "Fixed fee (not hourly), problems caught early, I already know your setup, and someone is actively managing your compliance." },
     { question: "Can I change plans as I grow?", answer: "Absolutely. Plans scale with your business. No reinstalling, no starting over." },
   ],
@@ -385,12 +385,12 @@ const faqData: Record<string, { question: string; answer: string }[]> = {
   ],
   "/it-support-laois": [
     { question: "Can you visit my office in Portlaoise?", answer: "Absolutely. I\u2019m 20 minutes from Portlaoise. On-site visits for network issues, hardware setup, or new office configurations are a normal part of my service." },
-    { question: "I only have 2\u20133 staff \u2014 is this overkill?", answer: "Not at all. My Essential plan starts at \u20ac45/user/month. Even a 2-person business benefits from proper email management, security, and someone to call when things go wrong." },
+    { question: "I only have 2\u20133 staff \u2014 is this overkill?", answer: "Not at all. The Standard plan starts at \u20ac65/user/month. Even a 2-person business benefits from proper email management, security, and someone to call when things go wrong." },
     { question: "Do you cover Portarlington and south Offaly too?", answer: "Yes \u2014 Portarlington straddles the border and I cover it fully. I also serve nearby Offaly towns like Mountmellick and Edenderry." },
   ],
   "/it-support-carlow": [
     { question: "My main contractor is asking about IT security. Can you help?", answer: "This is exactly why many Carlow construction firms come to me. I implement the security measures (MFA, email encryption, backup, endpoint protection) and provide documentation that proves compliance. When the question comes, you\u2019re ready." },
-    { question: "We\u2019re a small crew \u2014 is managed IT really for us?", answer: "Even a 3-person operation with email, a laptop, and an internet connection benefits. At \u20ac45/user on the Essential plan, it costs less than a single emergency call-out \u2014 and prevents most emergencies." },
+    { question: "We\u2019re a small crew \u2014 is managed IT really for us?", answer: "Even a 3-person operation with email, a laptop, and an internet connection benefits. At \u20ac65/user on the Standard plan, it costs less than a single emergency call-out \u2014 and prevents most emergencies." },
     { question: "Can you do on-site work in Tullow or Muinebheag?", answer: "Yes. I cover all of Carlow \u2014 Carlow town, Tullow, Muinebheag (Bagenalstown), Borris, Leighlinbridge, and everywhere in between." },
   ],
   "/it-support-kilkenny": [
@@ -433,7 +433,7 @@ function RouteSEO() {
         <ServiceSchema name="Microsoft 365 Setup, Business Email & Teams Phone" description="Professional Microsoft 365 setup, business email, Teams, OneDrive, SharePoint, and Teams Phone for small businesses in Ireland. GDPR-compliant. Migration and training included." />
       )}
       {location === "/managed-it-support" && (
-        <ServiceSchema name="Managed IT Support for Small Business" description="Proactive managed IT support for small businesses across Ireland. Fixed monthly pricing from \u20ac45/user/month. Microsoft 365 admin, endpoint security, compliance management, and direct support." areaServed="Ireland" />
+        <ServiceSchema name="Managed IT Support for Small Business" description="Proactive managed IT support for small businesses across Ireland. Fixed monthly pricing from \u20ac65/user/month. Microsoft 365 admin, endpoint security, compliance management, and direct support." areaServed="Ireland" />
       )}
       {location === "/managed-hardware" && (
         <ServiceSchema name="Managed Hardware Supply for Small Business" description="Turnkey business PCs and on-site servers delivered ready to use. Fully configured, licensed, encrypted, and migrated. Compact miniPCs from \u20ac899 per device; on-site servers from \u20ac2,499. Optional Hardware Care from \u20ac19/device/month." />
@@ -469,16 +469,16 @@ function RouteSEO() {
         <ServiceSchema name="Web Design in County Kilkenny" description="Professional website design for hospitality, retail, accommodation, and trades across County Kilkenny \u2014 Kilkenny city, Thomastown, Castlecomer, Callan, Graiguenamanagh. EAA-compliant for hospitality and retail. From \u20ac799." areaServed="County Kilkenny, Ireland" />
       )}
       {location === "/microsoft-365-setup-ireland" && (
-        <ServiceSchema name="Microsoft 365 Setup & Migration Across Ireland" description="Remote-first Microsoft 365 tenant setup, Exchange/Google Workspace/POP migration, Teams Phone, and Microsoft 365 Copilot configuration for small businesses across Ireland. GDPR-compliant with EU data residency, Microsoft Entra ID identity, and MFA. From \u20ac350 basic setup." areaServed="Ireland" />
+        <ServiceSchema name="Microsoft 365 Setup & Migration Across Ireland" description="Remote-first Microsoft 365 tenant setup, Exchange/Google Workspace/POP migration, Teams Phone, and Microsoft 365 Copilot configuration for small businesses across Ireland. GDPR-compliant with EU data residency, Microsoft Entra ID identity, and MFA. From \u20ac17.50/user/month with no setup fee." areaServed="Ireland" />
       )}
       {location === "/it-support-laois" && (
-        <ServiceSchema name="Managed IT Support in County Laois" description="Proactive managed IT support for small businesses across County Laois \u2014 Portlaoise, Portarlington, Abbeyleix, Mountmellick, Mountrath. Microsoft 365 administration, endpoint security, GDPR/NIS2 compliance, on-site support. From \u20ac45 per user per month." areaServed="County Laois, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Laois" description="Proactive managed IT support for small businesses across County Laois \u2014 Portlaoise, Portarlington, Abbeyleix, Mountmellick, Mountrath. Microsoft 365 administration, endpoint security, GDPR/NIS2 compliance, on-site support. From \u20ac65 per user per month." areaServed="County Laois, Ireland" />
       )}
       {location === "/it-support-carlow" && (
-        <ServiceSchema name="Managed IT Support in County Carlow" description="Managed IT and NIS2-ready cybersecurity for Carlow construction, trades, plant hire and professional services businesses. Supply-chain security documentation, MFA, endpoint protection, Microsoft 365 administration. From \u20ac45 per user per month." areaServed="County Carlow, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Carlow" description="Managed IT and NIS2-ready cybersecurity for Carlow construction, trades, plant hire and professional services businesses. Supply-chain security documentation, MFA, endpoint protection, Microsoft 365 administration. From \u20ac65 per user per month." areaServed="County Carlow, Ireland" />
       )}
       {location === "/it-support-kilkenny" && (
-        <ServiceSchema name="Managed IT Support in County Kilkenny" description="Sector-tailored managed IT for Kilkenny hospitality, professional firms, retail/craft, and trades \u2014 POS support, guest Wi-Fi isolation, EAA and GDPR compliance, Microsoft 365 administration. From \u20ac45 per user per month." areaServed="County Kilkenny, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Kilkenny" description="Sector-tailored managed IT for Kilkenny hospitality, professional firms, retail/craft, and trades \u2014 POS support, guest Wi-Fi isolation, EAA and GDPR compliance, Microsoft 365 administration. From \u20ac65 per user per month." areaServed="County Kilkenny, Ireland" />
       )}
       {location === "/network-wifi-laois-carlow" && (
         <ServiceSchema name="Business Network & Wi-Fi Installation in Laois and Carlow" description="On-site network design, Cat6a / Cat7 structured cabling (Cat8 for specialist runs), Wi-Fi 6E / Wi-Fi 7 mesh installation, CRA-compliant firewalls, and guest Wi-Fi isolation for offices, workshops, warehouses, and retail across Laois and Carlow. From \u20ac150 Wi-Fi health check, \u20ac400 small-office setup, \u20ac800 full design and install." areaServed="Laois and Carlow, Ireland" />
@@ -501,19 +501,19 @@ function RouteSEO() {
         <ServiceSchema name="Web Design in County Waterford" description="Web design for Waterford SMEs \u2014 Waterford city, Dungarvan, Tramore, and the Copper Coast. GSK-supplier ready, Greenway tourism-booking focused. From \u20ac799." areaServed="County Waterford, Ireland" />
       )}
       {location === "/it-support-dublin" && (
-        <ServiceSchema name="Managed IT Support in County Dublin" description="Proactive managed IT for Dublin SMEs \u2014 D2 professional firms, startups, consultancies. MFA, Microsoft 365 administration, NIS2 supply-chain documentation. From \u20ac45 per user per month." areaServed="County Dublin, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Dublin" description="Proactive managed IT for Dublin SMEs \u2014 D2 professional firms, startups, consultancies. MFA, Microsoft 365 administration, NIS2 supply-chain documentation. From \u20ac65 per user per month." areaServed="County Dublin, Ireland" />
       )}
       {location === "/it-support-cork" && (
-        <ServiceSchema name="Managed IT Support in County Cork" description="Managed IT for Cork SMEs \u2014 Apple / Pfizer / Eli Lilly supply-chain suppliers, Kinsale hospitality, Midleton food producers. Vendor-audit documentation, POS-ready networks. From \u20ac45 per user per month." areaServed="County Cork, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Cork" description="Managed IT for Cork SMEs \u2014 Apple / Pfizer / Eli Lilly supply-chain suppliers, Kinsale hospitality, Midleton food producers. Vendor-audit documentation, POS-ready networks. From \u20ac65 per user per month." areaServed="County Cork, Ireland" />
       )}
       {location === "/it-support-galway" && (
-        <ServiceSchema name="Managed IT Support in County Galway" description="Managed IT for Galway SMEs \u2014 Medtronic / Boston Scientific / Merit Medical supply chain, Connemara tourism, Salthill hospitality. Audit-ready documentation, bilingual 365 support. From \u20ac45 per user per month." areaServed="County Galway, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Galway" description="Managed IT for Galway SMEs \u2014 Medtronic / Boston Scientific / Merit Medical supply chain, Connemara tourism, Salthill hospitality. Audit-ready documentation, bilingual 365 support. From \u20ac65 per user per month." areaServed="County Galway, Ireland" />
       )}
       {location === "/it-support-limerick" && (
-        <ServiceSchema name="Managed IT Support in County Limerick" description="Managed IT for Limerick SMEs \u2014 Regeneron / Johnson & Johnson suppliers, Adare hospitality, Castletroy tech. Vendor-audit documentation, peak-season network reliability. From \u20ac45 per user per month." areaServed="County Limerick, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Limerick" description="Managed IT for Limerick SMEs \u2014 Regeneron / Johnson & Johnson suppliers, Adare hospitality, Castletroy tech. Vendor-audit documentation, peak-season network reliability. From \u20ac65 per user per month." areaServed="County Limerick, Ireland" />
       )}
       {location === "/it-support-waterford" && (
-        <ServiceSchema name="Managed IT Support in County Waterford" description="Managed IT for Waterford SMEs \u2014 GlaxoSmithKline supply chain, Copper Coast and Greenway hospitality, professional firms. Audit-ready documentation, isolated guest Wi-Fi. From \u20ac45 per user per month." areaServed="County Waterford, Ireland" />
+        <ServiceSchema name="Managed IT Support in County Waterford" description="Managed IT for Waterford SMEs \u2014 GlaxoSmithKline supply chain, Copper Coast and Greenway hospitality, professional firms. Audit-ready documentation, isolated guest Wi-Fi. From \u20ac65 per user per month." areaServed="County Waterford, Ireland" />
       )}
 
       {/* Page-type schemas */}

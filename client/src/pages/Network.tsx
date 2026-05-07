@@ -318,56 +318,40 @@ export default function NetworkWifi() {
       {/* Pricing Guidance */}
       <section className="py-28 bg-white" id="pricing">
         <div className="container mx-auto px-4 max-w-4xl">
-          <FadeIn className="mb-16 text-center">
+          <FadeIn className="mb-12 text-center">
             <PiggyBank className="text-accent mx-auto mb-4" size={32} />
-            <span className="eyebrow mb-5 inline-block">Pricing Guidance</span>
-            <h2 className="text-3xl mb-6">What Affects the Price</h2>
+            <span className="eyebrow mb-5 inline-block">Pricing</span>
+            <h2 className="text-3xl md:text-4xl mb-4">Quoted After a Free Site Review.</h2>
             <p className="text-foreground max-w-2xl mx-auto leading-relaxed font-sans font-normal">
-              Every premises is different, so I quote after a proper survey. Here's what typically influences the cost:
+              Network and Wi-Fi pricing depends on the size of the premises, the number of access points needed, the cabling already in place, and the hardware. A flat list price would be either fictional or unfair. The free review takes about an hour on site (or a video walk-through for remote sites) and produces a fixed-price proposal within 48 hours.
             </p>
           </FadeIn>
 
           <FadeIn>
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-[#f3f4f5] p-8 rounded-2xl">
-                <h3 className="text-lg mb-4">Factors That Affect Cost</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Size and layout of the premises",
-                    "Number of users and devices",
-                    "Cabling requirements (new runs vs existing)",
-                    "Equipment grade (home vs business-grade)",
-                    "Security requirements (firewall, VPN, guest isolation)",
-                    "Whether remote access or VPN is needed",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[15px] text-foreground font-sans">
-                      <CheckCircle className="text-accent mt-0.5 flex-shrink-0" size={16} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-[#f3f4f5] p-8 rounded-2xl">
-                <h3 className="text-lg mb-4">Typical Starting Points</h3>
-                <ul className="space-y-4">
-                  {[
-                    { label: "Wi‑Fi health check & optimisation", range: "From €150" },
-                    { label: "Small office network setup", range: "From €400" },
-                    { label: "Full network design & install", range: "From €800" },
-                    { label: "Firewall & security configuration", range: "From €300" },
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center justify-between text-sm border-b border-white pb-3 last:border-0 last:pb-0" data-testid={`text-pricing-${i}`}>
-                      <span className="text-foreground font-sans">{item.label}</span>
-                      <span className="font-headline font-bold text-primary">{item.range}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-foreground mt-4 font-sans">
-                  All prices are indicative. I'll provide a clear, fixed quote after an initial chat.
-                </p>
-              </div>
+            <div className="bg-[#f3f4f5] p-8 rounded-2xl max-w-2xl mx-auto">
+              <h3 className="text-lg mb-4">What the Quote Depends On</h3>
+              <ul className="space-y-3">
+                {[
+                  "Size and layout of the premises",
+                  "Number of users and devices",
+                  "Cabling requirements (new runs vs existing)",
+                  "Equipment grade (Wi-Fi 6 / 6E / 7, UniFi vs MikroTik vs Omada)",
+                  "Security requirements (firewall, VPN, guest isolation)",
+                  "Whether remote access or VPN is needed",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-[15px] text-foreground font-sans">
+                    <CheckCircle className="text-accent mt-0.5 flex-shrink-0" size={16} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </FadeIn>
+
+          <FadeIn className="text-center mt-10">
+            <Link href="/contact#send-message">
+              <Button size="lg">Book a Free Site Review</Button>
+            </Link>
           </FadeIn>
         </div>
       </section>
@@ -504,7 +488,7 @@ export default function NetworkWifi() {
         subtext="Book a free, no-obligation network review. I'll assess your setup, identify the problems, and give you a clear plan with a fixed price."
         primaryText="Book a Free Network Review"
         primaryHref="/contact#send-message"
-        secondaryText="See Bundles &amp; Pricing"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

@@ -1,117 +1,112 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, BadgeEuro, MonitorSmartphone, Cloud, ServerCog, Wifi, Shield, Phone, BrainCircuit, Wrench } from "lucide-react";
+import { CheckCircle, ArrowRight, BadgeEuro, MonitorSmartphone, Cloud, ServerCog, Wifi, Shield, Phone, BrainCircuit } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
 import { FragmentedVsIntegrated } from "@/components/FragmentedVsIntegrated";
 
-const bundles = [
+const m365Plans = [
   {
-    name: "Foundation Bundle",
-    tagline: "Get Online Properly",
-    target: "Solo traders and micro-businesses (1\u20133 people)",
-    setup: "From \u20ac1,099",
-    monthly: "From \u20ac89/month",
-    grant: "Software elements may qualify for Grow Digital Voucher (50% up to \u20ac5,000)",
-    popular: false,
+    icon: Cloud,
+    name: "Microsoft 365 Standard",
+    price: "€17.50",
+    unit: "per user / month",
+    tagline: "Email, files, Teams, OneDrive, SharePoint — set up properly, administered forever.",
     items: [
-      "Microsoft 365 Business Basic (professional email)",
-      "Microsoft 365 setup and configuration",
-      "MFA and basic security",
-      "GDPR-compliant forms and cookie consent",
-      "Professional website (up to 3 pages)",
-      "Website Care Plan (hosting, security, backups)",
-      "Google Business Profile guidance",
+      "Microsoft 365 Business Standard licence (full Office desktop apps, Outlook, Teams, OneDrive, SharePoint)",
+      "Tenant configuration with EU data residency",
+      "MFA enforced by default on every account",
+      "GDPR-compliant setup and retention policies",
+      "Ongoing user administration (joiners, movers, leavers, password resets, licence management)",
+      "Microsoft Entra ID identity, security monitoring",
+      "No setup fee",
     ],
+    popular: false,
   },
   {
-    name: "Operations Bundle",
-    tagline: "Compete and Win",
-    target: "Established businesses (3\u201310 people)",
-    setup: "From \u20ac2,499",
-    monthly: "From \u20ac55/user/month",
-    grant: "Software elements may qualify for Grow Digital Voucher (50% up to \u20ac5,000)",
+    icon: Phone,
+    name: "Microsoft 365 with Business Phone",
+    price: "€42.50",
+    unit: "per user / month",
+    tagline: "Everything in Standard, plus a proper business phone that works from any device.",
+    items: [
+      "Everything in Microsoft 365 Standard",
+      "Microsoft Teams Phone with calling plan",
+      "A real business number — works from mobile, laptop, or desk phone",
+      "Voicemail-to-email, call routing, auto-attendants",
+      "Replaces traditional landlines and the personal-mobile-given-to-clients problem",
+      "No setup fee",
+    ],
     popular: true,
-    items: [
-      "Essential Managed IT Support",
-      "Microsoft 365 Business Standard (full Office suite)",
-      "Full M365 setup, migration, and training",
-      "Microsoft Teams Phone",
-      "Network health check and Wi-Fi optimisation",
-      "GDPR setup and cookie compliance",
-      "Professional website (4\u20137 pages, full SEO)",
-      "Website Care Plan (Premium tier)",
-      "Web accessibility check (EAA)",
-      "Google Business Profile optimisation",
-    ],
-  },
-  {
-    name: "Enterprise Bundle",
-    tagline: "Your Complete IT Department",
-    target: "Growing businesses (10\u201320 people), professional services, regulated firms",
-    setup: "Custom quoted",
-    monthly: "From \u20ac95/user/month",
-    grant: "Grant eligibility assessed during consultation",
-    popular: false,
-    items: [
-      "Professional Managed IT Support (priority SLA)",
-      "Microsoft 365 Business Premium (advanced security)",
-      "Full migration, hardening, and team training",
-      "Microsoft Teams Phone for all users",
-      "Full network design and installation",
-      "Cybersecurity audit and staff awareness training",
-      "NIS2 readiness assessment",
-      "GDPR, cookie, and accessibility compliance",
-      "DORA readiness (if financial sector)",
-      "Quarterly on-site IT and strategy reviews",
-      "Microsoft Copilot readiness assessment",
-      "Custom website with conversion optimisation",
-      "Premium Website Care Plan with monthly SEO",
-    ],
   },
 ];
 
-const individualPricing = [
-  { category: "Web Design", href: "/web-design", items: [
-    { service: "Starter website (1\u20133 pages)", price: "From \u20ac799 + \u20ac49/mo care" },
-    { service: "Business website (4\u20137 pages)", price: "From \u20ac1,299 + \u20ac49/mo care" },
-    { service: "Custom website / redesign", price: "Quoted on scope" },
-    { service: "Website Care Plan (Standard)", price: "\u20ac49/month" },
-    { service: "Website Care Plan (Premium)", price: "\u20ac79/month" },
-  ]},
-  { category: "Microsoft 365 & Teams Phone", href: "/microsoft-365", items: [
-    { service: "Basic setup (1\u20135 users)", price: "From \u20ac350" },
-    { service: "Full migration & setup (5\u201320 users)", price: "From \u20ac600" },
-    { service: "GDPR & security hardening", price: "From \u20ac150" },
-    { service: "Teams Phone setup", price: "From \u20ac150" },
-    { service: "Teams Phone calling plan", price: "From \u20ac7.50/user/mo" },
-    { service: "Monthly support & admin", price: "From \u20ac50/month" },
-  ]},
-  { category: "Managed IT Support", href: "/managed-it-support", items: [
-    { service: "Essential (1\u20135 users)", price: "From \u20ac45/user/month" },
-    { service: "Professional (5\u201315 users)", price: "From \u20ac75/user/month" },
-    { service: "Comprehensive (regulated firms)", price: "From \u20ac110/user/month" },
-  ]},
-  { category: "Network & Wi-Fi", href: "/network-wifi-security", items: [
-    { service: "Wi-Fi health check", price: "From \u20ac150" },
-    { service: "Small office network setup", price: "From \u20ac400" },
-    { service: "Full network design & install", price: "From \u20ac800" },
-    { service: "Firewall & security config", price: "From \u20ac300" },
-  ]},
-  { category: "Cybersecurity & Compliance", href: "/cybersecurity", items: [
-    { service: "Security audit & health check", price: "From \u20ac200" },
-    { service: "Web Compliance Audit (GDPR + cookies + EAA)", price: "From \u20ac250" },
-    { service: "IT Resilience Audit (NIS2 + DORA where applicable)", price: "From \u20ac300" },
-    { service: "NIS2 Readiness Package", price: "From \u20ac500" },
-    { service: "Cookie consent setup", price: "From \u20ac150" },
-    { service: "Staff cyber awareness training", price: "From \u20ac250" },
-  ]},
-  { category: "AI & Microsoft Copilot", href: "/ai-readiness", items: [
-    { service: "AI Readiness Assessment", price: "From \u20ac150" },
-    { service: "Copilot setup & training", price: "From \u20ac250" },
-    { service: "AI Strategy Consultation", price: "From \u20ac400" },
-  ]},
+const itTiers = [
+  {
+    name: "Managed IT Standard",
+    price: "€65",
+    unit: "per user / month",
+    target: "Most small Irish businesses (1–20 staff) who want their IT looked after properly without the corporate price tag.",
+    items: [
+      "Proactive monitoring of devices and Microsoft 365",
+      "Patch management",
+      "Microsoft Defender endpoint security",
+      "MFA enforcement",
+      "Cloud backup with tested recovery",
+      "M365 user administration (joiners, movers, leavers)",
+      "Remote support via Zoho Assist Enterprise",
+      "Direct access to Joey for any IT issue",
+      "Quarterly IT review",
+      "Documentation kept current",
+    ],
+    popular: true,
+  },
+  {
+    name: "Managed IT — Compliance Plus",
+    price: "€95",
+    unit: "per user / month",
+    target: "Regulated firms (financial, legal, healthcare) and businesses subject to NIS2 supply-chain audits or DORA.",
+    items: [
+      "Everything in Managed IT Standard",
+      "Formal NIS2 readiness documentation",
+      "DORA-aligned controls and reporting (where applicable)",
+      "Quarterly compliance audits",
+      "Staff phishing simulations and cyber awareness training",
+      "Supply-chain security questionnaire support",
+      "Audit-ready evidence of controls",
+    ],
+    popular: false,
+  },
+];
+
+const specialistServices = [
+  {
+    icon: Wifi,
+    title: "Network & Wi-Fi",
+    href: "/network-wifi-security",
+    desc: "Quoted after a free site review. Network and Wi-Fi pricing depends on the size of the premises, the number of access points, the cabling already in place, and the hardware. A flat list price would be either fictional or unfair.",
+  },
+  {
+    icon: Shield,
+    title: "Cybersecurity & Compliance",
+    href: "/cybersecurity",
+    desc: "Quoted on request based on framework scope. NIS2, GDPR, DORA, EAA, and the underlying security work each scope differently. A free initial review tells us what you actually need — and what you do not. Most security work for Compliance Plus clients is already included.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI & Microsoft Copilot",
+    href: "/ai-readiness",
+    desc: "Quoted on request after a workflow review. Real productivity gains from Copilot depend on which workflows you already have, where the time is being lost, and what data Copilot can safely access. The price is set after the review, not before.",
+  },
+];
+
+const webDesignPricing = [
+  { service: "Starter website (1–3 pages)", price: "From €799 + €49/mo care" },
+  { service: "Business website (4–7 pages)", price: "From €1,299 + €49/mo care" },
+  { service: "Custom website / redesign", price: "Quoted on scope" },
+  { service: "Website Care Plan (Standard)", price: "€49/month" },
+  { service: "Website Care Plan (Premium)", price: "€79/month" },
 ];
 
 export default function Pricing() {
@@ -123,22 +118,22 @@ export default function Pricing() {
         <GridLines cols={12} rows={8} color="#ffffff" opacity={0.05} />
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn direction="up">
-            <span className="eyebrow mb-4 inline-block">Bundles &amp; Pricing</span>
+            <span className="eyebrow mb-4 inline-block">Pricing</span>
             <h1 className="display-sm text-white mb-6">
-              One Provider. One Monthly Cost. Everything Your Business Needs.
+              Predictable Pricing for Predictable IT.
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-8">
-              Stop juggling three providers, five invoices, and nobody taking responsibility. Digital Foundation Bundles give small businesses across Ireland their website, email, phone system, IT support, and security in one integrated package &mdash; built by one person, for one predictable monthly cost.
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mb-8">
+              No surprises, no hourly bills, no &ldquo;scope creep&rdquo; invoices at the end of the quarter. Three recurring subscriptions cover the core of what most Irish small businesses need from their IT partner. Three specialist services are quoted on request because the work genuinely depends on your business. And web design stays a fixed-price project, the way it should be.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">
                 <Button size="lg">Book a Free Consultation</Button>
               </Link>
-              <a href="#individual">
+              <Link href="/how-it-works">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  See Individual Pricing &darr;
+                  See How I Work &rarr;
                 </Button>
-              </a>
+              </Link>
             </div>
           </FadeIn>
         </div>
@@ -148,200 +143,242 @@ export default function Pricing() {
       <section className="py-20 bg-[#f3f4f5]">
         <div className="container mx-auto px-4 max-w-5xl">
           <FragmentedVsIntegrated
-            eyebrow="Why Bundle"
-            heading="Five Vendors vs One Trusted Partner"
-            intro="The case for bundling isn’t price — it’s accountability. Five providers means five strategies that don’t talk to each other."
+            eyebrow="Why This Pricing Model"
+            heading="One Trusted Partner. One Predictable Bill."
+            intro="The case for recurring subscriptions isn't price — it's accountability and cash-flow predictability. Hourly billing breeds surprises. Subscriptions don&rsquo;t."
           />
         </div>
       </section>
 
-      {/* Which tier is right for me? */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <FadeIn className="mb-12">
-            <span className="eyebrow mb-5 inline-block">Choosing a Tier</span>
-            <h2 className="text-2xl md:text-3xl mb-3">Which One Is Right for Me?</h2>
-            <p className="text-foreground max-w-2xl font-sans font-normal">
-              Three tiers, sized to where the business is today. The plan grows with you &mdash; nothing locks you into a tier.
-            </p>
-          </FadeIn>
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Foundation",
-                fit: "If you have under 5 staff and just need things running",
-                desc: "Professional email, a clean website, basic security, no surprises. The starting point most businesses need before anything else.",
-              },
-              {
-                name: "Operations",
-                fit: "If you have a small team and want everything handled",
-                desc: "Managed IT, Teams Phone, network optimised, accessibility checked, compliance baseline in place. The point where IT stops being your job.",
-              },
-              {
-                name: "Enterprise",
-                fit: "If you handle regulated data or have 10+ staff",
-                desc: "Full NIS2 / GDPR / DORA, on-site reviews, staff training, Copilot readiness, the whole picture under one roof.",
-              },
-            ].map((tier) => (
-              <StaggerItem key={tier.name}>
-                <div className="bg-[#f3f4f5] p-6 rounded-2xl h-full" data-testid={`tier-fit-${tier.name.toLowerCase()}`}>
-                  <h3 className="text-lg font-headline font-extrabold text-primary mb-1">{tier.name}</h3>
-                  <p className="text-xs font-headline font-bold text-accent uppercase tracking-wider mb-3">{tier.fit}</p>
-                  <p className="text-foreground text-[14px] font-sans leading-relaxed">{tier.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Bundles */}
+      {/* Section 1 — Microsoft 365 */}
       <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <FadeIn className="text-center mb-16">
-            <span className="eyebrow mb-5 inline-block">Digital Foundation Bundles</span>
-            <h2 className="text-3xl md:text-4xl mb-4">The Smarter Way to Buy</h2>
-            <p className="text-foreground max-w-2xl mx-auto font-sans font-normal">
-              Instead of buying services separately and hoping they work together, get a complete digital setup &mdash; built, integrated, and maintained under one roof.
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Microsoft 365</span>
+            <h2 className="text-3xl md:text-4xl mb-4">Email, Files, Teams, and (Optionally) a Business Phone</h2>
+            <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
+              Most Irish small businesses run Microsoft 365 tenants that were set up by the cheapest available reseller and never touched again. Default tenants are not secure tenants. I set up Microsoft 365 with EU data residency, Microsoft Entra ID, MFA-by-default, the right retention policies, and the right licences &mdash; then administer it for you on an ongoing basis.
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-8">
-            {bundles.map((bundle, i) => (
-              <StaggerItem key={i}>
-                <div className={`rounded-2xl p-8 h-full flex flex-col ${bundle.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-[#f3f4f5] border border-gray-100"}`}>
-                  {bundle.popular && (
+          <StaggerContainer className="grid md:grid-cols-2 gap-8">
+            {m365Plans.map((plan) => (
+              <StaggerItem key={plan.name}>
+                <div className={`rounded-2xl p-8 h-full flex flex-col ${plan.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-[#f3f4f5] border border-gray-100"}`}>
+                  {plan.popular && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Most Popular</span>
                   )}
-                  <h3 className="text-xl mb-1">{bundle.name}</h3>
-                  <p className="text-sm font-headline font-bold text-accent mb-4">{bundle.tagline}</p>
-                  <p className="text-xs text-muted-foreground mb-6 font-sans">{bundle.target}</p>
-
-                  <div className="mb-6">
-                    <p className="text-2xl font-headline font-extrabold text-primary">{bundle.setup}</p>
-                    <p className="text-sm text-muted-foreground font-sans">one-off setup</p>
-                    <p className="text-lg font-headline font-bold text-accent mt-1">{bundle.monthly}</p>
-                    <p className="text-sm text-muted-foreground font-sans">ongoing</p>
+                  <div className="flex items-center gap-3 mb-3">
+                    <plan.icon className="text-accent shrink-0" size={26} />
+                    <h3 className="text-xl">{plan.name}</h3>
                   </div>
-
-                  <p className="text-xs font-headline font-bold text-accent/80 bg-accent/10 rounded-lg px-3 py-2 mb-6">{bundle.grant}</p>
-
+                  <p className="text-foreground text-[14px] font-sans mb-5">{plan.tagline}</p>
+                  <div className="mb-6">
+                    <p className="text-4xl font-headline font-extrabold text-primary">{plan.price}</p>
+                    <p className="text-sm text-muted-foreground font-sans">{plan.unit}</p>
+                  </div>
                   <ul className="space-y-2.5 flex-1 mb-6">
-                    {bundle.items.map((item, j) => {
-                      // Inline-link the DORA readiness bullet in the Growth bundle to /dora-compliance
-                      const doraPrefix = "DORA readiness";
-                      const hasDora = item.startsWith(doraPrefix);
-                      return (
-                        <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
-                          <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
-                          {hasDora ? (
-                            <span>
-                              <Link href="/dora-compliance" className="text-accent hover:underline font-headline font-bold">{doraPrefix}</Link>
-                              {item.slice(doraPrefix.length)}
-                            </span>
-                          ) : item}
-                        </li>
-                      );
-                    })}
+                    {plan.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
-
-                  <Link href="/contact#send-message">
-                    <Button className="w-full" variant={bundle.popular ? "default" : "outline"}>
-                      Get a Quote
-                    </Button>
-                  </Link>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link href="/contact#send-message" className="flex-1">
+                      <Button className="w-full" variant={plan.popular ? "default" : "outline"}>Book a Free Consultation</Button>
+                    </Link>
+                    <Link href="/microsoft-365" className="flex-1">
+                      <Button variant="outline" className="w-full">See Details &rarr;</Button>
+                    </Link>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          <FadeIn className="text-center mt-6">
+            <p className="text-xs text-muted-foreground font-sans">Subject to Microsoft licence price changes. Larger migrations (20+ mailboxes from legacy Exchange) may be quoted as a separate one-off project; most are not.</p>
+          </FadeIn>
         </div>
       </section>
 
-      {/* Guided quote calculator cross-link */}
-      <section className="py-12 bg-white border-t border-gray-100">
+      {/* Section 2 — Managed IT */}
+      <section className="py-28 bg-[#f3f4f5]">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Managed IT Support</span>
+            <h2 className="text-3xl md:text-4xl mb-4">Your Outsourced IT Department. One Predictable Monthly Fee.</h2>
+            <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
+              A fixed monthly fee. One accountable person. Microsoft 365 administration, endpoint security, compliance management, backup, monitoring, and the boring-but-essential work that stops things breaking. Built on the same standards I learned across Microsoft, Intel and Dell &mdash; applied to Irish small businesses with 1 to 50 staff.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid md:grid-cols-2 gap-8">
+            {itTiers.map((tier) => (
+              <StaggerItem key={tier.name}>
+                <div className={`rounded-2xl p-8 h-full flex flex-col ${tier.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-white border border-gray-100"}`}>
+                  {tier.popular && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Most Popular</span>
+                  )}
+                  <div className="flex items-center gap-3 mb-3">
+                    <ServerCog className="text-accent shrink-0" size={26} />
+                    <h3 className="text-xl">{tier.name}</h3>
+                  </div>
+                  <p className="text-foreground text-[14px] font-sans mb-5">{tier.target}</p>
+                  <div className="mb-6">
+                    <p className="text-4xl font-headline font-extrabold text-primary">{tier.price}</p>
+                    <p className="text-sm text-muted-foreground font-sans">{tier.unit}</p>
+                  </div>
+                  <ul className="space-y-2.5 flex-1 mb-6">
+                    {tier.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link href="/contact#send-message" className="flex-1">
+                      <Button className="w-full" variant={tier.popular ? "default" : "outline"}>Book a Free Consultation</Button>
+                    </Link>
+                    <Link href="/managed-it-support" className="flex-1">
+                      <Button variant="outline" className="w-full">See Details &rarr;</Button>
+                    </Link>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="text-center mt-6">
+            <p className="text-sm text-foreground font-sans">
+              <strong>Monthly rolling.</strong> 30 days&rsquo; notice either side. The exit is documented in writing. Move between Standard and Compliance Plus as your business changes &mdash; no tier-change penalties.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Section 3 — Specialist services */}
+      <section className="py-28 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Specialist Services</span>
+            <h2 className="text-3xl md:text-4xl mb-4">Quoted on Request</h2>
+            <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
+              Three areas of work that do not fit a sticker price. A flat list price for any of these would be either fictional or unfair. A short, free review tells us what you actually need.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            {specialistServices.map((svc) => (
+              <StaggerItem key={svc.title}>
+                <Link href={svc.href} className="block bg-[#f3f4f5] p-7 rounded-2xl card-hover h-full" data-testid={`specialist-${svc.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svc.icon className="text-accent shrink-0" size={24} />
+                    <h3 className="text-lg font-headline font-extrabold text-primary">{svc.title}</h3>
+                  </div>
+                  <p className="text-foreground text-[14px] font-sans leading-relaxed mb-4">{svc.desc}</p>
+                  <span className="text-accent text-sm font-headline font-bold inline-flex items-center">See details <ArrowRight size={14} className="ml-1" /></span>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="text-center mt-10">
+            <Link href="/contact#send-message">
+              <Button size="lg">Book a Free Review</Button>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Section 4 — Web Design */}
+      <section className="py-28 bg-[#f3f4f5]">
         <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-12">
+            <span className="eyebrow mb-5 inline-block">Web Design</span>
+            <h2 className="text-3xl md:text-4xl mb-4">A Fixed-Price Project. Then a Care Plan That Keeps It Working.</h2>
+            <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
+              Web design is the one part of what I do that genuinely is a one-off project. Pricing is straightforward, fixed before work starts, and includes the ongoing care plan that every site needs.
+            </p>
+          </FadeIn>
+
           <FadeIn>
-            <div className="bg-accent/5 border border-accent/20 p-6 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="flex-1">
-                <p className="font-headline font-bold text-primary mb-1">Prefer a guided calculator?</p>
-                <p className="text-sm text-foreground font-sans">Use the 6-step quote tool to mix and match services and see a ballpark estimate instantly &mdash; no contact required until you&rsquo;re ready.</p>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+              <div className="bg-primary px-6 py-3 flex items-center gap-3">
+                <MonitorSmartphone className="text-white" size={20} />
+                <h3 className="text-white font-headline font-bold text-sm">Web Design</h3>
               </div>
-              <Link href="/get-a-quote">
-                <Button variant="outline" className="shrink-0">Get a Quote &rarr;</Button>
-              </Link>
+              <div className="divide-y divide-gray-200">
+                {webDesignPricing.map((item, i) => (
+                  <div key={i} className="flex items-center justify-between px-6 py-3.5">
+                    <span className="text-foreground text-[14px] font-sans">{item.service}</span>
+                    <span className="font-headline font-bold text-sm text-primary whitespace-nowrap ml-4">{item.price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn className="text-center mt-8">
+            <Link href="/web-design">
+              <Button variant="outline">See Web Design Details &rarr;</Button>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Worked example */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeIn className="text-center mb-10">
+            <span className="eyebrow mb-5 inline-block">A Worked Example</span>
+            <h2 className="text-2xl md:text-3xl mb-3">What Does This Look Like for a Typical Small Business?</h2>
+          </FadeIn>
+
+          <FadeIn>
+            <div className="bg-[#f3f4f5] rounded-2xl p-8 md:p-10">
+              <p className="text-foreground text-[15px] leading-relaxed font-sans mb-5">
+                A six-person trade business getting a website, Microsoft 365 with a business phone, and managed IT would pay roughly:
+              </p>
+              <ul className="space-y-3 mb-6 list-none p-0 m-0">
+                <li className="flex items-start gap-3 text-foreground text-[15px] font-sans">
+                  <CheckCircle className="text-accent shrink-0 mt-0.5" size={16} />
+                  <span><strong>€1,299 one-off</strong> for a Business website + €49/month care plan</span>
+                </li>
+                <li className="flex items-start gap-3 text-foreground text-[15px] font-sans">
+                  <CheckCircle className="text-accent shrink-0 mt-0.5" size={16} />
+                  <span><strong>€42.50 × 6 = €255/month</strong> for Microsoft 365 with phone</span>
+                </li>
+                <li className="flex items-start gap-3 text-foreground text-[15px] font-sans">
+                  <CheckCircle className="text-accent shrink-0 mt-0.5" size={16} />
+                  <span><strong>€65 × 6 = €390/month</strong> for Managed IT Standard</span>
+                </li>
+              </ul>
+              <p className="text-foreground text-[15px] leading-relaxed font-sans mb-4">
+                <strong>Total: €1,299 one-off + €694/month</strong>, of which the Microsoft 365 portion may qualify for the <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link> (50% up to €5,000).
+              </p>
+              <p className="text-foreground text-[15px] leading-relaxed font-sans">
+                A regulated 10-person accountancy practice would substitute Compliance Plus (€95) for Standard (€65), bringing the monthly to roughly €1,250 &mdash; still significantly less than hiring a junior IT person, with a far broader skillset.
+              </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Why Bundles Save Money */}
-      <section className="py-20 bg-[#f3f4f5]">
+      {/* Government grants */}
+      <section className="py-20 bg-accent/5 border-y border-accent/10">
         <div className="container mx-auto px-4 max-w-4xl">
-          <FadeIn className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl mb-4">Why a Bundle Costs Less Than Buying Separately</h2>
-          </FadeIn>
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "One Setup", desc: "Everything configured to work together from the start. No integration problems." },
-              { title: "One Monthly Bill", desc: "Predictable costs. No surprise invoices from three different companies." },
-              { title: "One Person to Call", desc: "I know your entire setup because I built all of it." },
-              { title: "Discounted Rates", desc: "Bundles are priced below the sum of individual services." },
-            ].map((item, i) => (
-              <StaggerItem key={i}>
-                <div className="bg-white p-6 rounded-2xl text-center shadow-sm">
-                  <h3 className="text-base font-headline font-bold mb-2">{item.title}</h3>
-                  <p className="text-foreground text-sm font-sans">{item.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Individual Pricing Table */}
-      <section id="individual" className="py-28 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <FadeIn className="text-center mb-16">
-            <span className="eyebrow mb-5 inline-block">Individual Pricing</span>
-            <h2 className="text-3xl md:text-4xl mb-4">Every Service, Priced Transparently</h2>
-            <p className="text-foreground max-w-2xl mx-auto font-sans font-normal">
-              Don't need a full bundle? Individual services are available too. All prices are starting points &mdash; I provide clear, fixed quotes after a free consultation.
-            </p>
-          </FadeIn>
-
-          <div className="space-y-8">
-            {individualPricing.map((cat, i) => (
-              <FadeIn key={i} delay={i * 0.05}>
-                <div className="bg-[#f3f4f5] rounded-2xl overflow-hidden">
-                  <Link
-                    href={cat.href}
-                    className="bg-primary px-6 py-3 flex items-center justify-between group hover:bg-primary/90 transition-colors"
-                    data-testid={`link-pricing-category-${cat.href}`}
-                  >
-                    <h3 className="text-white font-headline font-bold text-sm">{cat.category}</h3>
-                    <span className="text-white/80 text-xs font-headline font-bold inline-flex items-center gap-1 group-hover:text-white transition-colors">
-                      Full details <ArrowRight size={12} />
-                    </span>
-                  </Link>
-                  <div className="divide-y divide-gray-200">
-                    {cat.items.map((item, j) => (
-                      <div key={j} className="flex items-center justify-between px-6 py-3.5">
-                        <span className="text-foreground text-[14px] font-sans">{item.service}</span>
-                        <span className="font-headline font-bold text-sm text-primary whitespace-nowrap ml-4">{item.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn className="mt-10">
-            <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <BadgeEuro className="text-accent shrink-0" size={28} />
+          <FadeIn>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 bg-white rounded-2xl shadow-sm border border-accent/10">
+              <BadgeEuro className="text-accent shrink-0" size={32} />
               <div className="flex-1">
-                <p className="font-headline font-bold text-primary mb-1">Government grants may cover up to 50% of eligible costs</p>
-                <p className="text-sm text-foreground font-sans">The Grow Digital Voucher covers 50% of new software subscriptions up to &euro;5,000 (bespoke websites aren&rsquo;t eligible). I provide scheme-compliant invoicing.</p>
+                <p className="font-headline font-bold text-primary mb-1">Up to 50% Funded — Where the Voucher Actually Applies.</p>
+                <p className="text-sm text-foreground font-sans">
+                  The Grow Digital Voucher covers 50% of new software subscriptions up to €5,000 &mdash; including Microsoft 365 first-year subscriptions, Copilot, and cybersecurity software. It does not cover bespoke websites, hardware, or ongoing care plans. I provide scheme-compliant invoicing for the elements that qualify.
+                </p>
               </div>
               <Link href="/grants-funding">
                 <Button variant="outline" className="shrink-0">See Grant Details</Button>
@@ -352,13 +389,13 @@ export default function Pricing() {
       </section>
 
       <SpotlightCTA
-        eyebrow="Not Sure Which Option Is Right?"
-        heading="Let's Figure It Out Together"
-        subtext="Book a free consultation. I'll assess what your business actually needs, recommend the right bundle or individual services, and give you a clear, fixed quote &mdash; including any government grants you're eligible for."
+        eyebrow="Not Sure Which Option Fits?"
+        heading="Let's Have a Conversation."
+        subtext="A free, no-obligation chat. I'll listen to what you actually need, give honest advice on what's right for your business, and quote you in writing for whatever you go with. No hard sell, no pressure."
         primaryText="Book a Free Consultation"
         primaryHref="/contact#send-message"
-        secondaryText="See Portfolio"
-        secondaryHref="/portfolio"
+        secondaryText="See How I Work"
+        secondaryHref="/how-it-works"
       />
     </div>
   );

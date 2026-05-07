@@ -260,7 +260,7 @@ export default function About() {
               { icon: ServerCog, title: "Everything Under One Roof", desc: "Website, email, phone, network, security, compliance, and AI tools \u2014 all from one person who makes sure it all works together. No juggling multiple providers.", testId: "card-trust-one-roof" },
               { icon: MessageSquare, title: "Direct Access, Always", desc: "You deal directly with Joey \u2014 the person doing the work. No call centres, no ticketing systems, no waiting days for a reply from someone who doesn\u2019t know your setup.", testId: "card-trust-direct" },
               { icon: FileCheck, title: "Compliance Without Complexity", desc: "GDPR, NIS2, the Accessibility Act, cookie regulations \u2014 I translate what these mean for your business and implement what\u2019s needed. You stay compliant without becoming an expert.", testId: "card-trust-compliance" },
-              { icon: BadgeEuro, title: "Transparent, Predictable Pricing", desc: "Clear, fixed quotes before work starts. No hidden fees. Digital Foundation Bundles combine everything into one predictable monthly cost \u2014 so you always know what technology costs.", testId: "card-trust-pricing" },
+              { icon: BadgeEuro, title: "Transparent, Predictable Pricing", desc: "Clear, fixed quotes before work starts. No hidden fees. Recurring subscriptions for Microsoft 365 and managed IT with no setup costs \u2014 so you always know what technology costs.", testId: "card-trust-pricing" },
             ].map((item) => (
               <StaggerItem key={item.testId}>
                 <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover flex gap-4 items-start" data-testid={item.testId}>
@@ -341,7 +341,7 @@ export default function About() {
         subtext="Whether you need a new website, better email, a security audit, or just want an honest opinion on your current technology &mdash; book a free consultation. No obligation, no jargon, no pressure."
         primaryText="Book a Free Consultation"
         primaryHref="/contact#send-message"
-        secondaryText="See Bundles &amp; Pricing"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

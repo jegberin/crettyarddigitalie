@@ -89,7 +89,7 @@ export const COUNTIES: Record<CountySlug, CountyProfile> = {
     faqsItSupport: [
       {
         q: "We're a ten-person professional services firm in the city centre. What does managed IT actually look like?",
-        a: "On the Essential plan (€45/user/month): a properly hardened Microsoft 365 tenant with MFA enforced, Microsoft Defender for Endpoint on every device, cloud-to-cloud backup for mail and files, conditional access, patch management, and a direct line to Joey when something needs a human. At ten users that's €450/month — usually less than the billable time a firm currently loses to IT admin, waiting on suppliers, and recovering from preventable incidents.",
+        a: "On the Managed IT Standard plan (€65/user/month): a properly hardened Microsoft 365 tenant with MFA enforced, Microsoft Defender for Endpoint on every device, cloud-to-cloud backup for mail and files, conditional access, patch management, and a direct line to Joey when something needs a human. At ten users that's €650/month — usually less than the billable time a firm currently loses to IT admin, waiting on suppliers, and recovering from preventable incidents.",
       },
       {
         q: "Our corporate clients keep asking about our IT security posture. Can you help us respond?",
@@ -164,7 +164,7 @@ export const COUNTIES: Record<CountySlug, CountyProfile> = {
       },
       {
         q: "We're six staff in a food-production business outside Mitchelstown. What do we actually get for €45 per user per month?",
-        a: "The Essential tier covers managed Microsoft 365 (mailboxes, OneDrive, SharePoint), MFA and conditional access, Microsoft Defender for Endpoint on every device, cloud-to-cloud backup for mail and files, patch management, and a direct line to me when something needs a human. At six users that's €270 a month — typically less than the cost of a single emergency call-out and the trading day lost around it.",
+        a: "The Standard tier covers managed Microsoft 365 (mailboxes, OneDrive, SharePoint), MFA and conditional access, Microsoft Defender for Endpoint on every device, cloud-to-cloud backup for mail and files, patch management, and a direct line to me when something needs a human. At six users that's €390 a month — typically less than the cost of a single emergency call-out and the trading day lost around it.",
       },
     ],
     ctaLine: "Based in Cork? Let's have a straightforward conversation about your website, 365, or IT — in plain English and with a clear price.",
@@ -298,7 +298,7 @@ export const COUNTIES: Record<CountySlug, CountyProfile> = {
       },
       {
         q: "We're four staff in Newcastle West. Is managed IT actually worth it at our scale?",
-        a: "Usually yes, for one practical reason: at four users the cost lands around €180 a month on the Essential plan, and the first avoided day of downtime pays for that for a year. The other benefit is consolidation — instead of the printer guy, the 365 consultant, and a nephew who 'knows computers', you have one person who knows your whole setup and handles all of it. That's worth real money in time you don't spend explaining your own systems to strangers.",
+        a: "Usually yes, for one practical reason: at four users the cost lands around €260 a month on the Standard plan, and the first avoided day of downtime pays for that for a year. The other benefit is consolidation — instead of the printer guy, the 365 consultant, and a nephew who 'knows computers', you have one person who knows your whole setup and handles all of it. That's worth real money in time you don't spend explaining your own systems to strangers.",
       },
     ],
     ctaLine: "Based in Limerick, gearing up for 2027 or running manufacturing in 2026? Let's talk about what your business needs, plainly.",
@@ -365,7 +365,7 @@ export const COUNTIES: Record<CountySlug, CountyProfile> = {
       },
       {
         q: "We're five staff in a Waterford law firm. Is managed IT actually worth it for us?",
-        a: "For a regulated professional firm at five staff, the answer is almost always yes — not because of the technology itself but because of the compliance risk. GDPR data-processor obligations, client-confidentiality expectations, and increasingly corporate-client vendor-audit pressure mean 'hoping nothing goes wrong' isn't a defensible posture. €225 a month on the Essential plan covers MFA, managed 365, Microsoft Defender, backup, and someone accountable for the whole thing. A single mishandled GDPR incident costs multiples of a year's plan.",
+        a: "For a regulated professional firm at five staff, the answer is almost always yes — not because of the technology itself but because of the compliance risk. GDPR data-processor obligations, client-confidentiality expectations, and increasingly corporate-client vendor-audit pressure mean 'hoping nothing goes wrong' isn't a defensible posture. €475 a month on the Compliance Plus plan covers MFA, managed 365, Microsoft Defender, backup, NIS2 documentation, audit-ready evidence, and someone accountable for the whole thing. A single mishandled GDPR incident costs multiples of a year's plan.",
       },
     ],
     ctaLine: "Based in Waterford, working the pharma corridor or the Greenway economy? Let's have a plain-English conversation about what your business actually needs.",

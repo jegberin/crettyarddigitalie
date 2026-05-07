@@ -431,10 +431,10 @@ function calculateBallpark(state: QuoteState): Ballpark {
       userCount = "exact size TBC";
     }
     lines.push({
-      label: "Managed IT — Professional tier",
-      note: `${userCount} · €75/user/mo standard (€45–€110 range across tiers)`,
-      monthlyLow: seats.low * 75,
-      monthlyHigh: seats.high * 75,
+      label: "Managed IT — Standard tier",
+      note: `${userCount} · €65/user/mo Standard, €95/user/mo Compliance Plus`,
+      monthlyLow: seats.low * 65,
+      monthlyHigh: seats.high * 65,
       grantEligible: "no",
     });
   }

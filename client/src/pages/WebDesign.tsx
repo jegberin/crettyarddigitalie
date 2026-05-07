@@ -552,7 +552,7 @@ export default function WebDesign() {
               </Link>
               <Link href="/pricing">
                 <Button size="lg" variant="outline">
-                  See Digital Foundation Bundles
+                  See Full Pricing
                 </Button>
               </Link>
             </div>
@@ -618,7 +618,7 @@ export default function WebDesign() {
         subtext="Book a free consultation and I'll show you exactly what a professional website can do for your business &mdash; plus any software elements in your project that might qualify for the Grow Digital Voucher."
         primaryText="Get a Quote &rarr;"
         primaryHref="/get-a-quote"
-        secondaryText="See Digital Foundation Bundles"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

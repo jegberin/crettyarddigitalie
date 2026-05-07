@@ -60,7 +60,7 @@ const SERVICE_COPY: Record<Service, {
     ctaSecondary: { label: "See the Portfolio →", href: "/portfolio" },
     spotlightHeading: "Let's Build Your Website",
     spotlightPrimary: { label: "Get a Free Quote", href: "/contact#send-message" },
-    spotlightSecondary: { label: "See Bundles & Pricing", href: "/pricing" },
+    spotlightSecondary: { label: "See Full Pricing", href: "/pricing" },
   },
   "it-support": {
     eyebrow: "Managed IT Support",
@@ -75,11 +75,10 @@ const SERVICE_COPY: Record<Service, {
     pricing: {
       heading: "Managed IT Pricing",
       tiers: [
-        { amount: "€45", label: "Essential (per user / mo)" },
-        { amount: "€65", label: "Professional (per user / mo)", highlighted: true },
-        { amount: "€95", label: "Comprehensive (per user / mo)" },
+        { amount: "€65", label: "Standard (per user / mo)", highlighted: true },
+        { amount: "€95", label: "Compliance Plus (per user / mo)" },
       ],
-      footnote: "NIS2 supply-chain readiness included at Professional and Comprehensive tiers. DORA readiness at Comprehensive for regulated financial clients where it applies.",
+      footnote: "Monthly rolling. 30 days' notice either side. NIS2 supply-chain readiness and DORA-aligned controls included at Compliance Plus for regulated firms.",
     },
     ctaPrimary: { label: "Book a Free Consultation", href: "/contact#send-message" },
     ctaSecondary: { label: "Managed IT Details →", href: "/managed-it-support" },

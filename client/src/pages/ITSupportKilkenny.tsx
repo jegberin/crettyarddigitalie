@@ -184,7 +184,7 @@ export default function ITSupportKilkenny() {
         subtext="Whether you run a restaurant, a professional firm, or a craft business \u2014 book a free IT review and I'll show you how managed support works for your sector."
         primaryText="Book a Free IT Review"
         primaryHref="/contact#send-message"
-        secondaryText="See All Bundles"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

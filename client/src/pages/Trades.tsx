@@ -83,7 +83,7 @@ export default function Trades() {
                 <img src={icon365Admin} alt="Glass cog with envelope representing managed IT and Microsoft 365 administration" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
                 <h3 className="text-lg mb-2">Managed IT That Prevents Problems</h3>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">Proactive <Link href="/managed-it-support" className="text-accent hover:underline">managed IT support</Link>: monitoring, updates, security, and support for a fixed monthly fee. When something goes wrong, one call to someone who knows your setup.</p>
-                <p className="text-sm font-headline font-bold text-accent">From &euro;45/user/mo</p>
+                <p className="text-sm font-headline font-bold text-accent">From &euro;65/user/month</p>
               </div>
             </StaggerItem>
             <StaggerItem>
@@ -99,7 +99,7 @@ export default function Trades() {
                 <img src={iconEmailPro} alt="Glass envelope with @-symbol representing professional business email" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
                 <h3 className="text-lg mb-2">Professional Email</h3>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">@yourbusiness.ie email through <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link>. Accessible on phone, laptop, and tablet. Shared between office and field. Properly secured with MFA.</p>
-                <p className="text-sm font-headline font-bold text-accent">Setup from &euro;350</p>
+                <p className="text-sm font-headline font-bold text-accent">From &euro;17.50/user/month</p>
               </div>
             </StaggerItem>
             <StaggerItem>
@@ -107,7 +107,7 @@ export default function Trades() {
                 <img src={iconBusinessPhone} alt="Glass telephone handset representing Microsoft Teams Phone business phone system" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
                 <h3 className="text-lg mb-2">A Phone System That Follows You</h3>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3"><Link href="/microsoft-365" className="text-accent hover:underline">Microsoft Teams Phone</Link> replaces your landline or the personal mobile you&rsquo;ve been giving to clients. A proper business number that works from any device.</p>
-                <p className="text-sm font-headline font-bold text-accent">From &euro;7.50/user/mo</p>
+                <p className="text-sm font-headline font-bold text-accent">Bundled into &euro;42.50/user/month plan</p>
               </div>
             </StaggerItem>
             <StaggerItem>
@@ -173,35 +173,39 @@ export default function Trades() {
         </div>
       </section>
 
-      {/* Bundle */}
+      {/* Worked example */}
       <section className="py-20 bg-accent/5 border-y border-accent/10">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn>
             <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
               <div>
-                <h2 className="text-2xl mb-4">The Trades Digital Foundation Bundle</h2>
+                <h2 className="text-2xl mb-4">A Typical Setup for a Trade Business</h2>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans mb-4">
-                  For trade businesses with 1&ndash;5 people, the Starter Bundle includes everything you need to get online properly:
+                  A six-person trade business getting a website, Microsoft 365 with a business phone, and managed IT typically pays:
                 </p>
-                <div className="grid sm:grid-cols-2 gap-2">
-                  {["Professional website (up to 3 pages with portfolio)", "Website Care Plan (hosting, security, backups)", "Microsoft 365 (professional email)", "MFA and basic security", "Google Business Profile guidance"].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-[14px] font-sans">
-                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-4">
-                  <p className="font-headline font-bold text-primary">Setup from &euro;1,099 &middot; Ongoing from &euro;89/month</p>
-                  <p className="text-sm text-accent font-headline font-bold">Software elements (M365, CRM) may qualify for Grow Digital Voucher funding.</p>
-                </div>
+                <ul className="space-y-2 mb-4 list-none p-0 m-0">
+                  <li className="flex items-start gap-2 text-[14px] font-sans">
+                    <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                    <span><strong>&euro;1,299 one-off</strong> for a Business website + &euro;49/month care plan</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-[14px] font-sans">
+                    <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                    <span><strong>&euro;42.50 &times; 6 = &euro;255/month</strong> for Microsoft 365 with phone</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-[14px] font-sans">
+                    <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                    <span><strong>&euro;65 &times; 6 = &euro;390/month</strong> for Managed IT Standard</span>
+                  </li>
+                </ul>
+                <p className="font-headline font-bold text-primary">Total: &euro;1,299 one-off + &euro;694/month</p>
+                <p className="text-sm text-accent font-headline font-bold">M365 subscriptions may qualify for Grow Digital Voucher (50% up to &euro;5,000).</p>
               </div>
               <div className="flex flex-col gap-3">
                 <Link href="/contact#send-message">
-                  <Button size="lg" className="w-full">Get a Quote</Button>
+                  <Button size="lg" className="w-full">Book a Free Consultation</Button>
                 </Link>
                 <Link href="/pricing">
-                  <Button size="lg" variant="outline" className="w-full">See All Bundles</Button>
+                  <Button size="lg" variant="outline" className="w-full">See Full Pricing</Button>
                 </Link>
               </div>
             </div>

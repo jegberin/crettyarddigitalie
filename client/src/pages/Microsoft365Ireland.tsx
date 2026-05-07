@@ -209,7 +209,7 @@ export default function Microsoft365Ireland() {
         subtext="Book a free consultation. I'll assess your current email and file setup, recommend the right plan, and give you a clear quote &mdash; including any grants you're eligible for."
         primaryText="Book a Free Consultation"
         primaryHref="/contact#send-message"
-        secondaryText="See Bundles &amp; Pricing"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

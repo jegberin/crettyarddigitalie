@@ -106,7 +106,7 @@ export default function ITSupportLaois() {
             <Accordion type="single" collapsible className="w-full space-y-3">
               {[
                 { id: "itl-1", q: "Can you visit my office in Portlaoise?", a: "Absolutely. I\u2019m 20 minutes from Portlaoise. On-site visits for network issues, hardware setup, or new office configurations are a normal part of my service." },
-                { id: "itl-2", q: "I only have 2\u20133 staff \u2014 is this overkill?", a: "Not at all. My Essential plan starts at \u20ac45/user/month. Even a 2-person business benefits from proper email management, security, and someone to call when things go wrong." },
+                { id: "itl-2", q: "I only have 2\u20133 staff \u2014 is this overkill?", a: "Not at all. The Standard plan starts at \u20ac65/user/month. Even a 2-person business benefits from proper email management, security, and someone to call when things go wrong." },
                 { id: "itl-3", q: "Do you cover Portarlington and south Offaly too?", a: "Yes \u2014 Portarlington straddles the border and I cover it fully. I also serve nearby Offaly towns like Mountmellick and Edenderry." },
               ].map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6">
@@ -153,7 +153,7 @@ export default function ITSupportLaois() {
         subtext="Book a free IT review. I'll assess your setup, identify the risks, and show you how managed support works \u2014 from right here in Laois."
         primaryText="Book a Free IT Review"
         primaryHref="/contact#send-message"
-        secondaryText="See All Bundles"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

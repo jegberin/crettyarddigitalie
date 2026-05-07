@@ -248,7 +248,7 @@ export function PortfolioSchema() {
   const projects = [
     { id: "project-bm-custom-furniture", name: "BM Custom Furniture", url: "https://bmcustomfurniture.ie", description: "Bespoke fitted furniture and wall panelling website with strong local SEO for Carlow and Laois." },
     { id: "project-go-green-steam-clean", name: "Go Green Steam Clean", url: "https://gogreensteamclean.ie", description: "Eco-friendly steam cleaning website with conversion-optimised booking CTAs." },
-    { id: "project-nurney-plant-civil", name: "Nurney Plant and Civil", url: "https://nurneyplantandcivil.ie", description: "Integrated Digital Foundation project: corporate website, Microsoft 365, and business-grade Wi-Fi for a plant hire and civil engineering firm in County Carlow." },
+    { id: "project-nurney-plant-civil", name: "Nurney Plant and Civil", url: "https://nurneyplantandcivil.ie", description: "Integrated IT setup: corporate website, Microsoft 365, and business-grade Wi-Fi for a plant hire and civil engineering firm in County Carlow." },
     { id: "project-more-than-points", name: "More Than Points", url: "https://morethanpoints.ie", description: "Teen and parent coaching website with empathetic, trust-building copy and clear service structure." },
     { id: "project-crettyard-ie", name: "Crettyard.ie", url: "https://crettyard.ie", description: "Community website for Crettyard (Co. Laois) with local business directory, heritage content, and public notice board." },
   ];

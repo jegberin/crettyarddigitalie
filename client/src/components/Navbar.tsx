@@ -21,7 +21,7 @@ const industryLinks = [
 ];
 
 const moreLinks = [
-  { label: "Bundles & Pricing", path: "/pricing" },
+  { label: "Pricing", path: "/pricing" },
   { label: "Grants & Funding", path: "/grants-funding" },
   { label: "How It Works", path: "/how-it-works" },
   { label: "Portfolio", path: "/portfolio" },

@@ -260,7 +260,7 @@ export default function ManagedIT() {
               </div>
               <div className="mt-4 pl-0 md:pl-12">
                 <Link href="/pricing" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors">
-                  See how Digital Foundation Bundles work <ArrowRight size={14} className="ml-1" />
+                  See full pricing <ArrowRight size={14} className="ml-1" />
                 </Link>
               </div>
             </div>
@@ -276,30 +276,40 @@ export default function ManagedIT() {
             <h2 className="text-3xl md:text-4xl mb-4">Simple, Fixed Monthly Pricing &mdash; No Surprises</h2>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                name: "Essential Support",
-                price: "From \u20ac45",
+                name: "Managed IT Standard",
+                price: "\u20ac65",
                 unit: "per user / month",
-                target: "Micro-businesses & solo traders (1\u20135 users)",
-                items: ["Microsoft 365 administration", "Remote helpdesk support", "Endpoint antivirus (Microsoft Defender)", "Automated patch management", "Cloud backup", "Basic GDPR compliance checks", "Direct access to me"],
-                popular: false,
-              },
-              {
-                name: "Professional Managed IT",
-                price: "From \u20ac75",
-                unit: "per user / month",
-                target: "Small offices & teams (5\u201315 users)",
-                items: ["Everything in Essential", "Advanced email security", "Intune device management", "Priority response times", "Regular IT health reviews", "NIS2 readiness checks", "Teams Phone support"],
+                target: "For most small Irish businesses (1\u201320 staff). Proper IT looked after, without the corporate price tag.",
+                items: [
+                  "Proactive monitoring of devices and Microsoft 365",
+                  "Patch management",
+                  "Microsoft Defender endpoint security",
+                  "MFA enforcement",
+                  "Cloud backup with tested recovery",
+                  "M365 user administration",
+                  "Remote support via Zoho Assist Enterprise",
+                  "Direct access to Joey",
+                  "Quarterly IT review",
+                ],
                 popular: true,
               },
               {
-                name: "Comprehensive IT & Security",
-                price: "From \u20ac110",
+                name: "Managed IT \u2014 Compliance Plus",
+                price: "\u20ac95",
                 unit: "per user / month",
-                target: "Professional services & regulated firms",
-                items: ["Everything in Professional", "Phishing simulations & EDR", "Full NIS2 & GDPR management", "DORA readiness (financial sector)", "Quarterly on-site reviews", "Staff cyber awareness training", "Copilot readiness assessment"],
+                target: "For regulated firms (financial, legal, healthcare) and businesses inside larger supply chains where NIS2 or DORA documentation is being asked for.",
+                items: [
+                  "Everything in Managed IT Standard",
+                  "Formal NIS2 readiness documentation",
+                  "DORA-aligned controls and reporting (where applicable)",
+                  "Quarterly compliance audits",
+                  "Staff phishing simulations",
+                  "Cyber awareness training",
+                  "Audit-ready evidence of controls",
+                ],
                 popular: false,
               },
             ].map((tier, i) => (
@@ -307,9 +317,9 @@ export default function ManagedIT() {
                 <div className={`rounded-2xl p-8 h-full flex flex-col ${tier.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-[#f3f4f5]"}`}>
                   {tier.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Most Popular</span>}
                   <h3 className="text-lg mb-1">{tier.name}</h3>
-                  <p className="text-3xl font-headline font-extrabold text-accent mb-0">{tier.price}</p>
+                  <p className="text-4xl font-headline font-extrabold text-primary mb-0">{tier.price}</p>
                   <p className="text-sm text-muted-foreground mb-4 font-sans">{tier.unit}</p>
-                  <p className="text-xs text-muted-foreground mb-6 font-sans">{tier.target}</p>
+                  <p className="text-[13px] text-foreground mb-6 font-sans leading-relaxed">{tier.target}</p>
                   <ul className="space-y-2.5 flex-1 mb-6">
                     {tier.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
@@ -319,7 +329,7 @@ export default function ManagedIT() {
                     ))}
                   </ul>
                   <Link href="/contact#send-message">
-                    <Button className="w-full" variant={tier.popular ? "default" : "outline"}>Get a Quote</Button>
+                    <Button className="w-full" variant={tier.popular ? "default" : "outline"}>Book a Free Consultation</Button>
                   </Link>
                 </div>
               </StaggerItem>
@@ -327,10 +337,10 @@ export default function ManagedIT() {
           </StaggerContainer>
 
           <FadeIn className="text-center mt-8">
-            <p className="text-foreground text-sm font-sans mb-2">All plans quoted after a free discovery call. No long-term lock-ins. 30 days&rsquo; notice either side. The exit is documented in the agreement &mdash; a confident provider tells you how to leave them.</p>
-            <p className="text-foreground text-sm font-sans mb-4">Thinking about AI? The Comprehensive tier includes a <Link href="/ai-readiness" className="text-accent hover:underline">Microsoft 365 Copilot readiness assessment</Link>. Looking for grant funding? The M365 subscriptions inside your IT plan may qualify for the <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link>.</p>
+            <p className="text-foreground text-sm font-sans mb-2"><strong>Monthly rolling.</strong> 30 days&rsquo; notice either side. The exit is documented in the agreement &mdash; a confident provider tells you how to leave them. Move between Standard and Compliance Plus as your business changes &mdash; no tier-change penalties.</p>
+            <p className="text-foreground text-sm font-sans mb-4">Thinking about AI? Compliance Plus includes a <Link href="/ai-readiness" className="text-accent hover:underline">Microsoft 365 Copilot readiness assessment</Link>. The M365 subscriptions inside your IT plan may qualify for the <Link href="/grants-funding" className="text-accent hover:underline">Grow Digital Voucher</Link>.</p>
             <Link href="/pricing">
-              <Button variant="outline">See Digital Foundation Bundles &rarr;</Button>
+              <Button variant="outline">See Full Pricing &rarr;</Button>
             </Link>
           </FadeIn>
         </div>
@@ -347,7 +357,7 @@ export default function ManagedIT() {
             <Accordion type="single" collapsible className="w-full space-y-3">
               {[
                 { id: "mit-1", q: "Is this only for businesses with lots of staff?", a: "Not at all. Many clients are one to five-person businesses. Even a sole trader benefits from proper email, device, and compliance management." },
-                { id: "mit-2", q: "Is compliance really included?", a: "Yes. GDPR checks and configurations are included in every plan. NIS2 supply-chain readiness is included at Professional and Comprehensive tiers (see the cybersecurity page for full framework detail). DORA readiness is included at the Comprehensive tier for regulated financial clients where DORA applies \u2014 see the DORA page. It\u2019s not an add-on \u2014 it\u2019s part of the service." },
+                { id: "mit-2", q: "Is compliance really included?", a: "Yes. GDPR checks and configurations are included in both tiers. NIS2 supply-chain readiness, DORA-aligned controls (where applicable), audit-ready evidence, and quarterly compliance audits are all included at the Compliance Plus tier for regulated firms (see the cybersecurity page for full framework detail). It\u2019s not an add-on \u2014 it\u2019s part of the service." },
                 { id: "mit-3", q: "How is this different from calling someone when things break?", a: "Predictability (fixed fee, not hourly bills), prevention (problems caught early), familiarity (I already know your setup), and compliance (someone is actively managing your regulatory obligations). This is what managed service providers (MSPs) deliver \u2014 IT outsourced properly, not an hourly break-fix gamble." },
                 { id: "mit-4", q: "Can I change plans as I grow?", a: "Absolutely. Plans scale with your business. Adding a new team member? I add them to the system. Need more coverage? We adjust. No reinstalling, no starting over." },
                 { id: "mit-5", q: "Do I need this if I already have Microsoft 365?", a: "Having the licence is one thing \u2014 having it properly managed is another. Managed IT covers user management, security monitoring, troubleshooting, Intune device enrolment, and compliance. It\u2019s the difference between owning a car and having someone service it regularly. See the Microsoft 365 page for the product details I set up for you." },

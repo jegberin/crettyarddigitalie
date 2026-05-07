@@ -469,74 +469,25 @@ export default function Microsoft365() {
       {/* ── Pricing ───────────────────────────────────────────────── */}
       <section className="py-28 bg-[#f3f4f5]">
         <div className="container mx-auto px-4 max-w-4xl">
-          <FadeIn className="text-center mb-14">
+          <FadeIn className="text-center mb-12">
             <span className="eyebrow mb-5 inline-block">Pricing</span>
-            <h2 className="text-3xl">What Microsoft 365 Setup Costs</h2>
+            <h2 className="text-3xl md:text-4xl mb-4">€17.50 per user per month, or €42.50 with a business phone.</h2>
             <p className="text-foreground mt-4 max-w-2xl mx-auto leading-relaxed font-sans font-normal">
-              Every business is different, so I quote based on your specific situation. Here's what typically influences the price.
+              No setup fee. Monthly subscription. The price covers the licence, the proper configuration, ongoing administration, and direct access to Joey. The €42.50 option adds Microsoft Teams Phone with a calling plan &mdash; a proper business number that works from any device and replaces traditional landlines.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-14 items-start">
-            <FadeIn>
-              <ul className="space-y-5">
-                {[
-                  { factor: "Number of users", detail: "More mailboxes means a larger setup scope." },
-                  { factor: "Migration complexity", detail: "Moving from Gmail is simpler than migrating years of data from legacy Exchange." },
-                  { factor: "Security needs", detail: "Basic protection vs advanced compliance for regulated industries." },
-                  { factor: "Teams Phone", detail: "Adding a business phone system increases setup scope but simplifies your ongoing costs." },
-                  { factor: "Training", detail: "A quick walkthrough vs detailed hands-on sessions for your full team." },
-                  { factor: "Ongoing support", detail: "One-off setup vs monthly administration and support." },
-                ].map((item) => (
-                  <li key={item.factor} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-accent rounded-full shrink-0 mt-2.5"></span>
-                    <div>
-                      <span className="font-headline font-bold text-[15px]">{item.factor}:</span>
-                      <span className="text-foreground text-[15px] ml-1 font-sans">{item.detail}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm" data-testid="card-pricing-guidance">
-                <h3 className="text-lg mb-4">Typical Starting Points</h3>
-                <ul className="space-y-4 text-[15px] font-sans">
-                  <li className="flex justify-between border-b border-gray-100 pb-3">
-                    <span className="text-foreground">Basic setup (1&ndash;5 users)</span>
-                    <span className="font-headline font-bold">From &euro;350</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-100 pb-3">
-                    <span className="text-foreground">Full migration &amp; setup (5&ndash;20 users)</span>
-                    <span className="font-headline font-bold">From &euro;600</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-100 pb-3">
-                    <span className="text-foreground">GDPR &amp; security hardening</span>
-                    <span className="font-headline font-bold">From &euro;150</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-100 pb-3">
-                    <span className="text-foreground">Teams Phone setup</span>
-                    <span className="font-headline font-bold">From &euro;150</span>
-                  </li>
-                  <li className="flex justify-between border-b border-gray-100 pb-3">
-                    <span className="text-foreground">Teams Phone (calling plan)</span>
-                    <span className="font-headline font-bold">From &euro;7.50/user/mo</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-foreground">Monthly support &amp; admin</span>
-                    <span className="font-headline font-bold">From &euro;50/mo</span>
-                  </li>
-                </ul>
-                <p className="text-foreground/80 text-sm mt-6 leading-relaxed font-sans">
-                  Microsoft 365 licence fees are separate and billed directly by Microsoft. I recommend the most cost-effective plan.
-                </p>
-                <p className="text-sm font-headline font-bold text-accent mt-4">
-                  <Link href="/grants-funding" className="hover:underline">The Grow Digital Voucher</Link> may cover up to 50% of setup costs and 12 months of licences.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
+          <FadeIn>
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+              <p className="text-foreground text-[15px] leading-relaxed font-sans mb-3">
+                Larger migrations (20+ mailboxes from legacy Exchange, complex Google Workspace tenancies) may be quoted as a separate one-off project. Most are not.
+              </p>
+              <p className="text-sm font-headline font-bold text-accent">
+                <Link href="/grants-funding" className="hover:underline">The Grow Digital Voucher</Link> may cover up to 50% of first-year Microsoft 365 subscriptions.
+              </p>
+              <p className="text-xs text-muted-foreground font-sans mt-3">Subject to Microsoft licence price changes.</p>
+            </div>
+          </FadeIn>
 
           <FadeIn className="text-center mt-10">
             <div className="flex flex-wrap gap-4 justify-center">
@@ -544,7 +495,7 @@ export default function Microsoft365() {
                 <Button size="lg">Book a Free Consultation</Button>
               </Link>
               <Link href="/pricing">
-                <Button size="lg" variant="outline">See Digital Foundation Bundles</Button>
+                <Button size="lg" variant="outline">See Full Pricing &rarr;</Button>
               </Link>
             </div>
           </FadeIn>

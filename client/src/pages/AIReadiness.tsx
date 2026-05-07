@@ -94,13 +94,13 @@ export default function AIReadiness() {
             {[
               {
                 title: "AI Readiness Assessment",
-                price: "From \u20ac150",
+                price: "Quoted on request",
                 desc: "A practical, jargon-free consultation where I look at how your business works day-to-day and identify where AI tools could save you the most time. You get a clear report showing what\u2019s worth implementing now, what can wait, and what the realistic costs and benefits are.",
                 note: "This isn\u2019t a sales pitch for Microsoft \u2014 it\u2019s an honest assessment. If AI isn\u2019t the right investment for your business today, I\u2019ll tell you.",
               },
               {
                 title: "Microsoft 365 Copilot Setup & Training",
-                price: "From \u20ac250",
+                price: "Quoted on request",
                 desc: "If your business is already on Microsoft 365, adding Copilot is straightforward \u2014 but it needs correct configuration and your team needs to know how to get the best out of it. I handle both Microsoft 365 Copilot (paid) and Copilot Chat (free tier) setup.",
                 items: [
                   "Copilot licence setup and configuration within your Microsoft 365 environment",
@@ -112,7 +112,7 @@ export default function AIReadiness() {
               },
               {
                 title: "AI Strategy Consultation (incl. Copilot Studio & Azure OpenAI)",
-                price: "From \u20ac400",
+                price: "Quoted on request",
                 desc: "For businesses that want a deeper understanding of how AI could reshape their operations over the next 12\u201324 months. I assess your workflows, identify automation opportunities across Copilot Studio custom agents and Azure OpenAI where relevant, and create a practical roadmap that\u2019s aligned with the EU AI Act. Strategic advantage, not technology for its own sake.",
                 note: null,
               },

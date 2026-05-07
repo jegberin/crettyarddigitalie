@@ -91,7 +91,7 @@ export function Footer() {
               <nav aria-label="Company links">
                 <ul className="space-y-2.5 list-none m-0 p-0">
                   <li><Link href="/" className="text-white/80 hover:text-white transition-colors text-sm">Home</Link></li>
-                  <li><Link href="/pricing" className="text-white/80 hover:text-white transition-colors text-sm">Bundles &amp; Pricing</Link></li>
+                  <li><Link href="/pricing" className="text-white/80 hover:text-white transition-colors text-sm">Pricing</Link></li>
                   <li><Link href="/grants-funding" className="text-white/80 hover:text-white transition-colors text-sm">Grants &amp; Funding</Link></li>
                   <li><Link href="/how-it-works" className="text-white/80 hover:text-white transition-colors text-sm">How It Works</Link></li>
                   <li><Link href="/portfolio" className="text-white/80 hover:text-white transition-colors text-sm">Portfolio</Link></li>

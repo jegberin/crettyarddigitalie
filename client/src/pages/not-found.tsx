@@ -14,8 +14,8 @@ const quickLinks = [
   {
     href: "/pricing",
     icon: Tag,
-    title: "Bundles & Pricing",
-    desc: "Digital Foundation Bundles and individual service pricing.",
+    title: "Pricing",
+    desc: "Predictable subscription pricing for Microsoft 365, managed IT, and web design.",
   },
   {
     href: "/portfolio",

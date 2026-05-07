@@ -136,9 +136,9 @@ export default function DORACompliance() {
               <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover">
                 <h3 className="text-lg mb-2">Ongoing Compliance Management</h3>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">
-                  As part of a <Link href="/managed-it-support" className="text-accent hover:underline">Comprehensive Managed IT plan</Link>, DORA compliance monitoring is included &mdash; not an add-on. I keep your systems aligned with requirements as the supporting Regulatory Technical Standards evolve.
+                  As part of a <Link href="/managed-it-support" className="text-accent hover:underline">Compliance Plus Managed IT plan</Link>, DORA compliance monitoring is included &mdash; not an add-on. I keep your systems aligned with requirements as the supporting Regulatory Technical Standards evolve.
                 </p>
-                <p className="text-sm font-headline font-bold text-accent">Included in Comprehensive plan</p>
+                <p className="text-sm font-headline font-bold text-accent">Included in Compliance Plus</p>
               </div>
             </StaggerItem>
             <StaggerItem>

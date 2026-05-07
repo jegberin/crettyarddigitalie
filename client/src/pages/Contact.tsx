@@ -409,7 +409,7 @@ export default function Contact() {
                             <SelectItem value="network-wifi">Network & Wi‑Fi</SelectItem>
                             <SelectItem value="cybersecurity">Cybersecurity & Compliance</SelectItem>
                             <SelectItem value="ai-copilot">AI & Microsoft Copilot</SelectItem>
-                            <SelectItem value="digital-bundle">Digital Foundation Bundle</SelectItem>
+                            <SelectItem value="digital-bundle">Multi-service quote (website + IT + M365)</SelectItem>
                             <SelectItem value="grant-advice">Government Grant Advice</SelectItem>
                             <SelectItem value="not-sure">Not sure yet</SelectItem>
                           </SelectContent>

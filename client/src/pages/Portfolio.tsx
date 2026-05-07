@@ -76,7 +76,7 @@ export default function Portfolio() {
       ],
       challenge: "Nurney Plant and Civil operate a substantial plant hire and civil engineering business in Co. Carlow, but their online presence didn't reflect the scale or professionalism of their operation. Prospective clients — including councils and main contractors — were making decisions based on a site that undersold the business. Internally, email between office and site crews was unreliable (personal Gmail accounts), and Wi-Fi coverage was patchy.",
       solution: "Three integrated solutions: a professional corporate website clearly presenting their fleet and capabilities, Microsoft 365 for professional email across office and site teams, and a business-grade Wi-Fi installation covering the entire premises including workshop areas.",
-      outcome: "A credible web presence that helps win contracts. Professional @nurneyplantandcivil.ie email between office and field. Full Wi-Fi coverage across all areas. This project is a perfect example of the Digital Foundation Bundle approach — one provider handling website, email, and network as one integrated system."
+      outcome: "A credible web presence that helps win contracts. Professional @nurneyplantandcivil.ie email between office and field. Full Wi-Fi coverage across all areas. A perfect example of one provider handling website, email, and network as one integrated system — a single recurring subscription for ongoing IT, hardware, and care."
     },
     {
       id: "project-more-than-points",
@@ -336,7 +336,7 @@ export default function Portfolio() {
         subtext="Every project on this page started with a free consultation. No pressure, no jargon &mdash; just an honest conversation about what I can do for your business."
         primaryText="Book a Free Consultation"
         primaryHref="/contact#send-message"
-        secondaryText="See Bundles &amp; Pricing"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

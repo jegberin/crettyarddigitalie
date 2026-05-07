@@ -419,7 +419,7 @@ export default function ManagedHardware() {
                 <div>
                   <p className="text-[13px] font-headline font-bold uppercase tracking-wider text-accent mb-2">Hardware + server + network in one rollout</p>
                   <p className="text-foreground text-lg leading-relaxed font-sans mb-4">
-                    For County Carlow plant-hire firm Nurney Plant and Civil, a single engagement delivered the full Digital Foundation: business desktops, an on-site server for shared files and backups, Microsoft 365, and hardened business Wi-Fi &mdash; all configured, migrated, and supported end-to-end.
+                    For County Carlow plant-hire firm Nurney Plant and Civil, a single engagement delivered the full integrated IT setup: business desktops, an on-site server for shared files and backups, Microsoft 365, and hardened business Wi-Fi &mdash; all configured, migrated, and supported end-to-end.
                   </p>
                   <p className="font-headline font-bold text-primary text-sm">Brian, Nurney Plant and Civil &mdash; Co. Carlow</p>
                 </div>

@@ -128,7 +128,7 @@ export default function ITSupportCarlow() {
             <Accordion type="single" collapsible className="w-full space-y-3">
               {[
                 { id: "itc-1", q: "My main contractor is asking about IT security. Can you help?", a: "This is exactly why many Carlow construction firms come to me. I implement the security measures (MFA, email encryption, backup, endpoint protection) and provide documentation that proves compliance. When the question comes, you\u2019re ready." },
-                { id: "itc-2", q: "We're a small crew \u2014 is managed IT really for us?", a: "Even a 3-person operation with email, a laptop, and an internet connection benefits. At \u20ac45/user on the Essential plan, it costs less than a single emergency call-out \u2014 and prevents most emergencies." },
+                { id: "itc-2", q: "We're a small crew \u2014 is managed IT really for us?", a: "Even a 3-person operation with email, a laptop, and an internet connection benefits. At \u20ac65/user on the Standard plan, it costs less than a single emergency call-out \u2014 and prevents most emergencies." },
                 { id: "itc-3", q: "Can you do on-site work in Tullow or Muinebheag?", a: "Yes. I cover all of Carlow \u2014 Carlow town, Tullow, Muinebheag (Bagenalstown), Borris, Leighlinbridge, and everywhere in between." },
               ].map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6 bg-white">
@@ -175,7 +175,7 @@ export default function ITSupportCarlow() {
         subtext="Book a free IT and security review. Whether you need basic support or supply chain compliance documentation, I'll show you exactly what's needed."
         primaryText="Book a Free IT Review"
         primaryHref="/contact#send-message"
-        secondaryText="See All Bundles"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>

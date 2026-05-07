@@ -191,44 +191,39 @@ export default function ProfessionalServices() {
           </FadeIn>
         </div>
       </section>
-      {/* Bundle */}
+      {/* Worked example */}
       <section className="py-20 bg-accent/5 border-y border-accent/10">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn>
             <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
               <div>
-                <h2 className="text-2xl mb-4">The Professional Services Bundle</h2>
+                <h2 className="text-2xl mb-4">A Typical Setup for a Professional Firm</h2>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans mb-4">
-                  For firms with 5&ndash;15 people, the Business or Growth Bundle typically includes:
+                  A regulated 10-person accountancy or legal practice typically pays:
                 </p>
-                <div className="grid sm:grid-cols-2 gap-2">
-                  {[
-                    "Professional website with compliance",
-                    "Premium Website Care Plan with SEO",
-                    "Microsoft 365 Business Standard or Premium",
-                    "Full email migration and team training",
-                    "Microsoft Teams Phone",
-                    "Professional Managed IT Support",
-                    "GDPR, NIS2, and cookie compliance",
-                    "Quarterly IT and compliance reviews",
-                    "Secure SharePoint document vault",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-[14px] font-sans">
-                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-4 font-headline font-bold text-primary">
-                  From &euro;75/user/month (Professional) or &euro;110/user/month (Comprehensive)
-                </p>
+                <ul className="space-y-2 mb-4 list-none p-0 m-0">
+                  <li className="flex items-start gap-2 text-[14px] font-sans">
+                    <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                    <span><strong>&euro;1,299 one-off</strong> for a Business website + &euro;79/month Premium care plan</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-[14px] font-sans">
+                    <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                    <span><strong>&euro;42.50 &times; 10 = &euro;425/month</strong> for Microsoft 365 with phone</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-[14px] font-sans">
+                    <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                    <span><strong>&euro;95 &times; 10 = &euro;950/month</strong> for Managed IT Compliance Plus (NIS2, GDPR, audit-ready evidence)</span>
+                  </li>
+                </ul>
+                <p className="font-headline font-bold text-primary mb-2">Total: &euro;1,299 one-off + roughly &euro;1,454/month</p>
+                <p className="text-sm text-foreground font-sans italic">Significantly less than hiring a junior IT person, with a far broader skillset and audit-ready compliance.</p>
               </div>
               <div className="flex flex-col gap-3">
                 <Link href="/contact#send-message">
                   <Button size="lg" className="w-full">Book IT &amp; Compliance Review</Button>
                 </Link>
                 <Link href="/pricing">
-                  <Button size="lg" variant="outline" className="w-full">See All Bundles</Button>
+                  <Button size="lg" variant="outline" className="w-full">See Full Pricing</Button>
                 </Link>
               </div>
             </div>
@@ -296,7 +291,7 @@ export default function ProfessionalServices() {
         subtext="Book a free IT and compliance review. I'll assess your current setup, identify regulatory gaps, and give you a clear plan &mdash; in plain English."
         primaryText="Book a Free IT &amp; Compliance Review"
         primaryHref="/contact#send-message"
-        secondaryText="See Bundles &amp; Pricing"
+        secondaryText="See Full Pricing"
         secondaryHref="/pricing"
       />
     </div>
