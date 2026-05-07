@@ -250,7 +250,7 @@ export default function Cybersecurity() {
                 ))}
               </ul>
               <p className="text-[14px] text-foreground/80 font-sans mb-8">
-                This is particularly common for trades and construction firms \u2014 see the <Link href="/it-support-carlow" className="text-accent hover:underline">Carlow IT support page</Link> for the NIS2 supply-chain angle in full. Regulated financial firms should see <Link href="/dora-compliance" className="text-accent hover:underline">DORA compliance</Link> instead.
+                This is particularly common for <Link href="/trades" className="text-accent hover:underline">trades and construction firms</Link> &mdash; if a main contractor is asking about your IT security, that&rsquo;s the supply-chain angle in action. Regulated financial firms should see <Link href="/dora-compliance" className="text-accent hover:underline">DORA compliance</Link> instead.
               </p>
 
               <h3 className="text-xl mb-4">The five things NIS2 requires:</h3>
