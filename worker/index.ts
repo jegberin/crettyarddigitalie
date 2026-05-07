@@ -308,8 +308,10 @@ function withLinkHeaders(response: Response): Response {
 }
 
 // ─── Markdown for Agents ─────────────────────────────────────────────────────
-// Routes the scheduled handler refreshes daily. Slugs match request paths:
-// `/grants-funding` -> KV key `grants-funding`; `/` -> KV key `index`.
+// Routes the scheduled handler refreshes daily in a single cron firing.
+// Slugs match request paths: `/grants-funding` -> KV key `grants-funding`;
+// `/` -> KV key `index`. Add a route here AND to script/generate-sitemap.ts
+// when introducing a new public page.
 const MARKDOWN_ROUTES: readonly string[] = [
   "/",
   "/about",
@@ -391,8 +393,8 @@ async function tryServeMarkdownFromCache(env: Env, url: URL): Promise<Response |
   headers.set("content-type", "text/markdown; charset=utf-8");
   headers.set("x-markdown-tokens", String(approximateTokens(md)));
   headers.set("vary", "accept");
-  // Browsers/agents may cache for 5 min; the scheduled job refreshes daily.
-  headers.set("cache-control", "public, max-age=300");
+  // Agents may cache for an hour; the scheduled job refreshes daily.
+  headers.set("cache-control", "public, max-age=3600");
   headers.set("link", LINK_HEADER);
   return new Response(md, { status: 200, headers });
 }
@@ -429,49 +431,66 @@ async function fetchMarkdownFromBrowserRendering(
   return data.result;
 }
 
-// One route per worker invocation. Workers Free has a 30-second wall-clock
-// budget on ctx.waitUntil(); a single Browser Rendering call (~3 s) fits with
-// huge margin, but a 30-route loop with 10 s rate-limit spacing does not.
-// A cursor in KV tracks which route to render next, and each cron firing
-// (every 5 min — see wrangler.jsonc) advances the cursor by one. Full cache
-// refresh: ~30 × 5 min = 2.5 h. To populate faster, hit /api/refresh-markdown
-// in a loop with ≥10 s spacing (Browser Rendering's quick-action rate limit
-// on the free tier).
-const CURSOR_KEY = "__cursor";
+// Refresh every route in a single invocation. Sequential with a small spacer
+// to stay polite to the Browser Rendering API. Wall-clock budget on the paid
+// Workers plan is 15 minutes for ctx.waitUntil(); 40 routes × ~4 s ≈ 160 s,
+// well within budget. A failed route is logged and the loop continues — the
+// cached version stays under its 7-day TTL until the next refresh succeeds.
+const STATUS_KEY = "__last_refresh";
+const ROUTE_TTL_SECONDS = 60 * 60 * 24 * 7;
+const SPACER_MS = 200; // tiny breather between sequential calls
 
-async function refreshNextRoute(env: Env): Promise<{ route: string; ok: boolean; cursor: number }> {
-  if (!env.MARKDOWN_CACHE) {
-    console.error("[markdown] MARKDOWN_CACHE binding not configured; cannot refresh.");
-    return { route: "", ok: false, cursor: 0 };
-  }
-
-  const cursorRaw = await env.MARKDOWN_CACHE.get(CURSOR_KEY);
-  let cursor = cursorRaw ? Number.parseInt(cursorRaw, 10) : 0;
-  if (!Number.isFinite(cursor) || cursor < 0 || cursor >= MARKDOWN_ROUTES.length) cursor = 0;
-
-  const route = MARKDOWN_ROUTES[cursor];
-  const nextCursor = (cursor + 1) % MARKDOWN_ROUTES.length;
-
-  let ok = false;
+async function refreshOneRoute(route: string, env: Env): Promise<{ route: string; ok: boolean; bytes: number; error?: string }> {
   try {
     const md = await fetchMarkdownFromBrowserRendering(route, env);
     const key = pathToSlug(route);
     if (!key) {
-      console.warn(`[markdown] skipping ${route} (no slug)`);
-    } else {
-      // 7-day TTL so a few failed refreshes don't expire the content.
-      await env.MARKDOWN_CACHE.put(key, md, { expirationTtl: 60 * 60 * 24 * 7 });
-      ok = true;
-      console.log(`[markdown] refreshed ${route} (${md.length} bytes) — cursor ${cursor} -> ${nextCursor}`);
+      return { route, ok: false, bytes: 0, error: "no slug" };
     }
+    await env.MARKDOWN_CACHE!.put(key, md, { expirationTtl: ROUTE_TTL_SECONDS });
+    return { route, ok: true, bytes: md.length };
   } catch (err) {
-    console.error(`[markdown] ${route}:`, err instanceof Error ? err.message : err);
+    const message = err instanceof Error ? err.message : String(err);
+    return { route, ok: false, bytes: 0, error: message };
+  }
+}
+
+async function refreshAllRoutes(env: Env): Promise<{ ok: number; failed: number; durationMs: number; results: Array<{ route: string; ok: boolean; bytes: number; error?: string }> }> {
+  const startedAt = Date.now();
+  if (!env.MARKDOWN_CACHE) {
+    console.error("[markdown] MARKDOWN_CACHE binding not configured; cannot refresh.");
+    return { ok: 0, failed: 0, durationMs: 0, results: [] };
   }
 
-  // Always advance the cursor — a stuck route shouldn't block the others.
-  // Stale data sits behind it for up to 7 days, then the cron loops back.
-  await env.MARKDOWN_CACHE.put(CURSOR_KEY, String(nextCursor));
-  return { route, ok, cursor: nextCursor };
+  const results: Array<{ route: string; ok: boolean; bytes: number; error?: string }> = [];
+  for (const route of MARKDOWN_ROUTES) {
+    const result = await refreshOneRoute(route, env);
+    results.push(result);
+    if (result.ok) {
+      console.log(`[markdown] refreshed ${result.route} (${result.bytes} bytes)`);
+    } else {
+      console.error(`[markdown] ${result.route}: ${result.error}`);
+    }
+    if (SPACER_MS > 0) await new Promise((r) => setTimeout(r, SPACER_MS));
+  }
+
+  const ok = results.filter((r) => r.ok).length;
+  const failed = results.length - ok;
+  const durationMs = Date.now() - startedAt;
+
+  // Persist a small status blob so a follow-up GET can see when the last run
+  // happened and how it went.
+  try {
+    await env.MARKDOWN_CACHE.put(
+      STATUS_KEY,
+      JSON.stringify({ finishedAt: new Date().toISOString(), ok, failed, durationMs, total: results.length }),
+    );
+  } catch {
+    // status persistence is best-effort
+  }
+
+  console.log(`[markdown] full refresh complete: ${ok} ok / ${failed} failed in ${durationMs}ms`);
+  return { ok, failed, durationMs, results };
 }
 
 export default {
@@ -487,22 +506,27 @@ export default {
       return handleQuote(request, env);
     }
 
-    // Manual trigger that advances the cursor by one route. Gated by
-    // MARKDOWN_REFRESH_SECRET so random scanners can't fire it. To populate
-    // the whole cache from scratch, call this in a loop with ≥10 s spacing
-    // (Browser Rendering free-tier rate limit). The synchronous result tells
-    // the caller which route was rendered and where the cursor is now.
+    // Manual trigger that refreshes the entire markdown cache. Gated by
+    // MARKDOWN_REFRESH_SECRET so random scanners can't fire it. The work
+    // runs in the background via ctx.waitUntil(); the response returns
+    // immediately so the caller doesn't have to hold the connection open
+    // for the ~3-minute full refresh. Status is persisted to KV under
+    // `__last_refresh` and surfaced via GET /api/refresh-markdown.
     if (url.pathname === "/api/refresh-markdown") {
+      if (request.method === "GET") {
+        if (!env.MARKDOWN_CACHE) return json({ error: "Cache not configured." }, 500);
+        const raw = await env.MARKDOWN_CACHE.get(STATUS_KEY);
+        return json({ totalRoutes: MARKDOWN_ROUTES.length, lastRefresh: raw ? JSON.parse(raw) : null });
+      }
       if (request.method !== "POST") return json({ error: "Method not allowed." }, 405);
       const expected = env.MARKDOWN_REFRESH_SECRET;
       const provided = request.headers.get("x-refresh-secret");
       if (!expected || provided !== expected) return json({ error: "Unauthorized." }, 401);
-      const result = await refreshNextRoute(env);
+      ctx.waitUntil(refreshAllRoutes(env).then(() => undefined));
       return json({
-        ok: result.ok,
-        route: result.route,
-        cursor: result.cursor,
+        accepted: true,
         totalRoutes: MARKDOWN_ROUTES.length,
+        message: "Refresh started in background. Poll GET /api/refresh-markdown for last-run status.",
       });
     }
 
@@ -519,9 +543,9 @@ export default {
   },
 
   async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
-    // Single-route batch: cron fires every 5 min (see wrangler.jsonc), so the
-    // full ~30-route cache refreshes itself every ~2.5 hours within the Free
-    // plan's 30-second waitUntil budget.
-    ctx.waitUntil(refreshNextRoute(env).then(() => undefined));
+    // Daily full refresh: the cron fires once per day (see wrangler.jsonc).
+    // On the paid Workers plan the 15-minute waitUntil budget comfortably
+    // covers ~40 routes × ~4 s ≈ 160 s.
+    ctx.waitUntil(refreshAllRoutes(env).then(() => undefined));
   },
 } satisfies ExportedHandler<Env>;

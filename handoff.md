@@ -146,7 +146,7 @@ Cloudflare Workers Builds will fail the deploy if either fails, so catching it l
 
 ## Architecture in one paragraph
 
-React 19 + Vite 8 SPA, served in production by a **Cloudflare Worker** ([worker/index.ts](worker/index.ts)) that wraps the static asset bundle (`dist/public`). The Worker also exposes `/api/contact` and `/api/quote` (both → Resend email), and a **Markdown-for-Agents** layer: every public route has a markdown twin, pre-rendered into KV by a 5-min cron and served via `Accept: text/markdown` content negotiation. In dev, an **Express server** ([server/index.ts](server/index.ts)) on port 5000 mounts the same API routes and proxies to Vite's dev server.
+React 19 + Vite 8 SPA, served in production by a **Cloudflare Worker** ([worker/index.ts](worker/index.ts)) that wraps the static asset bundle (`dist/public`). The Worker also exposes `/api/contact` and `/api/quote` (both → Resend email), and a **Markdown-for-Agents** layer: every public route has a markdown twin, pre-rendered into KV by a daily cron (full refresh in one firing on the paid plan) and served via `Accept: text/markdown` content negotiation. In dev, an **Express server** ([server/index.ts](server/index.ts)) on port 5000 mounts the same API routes and proxies to Vite's dev server.
 
 ---
 
@@ -246,13 +246,14 @@ Docker: [Dockerfile](Dockerfile) + [docker-compose.yml](docker-compose.yml) map 
 
 ## Markdown-for-Agents (the cron system)
 
-Recent commits (`2588fd3`, `4fc62b2`) added an AI-agent-friendly markdown layer:
+AI-agent-friendly markdown layer. Each public route has a markdown twin pre-rendered into KV.
 
-- The worker's **`scheduled` handler** fires every 5 minutes ([wrangler.jsonc](wrangler.jsonc) `triggers.crons`).
-- Each firing renders **one** route via Cloudflare's Browser Rendering `/markdown` API and writes it to KV (`MARKDOWN_CACHE` binding, id `83bac33b...`). A cursor key tracks position; full ~30-route cycle = ~2.5 h.
-- When a request arrives with `Accept: text/markdown`, the fetch handler returns the cached markdown (`text/markdown; charset=utf-8`, `x-markdown-tokens` header) instead of HTML.
-- Manual refresh: `POST /api/refresh-markdown` with `x-refresh-secret` header (gated by `MARKDOWN_REFRESH_SECRET`).
-- Route list: `MARKDOWN_ROUTES` in [worker/index.ts:313](worker/index.ts) — keep in sync with App.tsx routes.
+- The worker's **`scheduled` handler** fires daily at 03:00 UTC ([wrangler.jsonc](wrangler.jsonc) `triggers.crons`) and refreshes **every** route in a single firing. ~40 routes × ~4 s ≈ 160 s, comfortably inside the paid plan's 15-minute `waitUntil` budget. (Pre-paid-plan implementation used a cursor + 5-min cron; that's gone now.)
+- Each route is rendered via Cloudflare's Browser Rendering `/markdown` endpoint and stored in KV (`MARKDOWN_CACHE` binding, id `83bac33b...`) with a 7-day TTL.
+- A status blob is written to KV under `__last_refresh` with `{ finishedAt, ok, failed, durationMs, total }`.
+- When a request arrives with `Accept: text/markdown`, the fetch handler returns the cached markdown (`text/markdown; charset=utf-8`, `x-markdown-tokens` header, 1-hour browser cache) instead of HTML.
+- Manual refresh: `POST /api/refresh-markdown` with `x-refresh-secret` header (gated by `MARKDOWN_REFRESH_SECRET`). Returns `202`-style "accepted" immediately and runs the full refresh in the background via `ctx.waitUntil`. Poll with `GET /api/refresh-markdown` to see the last-run status.
+- Route list: `MARKDOWN_ROUTES` in [worker/index.ts](worker/index.ts) — keep in sync with App.tsx routes and the sitemap.
 - Requires Worker secrets: `CF_ACCOUNT_ID`, `CF_API_TOKEN`, optional `MARKDOWN_REFRESH_SECRET`.
 
 ---

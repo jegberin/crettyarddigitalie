@@ -27,10 +27,10 @@
     }
   ],
 
-  // Cron fires every 5 minutes. Each firing renders one route (cursor in KV
-  // tracks position) so it fits inside the Workers Free 30-second waitUntil
-  // budget. Full ~30-route cache refresh cycle: ~2.5 hours.
+  // Cron fires once a day at 03:00 UTC and refreshes every route in the
+  // markdown cache in a single firing. ~40 routes × ~4 s ≈ 160 s, which
+  // sits well inside the paid plan's 15-minute waitUntil budget.
   "triggers": {
-    "crons": ["*/5 * * * *"]
+    "crons": ["0 3 * * *"]
   }
 }
