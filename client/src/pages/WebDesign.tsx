@@ -585,32 +585,6 @@ export default function WebDesign() {
             </Accordion>
           </FadeIn>
 
-          {/* ── By County ────────────────────────────────────────────── */}
-          <FadeIn className="text-center mb-14">
-            <span className="eyebrow mb-5 inline-block">By County</span>
-            <h2 className="text-3xl" data-testid="text-counties-heading">County-Specific Web Design Across Ireland</h2>
-            <p className="text-foreground mt-4 max-w-2xl mx-auto leading-relaxed font-sans font-normal">Every county has its own search patterns, market dynamics, and LEO. Pick yours for tailored pricing, sector angles, and grant guidance.</p>
-          </FadeIn>
-
-          <StaggerContainer className="grid md:grid-cols-3 gap-8 mb-24" data-testid="county-pages">
-            {[
-              { href: "/web-design-laois", county: "Laois", headline: "Web Design in Laois", desc: "Portlaoise, Portarlington, Abbeyleix, Mountmellick and the wider M7 corridor. Grow Digital Voucher via Laois LEO." },
-              { href: "/web-design-carlow", county: "Carlow", headline: "Web Design in Carlow", desc: "Carlow town, Tullow, Bagenalstown, Borris. Local case studies: BM Custom Furniture and Nurney Plant and Civil." },
-              { href: "/web-design-kilkenny", county: "Kilkenny", headline: "Web Design in Kilkenny", desc: "Kilkenny city, Thomastown, Castlecomer, Graiguenamanagh. EAA-ready for hospitality, retail and craft businesses." },
-            ].map((item) => (
-              <StaggerItem key={item.href}>
-                <Link href={item.href}>
-                  <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover cursor-pointer h-full" data-testid={`link-county-${item.county.toLowerCase()}`}>
-                    <span className="text-xs font-headline font-bold text-accent uppercase tracking-wider">County {item.county}</span>
-                    <h3 className="text-lg mt-2 mb-3">{item.headline}</h3>
-                    <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">{item.desc}</p>
-                    <span className="text-accent text-sm font-headline font-bold inline-block">See {item.county} details &rarr;</span>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
           {/* ── Related Services ────────────────────────────────────── */}
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">Related Services</span>

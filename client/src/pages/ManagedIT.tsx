@@ -390,35 +390,6 @@ export default function ManagedIT() {
         </div>
       </section>
 
-      {/* By County */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <FadeIn className="text-center mb-10">
-            <span className="eyebrow mb-3 inline-block">By County</span>
-            <h2 className="text-2xl">County-Specific Managed IT Across Ireland</h2>
-            <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">Every county has its own sector mix and compliance angle. Pick yours for tailored managed IT pricing, on-site notes, and LEO grant guidance.</p>
-          </FadeIn>
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
-            {[
-              { href: "/it-support-laois", county: "Laois", headline: "IT Support in Laois", desc: "Portlaoise, Portarlington, Mountmellick. M7 corridor growth, local on-site response, Microsoft 365 administration." },
-              { href: "/it-support-carlow", county: "Carlow", headline: "IT Support in Carlow", desc: "Carlow town, Tullow, Bagenalstown. NIS2 supply-chain security documentation for construction, plant hire and trades." },
-              { href: "/it-support-kilkenny", county: "Kilkenny", headline: "IT Support in Kilkenny", desc: "Kilkenny city, Thomastown, Castlecomer. Hospitality POS + guest Wi-Fi, EAA and GDPR for professional firms." },
-            ].map((item) => (
-              <StaggerItem key={item.href}>
-                <Link href={item.href}>
-                  <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover cursor-pointer h-full" data-testid={`link-county-${item.county.toLowerCase()}`}>
-                    <span className="text-xs font-headline font-bold text-accent uppercase tracking-wider">County {item.county}</span>
-                    <h3 className="text-lg mt-2 mb-3">{item.headline}</h3>
-                    <p className="text-foreground text-[15px] leading-relaxed font-sans mb-3">{item.desc}</p>
-                    <span className="text-accent text-sm font-headline font-bold inline-block">See {item.county} details &rarr;</span>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
       <section className="py-10 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4 max-w-3xl">
           <ContinuityCommitment />

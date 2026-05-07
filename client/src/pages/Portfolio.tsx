@@ -23,7 +23,6 @@ interface Project {
   imageAlt: string;
   industry: string;
   services: ProjectService[]; // first entry is primary
-  countyLinks?: { href: string; label: string }[]; // local SEO cross-links
   challenge: string;
   solution: string;
   outcome: string;
@@ -41,10 +40,6 @@ export default function Portfolio() {
       services: [
         { href: "/web-design", label: "Web Design" },
       ],
-      countyLinks: [
-        { href: "/web-design-carlow", label: "Web design in Carlow" },
-        { href: "/web-design-laois", label: "Web design in Laois" },
-      ],
       challenge: "BM Custom Furniture does outstanding work — bespoke fitted wardrobes, wall panelling, and custom cabinetry — but had no online presence to show for it. New clients came entirely through word-of-mouth, and the business was missing enquiries from homeowners searching Google for furniture makers in Carlow and Laois.",
       solution: "Designed and built a visually rich, image-led website showcasing their craftsmanship in detail. The site included a portfolio gallery, service pages for each product category, and strong local SEO targeting Carlow, Laois, and surrounding areas, with clear calls-to-action for quote requests.",
       outcome: "BM Custom Furniture now has a professional online presence that positions them as a credible, high-quality provider. The site generates consistent enquiries from homeowners and businesses across Carlow and Laois who found them through Google — customers who previously wouldn't have known they existed."
@@ -58,9 +53,6 @@ export default function Portfolio() {
       industry: "Cleaning Services",
       services: [
         { href: "/web-design", label: "Web Design" },
-      ],
-      countyLinks: [
-        { href: "/web-design-laois", label: "Web design in Laois" },
       ],
       challenge: "Go Green Steam Clean offered a differentiated eco-friendly cleaning service but had no website to communicate their proposition. Without an online presence, they were invisible to the growing number of customers searching for cleaning services in the Midlands — and had no way to showcase what made them different.",
       solution: "Built a service-focused website with dedicated pages for each cleaning service, strong local SEO targeting the Midlands and surrounding areas, and conversion-optimised CTAs to drive bookings. The eco-friendly angle was emphasised throughout as a key differentiator that resonates with their target customers.",
@@ -77,9 +69,6 @@ export default function Portfolio() {
         { href: "/web-design", label: "Web Design" },
         { href: "/microsoft-365", label: "Microsoft 365" },
         { href: "/network-wifi-security", label: "Network & Wi-Fi" },
-      ],
-      countyLinks: [
-        { href: "/web-design-carlow", label: "Web design in Carlow" },
       ],
       challenge: "Nurney Plant and Civil operate a substantial plant hire and civil engineering business in Co. Carlow, but their online presence didn't reflect the scale or professionalism of their operation. Prospective clients — including councils and main contractors — were making decisions based on a site that undersold the business. Internally, email between office and site crews was unreliable (personal Gmail accounts), and Wi-Fi coverage was patchy.",
       solution: "Three integrated solutions: a professional corporate website clearly presenting their fleet and capabilities, Microsoft 365 for professional email across office and site teams, and a business-grade Wi-Fi installation covering the entire premises including workshop areas.",
@@ -108,9 +97,6 @@ export default function Portfolio() {
       industry: "Community & Local",
       services: [
         { href: "/web-design", label: "Web Design" },
-      ],
-      countyLinks: [
-        { href: "/web-design-laois", label: "Web design in Laois" },
       ],
       challenge: "Crettyard is a vibrant rural community on the Laois-Carlow border with deep local roots, active sports clubs, local businesses, and a rich heritage — but it had no dedicated online home. Residents, visitors, and diaspora had no single place to find community information, local news, or discover nearby businesses and services.",
       solution: "Designed and built a community website covering the history and heritage of the area, a local business directory with individual profiles, community club and school information, and a public notice board where residents can post and read local announcements. The site is built around a warm, locally grounded identity that reflects the character of the area.",
@@ -226,18 +212,6 @@ export default function Portfolio() {
                         Discuss a similar project <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
-
-                    {project.countyLinks && project.countyLinks.length > 0 && (
-                      <p className="text-xs font-sans text-muted-foreground">
-                        Local case study:{" "}
-                        {project.countyLinks.map((link, i) => (
-                          <span key={link.href}>
-                            <Link href={link.href} className="text-accent hover:underline">{link.label}</Link>
-                            {i < project.countyLinks!.length - 1 ? ", " : ""}
-                          </span>
-                        ))}
-                      </p>
-                    )}
                   </div>
                 </article>
               </StaggerItem>
@@ -344,36 +318,6 @@ export default function Portfolio() {
               </Link>
             </div>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* By County */}
-      <section className="py-20 bg-[#f3f4f5] border-t border-gray-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <FadeIn className="text-center mb-10">
-            <span className="eyebrow mb-3 inline-block">County-Specific Hubs</span>
-            <h2 className="text-2xl">Looking for Web Design or IT Support in Your County?</h2>
-            <p className="text-foreground text-[15px] font-sans mt-3 max-w-2xl mx-auto">
-              I work with small businesses in every county in Ireland. Pick yours for tailored pricing, sector angles, and LEO grant guidance.
-            </p>
-          </FadeIn>
-          <StaggerContainer className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              { href: "/web-design-laois", label: "Web Design \u2014 Laois" },
-              { href: "/web-design-carlow", label: "Web Design \u2014 Carlow" },
-              { href: "/web-design-kilkenny", label: "Web Design \u2014 Kilkenny" },
-              { href: "/it-support-laois", label: "IT Support \u2014 Laois" },
-              { href: "/it-support-carlow", label: "IT Support \u2014 Carlow" },
-              { href: "/it-support-kilkenny", label: "IT Support \u2014 Kilkenny" },
-            ].map((item) => (
-              <StaggerItem key={item.href}>
-                <Link href={item.href} className="bg-white px-5 py-4 rounded-xl text-primary font-headline font-bold text-sm hover:bg-accent/10 hover:text-accent transition-colors flex items-center justify-between" data-testid={`link-county-${item.href}`}>
-                  <span>{item.label}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </section>
 
