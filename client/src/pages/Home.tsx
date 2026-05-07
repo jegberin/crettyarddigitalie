@@ -145,9 +145,9 @@ const services: Service[] = [
 
 const HERO_PHRASES = [
   "Done Properly.",
-  "One Trusted Partner.",
   "Built to Stay.",
-  "Enterprise Discipline.",
+  "Off Your Plate.",
+  "Sorted, Once.",
 ];
 
 function CharReveal({ text, startDelay = 0 }: { text: string; startDelay?: number }) {
@@ -197,8 +197,7 @@ export default function Home() {
                 data-testid="text-hero-heading"
               >
                 <span className="sr-only">Outsourced IT, Microsoft 365 &amp; Cybersecurity for Irish SMEs &mdash; </span>
-                <CharReveal text="Your" startDelay={200} /><br />
-                <CharReveal text="Outsourced IT," startDelay={500} /><br />
+                <CharReveal text="Your IT," startDelay={200} /><br />
                 <span
                   key={phraseIndex}
                   className="text-accent inline-block whitespace-nowrap"
