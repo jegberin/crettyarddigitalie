@@ -16,6 +16,7 @@ import iconTraining from "@assets/concept-training.webp";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { CredentialBand } from "@/components/CredentialBand";
 import {
   Accordion,
   AccordionContent,
@@ -35,10 +36,10 @@ export default function Microsoft365() {
             <FadeIn>
               <span className="eyebrow mb-5 inline-block">Microsoft 365 &amp; Teams Phone</span>
               <h1 className="display-sm mb-6" data-testid="text-page-title">
-                Microsoft 365 for Small Business &mdash; Professional Email, Teams Phone &amp; Cloud Tools, Set Up Properly
+                Microsoft 365, Done the Way Microsoft Actually Recommends
               </h1>
               <p className="text-xl text-foreground mb-8 leading-relaxed font-sans font-normal" data-testid="text-hero-description">
-                Stop losing emails, sharing files by USB stick, or sending quotes from a Gmail address. I set up Microsoft 365 for small businesses across Ireland so your email, file storage, and collaboration tools work securely from anywhere &mdash; and with Teams Phone, your business calls work through the same system. One setup, one provider, one bill.
+                Stop losing emails, sharing files by USB stick, or sending quotes from a Gmail address. I set up Microsoft 365 for small businesses across Ireland so your email, file storage, and collaboration tools work securely from anywhere &mdash; and with Teams Phone, your business calls work through the same system. Built on the standards I learned across Microsoft, Intel and Dell, with the security baselines Microsoft recommends but most resellers skip.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact#send-message">
@@ -66,6 +67,21 @@ export default function Microsoft365() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      <CredentialBand />
+
+      {/* ── Why this matters callout ─────────────────────────────── */}
+      <section className="py-14 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn>
+            <div className="bg-accent/5 border-l-4 border-accent p-6 md:p-7 rounded-r-xl" data-testid="callout-default-tenants">
+              <p className="text-foreground text-[16px] leading-relaxed font-sans font-medium">
+                Most small Irish businesses run on Microsoft 365 tenants that were set up by the cheapest available reseller and never touched again. <span className="text-primary font-headline font-bold">Default tenants are not secure tenants.</span> The hardening is the work.
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 

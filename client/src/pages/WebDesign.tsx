@@ -36,7 +36,7 @@ export default function WebDesign() {
                 <span className="sr-only">Web Design for Small Businesses Across Ireland &mdash; </span>A Website That Works as Hard as You Do
               </h1>
               <p className="text-xl text-foreground mb-4 leading-relaxed font-sans font-normal" data-testid="text-intro">
-                Your website should be your hardest-working employee &mdash; appearing on Google when customers in your area search for what you do, looking professional on every device, and turning visitors into phone calls and enquiries. I build websites for tradespeople, service businesses, and small SMEs across Ireland.
+                Your website is the most visible piece of your digital infrastructure &mdash; and for most small Irish businesses it is also the first piece. I build websites that look professional, rank locally, and meet the relevant accessibility and privacy regulations. I also stay around to maintain them, secure them, and integrate them with the email, IT and security setup behind them. Most clients who start with a website end up working with me for the long haul &mdash; but you don&rsquo;t have to. The website stands on its own.
               </p>
               <p className="text-sm font-headline font-bold text-accent mb-8">
                 Every site includes ongoing care and security &middot; Fixed quotes, no surprises
@@ -182,6 +182,17 @@ export default function WebDesign() {
               </div>
             </FadeIn>
           </div>
+
+          {/* ── What you also get, even if all you wanted was a website ── */}
+          <FadeIn className="mb-24">
+            <div className="bg-[#f3f4f5] p-8 md:p-10 rounded-2xl" data-testid="section-adjacent-flags">
+              <span className="eyebrow mb-3 inline-block">No Upsell. Just Honest.</span>
+              <h3 className="text-2xl mb-4">What You Also Get &mdash; Even If All You Wanted Was a Website</h3>
+              <p className="text-foreground text-[15px] leading-relaxed font-sans">
+                Most website projects expose adjacent risks &mdash; a Gmail address being used for invoices, no MFA on key accounts, scattered customer data, an outdated cookie banner, a Microsoft 365 tenant that was set up by the cheapest available reseller and never touched again. As part of every website build, I flag what I find. You decide what to do about it. There is no upsell pressure &mdash; but you&rsquo;ll know.
+              </p>
+            </div>
+          </FadeIn>
 
           {/* ── Mandatory Care Plan ────────────────────────────────── */}
           <FadeIn className="mb-24">
@@ -394,6 +405,51 @@ export default function WebDesign() {
             </div>
           </FadeIn>
 
+          {/* ── Website Studio vs IT Partner ────────────────────────── */}
+          <FadeIn className="mb-24" data-testid="section-studio-vs-partner">
+            <div className="text-center mb-10">
+              <span className="eyebrow mb-5 inline-block">The Other Difference</span>
+              <h2 className="text-3xl mb-4">Website Studio vs IT Partner</h2>
+              <p className="text-foreground max-w-2xl mx-auto leading-relaxed font-sans font-normal">
+                Two providers can both build the same site. What separates them is what happens after launch day.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 rounded-2xl overflow-hidden border border-gray-200">
+              <div className="bg-[#f3f4f5] p-7">
+                <h3 className="font-headline font-extrabold text-primary text-base uppercase tracking-wide mb-5">What a Website Studio Sells</h3>
+                <ul className="space-y-3 list-none m-0 p-0">
+                  {[
+                    "A site that looks good on launch day",
+                    "One transaction, then silence",
+                    "No accountability after launch",
+                    "No view of email, security, or compliance",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-foreground text-[15px] font-sans">
+                      <span className="text-muted-foreground shrink-0 mt-0.5" aria-hidden="true">·</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-accent/5 p-7 border-t md:border-t-0 md:border-l border-accent/20">
+                <h3 className="font-headline font-extrabold text-accent text-base uppercase tracking-wide mb-5">What Crettyard Digital Sells</h3>
+                <ul className="space-y-3 list-none m-0 p-0">
+                  {[
+                    "A site, plus the IT scaffolding behind it",
+                    "Care plan, support, ongoing relationship",
+                    "One person to contact for the next five years",
+                    "Whole digital surface in one strategy",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-foreground text-[15px] font-sans">
+                      <CheckCircle className="text-accent shrink-0 mt-0.5" size={14} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </FadeIn>
+
           {/* ── Saves Money ────────────────────────────────────────── */}
           <FadeIn className="mb-24" data-testid="section-saves-money">
             <div className="bg-primary p-10 md:p-14 rounded-2xl text-white">
@@ -518,6 +574,8 @@ export default function WebDesign() {
                 { id: "wd-faq-5", q: "Do you help with SEO and Google rankings?", a: "Yes. Every site includes on-page SEO targeting your local search terms. I also provide Google Business Profile guidance to help you rank in local map results." },
                 { id: "wd-faq-6", q: "Can I use a government grant to pay for my website?", a: "Partially, and only in specific cases. The Grow Digital Voucher (replaced the Trading Online Voucher in Dec 2024) doesn\u2019t fund bespoke WordPress builds \u2014 but subscription platforms (Shopify, Squarespace) and related new software (M365, CRM, e-commerce tools) may qualify for 50% funding up to \u20ac5,000. You must complete a free Digital for Business consultation first, then apply through your LEO. I provide scheme-compliant quotes to support your claim." },
                 { id: "wd-faq-7", q: "I already have a website but it\u2019s outdated \u2014 can you help?", a: "Absolutely. I regularly redesign and rebuild existing websites. Whether your current site isn\u2019t mobile-friendly, loads slowly, or isn\u2019t bringing in enquiries, I can give it a modern rebuild with proper SEO, compliance, and a conversion-focused design." },
+                { id: "wd-faq-8", q: "Will you still be there if something breaks in two years?", a: "Yes. Care plans and managed IT are how the business is set up \u2014 recurring relationships are the main work, not the exception. My longest single client relationship ran nine years before naturally concluding; my longest active client relationship is going on four years and counting. Documentation, credentials, and runbooks are written down \u2014 continuity is built into the operating model." },
+                { id: "wd-faq-9", q: "Why not just hire a cheaper website studio?", a: "If all you need is a one-page brochure site that nobody will maintain, a cheaper option is fine. If you need a website that ranks, complies, integrates with your email and IT, and has someone available in two years to fix what breaks \u2014 a website studio is not the right fit and a Crettyard Digital site is. Genuine answer either way \u2014 I\u2019ll tell you which I think you need." },
               ].map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border border-gray-100 rounded-xl px-6">
                   <AccordionTrigger className="text-left text-[15px] font-headline font-bold py-5">{faq.q}</AccordionTrigger>

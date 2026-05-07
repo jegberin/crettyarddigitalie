@@ -4,6 +4,7 @@ import { Shield, ShieldAlert, FileCheck, CheckCircle, ArrowRight, AlertTriangle,
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
+import { CredentialBand } from "@/components/CredentialBand";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import heroMfaInAction from "@assets/cyber-hero-mfa-in-action.webp";
 import iconSecurityAudit from "@assets/concept-security-audit.webp";
@@ -28,7 +29,7 @@ export default function Cybersecurity() {
                 Cybersecurity and Compliance for Small Businesses &mdash; Before Something Goes Wrong
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
-                You don't need to be a big company to be a target &mdash; or to face compliance obligations. Cyber attacks hit small businesses every week across Ireland &mdash; Dublin, Cork, Galway, and every town in between. EU regulations like NIS2, GDPR, DORA, and the European Accessibility Act now apply to more businesses than ever. I deliver practical cybersecurity grounded in NCSC Cyber Essentials, Microsoft Defender, MFA (phishing-resistant where it matters), and Zero Trust principles &mdash; all in plain English, at a price that makes sense.
+                You don't need to be a big company to be a target &mdash; or to face compliance obligations. Cyber attacks hit small businesses every week across Ireland. EU regulations like NIS2, GDPR, DORA, and the European Accessibility Act now apply to more businesses than ever. Built on a foundation of 26 industry certifications including Microsoft Azure Solutions Architect Expert, Intel Cloud Security, and Dell Infrastructure Security &mdash; I deliver practical cybersecurity grounded in NCSC Cyber Essentials, Microsoft Defender, MFA (phishing-resistant where it matters), and Zero Trust principles. All in plain English, at a price that makes sense.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact#send-message">
@@ -55,12 +56,17 @@ export default function Cybersecurity() {
         </div>
       </section>
 
+      <CredentialBand />
+
       {/* Why It Matters */}
       <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">Why This Matters Now</span>
-            <h2 className="text-3xl md:text-4xl mb-6">The Threat Is Real. The Regulations Are Here.</h2>
+            <h2 className="text-3xl md:text-4xl mb-6">The Setup You Want in Place Before Something Goes Wrong</h2>
+            <p className="text-foreground text-lg leading-relaxed max-w-2xl mx-auto font-sans">
+              Most small business owners don&rsquo;t lie awake worrying about specific threats. They lie awake wondering whether anyone competent is thinking about it for them. The threats below are real and the regulations are here &mdash; the work is to put the right setup in place calmly, before something goes wrong, not to scramble in a panic afterwards.
+            </p>
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-10">
@@ -334,6 +340,20 @@ export default function Cybersecurity() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* What competent looks like */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn>
+            <span className="eyebrow mb-5 inline-block">In One Paragraph</span>
+            <h2 className="text-3xl md:text-4xl mb-6">What Competent Looks Like</h2>
+            <p className="text-foreground text-lg leading-relaxed font-sans">
+              MFA enforced everywhere, on every account, no exceptions. Backups that are tested every quarter, not just configured once. Documented controls mapped to GDPR, NIS2, and the Accessibility Act. An incident response plan that says, in plain English, what happens at hour one, day one, and week one. Quarterly reviews that focus on what&rsquo;s changed in your business &mdash; not what&rsquo;s changed in the threat report. And one accountable person to contact when something goes wrong. That&rsquo;s the standard. It is not aspirational; it&rsquo;s the default.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
       <SpotlightCTA
         eyebrow="Ready to Get Started?"
         heading="Find Out Where You're Vulnerable"
