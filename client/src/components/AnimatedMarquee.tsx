@@ -1,10 +1,10 @@
 const ITEMS = [
-  { label: "Web Design & SEO",       sub: "Get Found Online" },
-  { label: "Microsoft 365 & Teams",  sub: "Email · Phone · Cloud" },
   { label: "Managed IT Support",     sub: "Your IT Department" },
-  { label: "Network & Wi-Fi",        sub: "No More Dead Spots" },
+  { label: "Microsoft 365 & Teams",  sub: "Email · Phone · Cloud" },
   { label: "Cybersecurity",          sub: "NIS2 · GDPR · EAA" },
+  { label: "Network & Wi-Fi",        sub: "No More Dead Spots" },
   { label: "AI & Copilot",           sub: "Practical Productivity" },
+  { label: "Web Design & SEO",       sub: "Get Found Online" },
   { label: "Government Grants",      sub: "Up to 50% Funded" },
   { label: "Ireland-Wide Coverage",  sub: "32 Counties · Remote-First" },
 ];

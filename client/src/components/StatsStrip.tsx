@@ -1,14 +1,33 @@
-import { Briefcase, Monitor, MapPin, Users, BadgeEuro, TrendingDown } from "lucide-react";
+import { Briefcase, Award, User, MapPin, ShieldCheck, CheckCircle2, type LucideIcon } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 
-const STATS = [
-  { target: 15, suffix: "+", label: "Years Enterprise IT", icon: Briefcase },
-  { target: 10, suffix: "+", label: "Websites Launched", icon: Monitor },
-  { target: 32, suffix: "", label: "Counties Served", icon: MapPin },
-  { target: 100, suffix: "%", label: "Small Business Focus", icon: Users },
-  { target: 50, suffix: "%", label: "Up to 50% Grant Funding", icon: BadgeEuro },
-  { target: 40, suffix: "%", label: "Up to 40% Less Than City Agency Rates", icon: TrendingDown },
+type CounterStat = {
+  type: "counter";
+  target: number;
+  suffix?: string;
+  display: string; // shorter eyebrow label below the number, e.g. "Years Enterprise IT"
+  sub: string;     // qualifier line, e.g. "Microsoft · Intel · Dell"
+  icon: LucideIcon;
+};
+
+type StaticStat = {
+  type: "static";
+  display: string; // headline value, e.g. "One"
+  label: string;   // larger label, e.g. "Accountable Person"
+  sub: string;     // qualifier, e.g. "From first call to month 60"
+  icon: LucideIcon;
+};
+
+type Stat = CounterStat | StaticStat;
+
+const STATS: Stat[] = [
+  { type: "counter", target: 15, suffix: "+", display: "Years Enterprise IT", sub: "Microsoft · Intel · Dell", icon: Briefcase },
+  { type: "counter", target: 26, display: "Industry Certifications", sub: "Microsoft · Cloud · Security", icon: Award },
+  { type: "static",  display: "One", label: "Accountable Person", sub: "From first call to month 60", icon: User },
+  { type: "counter", target: 32, display: "Counties Served", sub: "Remote-first, on-site where it counts", icon: MapPin },
+  { type: "static",  display: "NIS2 · GDPR", label: "DORA · EAA Ready", sub: "Compliance baked in", icon: ShieldCheck },
+  { type: "static",  display: "Care Plans", label: "On Every Build", sub: "Built to stay", icon: CheckCircle2 },
 ];
 
 export function StatsStrip() {
@@ -19,10 +38,23 @@ export function StatsStrip() {
           {STATS.map((stat, i) => (
             <StaggerItem key={i} className="flex flex-col items-center">
               <stat.icon className="text-accent mb-2" size={28} aria-hidden="true" />
-              <span className="display-counter text-primary" data-testid={`stat-counter-${i}`}>
-                <AnimatedCounter target={stat.target} suffix={stat.suffix} />
-              </span>
-              <span className="eyebrow mt-2">{stat.label}</span>
+              {stat.type === "counter" ? (
+                <>
+                  <span className="display-counter text-primary" data-testid={`stat-counter-${i}`}>
+                    <AnimatedCounter target={stat.target} suffix={stat.suffix ?? ""} />
+                  </span>
+                  <span className="eyebrow mt-2">{stat.display}</span>
+                  <span className="text-[11px] text-foreground font-sans mt-1 leading-tight">{stat.sub}</span>
+                </>
+              ) : (
+                <>
+                  <span className="display-counter text-primary text-2xl md:text-3xl leading-tight" data-testid={`stat-static-${i}`}>
+                    {stat.display}
+                  </span>
+                  <span className="eyebrow mt-2">{stat.label}</span>
+                  <span className="text-[11px] text-foreground font-sans mt-1 leading-tight">{stat.sub}</span>
+                </>
+              )}
             </StaggerItem>
           ))}
         </StaggerContainer>

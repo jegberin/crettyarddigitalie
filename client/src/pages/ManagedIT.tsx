@@ -28,7 +28,7 @@ export default function ManagedIT() {
                 Managed IT Support &mdash; Your Outsourced IT Department Without the Corporate Price Tag
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
-                Stop waiting for things to break and then scrambling to fix them. I manage your technology proactively &mdash; keeping everything updated, secure, compliant, and running smoothly &mdash; for a fixed monthly fee. One point of contact, no ticketing systems, no waiting days for a response.
+                A fixed monthly fee. One accountable person. Microsoft 365 administration, endpoint security, compliance management, backup, and the boring-but-essential work that stops things breaking &mdash; handled in the background. Built on the same standards I learned across Microsoft, Intel and Dell. Designed for Irish small businesses with 1 to 50 staff who want their IT to just work &mdash; and to keep working, year after year, with the same number to ring.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="#pricing">

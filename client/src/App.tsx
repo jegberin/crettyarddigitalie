@@ -75,8 +75,8 @@ import { COUNTIES } from "@/data/countyContent";
 
 const pageSEO: Record<string, { title: string; description: string; noindex?: boolean }> = {
   "/": {
-    title: "Web Design & IT Support for Small Businesses Across Ireland | Crettyard Digital",
-    description: "Professional websites, Microsoft 365 & managed IT for small businesses across Ireland. Enterprise experience. Grow Digital Voucher Ready. Serving all 32 counties.",
+    title: "Outsourced IT, Microsoft 365 & Cybersecurity for Irish SMEs | Crettyard Digital",
+    description: "Managed IT, Microsoft 365, cybersecurity, networks, AI and websites for small businesses across Ireland. 15+ years enterprise experience. 26 industry certifications. One accountable person. Grow Digital Voucher Ready.",
   },
   "/about": {
     title: "About Crettyard Digital \u2014 Enterprise IT Experience for Irish Small Businesses",

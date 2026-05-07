@@ -6,6 +6,54 @@ Read this first every new session. It's the fastest path from cold start to prod
 
 ---
 
+## ⚡ Active workstream — Site repositioning (multi-session)
+
+**Status as of 2026-05-07:** Phase 1 shipped. Phases 2-7 pending.
+
+**Strategic shift:** reposition Crettyard Digital from "website builder who also does IT" to "outsourced IT partner for Irish SMEs — covering the full digital surface, including a website if needed". Web design moves from item 01 to item 07 in service ordering.
+
+**Source documents:**
+- [`~/.claude/plans/harmonic-skipping-zebra.md`](C:/Users/joeye/.claude/plans/harmonic-skipping-zebra.md) — full 7-phase implementation plan, self-contained (every copy proposal inline). **Read this first.**
+- Memory: `website_copy_forbidden_facts.md` — STRICT: never mention "Citi" or surname "Egberink" in user-facing copy. Forever rule, all sessions.
+- Memory: `joey_bio_reference.md` — locked work history, role titles, 26 IT certs grouped by vendor, project go-live years, and the inputs Joey signed off on.
+
+**Phases (each is a separate shippable unit):**
+
+| # | Scope | Files touched | Effort | Status |
+|---|---|---|---|---|
+| 1 | Site-wide: 3 new shared components (CredentialBand, FragmentedVsIntegrated, ContinuityCommitment) + Navbar/Footer/AnimatedMarquee reorder + StatsStrip rewrite (counter + static types) + TrustBadges 6th badge + TrustMarquee 3 new items + Home SEO title/desc reorder + Meet Joey paragraphs on Home/About/ManagedIT | components/* + App.tsx + Home/About/ManagedIT | ~half day | ✅ shipped |
+| 2 | Home page rewrite (hero, problem, comparison, services reorder, "Why I'm not a website studio" section) | Home.tsx | ~1 day |
+| 3 | About + Managed IT — both get Built-to-Stay framing + new "Standards I run on" / "What ongoing looks like" sections | About.tsx, ManagedIT.tsx | ~1 day |
+| 4 | Web Design + Cybersecurity + Microsoft 365 — hero/copy adjustments + new sections | WebDesign.tsx, Cybersecurity.tsx, Microsoft365.tsx | ~1 day |
+| 5 | Pricing (rename tiers Foundation/Operations/Enterprise) + How It Works + Contact + Portfolio | Pricing.tsx, HowItWorks.tsx, Contact.tsx, Portfolio.tsx | ~half day |
+| 6 | Trades + ProfessionalServices reorder + remaining service pages + county template (one edit cascades to all 16 county pages) | Trades.tsx, ProfessionalServices.tsx, Network/ManagedHardware/AIReadiness/WebsiteCare, CountyLandingPage.tsx | ~half day |
+| 7 | Sitewide grep cleanup + structured data sync + final verify | (cleanup only) | ~half day |
+
+**Locked inputs (as of 2026-05-07):**
+- Cert count: **26 IT certs** (7 Microsoft · 4 Intel · 2 AWS · 9 Dell · 3 VMware · 1 Cisco)
+- Project go-live + status:
+  - **BM Custom Furniture** — 2016, **ENDED 2025** (9-year completed relationship; keep in featured projects, the 9-year span is the flex)
+  - **Nurney Plant and Civil** — 2022, active (website + M365 + Wi-Fi)
+  - **Go Green Steam Clean** — 2025, active (monthly updates + support)
+  - **More Than Points** — 2026, active (ongoing support)
+  - **Crettyard.ie** — 2026, active (ongoing support + development)
+- Longest single client relationship: **9 years** (BM, completed). Longest active: **going on 4 years** (Nurney, 2022 → present). Both used: 9-year as continuity proof, 4-year as "still going" credibility.
+- Portfolio header line replaced because BM is no longer active: *"These aren't projects I delivered and walked away from. Most are still active clients today. One ran for nine years before the relationship naturally concluded. Either way — these are relationships, not transactions."*
+- Cover arrangements: **DO NOT mention** anywhere
+- "Limited new clients per quarter": **NOT used** as hard claim. Softer: *"Capacity to onboard new clients is assessed against scope so existing clients keep getting the attention they pay for."*
+- Microsoft/Intel/Dell role titles: **surface concrete titles** ("Senior Solution Engineer at Microsoft, Infrastructure and Platforms Manager at Intel, Senior System Engineer at Dell EMC")
+- Meet Joey location: vary per page (three approved variants in the plan §1.7)
+- "15+ years enterprise IT" claim: **stays** — Joey is 41, has been computing since 14 (~27 years), professional IT since ~2011 (~15 years). Considers it conservative.
+
+**No open inputs.** Plan is fully unblocked. Joey says "go" → start Phase 1.
+
+**Working agreement:**
+- Each phase ships as its own commit. Direct-to-main for Phases 1, 4, 5, 6, 7. Feature branch + PR for Phases 2 and 3 (heaviest visible changes — Joey reviews before merge).
+- Cloudflare Workers Builds auto-deploys from main; no staging. Deliberate pushes only.
+- Update this section as each phase lands. When all 7 phases complete, archive the plan reference and remove this whole "Active workstream" block.
+
+---
+
 ## What this is
 
 Marketing site for **Crettyard Digital**, a one-person Irish digital services business (web design, Microsoft 365, managed IT, networks, cybersecurity) run by Joey, based on the Laois–Carlow border, serving all 32 counties.

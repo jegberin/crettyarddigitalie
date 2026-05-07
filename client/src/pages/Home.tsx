@@ -466,9 +466,12 @@ export default function Home() {
               </div>
               <div>
                 <span className="eyebrow mb-5 inline-block">Meet Joey</span>
-                <h2 id="meet-joey-heading" className="text-3xl md:text-4xl mb-5" data-testid="text-meet-joey-heading">Hi, I&rsquo;m Joey &mdash; and I&rsquo;ll be the one building your site and supporting your IT.</h2>
+                <h2 id="meet-joey-heading" className="text-3xl md:text-4xl mb-5" data-testid="text-meet-joey-heading">Hi, I&rsquo;m Joey &mdash; and I&rsquo;ll be the one supporting your IT, your email, and your website.</h2>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-5">
-                  Fifteen years inside Microsoft, Intel, and Dell taught me how enterprise IT actually works. Now I bring that experience to small businesses across Ireland &mdash; in plain English, with one person to call, and no runaround.
+                  Fifteen years inside Microsoft, Intel and Dell &mdash; most of it on cloud architecture and enterprise infrastructure. 26 industry certifications. The same standards a Fortune 500 IT department runs on, applied to small Irish businesses with 1 to 50 staff.
+                </p>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-5">
+                  I&rsquo;ll be the person on the call, the person doing the work, and the person answering the phone three years from now.
                 </p>
                 <Link href="/about" className="text-accent font-headline font-bold inline-flex items-center text-sm hover:text-primary transition-colors" data-testid="link-meet-joey-about">
                   More about me <ArrowRight size={14} className="ml-1" />

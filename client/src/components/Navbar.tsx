@@ -5,13 +5,13 @@ import { Button } from "./ui/button";
 import logoImg from "@assets/crettyard-digital-logo.webp";
 
 const serviceLinks = [
-  { label: "Web Design", path: "/web-design", desc: "Professional websites that win customers" },
-  { label: "Microsoft 365 & Teams Phone", path: "/microsoft-365", desc: "Email, cloud tools, and business phone" },
   { label: "Managed IT Support", path: "/managed-it-support", desc: "Your outsourced IT department" },
-  { label: "Managed Hardware", path: "/managed-hardware", desc: "Turnkey PCs & servers, ready to use" },
-  { label: "Network & Wi\u2011Fi", path: "/network-wifi-security", desc: "Reliable business connectivity" },
+  { label: "Microsoft 365 & Teams Phone", path: "/microsoft-365", desc: "Email, cloud tools, and business phone" },
   { label: "Cybersecurity & Compliance", path: "/cybersecurity", desc: "NIS2, GDPR, and threat protection" },
+  { label: "Network & Wi\u2011Fi", path: "/network-wifi-security", desc: "Reliable business connectivity" },
+  { label: "Managed Hardware", path: "/managed-hardware", desc: "Turnkey PCs & servers, ready to use" },
   { label: "AI & Microsoft Copilot", path: "/ai-readiness", desc: "Practical AI for small business" },
+  { label: "Web Design", path: "/web-design", desc: "Professional websites that win customers" },
   { label: "Website Care Plans", path: "/website-care-plans", desc: "Hosting, security, and maintenance" },
 ];
 

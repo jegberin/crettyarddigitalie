@@ -55,13 +55,13 @@ export function Footer() {
               <h4 className="font-headline font-bold text-base mb-5 text-accent">Services</h4>
               <nav aria-label="Services links">
                 <ul className="space-y-2.5 list-none m-0 p-0">
-                  <li><Link href="/web-design" className="text-white/80 hover:text-white transition-colors text-sm">Web Design</Link></li>
-                  <li><Link href="/microsoft-365" className="text-white/80 hover:text-white transition-colors text-sm">Microsoft 365 &amp; Teams Phone</Link></li>
                   <li><Link href="/managed-it-support" className="text-white/80 hover:text-white transition-colors text-sm">Managed IT Support</Link></li>
-                  <li><Link href="/managed-hardware" className="text-white/80 hover:text-white transition-colors text-sm">Managed Hardware</Link></li>
-                  <li><Link href="/network-wifi-security" className="text-white/80 hover:text-white transition-colors text-sm">Network &amp; Wi-Fi</Link></li>
+                  <li><Link href="/microsoft-365" className="text-white/80 hover:text-white transition-colors text-sm">Microsoft 365 &amp; Teams Phone</Link></li>
                   <li><Link href="/cybersecurity" className="text-white/80 hover:text-white transition-colors text-sm">Cybersecurity &amp; Compliance</Link></li>
+                  <li><Link href="/network-wifi-security" className="text-white/80 hover:text-white transition-colors text-sm">Network &amp; Wi-Fi</Link></li>
+                  <li><Link href="/managed-hardware" className="text-white/80 hover:text-white transition-colors text-sm">Managed Hardware</Link></li>
                   <li><Link href="/ai-readiness" className="text-white/80 hover:text-white transition-colors text-sm">AI &amp; Microsoft Copilot</Link></li>
+                  <li><Link href="/web-design" className="text-white/80 hover:text-white transition-colors text-sm">Web Design</Link></li>
                   <li><Link href="/website-care-plans" className="text-white/80 hover:text-white transition-colors text-sm">Website Care Plans</Link></li>
                 </ul>
               </nav>

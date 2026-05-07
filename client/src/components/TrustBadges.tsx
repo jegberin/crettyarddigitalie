@@ -11,6 +11,17 @@ const badges = [
     ),
   },
   {
+    id: "certifications",
+    label: "26 Industry Certifications",
+    description: "Microsoft \u00b7 Cloud \u00b7 Security",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="w-6 h-6">
+        <circle cx="12" cy="8" r="6" />
+        <polyline points="8.21 13.89 7 22 12 19 17 22 15.79 13.88" />
+      </svg>
+    ),
+  },
+  {
     id: "no-jargon",
     label: "Plain English, Always",
     description: "No jargon, no runaround",
