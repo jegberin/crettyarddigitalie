@@ -233,12 +233,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Credential Band ────────────────────────────────────────── */}
-      <CredentialBand />
-
-      {/* ── Stats Strip ───────────────────────────────────────────── */}
-      <StatsStrip />
-
       {/* ── The Problem ───────────────────────────────────────────── */}
       <section className="bg-white py-28">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -269,6 +263,9 @@ export default function Home() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* ── Stats Strip — answers the problem with quantified credibility ── */}
+      <StatsStrip />
 
       {/* ── Comparison ────────────────────────────────────────────── */}
       <section className="py-28 bg-[#f3f4f5] relative overflow-hidden">
@@ -477,6 +474,9 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ── Credential Band — bridges the pitch into the work ─────── */}
+      <CredentialBand />
 
       {/* ── Featured Projects ─────────────────────────────────────── */}
       <section className="py-28 bg-[#f3f4f5]">
