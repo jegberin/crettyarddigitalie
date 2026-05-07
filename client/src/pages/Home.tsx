@@ -1,11 +1,13 @@
 import { useState, useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, XCircle, ArrowRight, Shield, Clock, TrendingUp, MessageCircle, BadgeEuro } from "lucide-react";
+import { CheckCircle2, ArrowRight, Shield, BadgeEuro, Network, RefreshCw, FileCheck } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { TrustBadges } from "@/components/TrustBadges";
 import { StatsStrip } from "@/components/StatsStrip";
+import { CredentialBand } from "@/components/CredentialBand";
+import { FragmentedVsIntegrated } from "@/components/FragmentedVsIntegrated";
 import { AnimatedTetrahedron } from "@/components/AnimatedTetrahedron";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -15,7 +17,6 @@ import project3 from "@assets/portfolio-nurney-plant-civil.webp";
 import project4 from "@assets/portfolio-more-than-points.webp";
 import project5 from "@assets/portfolio-crettyard-ie.webp";
 import joeyPhoto from "@assets/joey-profile-photo.webp";
-import getFoundIllustration from "@assets/concept-your-business-found.webp";
 import iconWebDesign from "@assets/concept-web-design.webp";
 import iconAICopilot from "@assets/concept-ai-copilot.webp";
 import icon365Admin from "@assets/concept-365-admin.webp";
@@ -41,19 +42,15 @@ type Service = {
 const services: Service[] = [
   {
     num: "01",
-    image: iconWebDesign,
-    imageAlt: "Glass browser window with a smaller glass smartphone beside it representing responsive web design",
-    title: "Web Design",
-    desc: (
-      <>
-        Professional, mobile-friendly websites built to rank on Google for your area, turn visitors into enquiries, and make your business look as good online as the work you do. Every site includes a <Link href="/website-care-plans" className="text-accent hover:underline">care plan</Link>.
-      </>
-    ),
-    price: "From \u20ac799",
-    href: "/web-design",
-    linkLabel: "Learn what's included",
-    testId: "card-service-webdesign",
-    linkTestId: "link-webdesign",
+    image: iconItHelpdesk,
+    imageAlt: "Glass headset with a speech bubble representing direct IT helpdesk support",
+    title: "Managed IT Support",
+    desc: "Your outsourced IT department. I monitor your systems, keep everything updated and secure, manage compliance, and fix problems before they cost you time or money. Fixed monthly pricing.",
+    price: "From \u20ac45/user/month",
+    href: "/managed-it-support",
+    linkLabel: "Explore managed IT plans",
+    testId: "card-service-managedit",
+    linkTestId: "link-managedit",
   },
   {
     num: "02",
@@ -69,15 +66,15 @@ const services: Service[] = [
   },
   {
     num: "03",
-    image: iconItHelpdesk,
-    imageAlt: "Glass headset with a speech bubble representing direct IT helpdesk support",
-    title: "Managed IT Support",
-    desc: "Your outsourced IT department. I monitor your systems, keep everything updated and secure, manage compliance, and fix problems before they cost you time or money. Fixed monthly pricing.",
-    price: "From \u20ac45/user/month",
-    href: "/managed-it-support",
-    linkLabel: "Explore managed IT plans",
-    testId: "card-service-managedit",
-    linkTestId: "link-managedit",
+    image: iconGdprShield,
+    imageAlt: "Glass shield with a tick and a ring of EU stars representing cybersecurity and GDPR compliance",
+    title: "Cybersecurity & Compliance",
+    desc: "Practical protection against phishing, ransomware, and data breaches \u2014 plus NIS2, GDPR, and European Accessibility Act compliance. Security audits, staff training, and ongoing monitoring.",
+    price: "Audits from \u20ac200",
+    href: "/cybersecurity",
+    linkLabel: "See cybersecurity options",
+    testId: "card-service-cybersecurity",
+    linkTestId: "link-cybersecurity",
   },
   {
     num: "04",
@@ -93,15 +90,15 @@ const services: Service[] = [
   },
   {
     num: "05",
-    image: iconGdprShield,
-    imageAlt: "Glass shield with a tick and a ring of EU stars representing cybersecurity and GDPR compliance",
-    title: "Cybersecurity & Compliance",
-    desc: "Practical protection against phishing, ransomware, and data breaches \u2014 plus NIS2, GDPR, and European Accessibility Act compliance. Security audits, staff training, and ongoing monitoring.",
-    price: "Audits from \u20ac200",
-    href: "/cybersecurity",
-    linkLabel: "See cybersecurity options",
-    testId: "card-service-cybersecurity",
-    linkTestId: "link-cybersecurity",
+    image: iconEndpointSecurity,
+    imageAlt: "Glass laptop with a padlock representing managed business hardware",
+    title: "Managed Hardware",
+    desc: "Turnkey business PCs and on-site servers delivered ready to use \u2014 fully configured, licensed, encrypted, and with your data migrated before they arrive. Log in and get to work.",
+    price: "PCs from \u20ac899",
+    href: "/managed-hardware",
+    linkLabel: "See what's included",
+    testId: "card-service-hardware",
+    linkTestId: "link-hardware",
   },
   {
     num: "06",
@@ -117,15 +114,19 @@ const services: Service[] = [
   },
   {
     num: "07",
-    image: iconEndpointSecurity,
-    imageAlt: "Glass laptop with a padlock representing managed business hardware",
-    title: "Managed Hardware",
-    desc: "Turnkey business PCs and on-site servers delivered ready to use \u2014 fully configured, licensed, encrypted, and with your data migrated before they arrive. Log in and get to work.",
-    price: "PCs from \u20ac899",
-    href: "/managed-hardware",
-    linkLabel: "See what's included",
-    testId: "card-service-hardware",
-    linkTestId: "link-hardware",
+    image: iconWebDesign,
+    imageAlt: "Glass browser window with a smaller glass smartphone beside it representing responsive web design",
+    title: "Web Design",
+    desc: (
+      <>
+        Often the entry point to a longer relationship &mdash; a properly built website is the first piece of digital infrastructure for most businesses, and the one customers see. Every site includes a <Link href="/website-care-plans" className="text-accent hover:underline">care plan</Link>.
+      </>
+    ),
+    price: "From \u20ac799",
+    href: "/web-design",
+    linkLabel: "Learn what's included",
+    testId: "card-service-webdesign",
+    linkTestId: "link-webdesign",
   },
   {
     num: "08",
@@ -139,9 +140,15 @@ const services: Service[] = [
     testId: "card-service-care",
     linkTestId: "link-care",
   },
+
 ];
 
-const HERO_PHRASES = ["Get Found.", "Win Clients.", "Stand Out.", "Stay Secure."];
+const HERO_PHRASES = [
+  "Done Properly.",
+  "One Trusted Partner.",
+  "Built to Stay.",
+  "Enterprise Discipline.",
+];
 
 function CharReveal({ text, startDelay = 0 }: { text: string; startDelay?: number }) {
   let charIndex = 0;
@@ -189,9 +196,9 @@ export default function Home() {
                 className="display-heading text-white mb-8 leading-none"
                 data-testid="text-hero-heading"
               >
-                <span className="sr-only">Web Design, Microsoft 365 &amp; Managed IT for Small Businesses Across Ireland &mdash; </span>
-                <CharReveal text="Help Your" startDelay={200} /><br />
-                <CharReveal text="Business" startDelay={580} /><br />
+                <span className="sr-only">Outsourced IT, Microsoft 365 &amp; Cybersecurity for Irish SMEs &mdash; </span>
+                <CharReveal text="Your" startDelay={200} /><br />
+                <CharReveal text="Outsourced IT," startDelay={500} /><br />
                 <span
                   key={phraseIndex}
                   className="text-accent inline-block whitespace-nowrap"
@@ -201,7 +208,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-white text-lg mb-10 leading-relaxed font-sans font-normal max-w-lg" data-testid="text-hero-subheading">
-                I build websites, set up professional email, and manage IT for small businesses across Ireland. Enterprise-grade quality. Plain-English service. One person to call &mdash; no runaround.
+                Outsourced IT, Microsoft 365, cybersecurity, and the full digital surface of your business &mdash; run by one accountable person with 15+ years inside Microsoft, Intel and Dell, and 26 industry certifications. Plain-English Irish service. Built for the long haul &mdash; not the next invoice.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link href="/contact#send-message">
@@ -209,9 +216,9 @@ export default function Home() {
                     Book a Free Consultation
                   </Button>
                 </Link>
-                <Link href="/portfolio">
-                  <Button size="lg" variant="outline" className="px-8 border-white/30 text-white hover:bg-white/10" data-testid="button-get-quote">
-                    See What I've Built &rarr;
+                <Link href="/how-it-works">
+                  <Button size="lg" variant="outline" className="px-8 border-white/30 text-white hover:bg-white/10" data-testid="button-how-it-works">
+                    See How I Work &rarr;
                   </Button>
                 </Link>
               </div>
@@ -226,6 +233,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Credential Band ────────────────────────────────────────── */}
+      <CredentialBand />
+
       {/* ── Stats Strip ───────────────────────────────────────────── */}
       <StatsStrip />
 
@@ -234,19 +244,22 @@ export default function Home() {
         <div className="container mx-auto px-4 max-w-3xl">
           <FadeIn className="text-center">
             <span className="eyebrow mb-5 inline-block">Why It Matters</span>
-            <h2 className="text-3xl md:text-4xl mb-6" data-testid="text-presence-heading">If Customers Can't Find You Online, They're Finding Your Competitors</h2>
+            <h2 className="text-3xl md:text-4xl mb-6" data-testid="text-presence-heading">Most Small Businesses Are One Phishing Email or One Disappearing Vendor Away From a Crisis</h2>
+            <p className="text-lg text-foreground mb-6 leading-relaxed font-sans font-normal">
+              Most small Irish businesses didn&rsquo;t choose their IT setup &mdash; it accumulated. A Gmail address from 2018. A free WordPress theme someone&rsquo;s nephew installed. A network the broadband installer left behind. A vendor who took the cheque and stopped answering emails.
+            </p>
             <p className="text-lg text-foreground mb-10 leading-relaxed font-sans font-normal">
-              Someone in your area just searched Google for exactly what you do &mdash; "plumber Carlow," "furniture maker Laois," "cleaner near me." They didn't find you. They found a competitor whose website looked professional, had a proper email address, and had a phone number they could tap. That competitor got the job. You didn't even know you weren't in the running.
+              None of it was a decision. All of it is now load-bearing. And every month it gets a little more brittle while NIS2, GDPR, the Accessibility Act and the next ransomware family quietly tighten the screws.
             </p>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 gap-6 text-left">
             {[
-              "Potential customers find your competitors on Google instead of you",
-              "A Gmail or Yahoo email address makes you look like a hobby, not a business",
-              "No website means no way to show your work or explain what makes you different",
-              "Word-of-mouth alone eventually slows down \u2014 and you have no backup plan",
-              "New EU regulations mean your technology may need to meet legal standards",
-              "Every month without a proper online presence is a month of less work",
+              "The owner becomes the de-facto IT manager \u2014 at 9pm, after a full day\u2019s work",
+              "Files scattered across personal Gmail, USB sticks, and someone\u2019s old laptop",
+              "MFA off, default passwords on, no one watching for the phishing email that lands tomorrow",
+              "Backups that nobody has ever actually tested",
+              "GDPR, NIS2 and the EAA tightening with no one inside the business reading them",
+              "A website builder who launched two years ago and isn\u2019t returning emails now",
             ].map((point, i) => (
               <StaggerItem key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="text-accent shrink-0 mt-1" size={18} />
@@ -261,73 +274,11 @@ export default function Home() {
       <section className="py-28 bg-[#f3f4f5] relative overflow-hidden">
         <GridLines cols={6} rows={4} color="#002157" opacity={0.04} />
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
-          <FadeIn className="text-center mb-16">
-            <span className="eyebrow mb-5 inline-block">The Difference</span>
-            <h2 className="text-3xl md:text-4xl mb-4" data-testid="text-comparison-heading">Doing Nothing vs Getting It Right</h2>
-            <p className="text-foreground max-w-2xl mx-auto font-sans font-normal">A professional digital foundation changes everything for a local business.</p>
-          </FadeIn>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] gap-8">
-            <FadeIn delay={0.1}>
-              <div className="rounded-2xl p-8 bg-red-50/60 h-full">
-                <h3 className="text-xl mb-6 text-red-800 flex items-center gap-2">
-                  <XCircle size={22} className="text-red-500" />
-                  Without a Proper Setup
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "Customers searching Google find your competitors, not you",
-                    "A Gmail address makes prospects question your professionalism",
-                    "No way to showcase your best work or explain what sets you apart",
-                    "Files on USB sticks, personal laptops, and scattered email attachments",
-                    "No security \u2014 one phishing email could compromise your whole business",
-                    "Missing enquiries every month that could fill your calendar",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-foreground text-[15px] font-sans">
-                      <XCircle className="text-red-400 shrink-0 mt-0.5" size={16} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <div className="rounded-2xl p-8 bg-green-50/60 h-full">
-                <h3 className="text-xl mb-6 text-green-800 flex items-center gap-2">
-                  <CheckCircle2 size={22} className="text-green-600" />
-                  With a Digital Foundation
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "You appear in local searches for \u2018plumber Laois\u2019 or \u2018cleaner Carlow\u2019",
-                    "Professional website and @yourbusiness.ie email builds instant trust",
-                    "Your best work on display 24/7 \u2014 even while you sleep",
-                    "All files in one secure cloud, accessible from any device",
-                    "Proper security and compliance protecting your data from day one",
-                    "New enquiries arriving while you\u2019re out on the job",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-foreground text-[15px] font-sans">
-                      <CheckCircle2 className="text-green-500 shrink-0 mt-0.5" size={16} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.3} className="md:col-span-2 lg:col-span-1 justify-self-center self-center">
-              <img
-                src={getFoundIllustration}
-                alt="Glass illustration of an Irish small business being found on Google with a professional business email"
-                className="w-40 lg:w-44"
-                loading="lazy"
-                width="1000"
-                height="1000"
-                data-testid="img-get-found-online"
-              />
-            </FadeIn>
-          </div>
+          <FragmentedVsIntegrated
+            eyebrow="The Difference"
+            heading="Five Vendors vs One Trusted Partner"
+            intro="Most small businesses end up juggling five vendors and nobody accountable. There&rsquo;s a better way."
+          />
         </div>
       </section>
 
@@ -336,18 +287,18 @@ export default function Home() {
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn className="text-center mb-16">
             <span className="eyebrow mb-5 inline-block">Smart Investment</span>
-            <h2 className="text-3xl md:text-4xl mb-4" data-testid="text-investment-heading">Why Getting It Right the First Time Saves You Thousands</h2>
+            <h2 className="text-3xl md:text-4xl mb-4" data-testid="text-investment-heading">Five Vendors Costs More Than One</h2>
             <p className="text-foreground max-w-2xl mx-auto font-sans font-normal">
-              Going cheap upfront is tempting, but it nearly always costs more in the long run &mdash; in wasted money, missed customers, security risks, and the cost of starting over.
+              In money, in coordination tax, and in everything that falls between the cracks. Fragmented IT looks cheaper line by line and costs more in aggregate.
             </p>
           </FadeIn>
 
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: <Clock size={24} />, title: "Avoid Costly Rebuilds", desc: "A \u20ac300 website needs replacing within a year. Getting it right means a site that lasts and grows with your business." },
-              { icon: <TrendingUp size={24} />, title: "Stop Missing Leads", desc: "Every month without a proper online presence is a month of lost enquiries going to a competitor who did invest in a website." },
-              { icon: <Shield size={24} />, title: "Avoid Security & Legal Risks", desc: "Poorly configured setups leave security gaps. With NIS2 and GDPR enforcement tightening, that\u2019s now a legal problem too." },
-              { icon: <MessageCircle size={24} />, title: "No More Patchwork Fixes", desc: "Stop paying different people to patch the same problems. One integrated setup replaces years of expensive break-fixes." },
+              { icon: <Network size={24} />, title: "One Stack, One Strategy", desc: "Five vendors means five strategies that don\u2019t talk to each other. One partner means everything works together." },
+              { icon: <Shield size={24} />, title: "Risk Caught Early, Not Late", desc: "The cost of a breach, a failed backup, or a missed regulation is always higher than the cost of preventing it. Prevention is the standard." },
+              { icon: <RefreshCw size={24} />, title: "No Vendor Roulette", desc: "Every time you switch IT providers you pay a hidden tax in lost knowledge. Built to be the last switch you make." },
+              { icon: <FileCheck size={24} />, title: "Compliance, Not a Bill", desc: "NIS2, GDPR, DORA, EAA \u2014 handled as part of the service, not billed as an extra project." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="text-center">
@@ -369,9 +320,9 @@ export default function Home() {
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <FadeIn className="mb-16">
             <span className="eyebrow mb-5 inline-block">What I Do</span>
-            <h2 className="text-3xl md:text-4xl mb-3" data-testid="text-services-heading">One Trusted Partner for Your Website, Email, IT, and Security</h2>
+            <h2 className="text-3xl md:text-4xl mb-3" data-testid="text-services-heading">One Trusted Partner for the Full Digital Surface of Your Business</h2>
             <p className="text-foreground max-w-2xl font-sans font-normal">
-              Most agencies build you a website and disappear. Most IT companies don't do websites. I handle everything under one roof &mdash; so it all works together and you have one person to call.
+              Most agencies build you a website and disappear. Most IT companies don&rsquo;t touch websites. Almost nobody covers the whole digital surface &mdash; so most small businesses end up with five vendors and nobody accountable. I do all of it, under one roof, with one number to ring, for the long haul.
             </p>
           </FadeIn>
 
@@ -482,6 +433,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Why I'm not a website studio ──────────────────────────── */}
+      <section className="py-24 bg-white border-t border-gray-100" aria-labelledby="not-a-studio-heading">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeIn>
+            <span className="eyebrow mb-5 inline-block">A Quick Note</span>
+            <h2 id="not-a-studio-heading" className="text-3xl md:text-4xl mb-6" data-testid="text-not-a-studio-heading">Why I&rsquo;m Not a Website Studio</h2>
+            <p className="text-foreground text-[16px] leading-relaxed font-sans mb-5">
+              A new website studio appears in our area roughly every month. Most are one person with an AI tool. Some do good work. Many do not. None of them are still answering the phone two years later when a customer&rsquo;s email stops working, when a compliance auditor asks for documentation, when ransomware lands, when a vendor changes a billing model overnight, or when the business outgrows the original setup.
+            </p>
+            <p className="text-foreground text-[16px] leading-relaxed font-sans">
+              Crettyard Digital is the opposite proposition. The website is one piece of work in a relationship that is meant to last years. The standards behind it are the standards I learned across Microsoft, Intel and Dell. The pricing is transparent. The exit is documented. The phone gets answered. That is the whole offer.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── Process ───────────────────────────────────────────────── */}
       <section className="py-28 bg-white">
         <div className="container mx-auto px-4">
@@ -514,23 +481,28 @@ export default function Home() {
       {/* ── Featured Projects ─────────────────────────────────────── */}
       <section className="py-28 bg-[#f3f4f5]">
         <div className="container mx-auto px-4">
-          <FadeIn className="flex justify-between items-end mb-14">
+          <FadeIn className="flex justify-between items-end mb-6">
             <div>
               <span className="eyebrow mb-5 inline-block">Featured Projects</span>
-              <h2 className="text-3xl md:text-4xl mb-3" data-testid="text-projects-heading">Real Websites. Real Businesses. Real Results.</h2>
+              <h2 className="text-3xl md:text-4xl mb-3" data-testid="text-projects-heading">Real Businesses. Real Relationships.</h2>
             </div>
             <Link href="/portfolio" className="hidden md:inline-flex text-accent font-headline font-bold items-center hover:text-primary transition-colors text-sm" data-testid="link-view-all-projects">
               View all projects <ArrowRight size={14} className="ml-1" />
             </Link>
           </FadeIn>
+          <FadeIn className="mb-10">
+            <p className="text-foreground text-[15px] font-sans max-w-3xl">
+              Some of the businesses I&rsquo;ve built and supported. Most are still active clients today; one ran for nine years before the relationship naturally concluded. Either way &mdash; these are relationships, not transactions.
+            </p>
+          </FadeIn>
 
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
-              { href: "https://bmcustomfurniture.ie", portfolioAnchor: "/portfolio#project-bm-custom-furniture", img: project1, alt: "BM Custom Furniture bespoke fitted furniture website designed by Crettyard Digital", title: "BM Custom Furniture", url: "bmcustomfurniture.ie", desc: "Bespoke furniture \u2014 Google enquiries within 3 weeks", cta: "Visit site", ariaLabel: "Visit BM Custom Furniture website (opens in new tab)", testId: "card-project-bm" },
-              { href: "https://gogreensteamclean.ie", portfolioAnchor: "/portfolio#project-go-green-steam-clean", img: project2, alt: "Go Green Steam Clean eco-friendly steam cleaning business website designed by Crettyard Digital", title: "Go Green Steam Clean", url: "gogreensteamclean.ie", desc: "Eco-cleaning \u2014 new bookings every week via Google", cta: "Visit site", ariaLabel: "Visit Go Green Steam Clean website (opens in new tab)", testId: "card-project-gogreen" },
-              { href: "https://nurneyplantandcivil.ie", portfolioAnchor: "/portfolio#project-nurney-plant-civil", img: project3, alt: "Nurney Plant and Civil plant hire and civil engineering website designed by Crettyard Digital", title: "Nurney Plant and Civil", url: "nurneyplantandcivil.ie", desc: "Website + M365 + Wi-Fi \u2014 full digital foundation", cta: "Visit site", ariaLabel: "Visit Nurney Plant and Civil website (opens in new tab)", testId: "card-project-nurney" },
-              { href: "https://morethanpoints.ie", portfolioAnchor: "/portfolio#project-more-than-points", img: project4, alt: "More Than Points teen and parent coaching website designed by Crettyard Digital", title: "More Than Points", url: "morethanpoints.ie", desc: "Coaching service \u2014 trust-building for families", cta: "Visit site", ariaLabel: "Visit More Than Points coaching website (opens in new tab)", testId: "card-project-morethanpoints" },
-              { href: "https://crettyard.ie", portfolioAnchor: "/portfolio#project-crettyard-ie", img: project5, alt: "Crettyard.ie community website designed by Crettyard Digital", title: "Crettyard.ie", url: "crettyard.ie", desc: "Community hub \u2014 local business directory", cta: "Visit site", ariaLabel: "Visit Crettyard.ie community website (opens in new tab)", testId: "card-project-crettyardie" },
+              { href: "https://bmcustomfurniture.ie", portfolioAnchor: "/portfolio#project-bm-custom-furniture", img: project1, alt: "BM Custom Furniture bespoke fitted furniture website designed by Crettyard Digital", title: "BM Custom Furniture", url: "bmcustomfurniture.ie", desc: "9 years of service · 2016–2025 · Website, hardware, bookkeeping, all support", cta: "Visit site", ariaLabel: "Visit BM Custom Furniture website (opens in new tab)", testId: "card-project-bm" },
+              { href: "https://gogreensteamclean.ie", portfolioAnchor: "/portfolio#project-go-green-steam-clean", img: project2, alt: "Go Green Steam Clean eco-friendly steam cleaning business website designed by Crettyard Digital", title: "Go Green Steam Clean", url: "gogreensteamclean.ie", desc: "Live and supported since 2025 · Monthly updates and support", cta: "Visit site", ariaLabel: "Visit Go Green Steam Clean website (opens in new tab)", testId: "card-project-gogreen" },
+              { href: "https://nurneyplantandcivil.ie", portfolioAnchor: "/portfolio#project-nurney-plant-civil", img: project3, alt: "Nurney Plant and Civil plant hire and civil engineering website designed by Crettyard Digital", title: "Nurney Plant and Civil", url: "nurneyplantandcivil.ie", desc: "Live and supported since 2022 · Website, Microsoft 365, Wi-Fi", cta: "Visit site", ariaLabel: "Visit Nurney Plant and Civil website (opens in new tab)", testId: "card-project-nurney" },
+              { href: "https://morethanpoints.ie", portfolioAnchor: "/portfolio#project-more-than-points", img: project4, alt: "More Than Points teen and parent coaching website designed by Crettyard Digital", title: "More Than Points", url: "morethanpoints.ie", desc: "Live and supported since 2026 · Ongoing support", cta: "Visit site", ariaLabel: "Visit More Than Points coaching website (opens in new tab)", testId: "card-project-morethanpoints" },
+              { href: "https://crettyard.ie", portfolioAnchor: "/portfolio#project-crettyard-ie", img: project5, alt: "Crettyard.ie community website designed by Crettyard Digital", title: "Crettyard.ie", url: "crettyard.ie", desc: "Live and supported since 2026 · Ongoing support and development", cta: "Visit site", ariaLabel: "Visit Crettyard.ie community website (opens in new tab)", testId: "card-project-crettyardie" },
             ].map((p) => (
               <StaggerItem key={p.testId}>
                 <div className="flex flex-col h-full" data-testid={p.testId}>
@@ -595,7 +567,7 @@ export default function Home() {
       {/* ── Spotlight CTA ─────────────────────────────────────────── */}
       <SpotlightCTA
         eyebrow="Ready to Get Started?"
-        heading="Let's Build Your Digital Foundation"
+        heading="Let's Talk About Your IT, Properly"
         subtext="Book a free, no-obligation consultation. I'll listen to what you need, give you honest advice, and show you the most cost-effective way to get sorted &mdash; plus any grant opportunities for software elements of your project. No pressure, no jargon, no surprises."
         primaryText="Book Your Free Consultation"
         primaryHref="/contact#send-message"
