@@ -8,7 +8,7 @@ Read this first every new session. It's the fastest path from cold start to prod
 
 ## ⚡ Active workstream — Site repositioning (multi-session)
 
-**Status as of 2026-05-07:** Phase 1 shipped. Phases 2-7 pending.
+**Status as of 2026-05-07:** Phases 1 and 2 shipped to main. Phases 3-7 pending.
 
 **Strategic shift:** reposition Crettyard Digital from "website builder who also does IT" to "outsourced IT partner for Irish SMEs — covering the full digital surface, including a website if needed". Web design moves from item 01 to item 07 in service ordering.
 
@@ -21,7 +21,8 @@ Read this first every new session. It's the fastest path from cold start to prod
 
 | # | Scope | Files touched | Effort | Status |
 |---|---|---|---|---|
-| 1 | Site-wide: 3 new shared components (CredentialBand, FragmentedVsIntegrated, ContinuityCommitment) + Navbar/Footer/AnimatedMarquee reorder + StatsStrip rewrite (counter + static types) + TrustBadges 6th badge + TrustMarquee 3 new items + Home SEO title/desc reorder + Meet Joey paragraphs on Home/About/ManagedIT | components/* + App.tsx + Home/About/ManagedIT | ~half day | ✅ shipped |
+| 1 | Site-wide: 3 new shared components (CredentialBand, FragmentedVsIntegrated, ContinuityCommitment) + Navbar/Footer/AnimatedMarquee reorder + StatsStrip rewrite (later refined to all-counter for visual consistency) + TrustBadges 6th badge + TrustMarquee 3 new items + Home SEO title/desc reorder + Meet Joey paragraphs on Home/About/ManagedIT | components/* + App.tsx + Home/About/ManagedIT | ~half day | ✅ shipped |
+| 2 | Home rewrite: hero rotations + subhead + CTA → /how-it-works · CredentialBand under hero · Problem section reframed (fragmented IT) · Comparison block → FragmentedVsIntegrated · Smart Investment refocused · services array reordered (Web Design 07) · NEW "Why I'm not a website studio" section · Featured Projects with relationshipLine + new framing for ended BM client · Spotlight CTA heading | Home.tsx | ~1 day | ✅ shipped |
 | 2 | Home page rewrite (hero, problem, comparison, services reorder, "Why I'm not a website studio" section) | Home.tsx | ~1 day |
 | 3 | About + Managed IT — both get Built-to-Stay framing + new "Standards I run on" / "What ongoing looks like" sections | About.tsx, ManagedIT.tsx | ~1 day |
 | 4 | Web Design + Cybersecurity + Microsoft 365 — hero/copy adjustments + new sections | WebDesign.tsx, Cybersecurity.tsx, Microsoft365.tsx | ~1 day |
@@ -48,7 +49,7 @@ Read this first every new session. It's the fastest path from cold start to prod
 **No open inputs.** Plan is fully unblocked. Joey says "go" → start Phase 1.
 
 **Working agreement:**
-- Each phase ships as its own commit. Direct-to-main for Phases 1, 4, 5, 6, 7. Feature branch + PR for Phases 2 and 3 (heaviest visible changes — Joey reviews before merge).
+- **Every phase ships direct to `main`.** No feature branches, no PRs. Type-check (`npm run check`), commit, push. Joey does not want to be the merge-approver. (See memory: `workflow_no_feature_branches.md`.)
 - Cloudflare Workers Builds auto-deploys from main; no staging. Deliberate pushes only.
 - Update this section as each phase lands. When all 7 phases complete, archive the plan reference and remove this whole "Active workstream" block.
 
