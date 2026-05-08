@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, BadgeEuro, MonitorSmartphone, Cloud, ServerCog, Wifi, Phone, BrainCircuit, Lock, ShieldCheck, FileCheck } from "lucide-react";
+import { CheckCircle, ArrowRight, BadgeEuro, MonitorSmartphone, Cloud, ServerCog, Wifi, Phone, BrainCircuit, Lock, ShieldCheck } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -115,23 +115,6 @@ const cyberPackages = [
     ],
     href: "/managed-hardware/crettyard-edge",
     popular: true,
-  },
-  {
-    icon: FileCheck,
-    name: "Bespoke Compliance Projects",
-    price: "Quoted",
-    unit: "on request",
-    tagline: "NIS2 readiness, DORA gap analyses, EAA audits, sector-specific compliance work.",
-    items: [
-      "NIS2 readiness packages",
-      "DORA gap analyses (Article 17 + RTS)",
-      "EAA accessibility audits",
-      "IT resilience reviews",
-      "Sector-specific compliance (healthcare, legal, financial)",
-      "Most of this is included in Compliance Plus",
-    ],
-    href: "/cybersecurity",
-    popular: false,
   },
 ];
 
@@ -351,13 +334,13 @@ export default function Pricing() {
         <div className="container mx-auto px-4 max-w-6xl">
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">Cybersecurity &amp; Compliance</span>
-            <h2 className="text-3xl md:text-4xl mb-4">Two Productised Packages. One Bespoke Layer.</h2>
+            <h2 className="text-3xl md:text-4xl mb-4">Two Productised Packages.</h2>
             <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
               Most Irish small businesses need two things from a security partner: proper endpoint and web protection on every device, and a real firewall at the edge of their network. Those two are sold as fixed-price monthly packages. Larger compliance projects &mdash; NIS2 readiness, DORA gap analyses, sector-specific audits &mdash; sit outside the packages and are quoted in writing after a free initial review.
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {cyberPackages.map((pkg) => (
               <StaggerItem key={pkg.name}>
                 <div className={`rounded-2xl p-8 h-full flex flex-col ${pkg.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-white border border-gray-100"}`} data-testid={`cyber-${pkg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
@@ -370,17 +353,8 @@ export default function Pricing() {
                   </div>
                   <p className="text-foreground text-[14px] font-sans mb-5">{pkg.tagline}</p>
                   <div className="mb-6">
-                    {pkg.price === "Quoted" ? (
-                      <>
-                        <p className="text-2xl font-headline font-extrabold text-primary leading-tight">Quoted on request</p>
-                        <p className="text-sm text-muted-foreground font-sans mt-1">After a free initial review</p>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-4xl font-headline font-extrabold text-primary">{pkg.price}</p>
-                        <p className="text-sm text-muted-foreground font-sans">{pkg.unit}</p>
-                      </>
-                    )}
+                    <p className="text-4xl font-headline font-extrabold text-primary">{pkg.price}</p>
+                    <p className="text-sm text-muted-foreground font-sans">{pkg.unit}</p>
                   </div>
                   <ul className="space-y-2.5 flex-1 mb-6">
                     {pkg.items.map((item, j) => (
@@ -390,11 +364,11 @@ export default function Pricing() {
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-col gap-2">
-                    <Link href="/contact#send-message">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link href="/contact#send-message" className="flex-1">
                       <Button className="w-full" variant={pkg.popular ? "default" : "outline"}>Book a Free Consultation</Button>
                     </Link>
-                    <Link href={pkg.href}>
+                    <Link href={pkg.href} className="flex-1">
                       <Button variant="outline" className="w-full">See Details &rarr;</Button>
                     </Link>
                   </div>
