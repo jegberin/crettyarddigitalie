@@ -413,40 +413,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Section 4 — Specialist services (Network + AI) */}
-      <section className="py-28 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <FadeIn className="text-center mb-14">
-            <span className="eyebrow mb-5 inline-block">Specialist Services</span>
-            <h2 className="text-3xl md:text-4xl mb-4">Quoted on Request</h2>
-            <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
-              Two areas of work that do not fit a sticker price. A flat list price for either would be either fictional or unfair. A short, free review tells us what you actually need.
-            </p>
-          </FadeIn>
-
-          <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {specialistServices.map((svc) => (
-              <StaggerItem key={svc.title}>
-                <Link href={svc.href} className="block bg-[#f3f4f5] p-7 rounded-2xl card-hover h-full" data-testid={`specialist-${svc.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <svc.icon className="text-accent shrink-0" size={24} />
-                    <h3 className="text-lg font-headline font-extrabold text-primary">{svc.title}</h3>
-                  </div>
-                  <p className="text-foreground text-[14px] font-sans leading-relaxed mb-4">{svc.desc}</p>
-                  <span className="text-accent text-sm font-headline font-bold inline-flex items-center">See details <ArrowRight size={14} className="ml-1" /></span>
-                </Link>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          <FadeIn className="text-center mt-10">
-            <Link href="/contact#send-message">
-              <Button size="lg">Book a Free Review</Button>
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* Section 4 — Web Design */}
       <section className="py-28 bg-[#f3f4f5]">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -553,6 +519,40 @@ export default function Pricing() {
                 A regulated 10-person accountancy practice would substitute Compliance Plus (€95) for Standard (€65), bringing the monthly to roughly €1,250 &mdash; still significantly less than hiring a junior IT person, with a far broader skillset.
               </p>
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Section 5 — Specialist services (Network + AI) */}
+      <section className="py-28 bg-[#f3f4f5] border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Specialist Services</span>
+            <h2 className="text-3xl md:text-4xl mb-4">Quoted on Request</h2>
+            <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
+              Two areas of work that do not fit a sticker price. A flat list price for either would be either fictional or unfair. A short, free review tells us what you actually need.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {specialistServices.map((svc) => (
+              <StaggerItem key={svc.title}>
+                <Link href={svc.href} className="block bg-white p-7 rounded-2xl card-hover h-full shadow-sm" data-testid={`specialist-${svc.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <svc.icon className="text-accent shrink-0" size={24} />
+                    <h3 className="text-lg font-headline font-extrabold text-primary">{svc.title}</h3>
+                  </div>
+                  <p className="text-foreground text-[14px] font-sans leading-relaxed mb-4">{svc.desc}</p>
+                  <span className="text-accent text-sm font-headline font-bold inline-flex items-center">See details <ArrowRight size={14} className="ml-1" /></span>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="text-center mt-10">
+            <Link href="/contact#send-message">
+              <Button size="lg">Book a Free Review</Button>
+            </Link>
           </FadeIn>
         </div>
       </section>
