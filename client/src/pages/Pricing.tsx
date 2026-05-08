@@ -390,11 +390,11 @@ export default function Pricing() {
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Link href="/contact#send-message" className="flex-1">
+                  <div className="flex flex-col gap-2">
+                    <Link href="/contact#send-message">
                       <Button className="w-full" variant={pkg.popular ? "default" : "outline"}>Book a Free Consultation</Button>
                     </Link>
-                    <Link href={pkg.href} className="flex-1">
+                    <Link href={pkg.href}>
                       <Button variant="outline" className="w-full">See Details &rarr;</Button>
                     </Link>
                   </div>
