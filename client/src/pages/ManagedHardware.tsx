@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Monitor, Server, ShieldCheck, Package, Clock, Phone, Zap, Lock, HardDrive, CheckCircle, Truck, UserCheck, Shield } from "lucide-react";
+import { Monitor, Server, ShieldCheck, Package, Clock, Phone, Zap, Lock, HardDrive, CheckCircle, Truck, UserCheck } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -133,10 +133,14 @@ export default function ManagedHardware() {
             <FadeIn>
               <div className="bg-[#f3f4f5] rounded-2xl h-full flex flex-col overflow-hidden relative" data-testid="card-crettyard-edge">
                 <span className="absolute top-4 right-4 z-10 bg-accent text-white text-xs font-headline font-bold px-3 py-1 rounded-full">New</span>
-                <div className="aspect-[4/3] bg-primary flex items-center justify-center relative overflow-hidden">
-                  <GridLines cols={6} rows={4} color="#ffffff" opacity={0.05} />
-                  <Shield className="text-accent relative z-10" size={88} strokeWidth={1.25} />
-                </div>
+                <img
+                  src={imgBusinessDesktop}
+                  alt="A compact, anonymous purpose-built firewall appliance ready for deployment at the edge of a small Irish-business network"
+                  width={1000}
+                  height={750}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
                 <div className="p-8 flex flex-col flex-grow">
                   <ShieldCheck className="text-accent mb-5" size={32} />
                   <h3 className="text-xl mb-3">Crettyard Edge &mdash; Managed Firewall</h3>
