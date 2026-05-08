@@ -29,6 +29,11 @@ const moreLinks = [
   { label: "About", path: "/about" },
 ];
 
+// Customer portal is being reworked — Login + Quote nav buttons (desktop and
+// mobile) are hidden until the new portal lands. Flip this flag to true to
+// restore them.
+const SHOW_PORTAL_NAV = false;
+
 export function Navbar() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -176,29 +181,33 @@ export function Navbar() {
             </li>
 
             {/* Action buttons */}
-            <li>
-              <a
-                href="https://client.crettyarddigital.ie"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-headline text-[13px] font-bold transition-all duration-200 hover:text-accent text-primary/80"
-                data-testid="link-nav-client-login"
-              >
-                Login
-              </a>
-            </li>
-            <li>
-              <Link href="/get-a-quote">
-                <Button
-                  size="sm"
-                  variant={isGetAQuote ? "default" : "outline"}
-                  className="px-5 h-9 text-[13px]"
-                  data-testid="button-nav-get-quote"
-                >
-                  Quote
-                </Button>
-              </Link>
-            </li>
+            {SHOW_PORTAL_NAV && (
+              <>
+                <li>
+                  <a
+                    href="https://client.crettyarddigital.ie"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-headline text-[13px] font-bold transition-all duration-200 hover:text-accent text-primary/80"
+                    data-testid="link-nav-client-login"
+                  >
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <Link href="/get-a-quote">
+                    <Button
+                      size="sm"
+                      variant={isGetAQuote ? "default" : "outline"}
+                      className="px-5 h-9 text-[13px]"
+                      data-testid="button-nav-get-quote"
+                    >
+                      Quote
+                    </Button>
+                  </Link>
+                </li>
+              </>
+            )}
             <li>
               <Link href="/contact#send-message">
                 <Button size="sm" className="px-5 h-9 text-[13px]" data-testid="button-nav-contact">
@@ -333,26 +342,30 @@ export function Navbar() {
               </li>
             ))}
 
-            <li>
-              <a
-                href="https://client.crettyarddigital.ie"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-primary font-headline font-bold p-2.5 hover:bg-secondary rounded-xl text-sm"
-                onClick={() => setIsMobileMenuOpen(false)}
-                data-testid="link-mobile-client-login"
-              >
-                Login
-              </a>
-            </li>
+            {SHOW_PORTAL_NAV && (
+              <li>
+                <a
+                  href="https://client.crettyarddigital.ie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-primary font-headline font-bold p-2.5 hover:bg-secondary rounded-xl text-sm"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  data-testid="link-mobile-client-login"
+                >
+                  Login
+                </a>
+              </li>
+            )}
           </ul>
 
           <div className="flex flex-col gap-2 mt-3">
-            <Link href="/get-a-quote" onClick={() => setIsMobileMenuOpen(false)}>
-              <Button variant="outline" className="w-full" data-testid="button-mobile-get-quote">
-                Quote
-              </Button>
-            </Link>
+            {SHOW_PORTAL_NAV && (
+              <Link href="/get-a-quote" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="outline" className="w-full" data-testid="button-mobile-get-quote">
+                  Quote
+                </Button>
+              </Link>
+            )}
             <Link href="/contact#send-message" onClick={() => setIsMobileMenuOpen(false)}>
               <Button className="w-full" data-testid="button-mobile-contact">
                 Contact
