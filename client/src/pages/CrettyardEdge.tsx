@@ -50,7 +50,7 @@ export default function CrettyardEdge() {
               </p>
               <div className="bg-accent/15 border border-accent/30 rounded-xl p-4 mb-8 inline-block">
                 <p className="font-headline font-bold text-white text-lg">
-                  From &euro;150/month <span className="text-white/60 text-sm font-normal">&middot; 24-month lease &middot; No setup cost</span>
+                  From &euro;150/month <span className="text-white/60 text-sm font-normal">&middot; 30 days&rsquo; notice &middot; No setup cost</span>
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -308,11 +308,9 @@ export default function CrettyardEdge() {
             {[
               { title: "€150 per month", desc: "All-inclusive lease. Hardware, software, threat feeds, monitoring, reporting." },
               { title: "No setup fee", desc: "Pre-configuration, on-site installation, and first-month monitoring are part of the price." },
-              { title: "24-month minimum lease", desc: "After that, rolling monthly with 30 days’ notice." },
+              { title: "30 days’ notice — no minimum term", desc: "Cancel any time with 30 days’ notice from either side. No lock-in, no early-termination fee, no clawback. A confident provider tells you how to leave them." },
               { title: "Hardware replacement included", desc: "If the unit fails, a configured replacement is dispatched within one business day at no charge." },
-              { title: "Buyout option at month 24", desc: "Keep the hardware for a token €1 if you wish." },
-              { title: "Early termination is allowed", desc: "Pay the remaining hardware portion (€50 × months remaining) and walk. No service clawback, no punitive fee. A confident provider tells you how to leave them." },
-              { title: "VAT-free for now", desc: "Crettyard Digital is non-VAT-registered as a sole trader. Subject to change if VAT registration becomes mandatory; existing customers grandfathered through their current term." },
+              { title: "Hardware stays our property", desc: "The unit remains property of Crettyard Digital throughout the relationship and is returned to us at cancellation. No buyout, no surprise asset on your books, no depreciation hassle for you to manage." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="bg-white p-5 rounded-xl shadow-sm h-full">
@@ -454,8 +452,8 @@ export default function CrettyardEdge() {
                 },
                 {
                   id: "ce-7",
-                  q: "Can I get out of the lease early?",
-                  a: "Yes. Pay the remaining hardware portion (€50 × months remaining) and walk. No service-element fee, no penalty.",
+                  q: "Can I cancel any time?",
+                  a: "Yes. 30 days’ notice from either side, no minimum term, no fee. The unit comes back to Crettyard Digital at cancellation — it remains our property throughout the relationship. A confident provider tells you how to leave them.",
                 },
                 {
                   id: "ce-8",

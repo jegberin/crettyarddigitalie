@@ -171,7 +171,7 @@ export default function Cybersecurity() {
                 <p className="text-3xl font-headline font-extrabold text-primary mb-1">&euro;150</p>
                 <p className="text-sm text-muted-foreground mb-5 font-sans">per month per site &middot; leased</p>
                 <p className="text-foreground text-[14px] font-sans leading-relaxed mb-5 flex-grow">
-                  The Crettyard Edge appliance &mdash; an enterprise-grade firewall sitting at the edge of your network. Real-time threat blocking, encrypted-traffic inspection, 365-day audit-grade logging for NIS2 and DORA. 24-month lease, hardware replacement included, no setup fee.
+                  The Crettyard Edge appliance &mdash; an enterprise-grade firewall sitting at the edge of your network. Real-time threat blocking, encrypted-traffic inspection, 365-day audit-grade logging for NIS2 and DORA. 30 days&rsquo; notice, no minimum term, hardware replacement included, no setup fee.
                 </p>
                 <p className="text-[13px] text-foreground/80 font-sans mb-3"><strong>Best for:</strong> businesses with a physical office, regulated practices, contractors inside larger supply chains.</p>
                 <p className="text-[13px] text-foreground/60 font-sans italic mb-5">Full product details on the Crettyard Edge page.</p>
