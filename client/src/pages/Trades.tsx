@@ -90,7 +90,7 @@ export default function Trades() {
               <div className="bg-white p-7 rounded-2xl card-hover shadow-sm">
                 <img src={iconGdprShield} alt="Glass shield representing NIS2 supply-chain security for trade businesses" width={1000} height={1000} className="w-20 h-20 mb-4" loading="lazy" />
                 <h3 className="text-lg mb-2">Security That Meets Supply Chain Requirements</h3>
-                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">MFA, email protection, endpoint security, and backup &mdash; documented and ready to show a main contractor or council if they ask about your <Link href="/cybersecurity" className="text-accent hover:underline">NIS2 supply-chain security</Link> posture.</p>
+                <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">MFA, email protection, endpoint security, and backup &mdash; documented and ready to show a main contractor or council if they ask about your <Link href="/cybersecurity" className="text-accent hover:underline">NIS2 supply-chain security</Link> posture. Trade firms exposed to supply-chain audits can add <Link href="/managed-hardware/crettyard-edge" className="text-accent hover:underline">Crettyard Edge</Link>, the leased managed firewall, for 365-day audit-grade logging at the network perimeter.</p>
                 <p className="text-sm font-headline font-bold text-accent">Included in plans</p>
               </div>
             </StaggerItem>

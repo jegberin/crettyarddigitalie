@@ -69,6 +69,7 @@ const itTiers = [
     target: "Regulated firms (financial, legal, healthcare) and businesses subject to NIS2 supply-chain audits or DORA.",
     items: [
       "Everything in Managed IT Standard",
+      "Endpoint Security package included — Microsoft Defender + DNS protection (no separate €50/user charge)",
       "Formal NIS2 readiness documentation",
       "DORA-aligned controls and reporting (where applicable)",
       "Quarterly compliance audits",
@@ -91,7 +92,7 @@ const specialistServices = [
     icon: Shield,
     title: "Cybersecurity & Compliance",
     href: "/cybersecurity",
-    desc: "Quoted on request based on framework scope. NIS2, GDPR, DORA, EAA, and the underlying security work each scope differently. A free initial review tells us what you actually need — and what you do not. Most security work for Compliance Plus clients is already included.",
+    desc: "Two productised packages plus bespoke compliance work. Endpoint Security at €50/user/month (Microsoft Defender + DNS protection). Managed Firewall at €150/month per site (Crettyard Edge). Larger projects — NIS2 readiness, DORA gap analyses, sector-specific audits — quoted on request. Most security work for Compliance Plus clients is already included.",
   },
   {
     icon: BrainCircuit,
@@ -160,7 +161,7 @@ export default function Pricing() {
               Predictable Pricing for Predictable IT.
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-3xl mb-8">
-              No surprises, no hourly bills, no &ldquo;scope creep&rdquo; invoices at the end of the quarter. Three recurring subscriptions cover the core of what most Irish small businesses need from their IT partner. Three specialist services are quoted on request because the work genuinely depends on your business. And web design stays a fixed-price project, the way it should be.
+              No surprises, no hourly bills, no &ldquo;scope creep&rdquo; invoices at the end of the quarter. Recurring subscriptions cover the core of what most Irish small businesses need from their IT partner. Cybersecurity now sits in a hybrid layer &mdash; two productised packages plus bespoke compliance work. The remaining specialist services (network and AI) stay quoted on request because the work genuinely depends on your business. And web design stays a fixed-price project, the way it should be.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact#send-message">

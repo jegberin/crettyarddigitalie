@@ -321,6 +321,7 @@ const MARKDOWN_ROUTES: readonly string[] = [
   "/microsoft-365",
   "/managed-it-support",
   "/managed-hardware",
+  "/managed-hardware/crettyard-edge",
   "/network-wifi-security",
   "/cybersecurity",
   "/ai-readiness",
@@ -368,8 +369,12 @@ function wantsMarkdown(request: Request): boolean {
 function pathToSlug(pathname: string): string | null {
   if (pathname === "/" || pathname === "") return "index";
   const trimmed = pathname.replace(/^\/+/, "").replace(/\/+$/, "");
-  if (!trimmed || trimmed.includes("/") || trimmed.includes(".")) return null;
-  return trimmed;
+  if (!trimmed || trimmed.includes(".")) return null;
+  // Nested paths (e.g. /managed-hardware/crettyard-edge) collapse to a flat
+  // KV key by replacing `/` with `-`. Both the cron writer and the Accept:
+  // text/markdown reader route through this function, so the slug stays
+  // consistent across read and write paths.
+  return trimmed.replace(/\//g, "-");
 }
 
 function slugToKey(pathname: string): string | null {

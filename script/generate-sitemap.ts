@@ -46,6 +46,7 @@ const STATIC_ENTRIES: StaticEntry[] = [
   { loc: "/microsoft-365", priority: "0.9", changefreq: "monthly" },
   { loc: "/managed-it-support", priority: "0.9", changefreq: "monthly" },
   { loc: "/managed-hardware", priority: "0.9", changefreq: "monthly" },
+  { loc: "/managed-hardware/crettyard-edge", priority: "0.8", changefreq: "monthly" },
   { loc: "/network-wifi-security", priority: "0.9", changefreq: "monthly" },
   { loc: "/cybersecurity", priority: "0.9", changefreq: "monthly" },
   { loc: "/ai-readiness", priority: "0.8", changefreq: "monthly" },

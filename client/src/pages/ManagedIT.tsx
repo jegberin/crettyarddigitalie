@@ -303,6 +303,7 @@ export default function ManagedIT() {
                 target: "For regulated firms (financial, legal, healthcare) and businesses inside larger supply chains where NIS2 or DORA documentation is being asked for.",
                 items: [
                   "Everything in Managed IT Standard",
+                  "Endpoint Security package included — Microsoft Defender + DNS protection (no separate €50/user charge)",
                   "Formal NIS2 readiness documentation",
                   "DORA-aligned controls and reporting (where applicable)",
                   "Quarterly compliance audits",
@@ -357,7 +358,7 @@ export default function ManagedIT() {
             <Accordion type="single" collapsible className="w-full space-y-3">
               {[
                 { id: "mit-1", q: "Is this only for businesses with lots of staff?", a: "Not at all. Many clients are one to five-person businesses. Even a sole trader benefits from proper email, device, and compliance management." },
-                { id: "mit-2", q: "Is compliance really included?", a: "Yes. GDPR checks and configurations are included in both tiers. NIS2 supply-chain readiness, DORA-aligned controls (where applicable), audit-ready evidence, and quarterly compliance audits are all included at the Compliance Plus tier for regulated firms (see the cybersecurity page for full framework detail). It\u2019s not an add-on \u2014 it\u2019s part of the service." },
+                { id: "mit-2", q: "Is compliance really included?", a: "Yes. GDPR checks and configurations are included in both tiers. NIS2 supply-chain readiness, DORA-aligned controls (where applicable), audit-ready evidence, and quarterly compliance audits are all included at the Compliance Plus tier for regulated firms (see the cybersecurity page for full framework detail). Compliance Plus also already includes the Endpoint Security package (Microsoft Defender + DNS protection) \u2014 you don\u2019t pay \u20ac50/user/month on top. It\u2019s not an add-on \u2014 it\u2019s part of the service." },
                 { id: "mit-3", q: "How is this different from calling someone when things break?", a: "Predictability (fixed fee, not hourly bills), prevention (problems caught early), familiarity (I already know your setup), and compliance (someone is actively managing your regulatory obligations). This is what managed service providers (MSPs) deliver \u2014 IT outsourced properly, not an hourly break-fix gamble." },
                 { id: "mit-4", q: "Can I change plans as I grow?", a: "Absolutely. Plans scale with your business. Adding a new team member? I add them to the system. Need more coverage? We adjust. No reinstalling, no starting over." },
                 { id: "mit-5", q: "Do I need this if I already have Microsoft 365?", a: "Having the licence is one thing \u2014 having it properly managed is another. Managed IT covers user management, security monitoring, troubleshooting, Intune device enrolment, and compliance. It\u2019s the difference between owning a car and having someone service it regularly. See the Microsoft 365 page for the product details I set up for you." },

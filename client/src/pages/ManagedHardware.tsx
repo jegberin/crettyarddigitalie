@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Monitor, Server, ShieldCheck, Package, Clock, Phone, Zap, Lock, HardDrive, CheckCircle, Truck, UserCheck } from "lucide-react";
+import { Monitor, Server, ShieldCheck, Package, Clock, Phone, Zap, Lock, HardDrive, CheckCircle, Truck, UserCheck, Shield } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -22,10 +22,10 @@ export default function ManagedHardware() {
             <FadeIn direction="up">
               <span className="eyebrow mb-4 inline-block">Managed Hardware</span>
               <h1 className="display-sm text-white mb-6">
-                Modern Business PCs &amp; Servers &mdash; Delivered Ready to Use, Anywhere in Ireland
+                Managed Hardware &mdash; From the Firewall at the Edge of Your Network to Every Desktop on It
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8">
-                Hardware as part of a coherent IT setup &mdash; not boxes shipped to your office hoping someone in the team can figure it out. Your new systems arrive fully configured, licensed, encrypted, and with your data already moved across &mdash; via Windows Autopilot and Microsoft Intune device enrolment done before the kit leaves me. The Intune policies and security baseline match the rest of your tenant, so day-one fits the standards already running on your other devices.
+                Hardware as part of a coherent IT setup &mdash; not boxes shipped to your office hoping someone in the team can figure it out. From the firewall at the edge of your network to workstations and servers, every piece I supply is sourced, configured, deployed, and maintained to the same standards I deployed across enterprise environments at Microsoft, Intel and Dell &mdash; sized for Irish small businesses.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact#send-message">
@@ -124,11 +124,48 @@ export default function ManagedHardware() {
             <span className="eyebrow mb-5 inline-block">What I Supply</span>
             <h2 className="text-3xl md:text-4xl mb-6">Compact, Quiet, Fast. Built for Work.</h2>
             <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal max-w-2xl mx-auto">
-              Two straightforward categories, chosen to fit how small Irish businesses actually operate.
+              Three straightforward categories, chosen to fit how small Irish businesses actually operate &mdash; from the firewall at the network edge to the desktop on every desk.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Crettyard Edge — Managed Firewall (FEATURED, position 1) */}
+            <FadeIn>
+              <div className="bg-[#f3f4f5] rounded-2xl h-full flex flex-col overflow-hidden relative" data-testid="card-crettyard-edge">
+                <span className="absolute top-4 right-4 z-10 bg-accent text-white text-xs font-headline font-bold px-3 py-1 rounded-full">New</span>
+                <div className="aspect-[4/3] bg-primary flex items-center justify-center relative overflow-hidden">
+                  <GridLines cols={6} rows={4} color="#ffffff" opacity={0.05} />
+                  <Shield className="text-accent relative z-10" size={88} strokeWidth={1.25} />
+                </div>
+                <div className="p-8 flex flex-col flex-grow">
+                  <ShieldCheck className="text-accent mb-5" size={32} />
+                  <h3 className="text-xl mb-3">Crettyard Edge &mdash; Managed Firewall</h3>
+                  <p className="text-foreground text-[15px] font-sans leading-relaxed mb-5">
+                    An enterprise-grade firewall, leased and fully managed. Filters and inspects every packet entering and leaving your network. Detects and blocks threats in real time. Produces 365 days of audit-grade logs for NIS2, DORA, and GDPR. Replaces the ISP router most Irish small businesses are still relying on as their only line of defence.
+                  </p>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {[
+                      "Real-time threat blocking at the edge",
+                      "Multi-layer intrusion detection",
+                      "Encrypted-traffic inspection",
+                      "365-day audit-grade log retention",
+                      "24/7 health monitoring with alerting",
+                      "Hardware replacement included",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-[14px] font-sans">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={14} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-base font-headline font-bold text-primary mb-3">From &euro;150/month &middot; lease, all-inclusive</p>
+                  <Link href="/managed-hardware/crettyard-edge" className="text-accent font-headline font-bold text-sm inline-flex items-center hover:text-primary transition-colors">
+                    Learn more about Crettyard Edge &rarr;
+                  </Link>
+                </div>
+              </div>
+            </FadeIn>
+
             {/* Business Desktop */}
             <FadeIn>
               <div className="bg-[#f3f4f5] rounded-2xl h-full flex flex-col overflow-hidden" data-testid="card-desktop">

@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Shield, ShieldAlert, FileCheck, CheckCircle, ArrowRight, AlertTriangle } from "lucide-react";
+import { Shield, ShieldAlert, FileCheck, CheckCircle, ArrowRight, AlertTriangle, ShieldCheck, Lock } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -132,12 +132,90 @@ export default function Cybersecurity() {
         </div>
       </section>
 
+      {/* Productised Pricing — Two Packages + Bespoke Layer */}
+      <section className="py-28 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Pricing</span>
+            <h2 className="text-3xl md:text-4xl mb-6">Two Productised Packages. One Bespoke Layer for Larger Work.</h2>
+            <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal max-w-3xl mx-auto">
+              Most Irish small businesses need two things from a security partner: proper endpoint and web protection on every device, and a real firewall at the edge of their network. Crettyard Digital sells those two things as fixed-price monthly packages. Larger projects &mdash; full NIS2 readiness, DORA gap analyses, sector-specific audits &mdash; sit outside the packages and are quoted in writing after a free initial review.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            {/* Card 1 — Endpoint Security */}
+            <StaggerItem>
+              <div className="bg-[#f3f4f5] p-7 rounded-2xl h-full flex flex-col" data-testid="card-pricing-endpoint">
+                <Lock className="text-accent mb-4" size={28} />
+                <h3 className="text-lg mb-2">Endpoint Security</h3>
+                <p className="text-3xl font-headline font-extrabold text-primary mb-1">&euro;50</p>
+                <p className="text-sm text-muted-foreground mb-5 font-sans">per user / month</p>
+                <p className="text-foreground text-[14px] font-sans leading-relaxed mb-5 flex-grow">
+                  Microsoft Defender for Business plus Crettyard Digital&rsquo;s own DNS-level threat protection. Blocks phishing domains, malware destinations, and ransomware infrastructure before any device tries to connect. Monthly threat report. Direct support for incidents.
+                </p>
+                <p className="text-[13px] text-foreground/80 font-sans mb-3"><strong>Best for:</strong> businesses on Microsoft 365 who want serious endpoint and web protection without spinning up a security team.</p>
+                <p className="text-[13px] text-foreground/60 font-sans italic mb-5">Already included in Managed IT Compliance Plus.</p>
+                <Link href="/contact#send-message">
+                  <Button className="w-full" variant="outline">Book a Free Consultation &rarr;</Button>
+                </Link>
+              </div>
+            </StaggerItem>
+
+            {/* Card 2 — Managed Firewall (Crettyard Edge) */}
+            <StaggerItem>
+              <div className="bg-accent/5 border-2 border-accent p-7 rounded-2xl h-full flex flex-col relative" data-testid="card-pricing-firewall">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Most Differentiating</span>
+                <ShieldCheck className="text-accent mb-4" size={28} />
+                <h3 className="text-lg mb-2">Managed Firewall</h3>
+                <p className="text-3xl font-headline font-extrabold text-primary mb-1">&euro;150</p>
+                <p className="text-sm text-muted-foreground mb-5 font-sans">per month per site &middot; leased</p>
+                <p className="text-foreground text-[14px] font-sans leading-relaxed mb-5 flex-grow">
+                  The Crettyard Edge appliance &mdash; an enterprise-grade firewall sitting at the edge of your network. Real-time threat blocking, encrypted-traffic inspection, 365-day audit-grade logging for NIS2 and DORA. 24-month lease, hardware replacement included, no setup fee.
+                </p>
+                <p className="text-[13px] text-foreground/80 font-sans mb-3"><strong>Best for:</strong> businesses with a physical office, regulated practices, contractors inside larger supply chains.</p>
+                <p className="text-[13px] text-foreground/60 font-sans italic mb-5">Full product details on the Crettyard Edge page.</p>
+                <Link href="/managed-hardware/crettyard-edge">
+                  <Button className="w-full">Learn About Crettyard Edge &rarr;</Button>
+                </Link>
+              </div>
+            </StaggerItem>
+
+            {/* Card 3 — Bespoke Compliance Projects */}
+            <StaggerItem>
+              <div className="bg-[#f3f4f5] p-7 rounded-2xl h-full flex flex-col" data-testid="card-pricing-bespoke">
+                <FileCheck className="text-accent mb-4" size={28} />
+                <h3 className="text-lg mb-2">Bespoke Compliance Projects</h3>
+                <p className="text-3xl font-headline font-extrabold text-primary mb-1">Quoted</p>
+                <p className="text-sm text-muted-foreground mb-5 font-sans">on request</p>
+                <p className="text-foreground text-[14px] font-sans leading-relaxed mb-5 flex-grow">
+                  NIS2 readiness packages, DORA gap analyses, EAA accessibility audits, IT resilience reviews, and sector-specific compliance work. Scoped after a free initial review, quoted as fixed-price projects in writing.
+                </p>
+                <p className="text-[13px] text-foreground/80 font-sans mb-3"><strong>Best for:</strong> regulated firms, businesses preparing for an audit, organisations responding to a supply-chain security questionnaire.</p>
+                <p className="text-[13px] text-foreground/60 font-sans italic mb-5">Most of this work is included in Managed IT Compliance Plus for clients on that plan.</p>
+                <Link href="/contact#send-message">
+                  <Button className="w-full" variant="outline">Book a Free Review &rarr;</Button>
+                </Link>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
+
+          <FadeIn className="mt-12 max-w-3xl mx-auto">
+            <div className="bg-[#f3f4f5] border border-gray-200 p-6 rounded-2xl">
+              <p className="text-foreground text-[14px] font-sans leading-relaxed">
+                <strong>Mix and match.</strong> The two packages are designed to layer. A 10-person accountancy practice on Compliance Plus already has Endpoint Security included &mdash; the natural addition is the Managed Firewall (&euro;150/month per site). A 5-person consultancy on Managed IT Standard might add Endpoint Security (&euro;50/user/month) without the firewall. There is no wrong combination &mdash; the packages don&rsquo;t depend on each other.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Cybersecurity Services */}
       <section className="py-28 bg-[#f3f4f5]">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">Cybersecurity Services</span>
-            <h2 className="text-3xl">Practical Security &mdash; Not Scare Tactics</h2>
+            <h2 className="text-3xl">What These Packages Cover, in Detail</h2>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">

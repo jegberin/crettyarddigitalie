@@ -127,7 +127,7 @@ export default function DORACompliance() {
               <div className="bg-[#f3f4f5] p-7 rounded-2xl card-hover">
                 <h3 className="text-lg mb-2">DORA-Aligned IT Setup</h3>
                 <p className="text-foreground text-[15px] leading-relaxed font-sans font-normal mb-3">
-                  If you need a new or upgraded IT environment, I build it to DORA standards from the start &mdash; <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link> with advanced security, encrypted communications, automated backups with tested recovery, endpoint protection (see <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity</Link>), and full documentation.
+                  If you need a new or upgraded IT environment, I build it to DORA standards from the start &mdash; <Link href="/microsoft-365" className="text-accent hover:underline">Microsoft 365</Link> with advanced security, encrypted communications, automated backups with tested recovery, endpoint protection (see <Link href="/cybersecurity" className="text-accent hover:underline">cybersecurity</Link>), <Link href="/managed-hardware/crettyard-edge" className="text-accent hover:underline">Crettyard Edge</Link> at the network perimeter for 365-day audit-grade logging aligned to DORA Article 17, and full documentation.
                 </p>
                 <p className="text-sm font-headline font-bold text-accent">Quoted on scope</p>
               </div>

@@ -22,6 +22,7 @@ import GetAQuote from "@/pages/GetAQuote";
 // New service pages
 import ManagedIT from "@/pages/ManagedIT";
 import ManagedHardware from "@/pages/ManagedHardware";
+import CrettyardEdge from "@/pages/CrettyardEdge";
 import Cybersecurity from "@/pages/Cybersecurity";
 import AIReadiness from "@/pages/AIReadiness";
 import WebsiteCare from "@/pages/WebsiteCare";
@@ -105,6 +106,10 @@ const pageSEO: Record<string, { title: string; description: string; noindex?: bo
   "/managed-hardware": {
     title: "Business PCs & Servers, Delivered Ready to Use | Crettyard Digital",
     description: "Turnkey business desktops and on-site servers for small Irish businesses. Fully configured, licensed, encrypted, and with your data migrated before delivery. Log in and get to work. From \u20ac899 per device.",
+  },
+  "/managed-hardware/crettyard-edge": {
+    title: "Crettyard Edge \u2014 Managed Firewall for Irish SMEs | NIS2 & DORA Ready",
+    description: "Enterprise-grade managed firewall for Irish small businesses. Real-time threat blocking, 365-day audit logs, NIS2 and DORA-aligned reporting. \u20ac150/month leased \u2014 hardware, monitoring, and replacement included.",
   },
   "/network-wifi-security": {
     title: "Business Network & Wi-Fi Solutions for Irish Offices and Workshops | Crettyard Digital",
@@ -588,6 +593,7 @@ function Router() {
                 <Route path="/microsoft-365" component={Microsoft365} />
                 <Route path="/managed-it-support" component={ManagedIT} />
                 <Route path="/managed-hardware" component={ManagedHardware} />
+                <Route path="/managed-hardware/crettyard-edge" component={CrettyardEdge} />
                 <Route path="/network-wifi-security" component={NetworkWifi} />
                 <Route path="/cybersecurity" component={Cybersecurity} />
                 <Route path="/ai-readiness" component={AIReadiness} />
