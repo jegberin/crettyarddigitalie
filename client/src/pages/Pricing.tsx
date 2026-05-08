@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, BadgeEuro, MonitorSmartphone, Cloud, ServerCog, Wifi, Shield, Phone, BrainCircuit } from "lucide-react";
+import { CheckCircle, ArrowRight, BadgeEuro, MonitorSmartphone, Cloud, ServerCog, Wifi, Phone, BrainCircuit, Lock, ShieldCheck, FileCheck } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { GridLines } from "@/components/GridLines";
 import { SpotlightCTA } from "@/components/SpotlightCTA";
@@ -81,18 +81,66 @@ const itTiers = [
   },
 ];
 
+const cyberPackages = [
+  {
+    icon: Lock,
+    name: "Endpoint Security",
+    price: "€50",
+    unit: "per user / month",
+    tagline: "Microsoft Defender for Business plus Crettyard Digital’s own DNS-level threat protection.",
+    items: [
+      "Microsoft Defender for Business deployed and tuned",
+      "DNS-level blocking of phishing, malware, ransomware infrastructure",
+      "Continuous threat-intelligence updates",
+      "Monthly threat report in plain English",
+      "Direct support for security incidents",
+      "Already included in Compliance Plus — no double charge",
+    ],
+    href: "/cybersecurity",
+    popular: false,
+  },
+  {
+    icon: ShieldCheck,
+    name: "Managed Firewall (Crettyard Edge)",
+    price: "€150",
+    unit: "per month per site",
+    tagline: "Enterprise-grade managed firewall, leased and watched 24/7. Real-time threat blocking, 365-day audit-grade logs.",
+    items: [
+      "Real-time threat blocking at the network edge",
+      "Multi-layer intrusion detection",
+      "Encrypted-traffic inspection",
+      "365-day audit-grade log retention",
+      "Hardware replacement included, no setup fee",
+      "30 days’ notice — no minimum term",
+    ],
+    href: "/managed-hardware/crettyard-edge",
+    popular: true,
+  },
+  {
+    icon: FileCheck,
+    name: "Bespoke Compliance Projects",
+    price: "Quoted",
+    unit: "on request",
+    tagline: "NIS2 readiness, DORA gap analyses, EAA audits, sector-specific compliance work.",
+    items: [
+      "NIS2 readiness packages",
+      "DORA gap analyses (Article 17 + RTS)",
+      "EAA accessibility audits",
+      "IT resilience reviews",
+      "Sector-specific compliance (healthcare, legal, financial)",
+      "Most of this is included in Compliance Plus",
+    ],
+    href: "/cybersecurity",
+    popular: false,
+  },
+];
+
 const specialistServices = [
   {
     icon: Wifi,
     title: "Network & Wi-Fi",
     href: "/network-wifi-security",
     desc: "Quoted after a free site review. Network and Wi-Fi pricing depends on the size of the premises, the number of access points, the cabling already in place, and the hardware. A flat list price would be either fictional or unfair.",
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity & Compliance",
-    href: "/cybersecurity",
-    desc: "Two productised packages plus bespoke compliance work. Endpoint Security at €50/user/month (Microsoft Defender + DNS protection). Managed Firewall at €150/month per site (Crettyard Edge). Larger projects — NIS2 readiness, DORA gap analyses, sector-specific audits — quoted on request. Most security work for Compliance Plus clients is already included.",
   },
   {
     icon: BrainCircuit,
@@ -298,18 +346,76 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Section 3 — Specialist services */}
+      {/* Section 3 — Cybersecurity & Compliance */}
+      <section className="py-28 bg-[#f3f4f5] border-t border-gray-200">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <FadeIn className="text-center mb-14">
+            <span className="eyebrow mb-5 inline-block">Cybersecurity &amp; Compliance</span>
+            <h2 className="text-3xl md:text-4xl mb-4">Two Productised Packages. One Bespoke Layer.</h2>
+            <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
+              Most Irish small businesses need two things from a security partner: proper endpoint and web protection on every device, and a real firewall at the edge of their network. Those two are sold as fixed-price monthly packages. Larger compliance projects &mdash; NIS2 readiness, DORA gap analyses, sector-specific audits &mdash; sit outside the packages and are quoted in writing after a free initial review.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+            {cyberPackages.map((pkg) => (
+              <StaggerItem key={pkg.name}>
+                <div className={`rounded-2xl p-8 h-full flex flex-col ${pkg.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-white border border-gray-100"}`} data-testid={`cyber-${pkg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  {pkg.popular && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Most Differentiating</span>
+                  )}
+                  <div className="flex items-center gap-3 mb-3">
+                    <pkg.icon className="text-accent shrink-0" size={26} />
+                    <h3 className="text-lg leading-tight">{pkg.name}</h3>
+                  </div>
+                  <p className="text-foreground text-[14px] font-sans mb-5">{pkg.tagline}</p>
+                  <div className="mb-6">
+                    <p className="text-4xl font-headline font-extrabold text-primary">{pkg.price}</p>
+                    <p className="text-sm text-muted-foreground font-sans">{pkg.unit}</p>
+                  </div>
+                  <ul className="space-y-2.5 flex-1 mb-6">
+                    {pkg.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-[14px] font-sans text-foreground">
+                        <CheckCircle className="text-accent shrink-0 mt-0.5" size={15} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link href="/contact#send-message" className="flex-1">
+                      <Button className="w-full" variant={pkg.popular ? "default" : "outline"}>Book a Free Consultation</Button>
+                    </Link>
+                    <Link href={pkg.href} className="flex-1">
+                      <Button variant="outline" className="w-full">See Details &rarr;</Button>
+                    </Link>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn className="mt-10 max-w-3xl mx-auto">
+            <div className="bg-white border border-gray-200 p-6 rounded-2xl">
+              <p className="text-foreground text-[14px] font-sans leading-relaxed">
+                <strong>Mix and match.</strong> The two packages are designed to layer. A 10-person accountancy practice on Compliance Plus already has Endpoint Security included &mdash; the natural addition is the Managed Firewall (&euro;150/month per site). A 5-person consultancy on Managed IT Standard might add Endpoint Security (&euro;50/user/month) without the firewall. There is no wrong combination &mdash; the packages don&rsquo;t depend on each other.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Section 4 — Specialist services (Network + AI) */}
       <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">Specialist Services</span>
             <h2 className="text-3xl md:text-4xl mb-4">Quoted on Request</h2>
             <p className="text-foreground max-w-3xl mx-auto font-sans font-normal">
-              Three areas of work that do not fit a sticker price. A flat list price for any of these would be either fictional or unfair. A short, free review tells us what you actually need.
+              Two areas of work that do not fit a sticker price. A flat list price for either would be either fictional or unfair. A short, free review tells us what you actually need.
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {specialistServices.map((svc) => (
               <StaggerItem key={svc.title}>
                 <Link href={svc.href} className="block bg-[#f3f4f5] p-7 rounded-2xl card-hover h-full" data-testid={`specialist-${svc.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
