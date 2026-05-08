@@ -330,7 +330,7 @@ export default function Pricing() {
       </section>
 
       {/* Section 3 — Cybersecurity & Compliance */}
-      <section className="py-28 bg-[#f3f4f5] border-t border-gray-200">
+      <section className="py-28 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <FadeIn className="text-center mb-14">
             <span className="eyebrow mb-5 inline-block">Cybersecurity &amp; Compliance</span>
@@ -343,7 +343,7 @@ export default function Pricing() {
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {cyberPackages.map((pkg) => (
               <StaggerItem key={pkg.name}>
-                <div className={`rounded-2xl p-8 h-full flex flex-col ${pkg.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-white border border-gray-100"}`} data-testid={`cyber-${pkg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                <div className={`rounded-2xl p-8 h-full flex flex-col ${pkg.popular ? "bg-accent/5 border-2 border-accent relative" : "bg-[#f3f4f5] border border-gray-100"}`} data-testid={`cyber-${pkg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
                   {pkg.popular && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-headline font-bold px-4 py-1 rounded-full">Most Differentiating</span>
                   )}
@@ -378,7 +378,7 @@ export default function Pricing() {
           </StaggerContainer>
 
           <FadeIn className="mt-10 max-w-3xl mx-auto">
-            <div className="bg-white border border-gray-200 p-6 rounded-2xl">
+            <div className="bg-[#f3f4f5] border border-gray-200 p-6 rounded-2xl">
               <p className="text-foreground text-[14px] font-sans leading-relaxed">
                 <strong>Mix and match.</strong> The two packages are designed to layer. A 10-person accountancy practice on Compliance Plus already has Endpoint Security included &mdash; the natural addition is the Managed Firewall (&euro;150/month per site). A 5-person consultancy on Managed IT Standard might add Endpoint Security (&euro;50/user/month) without the firewall. There is no wrong combination &mdash; the packages don&rsquo;t depend on each other.
               </p>
