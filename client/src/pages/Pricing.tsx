@@ -370,8 +370,17 @@ export default function Pricing() {
                   </div>
                   <p className="text-foreground text-[14px] font-sans mb-5">{pkg.tagline}</p>
                   <div className="mb-6">
-                    <p className="text-4xl font-headline font-extrabold text-primary">{pkg.price}</p>
-                    <p className="text-sm text-muted-foreground font-sans">{pkg.unit}</p>
+                    {pkg.price === "Quoted" ? (
+                      <>
+                        <p className="text-2xl font-headline font-extrabold text-primary leading-tight">Quoted on request</p>
+                        <p className="text-sm text-muted-foreground font-sans mt-1">After a free initial review</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-4xl font-headline font-extrabold text-primary">{pkg.price}</p>
+                        <p className="text-sm text-muted-foreground font-sans">{pkg.unit}</p>
+                      </>
+                    )}
                   </div>
                   <ul className="space-y-2.5 flex-1 mb-6">
                     {pkg.items.map((item, j) => (
